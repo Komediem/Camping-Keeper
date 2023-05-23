@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class InterractZone : MonoBehaviour
 {
     public GameObject InterractTextCanvas;
-    public Outline Outline;
+    public OutlineScript Outline;
     private void OnTriggerEnter(Collider collision)
     {
         if (collision.tag == "Player")
