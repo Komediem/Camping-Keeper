@@ -729,9 +729,11 @@ MonoBehaviour:
   cloudMap:
     m_OverrideState: 0
     m_Value: {fileID: 0}
+    dimension: 2
   cloudLut:
     m_OverrideState: 0
     m_Value: {fileID: 0}
+    dimension: 2
   cloudControl:
     m_OverrideState: 0
     m_Value: 0
@@ -741,24 +743,28 @@ MonoBehaviour:
   cumulusMap:
     m_OverrideState: 0
     m_Value: {fileID: 0}
+    dimension: 2
   cumulusMapMultiplier:
     m_OverrideState: 0
     m_Value: 1
   altoStratusMap:
     m_OverrideState: 0
     m_Value: {fileID: 0}
+    dimension: 2
   altoStratusMapMultiplier:
     m_OverrideState: 0
     m_Value: 1
   cumulonimbusMap:
     m_OverrideState: 0
     m_Value: {fileID: 0}
+    dimension: 2
   cumulonimbusMapMultiplier:
     m_OverrideState: 0
     m_Value: 1
   rainMap:
     m_OverrideState: 0
     m_Value: {fileID: 0}
+    dimension: 2
   cloudMapResolution:
     m_OverrideState: 0
     m_Value: 64
@@ -971,6 +977,9 @@ MonoBehaviour:
   ghostingReduction:
     m_OverrideState: 0
     m_Value: 0
+  perceptualBlending:
+    m_OverrideState: 0
+    m_Value: 1
   shadows:
     m_OverrideState: 0
     m_Value: 0
@@ -1021,6 +1030,9 @@ MonoBehaviour:
   mode:
     m_OverrideState: 1
     m_Value: 2
+  useFullACES:
+    m_OverrideState: 0
+    m_Value: 0
   toeStrength:
     m_OverrideState: 0
     m_Value: 0
@@ -1045,6 +1057,33 @@ MonoBehaviour:
   lutContribution:
     m_OverrideState: 0
     m_Value: 1
+  neutralHDRRangeReductionMode:
+    m_OverrideState: 0
+    m_Value: 2
+  acesPreset:
+    m_OverrideState: 0
+    m_Value: 3
+  fallbackMode:
+    m_OverrideState: 0
+    m_Value: 1
+  hueShiftAmount:
+    m_OverrideState: 0
+    m_Value: 0
+  detectPaperWhite:
+    m_OverrideState: 0
+    m_Value: 0
+  paperWhite:
+    m_OverrideState: 0
+    m_Value: 300
+  detectBrightnessLimits:
+    m_OverrideState: 0
+    m_Value: 1
+  minNits:
+    m_OverrideState: 0
+    m_Value: 0.005
+  maxNits:
+    m_OverrideState: 0
+    m_Value: 1000
 --- !u!114 &8300247594604814326
 MonoBehaviour:
   m_ObjectHideFlags: 3
