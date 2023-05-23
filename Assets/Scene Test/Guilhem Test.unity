@@ -294,7 +294,6 @@ GameObject:
   m_Component:
   - component: {fileID: 689047535}
   - component: {fileID: 689047534}
-  - component: {fileID: 689047536}
   - component: {fileID: 689047537}
   m_Layer: 0
   m_Name: Directional Light
@@ -380,18 +379,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
---- !u!114 &689047536
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 689047533}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &689047537
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -734,62 +721,6 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4292055377032961787, guid: a389da2f4438b3a4e9c5202b88c93942, type: 3}
-      propertyPath: m_Actions
-      value: 
-      objectReference: {fileID: -944628639613478452, guid: e67c89c6072fd744da39b1e0cfb78897, type: 3}
-    - target: {fileID: 4292055377032961787, guid: a389da2f4438b3a4e9c5202b88c93942, type: 3}
-      propertyPath: m_ActionEvents.Array.size
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 4292055377032961787, guid: a389da2f4438b3a4e9c5202b88c93942, type: 3}
-      propertyPath: m_ActionEvents.Array.data[0].m_ActionId
-      value: f9f98a2c-4e09-4579-9344-890223eb03ec
-      objectReference: {fileID: 0}
-    - target: {fileID: 4292055377032961787, guid: a389da2f4438b3a4e9c5202b88c93942, type: 3}
-      propertyPath: m_ActionEvents.Array.data[1].m_ActionId
-      value: 39c2b3fe-95c4-44f7-84ac-3ab8700b83a7
-      objectReference: {fileID: 0}
-    - target: {fileID: 4292055377032961787, guid: a389da2f4438b3a4e9c5202b88c93942, type: 3}
-      propertyPath: m_ActionEvents.Array.data[2].m_ActionId
-      value: 7d425355-2377-4881-9271-c84ee540cb19
-      objectReference: {fileID: 0}
-    - target: {fileID: 4292055377032961787, guid: a389da2f4438b3a4e9c5202b88c93942, type: 3}
-      propertyPath: m_ActionEvents.Array.data[3].m_ActionId
-      value: 815be1eb-3feb-4f94-b066-4a0377ab767d
-      objectReference: {fileID: 0}
-    - target: {fileID: 4292055377032961787, guid: a389da2f4438b3a4e9c5202b88c93942, type: 3}
-      propertyPath: m_ActionEvents.Array.data[4].m_ActionId
-      value: 4b3730a6-2831-40cc-a610-623545db434c
-      objectReference: {fileID: 0}
-    - target: {fileID: 4292055377032961787, guid: a389da2f4438b3a4e9c5202b88c93942, type: 3}
-      propertyPath: m_ActionEvents.Array.data[5].m_ActionId
-      value: c8e804a5-3679-432c-822f-1476efe89dac
-      objectReference: {fileID: 0}
-    - target: {fileID: 4292055377032961787, guid: a389da2f4438b3a4e9c5202b88c93942, type: 3}
-      propertyPath: m_ActionEvents.Array.data[0].m_ActionName
-      value: Player/Move[/Keyboard/leftArrow,/Keyboard/rightArrow,/DualShock4GamepadHID/leftStick/x,/Keyboard/a,/Keyboard/d,/DualShock4GamepadHID/dpad/left,/DualShock4GamepadHID/dpad/right]
-      objectReference: {fileID: 0}
-    - target: {fileID: 4292055377032961787, guid: a389da2f4438b3a4e9c5202b88c93942, type: 3}
-      propertyPath: m_ActionEvents.Array.data[1].m_ActionName
-      value: Player/Jump[/Keyboard/space,/DualShock4GamepadHID/buttonSouth]
-      objectReference: {fileID: 0}
-    - target: {fileID: 4292055377032961787, guid: a389da2f4438b3a4e9c5202b88c93942, type: 3}
-      propertyPath: m_ActionEvents.Array.data[2].m_ActionName
-      value: Player/Crouch[/Keyboard/c,/DualShock4GamepadHID/buttonEast]
-      objectReference: {fileID: 0}
-    - target: {fileID: 4292055377032961787, guid: a389da2f4438b3a4e9c5202b88c93942, type: 3}
-      propertyPath: m_ActionEvents.Array.data[3].m_ActionName
-      value: Player/Pull/Push[/Keyboard/w,/DualShock4GamepadHID/leftTrigger]
-      objectReference: {fileID: 0}
-    - target: {fileID: 4292055377032961787, guid: a389da2f4438b3a4e9c5202b88c93942, type: 3}
-      propertyPath: m_ActionEvents.Array.data[4].m_ActionName
-      value: Player/Light[/Keyboard/f,/DualShock4GamepadHID/buttonWest]
-      objectReference: {fileID: 0}
-    - target: {fileID: 4292055377032961787, guid: a389da2f4438b3a4e9c5202b88c93942, type: 3}
-      propertyPath: m_ActionEvents.Array.data[5].m_ActionName
-      value: Player/Pause[/Keyboard/escape,/Keyboard/tab,/DualShock4GamepadHID/start]
-      objectReference: {fileID: 0}
     - target: {fileID: 6330055504169505633, guid: a389da2f4438b3a4e9c5202b88c93942, type: 3}
       propertyPath: m_Name
       value: Player + Cam
