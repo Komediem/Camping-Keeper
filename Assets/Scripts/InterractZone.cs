@@ -6,13 +6,12 @@ using UnityEngine.UI;
 
 public class InterractZone : MonoBehaviour
 {
-    public GameObject InterractTextCanvas;
-    public Outline Outline;
+    public GameObject InterractTextCanvas; 
+
     private void OnTriggerEnter(Collider collision)
     {
         if (collision.tag == "Player")
         {
-            Outline.enabled = true;
             InterractTextCanvas.SetActive(true);
         }
        
@@ -21,7 +20,6 @@ public class InterractZone : MonoBehaviour
     {
         if (collision.tag == "Player")
         {
-            Outline.enabled = false;
             InterractTextCanvas.SetActive(false);
         }
     }

@@ -647,17 +647,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1289757372}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &1304505711 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1582169800, guid: 932ab48591573d649b2aa6e1db6d7388, type: 3}
-  m_PrefabInstance: {fileID: 7425496838988934745}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &2002821267
 GameObject:
   m_ObjectHideFlags: 0
@@ -732,10 +721,6 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1237088474169482053, guid: 0b808f0095528bf41ba9480bb86dffea, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4272810012536966945, guid: 0b808f0095528bf41ba9480bb86dffea, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -824,18 +809,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
-    - target: {fileID: 6168039218099592879, guid: 0b808f0095528bf41ba9480bb86dffea, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -400
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 0b808f0095528bf41ba9480bb86dffea, type: 3}
---- !u!1 &3643516211514696676 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1237088474169482053, guid: 0b808f0095528bf41ba9480bb86dffea, type: 3}
-  m_PrefabInstance: {fileID: 3643516211514696675}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6330055503763038784
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -903,26 +879,6 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1650216807462320466, guid: 932ab48591573d649b2aa6e1db6d7388, type: 3}
-      propertyPath: Outline
-      value: 
-      objectReference: {fileID: 1304505711}
-    - target: {fileID: 1650216807462320466, guid: 932ab48591573d649b2aa6e1db6d7388, type: 3}
-      propertyPath: InterractTextCanvas
-      value: 
-      objectReference: {fileID: 3643516211514696676}
-    - target: {fileID: 7425496837321290052, guid: 932ab48591573d649b2aa6e1db6d7388, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: a4a946a71238b6249ada4b7f85b6fd4c, type: 2}
-    - target: {fileID: 7425496837872601900, guid: 932ab48591573d649b2aa6e1db6d7388, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: a4a946a71238b6249ada4b7f85b6fd4c, type: 2}
-    - target: {fileID: 7425496838243051426, guid: 932ab48591573d649b2aa6e1db6d7388, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: a4a946a71238b6249ada4b7f85b6fd4c, type: 2}
     - target: {fileID: 7425496838629524794, guid: 932ab48591573d649b2aa6e1db6d7388, type: 3}
       propertyPath: m_Name
       value: Crate
@@ -971,6 +927,7 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1669708662422021255, guid: 932ab48591573d649b2aa6e1db6d7388, type: 3}
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 932ab48591573d649b2aa6e1db6d7388, type: 3}
