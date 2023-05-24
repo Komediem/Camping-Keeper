@@ -388,10 +388,10 @@ RectTransform:
   m_Father: {fileID: 1858949009}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 25, y: 25}
+  m_SizeDelta: {x: -1895, y: -1055}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &152863323
 MonoBehaviour:
@@ -906,7 +906,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &312857771
 GameObject:
@@ -2077,16 +2077,16 @@ MonoBehaviour:
   m_MoveRepeatRate: 0.1
   m_XRTrackingOrigin: {fileID: 0}
   m_ActionsAsset: {fileID: -944628639613478452, guid: e67c89c6072fd744da39b1e0cfb78897, type: 3}
-  m_PointAction: {fileID: 0}
-  m_MoveAction: {fileID: -7700340205965858244, guid: e67c89c6072fd744da39b1e0cfb78897, type: 3}
-  m_SubmitAction: {fileID: 0}
-  m_CancelAction: {fileID: 0}
-  m_LeftClickAction: {fileID: 0}
-  m_MiddleClickAction: {fileID: 0}
-  m_RightClickAction: {fileID: 0}
-  m_ScrollWheelAction: {fileID: 0}
-  m_TrackedDevicePositionAction: {fileID: 0}
-  m_TrackedDeviceOrientationAction: {fileID: 0}
+  m_PointAction: {fileID: -7230708047303840904, guid: e67c89c6072fd744da39b1e0cfb78897, type: 3}
+  m_MoveAction: {fileID: 152340601841199850, guid: e67c89c6072fd744da39b1e0cfb78897, type: 3}
+  m_SubmitAction: {fileID: -4597293622960332290, guid: e67c89c6072fd744da39b1e0cfb78897, type: 3}
+  m_CancelAction: {fileID: -3867112073106818925, guid: e67c89c6072fd744da39b1e0cfb78897, type: 3}
+  m_LeftClickAction: {fileID: -1846945754770366679, guid: e67c89c6072fd744da39b1e0cfb78897, type: 3}
+  m_MiddleClickAction: {fileID: -8029019340008353425, guid: e67c89c6072fd744da39b1e0cfb78897, type: 3}
+  m_RightClickAction: {fileID: 6412080408316591133, guid: e67c89c6072fd744da39b1e0cfb78897, type: 3}
+  m_ScrollWheelAction: {fileID: -522870407094935367, guid: e67c89c6072fd744da39b1e0cfb78897, type: 3}
+  m_TrackedDevicePositionAction: {fileID: -693020904813365629, guid: e67c89c6072fd744da39b1e0cfb78897, type: 3}
+  m_TrackedDeviceOrientationAction: {fileID: -5740453731621529552, guid: e67c89c6072fd744da39b1e0cfb78897, type: 3}
   m_DeselectOnBackgroundClick: 1
   m_PointerBehavior: 0
   m_CursorLockBehavior: 0
@@ -2995,7 +2995,6 @@ RectTransform:
   - {fileID: 1026038442}
   - {fileID: 1766058728}
   - {fileID: 152863322}
-  - {fileID: 2052191471}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3337,7 +3336,7 @@ GameObject:
   - component: {fileID: 2052191471}
   - component: {fileID: 2052191473}
   - component: {fileID: 2052191472}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Gamepad Cursor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3351,17 +3350,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2052191470}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1858949009}
-  m_RootOrder: -1
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 960, y: 540}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2052191472
@@ -3388,9 +3387,77 @@ MonoBehaviour:
   m_ControlsChangedEvent:
     m_PersistentCalls:
       m_Calls: []
-  m_ActionEvents: []
+  m_ActionEvents:
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: f9f98a2c-4e09-4579-9344-890223eb03ec
+    m_ActionName: Player/Move[/Keyboard/leftArrow,/Keyboard/rightArrow,/DualShock4GamepadHID/leftStick/x,/Keyboard/a,/Keyboard/d,/DualShock4GamepadHID/dpad/left,/DualShock4GamepadHID/dpad/right]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 39c2b3fe-95c4-44f7-84ac-3ab8700b83a7
+    m_ActionName: Player/Jump[/Keyboard/space,/DualShock4GamepadHID/buttonSouth]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 7d425355-2377-4881-9271-c84ee540cb19
+    m_ActionName: Player/Crouch[/Keyboard/c,/DualShock4GamepadHID/buttonEast]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 815be1eb-3feb-4f94-b066-4a0377ab767d
+    m_ActionName: Player/Pull/Push[/Keyboard/w,/DualShock4GamepadHID/leftTrigger]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 4b3730a6-2831-40cc-a610-623545db434c
+    m_ActionName: Player/Light[/Keyboard/f,/DualShock4GamepadHID/buttonNorth]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: c8e804a5-3679-432c-822f-1476efe89dac
+    m_ActionName: Player/Pause[/Keyboard/escape,/Keyboard/tab,/DualShock4GamepadHID/start]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 6b24ef5b-b74f-4b48-92cc-93fe0529365f
+    m_ActionName: Player/Interract[/Keyboard/e,/DualShock4GamepadHID/buttonWest]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 6b4bb8a7-4807-4779-ae85-f653f4204a8e
+    m_ActionName: UI/Navigation[/Mouse/delta,/VirtualMouse/delta,/VirtualMouse1/delta,/VirtualMouse2/delta,/VirtualMouse3/delta,/VirtualMouse4/delta,/VirtualMouse5/delta,/VirtualMouse6/delta,/VirtualMouse7/delta]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: ca791f7c-32b9-4c33-ab7c-8b23637b4a40
+    m_ActionName: UI/Submit[/Keyboard/enter,/DualShock4GamepadHID/buttonSouth]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 7c5b2179-e88d-4cfd-bfb3-2a822856544e
+    m_ActionName: UI/Cancel[/Keyboard/escape,/DualShock4GamepadHID/buttonEast]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 3063e375-dc02-42f7-b82f-0e2f4cbca813
+    m_ActionName: UI/Point[/Mouse/position,/VirtualMouse/position,/VirtualMouse1/position,/VirtualMouse2/position,/VirtualMouse3/position,/VirtualMouse4/position,/VirtualMouse5/position,/VirtualMouse6/position,/VirtualMouse7/position]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: b780a653-e848-4aa3-89df-5552bfd78a41
+    m_ActionName: UI/Click[/Mouse/leftButton,/VirtualMouse/leftButton,/VirtualMouse1/leftButton,/VirtualMouse2/leftButton,/VirtualMouse3/leftButton,/VirtualMouse4/leftButton,/VirtualMouse5/leftButton,/VirtualMouse6/leftButton,/VirtualMouse7/leftButton,/DualShock4GamepadHID/leftTrigger]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: a89dacab-ca95-4776-b2b3-66c4b506065c
+    m_ActionName: UI/ScrollWheel[/Mouse/scroll,/VirtualMouse/scroll,/VirtualMouse1/scroll,/VirtualMouse2/scroll,/VirtualMouse3/scroll,/VirtualMouse4/scroll,/VirtualMouse5/scroll,/VirtualMouse6/scroll,/VirtualMouse7/scroll]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 43e5ca8b-d474-4569-a56c-a37a8c5d223a
+    m_ActionName: UI/MiddleClick[/Mouse/middleButton,/VirtualMouse/middleButton,/VirtualMouse1/middleButton,/VirtualMouse2/middleButton,/VirtualMouse3/middleButton,/VirtualMouse4/middleButton,/VirtualMouse5/middleButton,/VirtualMouse6/middleButton,/VirtualMouse7/middleButton]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 9c7a79a7-fe95-4bfe-8a21-1ff5711f3518
+    m_ActionName: UI/RightClick[/Mouse/rightButton,/VirtualMouse/rightButton,/VirtualMouse1/rightButton,/VirtualMouse2/rightButton,/VirtualMouse3/rightButton,/VirtualMouse4/rightButton,/VirtualMouse5/rightButton,/VirtualMouse6/rightButton,/VirtualMouse7/rightButton]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 865b9169-befd-4cee-b0a5-55c4dbafe237
+    m_ActionName: UI/TrackedDevicePosition
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 05ca49b2-4ef6-480d-aca2-b4f9d81cff58
+    m_ActionName: UI/TrackedDeviceOrientation
   m_NeverAutoSwitchControlSchemes: 0
-  m_DefaultControlScheme: Gamepad
+  m_DefaultControlScheme: 
   m_DefaultActionMap: UI
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 330585545}
