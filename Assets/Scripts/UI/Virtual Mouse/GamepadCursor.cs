@@ -3,7 +3,7 @@ using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.LowLevel;
 using UnityEngine.InputSystem.Users;
 
-public class GamePadCursorTest : MonoBehaviour
+public class GamepadCursor : MonoBehaviour
 {
     [SerializeField] 
     private PlayerInput playerInput;
