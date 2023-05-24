@@ -10,6 +10,7 @@ public class GamepadCursor : MonoBehaviour
 
     [SerializeField] 
     private RectTransform cursorTransform;
+
     [SerializeField]
     private RectTransform canvasRectTransform;
     [SerializeField]
@@ -56,7 +57,10 @@ public class GamepadCursor : MonoBehaviour
 
     private void UpdateMotion()
     {
-        if(virtualMouse != null || Gamepad.current == null) return;
+        if (virtualMouse != null || Gamepad.current == null)
+        { 
+            return; 
+        }
 
         Vector2 deltaValue = Gamepad.current.leftStick.ReadValue();
         deltaValue *= cursorSpeed * Time.deltaTime;
@@ -86,7 +90,7 @@ public class GamepadCursor : MonoBehaviour
     {
         Vector2 anchoredPosition;
         RectTransformUtility.ScreenPointToLocalPointInRectangle(canvasRectTransform, position, 
-            canvas.renderMode == RenderMode.ScreenSpaceOverlay ? null : Camera.main, out anchoredPosition);
+            canvas.renderMode == RenderMode.ScreenSpaceOverlay ? null : mainCamera, out anchoredPosition);
 
         cursorTransform.anchoredPosition = anchoredPosition;
     }
