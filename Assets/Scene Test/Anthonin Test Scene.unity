@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 1188.0479, g: 1423.1816, b: 1875.0176, a: 1}
+  m_IndirectSpecularColor: {r: 1283.5898, g: 1555.9258, b: 2090.5977, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -301,7 +301,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 805318925369265899, guid: 932ab48591573d649b2aa6e1db6d7388, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1650216807462320466, guid: 932ab48591573d649b2aa6e1db6d7388, type: 3}
       propertyPath: Text
@@ -317,7 +317,7 @@ PrefabInstance:
       objectReference: {fileID: 39261401}
     - target: {fileID: 1807749603978779589, guid: 932ab48591573d649b2aa6e1db6d7388, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1807749603978779589, guid: 932ab48591573d649b2aa6e1db6d7388, type: 3}
       propertyPath: m_IsTrigger
@@ -333,7 +333,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7425496838629524794, guid: 932ab48591573d649b2aa6e1db6d7388, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7425496838629524794, guid: 932ab48591573d649b2aa6e1db6d7388, type: 3}
       propertyPath: m_TagString
@@ -396,6 +396,10 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1397333176, guid: a389da2f4438b3a4e9c5202b88c93942, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6330055504169505633, guid: a389da2f4438b3a4e9c5202b88c93942, type: 3}
       propertyPath: m_Name
       value: Player + Cam
@@ -482,7 +486,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!54 &853037375
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -591,28 +595,6 @@ GameObject:
 Transform:
   m_CorrespondingSourceObject: {fileID: 7425496838629524797, guid: 932ab48591573d649b2aa6e1db6d7388, type: 3}
   m_PrefabInstance: {fileID: 272707447}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1157529048
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1157529046}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dfe0f0d27cb90a941b7dfedbeeebd1ab, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mainCamera: {fileID: 1174162107}
-  cubeToInteract: {fileID: 0}
-  isInteracting: 0
-  interactionRange: 5
-  interactionForce: 10
---- !u!20 &1174162107 stripped
-Camera:
-  m_CorrespondingSourceObject: {fileID: 278788667767926155, guid: a389da2f4438b3a4e9c5202b88c93942, type: 3}
-  m_PrefabInstance: {fileID: 316329388}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1453351284
 GameObject:

@@ -132,6 +132,17 @@ public class PlayerController : MonoBehaviour
             InterractionZone.SetActive(false);
         }
     }
+    //public void Pickable(InputAction.CallbackContext context)
+    //{
+    //    if (context.started)
+    //    {
+    //        InterractionZone.SetActive(true); 
+    //    }
+    //    else if (context.canceled || context.performed)
+    //    {
+    //        InterractionZone.SetActive(false);
+    //    }
+    //}
 
 
     #endregion

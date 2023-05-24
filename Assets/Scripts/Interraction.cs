@@ -24,6 +24,10 @@ public class Interraction : MonoBehaviour
         Player = GameObject.Find("Player");
         playerTriggerDetection = GetComponent<PlayerTriggerDetection>();
     }
+    private void Update()
+    {
+        Interract();
+    }
 
     public void Interract()
     {
@@ -35,6 +39,7 @@ public class Interraction : MonoBehaviour
             InterractTextCanvas.SetActive(false);
             playerController.speed = playerController.speed / 2f;
             playerController.jumpSpeed = 0;
+
         }
         else
         {
