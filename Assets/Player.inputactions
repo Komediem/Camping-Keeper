@@ -333,7 +333,7 @@
                     "name": "Navigation",
                     "type": "PassThrough",
                     "id": "6b4bb8a7-4807-4779-ae85-f653f4204a8e",
-                    "expectedControlType": "",
+                    "expectedControlType": "Vector2",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
@@ -358,16 +358,16 @@
                 },
                 {
                     "name": "Point",
-                    "type": "Value",
+                    "type": "PassThrough",
                     "id": "3063e375-dc02-42f7-b82f-0e2f4cbca813",
-                    "expectedControlType": "",
+                    "expectedControlType": "Vector2",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
                 },
                 {
                     "name": "Click",
-                    "type": "Button",
+                    "type": "PassThrough",
                     "id": "b780a653-e848-4aa3-89df-5552bfd78a41",
                     "expectedControlType": "Button",
                     "processors": "",
@@ -378,14 +378,14 @@
                     "name": "ScrollWheel",
                     "type": "PassThrough",
                     "id": "a89dacab-ca95-4776-b2b3-66c4b506065c",
-                    "expectedControlType": "Delta",
+                    "expectedControlType": "Vector2",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
                 },
                 {
                     "name": "MiddleClick",
-                    "type": "Button",
+                    "type": "PassThrough",
                     "id": "43e5ca8b-d474-4569-a56c-a37a8c5d223a",
                     "expectedControlType": "Button",
                     "processors": "",
@@ -394,7 +394,7 @@
                 },
                 {
                     "name": "RightClick",
-                    "type": "Button",
+                    "type": "PassThrough",
                     "id": "9c7a79a7-fe95-4bfe-8a21-1ff5711f3518",
                     "expectedControlType": "Button",
                     "processors": "",
@@ -424,10 +424,10 @@
                 {
                     "name": "",
                     "id": "55934f3e-e46f-4752-ab18-055e404cd580",
-                    "path": "",
+                    "path": "<Mouse>/delta",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "Keyboard",
                     "action": "Navigation",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -478,22 +478,33 @@
                 },
                 {
                     "name": "",
-                    "id": "a5f1707c-cb5c-441e-a25b-2af6e7923c4a",
-                    "path": "*/{Point}",
+                    "id": "f0c563cc-8307-4b31-a5a9-b4be8290fe9f",
+                    "path": "<Mouse>/leftButton",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
-                    "action": "Point",
+                    "groups": "Keyboard",
+                    "action": "Click",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
-                    "id": "f0c563cc-8307-4b31-a5a9-b4be8290fe9f",
-                    "path": "<Mouse>/leftButton",
+                    "id": "2de14039-6128-4b49-87bc-6d5d9ae0ce46",
+                    "path": "<VirtualMouse>/leftButton",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "Gamepad",
+                    "action": "Click",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "eef27b56-c285-4bbe-bf9a-b1859a5859c4",
+                    "path": "<Gamepad>/leftTrigger",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
                     "action": "Click",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -504,7 +515,18 @@
                     "path": "<Mouse>/scroll",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "Keyboard",
+                    "action": "ScrollWheel",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c8ce2cca-ea25-443d-a6fd-640029fdb3a9",
+                    "path": "<VirtualMouse>/scroll",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
                     "action": "ScrollWheel",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -515,7 +537,18 @@
                     "path": "<Mouse>/middleButton",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "Keyboard",
+                    "action": "MiddleClick",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "b10fba4b-bf8f-4ed7-a1d9-6e32dd310c87",
+                    "path": "<VirtualMouse>/middleButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
                     "action": "MiddleClick",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -526,7 +559,18 @@
                     "path": "<Mouse>/rightButton",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "Keyboard",
+                    "action": "RightClick",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "6d840e26-6845-4ff2-929c-bcd41ab0634c",
+                    "path": "<VirtualMouse>/rightButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
                     "action": "RightClick",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -552,6 +596,28 @@
                     "action": "TrackedDeviceOrientation",
                     "isComposite": false,
                     "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "51df5bcf-8e20-4d06-9168-efbf1e33f2b9",
+                    "path": "<Mouse>/position",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard",
+                    "action": "Point",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "eac79b66-0f93-471f-bda6-6cbf641420c3",
+                    "path": "<VirtualMouse>/position",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "Point",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         }
@@ -565,6 +631,11 @@
                     "devicePath": "<Keyboard>",
                     "isOptional": false,
                     "isOR": false
+                },
+                {
+                    "devicePath": "<Mouse>",
+                    "isOptional": true,
+                    "isOR": false
                 }
             ]
         },
@@ -575,6 +646,11 @@
                 {
                     "devicePath": "<Gamepad>",
                     "isOptional": false,
+                    "isOR": false
+                },
+                {
+                    "devicePath": "<VirtualMouse>",
+                    "isOptional": true,
                     "isOR": false
                 }
             ]
