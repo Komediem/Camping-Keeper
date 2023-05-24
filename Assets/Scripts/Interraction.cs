@@ -5,32 +5,40 @@ using UnityEngine.UI;
 
 public class Interraction : MonoBehaviour
 {
-    public bool IsTrigger = false;
+    public bool InterractionTrigger;
     [Header("GameObject")]
     public GameObject InterractTextCanvas;
     public GameObject Player;
-    public GameObject Objet;
+    public GameObject child;
     [Header("Script")]
-    public PlayerController playerController;
+    public PlayerController playerController;  
     public Outline Outline;
+    public PlayerTriggerDetection playerTriggerDetection;
 
+    private void Start()
+    {
+        InterractionTrigger = false;
+    }
     private void Awake()
     {
         Player = GameObject.Find("Player");
-        playerController = GetComponent<PlayerController>();
+        playerTriggerDetection = GetComponent<PlayerTriggerDetection>();
     }
 
     public void Interract()
     {
-        if (IsTrigger == true) //( && verifier si touche maintenue)
+        if (playerTriggerDetection.PlayerIsTrigger == true && InterractionTrigger == true ) //( && verifier si touche maintenue)
         {
             //Outline.enabled = false;
+            Debug.Log("Ca marche");
+            child.transform.SetParent(Player.transform); // Sets "Player" as the new parent of the child GameObject.
             InterractTextCanvas.SetActive(false);
             playerController.speed = playerController.speed / 2f;
             playerController.jumpSpeed = 0;
         }
         else
         {
+            child.transform.SetParent(null);        // Setting the parent to ‘null’ unparents the GameObject and turns child into a top-level object in the hierarchy
             playerController.speed = playerController.speedDefault;
             playerController.jumpSpeed = playerController.jumpDefault;
         }
@@ -38,34 +46,26 @@ public class Interraction : MonoBehaviour
 
     private void OnTriggerEnter(Collider collision)
     {
-        if (collision.tag == "Player")
+        if (collision.tag == "InterractZone")
         {
-            //Outline.enabled = true;
-            InterractTextCanvas.SetActive(true);
-            IsTrigger = true;
+            Debug.Log("InterractZone Detecté");
+            InterractionTrigger = true;
         }
     }
     private void OnTriggerExit(Collider collision)
     {
-        if (collision.tag == "Player")
+        if (collision.tag == "InterractZone")
         {
-            //Outline.enabled = false;
-            InterractTextCanvas.SetActive(false);
-            IsTrigger = false;
+            InterractionTrigger = false;
         }
     }
 }
 /*
----------------------------------------------
-If player is Trigger && Hold input interraction
--Hide text canvas
-
-Put object child player until he stop holding the input
-
-Slow the speed of the player for more realism
-
-Player can't jump
-
-
----------------------------------------------
+                       |-------------------------------------------------------------------|
+                       | - If player is Trigger && Hold input interraction                 |
+                       |                                                                   |
+                       | - Put object child player until he stop holding the input         |
+                       |                                                                   |
+                       | - Slow the speed of the player  & Player can't jump               |
+                       |-------------------------------------------------------------------|
 */

@@ -58,6 +58,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "Interract",
+                    "type": "Button",
+                    "id": "6b24ef5b-b74f-4b48-92cc-93fe0529365f",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -228,8 +237,8 @@
                 },
                 {
                     "name": "",
-                    "id": "d1624fdc-e6df-4534-8b7a-54927afeeffd",
-                    "path": "<Gamepad>/buttonWest",
+                    "id": "c509d9d4-7240-4a23-b359-c4dca5df9d05",
+                    "path": "<Gamepad>/buttonNorth",
                     "interactions": "",
                     "processors": "",
                     "groups": "Gamepad",
@@ -291,6 +300,28 @@
                     "action": "Pause",
                     "isComposite": false,
                     "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "86177612-8e1f-42f2-9b0c-02585c5966e8",
+                    "path": "<Keyboard>/e",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard",
+                    "action": "Interract",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "77367150-0df0-48ca-a48a-0f214f9c3e12",
+                    "path": "<Gamepad>/buttonWest",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "Interract",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         },
@@ -299,19 +330,91 @@
             "id": "7414dbac-01df-4763-9797-dc869f8d0500",
             "actions": [
                 {
-                    "name": "Accept",
+                    "name": "Navigation",
+                    "type": "PassThrough",
+                    "id": "6b4bb8a7-4807-4779-ae85-f653f4204a8e",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Submit",
                     "type": "Button",
-                    "id": "da3ada90-5d2a-4a76-8cf3-d3a2f53ee52d",
+                    "id": "ca791f7c-32b9-4c33-ab7c-8b23637b4a40",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Decline",
+                    "name": "Cancel",
                     "type": "Button",
-                    "id": "bec82c83-1e4d-43b0-a607-a9b475708915",
+                    "id": "7c5b2179-e88d-4cfd-bfb3-2a822856544e",
                     "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Point",
+                    "type": "Value",
+                    "id": "3063e375-dc02-42f7-b82f-0e2f4cbca813",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "Click",
+                    "type": "Button",
+                    "id": "b780a653-e848-4aa3-89df-5552bfd78a41",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "ScrollWheel",
+                    "type": "PassThrough",
+                    "id": "a89dacab-ca95-4776-b2b3-66c4b506065c",
+                    "expectedControlType": "Delta",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "MiddleClick",
+                    "type": "Button",
+                    "id": "43e5ca8b-d474-4569-a56c-a37a8c5d223a",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "RightClick",
+                    "type": "Button",
+                    "id": "9c7a79a7-fe95-4bfe-8a21-1ff5711f3518",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "TrackedDevicePosition",
+                    "type": "PassThrough",
+                    "id": "865b9169-befd-4cee-b0a5-55c4dbafe237",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "TrackedDeviceOrientation",
+                    "type": "PassThrough",
+                    "id": "05ca49b2-4ef6-480d-aca2-b4f9d81cff58",
+                    "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
@@ -320,45 +423,133 @@
             "bindings": [
                 {
                     "name": "",
-                    "id": "2ce968b7-59f4-4289-a8b5-a566e51c97f4",
+                    "id": "55934f3e-e46f-4752-ab18-055e404cd580",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Navigation",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "986e8e9c-3032-444e-981a-b7e16a707232",
                     "path": "<Keyboard>/enter",
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard",
-                    "action": "Accept",
+                    "action": "Submit",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
-                    "id": "ce77ea24-8e11-4eb2-888f-c9d11e7f7bf8",
+                    "id": "dd1ee00f-cdda-4fb6-bb57-8ff345c60fe1",
                     "path": "<Gamepad>/buttonSouth",
                     "interactions": "",
                     "processors": "",
                     "groups": "Gamepad",
-                    "action": "Accept",
+                    "action": "Submit",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
-                    "id": "e512c4aa-0fe3-4b97-8559-5f57492d6c5e",
+                    "id": "91c89842-70b7-4e01-9807-7190d84f5562",
                     "path": "<Keyboard>/escape",
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard",
-                    "action": "Decline",
+                    "action": "Cancel",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
-                    "id": "77eb1ebe-69ab-45f6-ae38-b2d5ff2becc4",
-                    "path": "<Gamepad>/buttonWest",
+                    "id": "3048fe29-24a1-4992-a59c-d3e44076d77b",
+                    "path": "<Gamepad>/buttonEast",
                     "interactions": "",
                     "processors": "",
                     "groups": "Gamepad",
-                    "action": "Decline",
+                    "action": "Cancel",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "a5f1707c-cb5c-441e-a25b-2af6e7923c4a",
+                    "path": "*/{Point}",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Point",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "f0c563cc-8307-4b31-a5a9-b4be8290fe9f",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Click",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "a018deb2-5627-4adb-8401-b929ce2b8166",
+                    "path": "<Mouse>/scroll",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ScrollWheel",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "5a2d5b46-20ab-4c3e-9951-b10d8983250e",
+                    "path": "<Mouse>/middleButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "MiddleClick",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "64726477-5151-4ef9-adfe-430c299dbb17",
+                    "path": "<Mouse>/rightButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "RightClick",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "83e441ae-e1a9-40ac-95db-f7433c3dfebb",
+                    "path": "<TrackedDevice>/devicePosition",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "TrackedDevicePosition",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "ab408850-0863-48f7-9f30-4ddcc5e213f0",
+                    "path": "<TrackedDevice>/deviceRotation",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "TrackedDeviceOrientation",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
