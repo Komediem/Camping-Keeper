@@ -1,21 +1,31 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Interraction : MonoBehaviour
 {
     public bool IsTrigger = false;
+    [Header("GameObject")]
+    public GameObject InterractTextCanvas;
+    public GameObject Player;
+    public GameObject Objet;
+    [Header("Script")]
     public PlayerController playerController;
+    public Outline Outline;
 
     private void Awake()
     {
-        playerController = GetComponent<PlayerController>();    
+        Player = GameObject.Find("Player");
+        playerController = GetComponent<PlayerController>();
     }
 
     public void Interract()
     {
         if (IsTrigger == true) //( && verifier si touche maintenue)
         {
+            //Outline.enabled = false;
+            InterractTextCanvas.SetActive(false);
             playerController.speed = playerController.speed / 2f;
             playerController.jumpSpeed = 0;
         }
@@ -30,6 +40,8 @@ public class Interraction : MonoBehaviour
     {
         if (collision.tag == "Player")
         {
+            //Outline.enabled = true;
+            InterractTextCanvas.SetActive(true);
             IsTrigger = true;
         }
     }
@@ -37,13 +49,12 @@ public class Interraction : MonoBehaviour
     {
         if (collision.tag == "Player")
         {
+            //Outline.enabled = false;
+            InterractTextCanvas.SetActive(false);
             IsTrigger = false;
         }
     }
-
 }
-
-
 /*
 ---------------------------------------------
 If player is Trigger && Hold input interraction
@@ -57,24 +68,4 @@ Player can't jump
 
 
 ---------------------------------------------
-
-    public GameObject InterractTextCanvas;
-    public Outline Outline;
-    private void OnTriggerEnter(Collider collision)
-    {
-        if (collision.tag == "Player")
-        {
-            Outline.enabled = true;
-            InterractTextCanvas.SetActive(true);
-        }
-       
-    }
-    private void OnTriggerExit(Collider collision)
-    {
-        if (collision.tag == "Player")
-        {
-            Outline.enabled = false;
-            InterractTextCanvas.SetActive(false);
-        }
-    }
 */
