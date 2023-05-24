@@ -9,7 +9,6 @@ using UnityEngine.UI;
 public class GamepadCursor : MonoBehaviour
 {
     #region Statics
-
     // All Cursors that exist
     private static List<GamepadCursor> gamepadCursors = new List<GamepadCursor>();
 
@@ -29,9 +28,9 @@ public class GamepadCursor : MonoBehaviour
             cursor.cursorSpeed = speed;
         }
     }
-
     #endregion
 
+    #region enum
     public enum GamepadStick
     {
         Left,
@@ -58,6 +57,7 @@ public class GamepadCursor : MonoBehaviour
         LBRB,
         None,
     }
+    #endregion
 
     [Header("Needed")]
     [SerializeField] private PlayerInput playerInput;
@@ -85,6 +85,8 @@ public class GamepadCursor : MonoBehaviour
 
     public string CurrentControlScheme => playerInput.currentControlScheme;
 
+   private string previousControlScheme = "";
+
     public float CursorSpeed => cursorSpeed;
 
     private Mouse virtualMouse;
@@ -95,11 +97,9 @@ public class GamepadCursor : MonoBehaviour
 
     private Camera mainCamera;
 
-    private string previousControlScheme = "";
-
     private float inactiveTime;
-    private bool isVirtualCursorVisible = false;
 
+    private bool isVirtualCursorVisible = false;
     private bool isGamePadPressed = false;
 
     private Vector3 lastCursorSpritePosition;
@@ -189,7 +189,6 @@ public class GamepadCursor : MonoBehaviour
         playerInput.onControlsChanged += OnControlsChange;
 
         inactiveTime = inactiveHideTime;
-
     }
 
     private void OnDisable()
@@ -203,6 +202,7 @@ public class GamepadCursor : MonoBehaviour
 
         // Remove virtual mouse and unsubscribe to events
         if (virtualMouse != null && virtualMouse.added) InputSystem.RemoveDevice(virtualMouse);
+
         InputSystem.onAfterUpdate -= UpdateMotion;
         playerInput.onControlsChanged -= OnControlsChange;
 
@@ -264,9 +264,7 @@ public class GamepadCursor : MonoBehaviour
             previousControlScheme = gamepadScheme;
         }
         // Other Scheme
-        else if (playerInput.currentControlScheme != gamepadScheme &&
-            playerInput.currentControlScheme != mouseScheme &&
-            (previousControlScheme == mouseScheme || previousControlScheme == gamepadScheme))
+        else if (playerInput.currentControlScheme != gamepadScheme && playerInput.currentControlScheme != mouseScheme && (previousControlScheme == mouseScheme || previousControlScheme == gamepadScheme))
         {
             // Hide virtual cursor
             cursorImage.enabled = false;
@@ -354,7 +352,9 @@ public class GamepadCursor : MonoBehaviour
         {
             virtualMouse.CopyState<MouseState>(out var mouseState);
             mouseState.WithButton(MouseButton.Left, (buttonIsPressed || triggerIsPressed));
+
             InputState.Change(virtualMouse, mouseState);
+
             prevMouseState = (buttonIsPressed || triggerIsPressed);
         }
 
@@ -433,10 +433,10 @@ public class GamepadCursor : MonoBehaviour
         return sign * smoothFunction.Evaluate(Mathf.Abs(stickValue));
     }
 
-    public void CursorAlfa(float alfa)
+    public void CursorAlpha(float alpha)
     {
         var cc = cursorImage.color;
-        cc.a = Mathf.Clamp01(alfa);
+        cc.a = Mathf.Clamp01(alpha);
         cursorImage.color = cc;
     }
 }
