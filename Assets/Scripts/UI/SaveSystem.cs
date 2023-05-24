@@ -8,12 +8,6 @@ public class SaveSystem : MonoBehaviour
 {
     public static SaveSystem instance;
 
-    /*
-    public GameObject loadingScreen;
-    public Image progressBar;
-    public TextMeshProUGUI progressText;
-	*/
-
     #region Options to save
     public float music;
     public bool isFulscreen;
@@ -52,11 +46,9 @@ public class SaveSystem : MonoBehaviour
     }
     public void Load()
     {
-        //StartCoroutine(LoadingScreen());
-
         if (!File.Exists(Application.persistentDataPath + "/save.fsav")) //check if there is a save file
         {
-            SceneManager.LoadScene("Intro");
+            _lvl = 1; //first level of the game ("index 0" is the menu)
         }
         else
         {
@@ -73,25 +65,6 @@ public class SaveSystem : MonoBehaviour
             //print(jObject.ToString());
         }
     }
-
-    /*private IEnumerator LoadingScreen()
-    {
-        loadingScreen.SetActive(true);
-
-        AsyncOperation async = SceneManager.LoadSceneAsync("Game Scene");
-		while (!async.isDone)
-        {
-            //progressBar.fillAmount = async.progress;
-
-			if (async.progress >= 0.95f)
-			{
-                progressText.text = "Press any key to continue";
-            }
-            yield return null;
-        }
-        loadingScreen.SetActive(false);
-    }*/
-
 
     public void SaveOptions()
     {
@@ -124,7 +97,7 @@ public class SaveSystem : MonoBehaviour
             isFulscreen = true;
             Screen.fullScreen = true;
 
-            music = 100;
+            music = musicSlider.maxValue;
         }
         else
         {

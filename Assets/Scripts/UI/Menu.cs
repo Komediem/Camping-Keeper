@@ -16,11 +16,12 @@ public class Menu : MonoBehaviour
     public GameObject Buttons;
     public GameObject OptionsWindow;
 
-    private void Start() //to make sure there is no problem on start
+    private void Start() 
     {
         if (Instance) Destroy(this);
         else Instance = this;
 
+        //to make sure there is no problem on start
         Buttons.SetActive(true);
         OptionsWindow.SetActive(false);
 
@@ -32,16 +33,9 @@ public class Menu : MonoBehaviour
 
     public void StartGame() //new game or continue from save
     {
-        if (!File.Exists(Application.persistentDataPath + "/save.fsav")) //check if there is a save file
-        {
-            SceneManager.LoadScene("Level1");
-        }
-        else
-        {
-            SaveSystem.instance.Load();
+        SaveSystem.instance.Load();
 
-            SceneManager.LoadScene(SaveSystem.instance._lvl);
-        }
+        SceneManager.LoadScene(SaveSystem.instance._lvl);
     }
 
      public void ExitGame() //close App
@@ -55,6 +49,8 @@ public class Menu : MonoBehaviour
         SaveSystem.instance.LoadOptions(); //load options when entering options menu
 
         fullscreenToggle.isOn = SaveSystem.instance.isFulscreen;
+        Screen.fullScreen = SaveSystem.instance.isFulscreen;
+
         musicSlider.value = SaveSystem.instance.music;
 
         Buttons.SetActive(false); //to make sure you can't click them while in the options menu

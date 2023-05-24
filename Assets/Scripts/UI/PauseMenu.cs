@@ -11,14 +11,13 @@ public class PauseMenu : MonoBehaviour
 
     public AudioSource audioSource;
     [Space]
-    public GameObject pauseMenu; //pause menu
-    public GameObject optionsButtons; //buttons of the options menu
+    public GameObject pauseMenu;
+    public GameObject Buttons; //buttons of the Main Menu
+    [Space]
+    public GameObject OptionsWindow;
     [Space]
     public Toggle fullscreenToggle;
     public Slider musicSlider;
-    [Space]
-    public GameObject Buttons; //buttons of the Main Menu
-    public GameObject OptionsWindow;
 
     private void Awake()
     {
@@ -57,18 +56,22 @@ public class PauseMenu : MonoBehaviour
     {
         pauseMenu.SetActive(true);
         Buttons.SetActive(true);
-        optionsButtons.SetActive(false);
+        OptionsWindow.SetActive(false);
 
         EventSystem.current.SetSelectedGameObject(Buttons.transform.GetChild(0).gameObject);
 
         Time.timeScale = 0;
 
         gameIsPaused = true;
+
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.Confined;
     }
 
     public void Resume()
     {
         pauseMenu.SetActive(false);
+        Buttons.SetActive(false);
 
         Time.timeScale = 1;
 
@@ -97,6 +100,8 @@ public class PauseMenu : MonoBehaviour
         SaveSystem.instance.LoadOptions(); //load options when entering options menu
 
         fullscreenToggle.isOn = SaveSystem.instance.isFulscreen;
+        Screen.fullScreen = SaveSystem.instance.isFulscreen;
+
         musicSlider.value = SaveSystem.instance.music;
 
         Buttons.SetActive(false); //to make sure you can't click them while in the options menu
