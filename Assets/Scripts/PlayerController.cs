@@ -12,8 +12,8 @@ public class PlayerController : MonoBehaviour
 
     [Header("Movement Settings")]
     [Space]
-    [SerializeField] public float speed = 5f;
-    [SerializeField] public float speedDefault;
+     public float speed = 5f;
+    public float speedDefault;
     [SerializeField] private float moveSmoothTime = 0.2f;
     private Vector3 currentMoveVelocity;
     private Vector3 moveDampVelocity;
@@ -21,8 +21,9 @@ public class PlayerController : MonoBehaviour
     [Space]
     [Header("Jump Settings")]
     [Space]
-    [SerializeField] public float jumpSpeed = 8.0f;
-    [SerializeField] public float jumpDefault;
+    public float jumpSpeed = 8.0f;
+    public float jumpDefault;
+    public GameObject InterractionZone;
     [SerializeField] private float gravity = 10.0f;
     [SerializeField] private bool isJumping;
     private float verticalVelocity;
@@ -34,6 +35,7 @@ public class PlayerController : MonoBehaviour
     {
         speedDefault = speed;
         jumpDefault = jumpSpeed;
+        InterractionZone.SetActive(false);
     }
     private void Awake()
     {
@@ -119,6 +121,18 @@ public class PlayerController : MonoBehaviour
             PauseMenu.Instance.PauseGame();
         }
     }
+    public void Interraction(InputAction.CallbackContext context)
+    {
+        if (context.started)
+        {
+            InterractionZone.SetActive(true); 
+        }
+        else if (context.canceled || context.performed)
+        {
+            InterractionZone.SetActive(false);
+        }
+    }
+
 
     #endregion
 }
