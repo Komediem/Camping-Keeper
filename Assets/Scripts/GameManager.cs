@@ -6,14 +6,19 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
 
-    public List<GameObject> checkpoints;
+    public List<Transform> checkpoints = new();
+    public Transform checkpointsParent;
     public GameObject CurrentCheckpoint;
     public GameObject Player;
 
     private void Awake()
     {
         instance = this;
-        CurrentCheckpoint = checkpoints[0];
+
+        for(int i = 0; i < checkpointsParent.transform.childCount; i++)
+        {
+            checkpoints.Add(checkpointsParent.transform.GetChild(i));
+        }
 
         Player = GameObject.Find("Player");
     }
