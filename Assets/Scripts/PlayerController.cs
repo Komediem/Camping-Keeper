@@ -1,6 +1,5 @@
 using UnityEngine.InputSystem;
 using UnityEngine;
-using Unity.VisualScripting;
 
 public class PlayerController : MonoBehaviour
 {
@@ -8,13 +7,15 @@ public class PlayerController : MonoBehaviour
 
     private CharacterController controller;
 
+    [SerializeField] public Rigidbody rb;
+
     public bool lockMovements;
 
     public bool isCrouching = false;
 
     [Header("Movement Settings")]
     [Space]
-     public float speed = 5f;
+    public float speed = 5f;
     public float speedDefault;
     [SerializeField] private float moveSmoothTime = 0.2f;
     private Vector3 currentMoveVelocity;
@@ -24,9 +25,9 @@ public class PlayerController : MonoBehaviour
 
     [Header("Jump Settings")]
     [Space]
-    public float jumpSpeed = 8.0f;
+    public float jumpSpeed = 8f;
     public float jumpDefault;
-    float jumpHeight = Mathf.Clamp01(20);
+    float jumpHeight = 1f;
 
     [SerializeField]
     private GameObject Interract;
@@ -35,11 +36,14 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private bool isJumping;
 
     private Vector3 verticalVelocity;
+    public float trampolineForce = 16f;
     [Space]
     float movement;
 
     private void Start()
     {
+        rb = GetComponent<Rigidbody>();
+
         speedDefault = speed;
         jumpDefault = jumpSpeed;
 
@@ -65,8 +69,10 @@ public class PlayerController : MonoBehaviour
             currentMoveVelocity = Vector3.SmoothDamp(currentMoveVelocity, move * speedValue, ref moveDampVelocity, moveSmoothTime);
 
             controller.Move(currentMoveVelocity * Time.deltaTime);
-            
-            CheckJump(); 
+
+            CheckJump();
+
+            jumpSpeed = jumpDefault;
         }
     }
 
@@ -167,14 +173,19 @@ public class PlayerController : MonoBehaviour
         {
             verticalVelocity.y -= gravity;
         }
-        else if (collision.tag == "Trampoline")
+
+        if (collision.gameObject.tag == "Trampoline")
         {
-            Vector3 Boom = new Vector3(0f,200f, 0f);
+            if (controller.isGrounded)
+            {
+                jumpSpeed = trampolineForce;
 
-            controller.Move(Boom);
-            
+                isJumping = true;
 
-            print("weewoo");
+                //CheckJump();
+
+                print("WeeWoo");
+            }
         }
     }
 
