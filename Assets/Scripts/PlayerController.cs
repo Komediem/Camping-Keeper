@@ -149,7 +149,7 @@ public class PlayerController : MonoBehaviour
 
     public void Interraction(InputAction.CallbackContext context)
     {
-        if (context.started)
+        if (context.started && !isCrouching)
         {
             InterractionZone.SetActive(true); 
         }
@@ -170,7 +170,6 @@ public class PlayerController : MonoBehaviour
     //        InterractionZone.SetActive(false);
     //    }
     //}
-
     #endregion
 
     private void OnTriggerEnter(Collider collision)
