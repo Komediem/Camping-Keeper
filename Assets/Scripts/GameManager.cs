@@ -14,6 +14,8 @@ public class GameManager : MonoBehaviour
     {
         instance = this;
         CurrentCheckpoint = checkpoints[0];
+
+        Player = GameObject.Find("Player");
     }
     private void Update()
     {
