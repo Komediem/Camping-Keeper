@@ -169,9 +169,13 @@ public class PlayerController : MonoBehaviour
         {
             verticalVelocity.y -= gravity;
         }
-        if (collision.tag == "Trampoline")
+        else if (collision.tag == "Trampoline")
         {
-            verticalVelocity.y += gravity;
+            verticalVelocity.y += (jumpSpeed * jumpHeight) * 2;
+
+            controller.Move(verticalVelocity * Time.deltaTime);
+
+            print("weewoo");
         }
     }
 }
