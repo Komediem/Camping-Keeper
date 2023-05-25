@@ -10,7 +10,7 @@ public class PlayerController : MonoBehaviour
 
     public bool lockMovements;
 
-    public bool isCrouching =false;
+    public bool isCrouching = false;
 
     [Header("Movement Settings")]
     [Space]
@@ -26,11 +26,15 @@ public class PlayerController : MonoBehaviour
     [Space]
     public float jumpSpeed = 8.0f;
     public float jumpDefault;
+    float jumpHeight = Mathf.Clamp01(20);
+
     public GameObject Interract;
+
     [SerializeField] private float gravity = 10.0f;
     [SerializeField] private bool isJumping;
-    private Vector3 verticalVelocity;
 
+    private Vector3 verticalVelocity;
+    [Space]
     float movement;
 
     private void Start()
@@ -69,7 +73,6 @@ public class PlayerController : MonoBehaviour
     {
         if (isJumping)
         {
-            float jumpHeight = Mathf.Clamp01(20);
             verticalVelocity.y = jumpSpeed * jumpHeight;
             
             isJumping = false;
@@ -165,6 +168,14 @@ public class PlayerController : MonoBehaviour
         if (collision.tag == "Roof")
         {
             verticalVelocity.y -= gravity;
+        }
+        else if (collision.tag == "Trampoline")
+        {
+            verticalVelocity.y += (jumpSpeed * jumpHeight) * 2;
+
+            controller.Move(verticalVelocity * Time.deltaTime);
+
+            print("weewoo");
         }
     }
 }
