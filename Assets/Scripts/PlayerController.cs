@@ -1,6 +1,6 @@
 using UnityEngine.InputSystem;
 using UnityEngine;
-
+using Unity.VisualScripting;
 
 public class PlayerController : MonoBehaviour
 {
@@ -9,6 +9,8 @@ public class PlayerController : MonoBehaviour
     private CharacterController controller;
 
     public bool lockMovements;
+
+    public bool isCrouching =false;
 
     [Header("Movement Settings")]
     [Space]
@@ -19,6 +21,7 @@ public class PlayerController : MonoBehaviour
     private Vector3 moveDampVelocity;
     private float speedValue;
     [Space]
+
     [Header("Jump Settings")]
     [Space]
     public float jumpSpeed = 8.0f;
@@ -26,8 +29,7 @@ public class PlayerController : MonoBehaviour
     public GameObject InterractionZone;
     [SerializeField] private float gravity = 10.0f;
     [SerializeField] private bool isJumping;
-    private float verticalVelocity;
-
+    private Vector3 verticalVelocity;
 
     float movement;
 
@@ -35,8 +37,10 @@ public class PlayerController : MonoBehaviour
     {
         speedDefault = speed;
         jumpDefault = jumpSpeed;
+
         InterractionZone.SetActive(false);
     }
+
     private void Awake()
     {
         if (Instance) Destroy(this);
@@ -51,14 +55,13 @@ public class PlayerController : MonoBehaviour
         if (!lockMovements)
         {
             float x = movement;
-
             Vector3 move = transform.right * x;
 
             currentMoveVelocity = Vector3.SmoothDamp(currentMoveVelocity, move * speedValue, ref moveDampVelocity, moveSmoothTime);
 
             controller.Move(currentMoveVelocity * Time.deltaTime);
-
-            CheckJump();
+            
+            CheckJump(); 
         }
     }
 
@@ -67,17 +70,16 @@ public class PlayerController : MonoBehaviour
         if (isJumping)
         {
             float jumpHeight = Mathf.Clamp01(20);
-            verticalVelocity = jumpSpeed * jumpHeight;
-
-            if (verticalVelocity >= jumpSpeed)
-                isJumping = false;
+            verticalVelocity.y = jumpSpeed * jumpHeight;
+            
+            isJumping = false;
         }
         else
         {
-            verticalVelocity -= gravity * 2 * Time.deltaTime;
-        }
-
-        controller.Move(Vector3.up * verticalVelocity * Time.deltaTime);
+            verticalVelocity.y -= gravity * 2 * Time.deltaTime;
+        } 
+        
+        controller.Move(verticalVelocity * Time.deltaTime);
     }
 
     private void OnControllerColliderHit(ControllerColliderHit hit)
@@ -92,7 +94,6 @@ public class PlayerController : MonoBehaviour
     }
 
     #region Input
-
     public void Move(InputAction.CallbackContext context)
     {
         movement = context.ReadValue<float>();
@@ -102,7 +103,7 @@ public class PlayerController : MonoBehaviour
     {
         if(context.started) 
         { 
-            if (controller.isGrounded)
+            if (controller.isGrounded && !isCrouching)
             {
                 isJumping = true;
             }
@@ -111,7 +112,31 @@ public class PlayerController : MonoBehaviour
         {
             isJumping = false;
         }
+    }
 
+    public void Crouch(InputAction.CallbackContext context)
+    {
+        ///Speed/2, no jump, no stun, no pull/push
+        if (context.performed)
+        {
+            if (isCrouching)
+            {
+                isCrouching = false;
+
+                speed *= 2;
+            }
+            else
+            {
+                isCrouching = true;
+
+                speed /= 2;
+
+                isJumping = false;
+                InterractionZone.SetActive(false);
+
+                //anim crouch & collider gets smaller
+            }
+        }
     }
 
     public void Pause(InputAction.CallbackContext context)
@@ -121,9 +146,10 @@ public class PlayerController : MonoBehaviour
             PauseMenu.Instance.PauseGame();
         }
     }
+
     public void Interraction(InputAction.CallbackContext context)
     {
-        if (context.started)
+        if (context.started && !isCrouching)
         {
             InterractionZone.SetActive(true); 
         }
@@ -132,6 +158,7 @@ public class PlayerController : MonoBehaviour
             InterractionZone.SetActive(false);
         }
     }
+
     //public void Pickable(InputAction.CallbackContext context)
     //{
     //    if (context.started)
@@ -143,7 +170,13 @@ public class PlayerController : MonoBehaviour
     //        InterractionZone.SetActive(false);
     //    }
     //}
-
-
     #endregion
+
+    private void OnTriggerEnter(Collider collision)
+    {
+        if (collision.tag == "Roof")
+        {
+            verticalVelocity.y -= gravity;
+        }
+    }
 }
