@@ -10,6 +10,8 @@ public class PlayerController : MonoBehaviour
 
     public bool lockMovements;
 
+    public bool isCrouching =false;
+
     [Header("Movement Settings")]
     [Space]
      public float speed = 5f;
@@ -35,6 +37,7 @@ public class PlayerController : MonoBehaviour
     {
         speedDefault = speed;
         jumpDefault = jumpSpeed;
+
         InterractionZone.SetActive(false);
     }
 
@@ -57,8 +60,8 @@ public class PlayerController : MonoBehaviour
             currentMoveVelocity = Vector3.SmoothDamp(currentMoveVelocity, move * speedValue, ref moveDampVelocity, moveSmoothTime);
 
             controller.Move(currentMoveVelocity * Time.deltaTime);
-
-            CheckJump();
+            
+            CheckJump(); 
         }
     }
 
@@ -74,8 +77,8 @@ public class PlayerController : MonoBehaviour
         else
         {
             verticalVelocity.y -= gravity * 2 * Time.deltaTime;
-        }
-
+        } 
+        
         controller.Move(verticalVelocity * Time.deltaTime);
     }
 
@@ -100,7 +103,7 @@ public class PlayerController : MonoBehaviour
     {
         if(context.started) 
         { 
-            if (controller.isGrounded)
+            if (controller.isGrounded && !isCrouching)
             {
                 isJumping = true;
             }
@@ -108,6 +111,31 @@ public class PlayerController : MonoBehaviour
         else if (context.canceled)
         {
             isJumping = false;
+        }
+    }
+
+    public void Crouch(InputAction.CallbackContext context)
+    {
+        ///Speed/2, no jump, no stun, no pull/push
+        if (context.performed)
+        {
+            if (isCrouching)
+            {
+                isCrouching = false;
+
+                speed *= 2;
+            }
+            else
+            {
+                isCrouching = true;
+
+                speed /= 2;
+
+                isJumping = false;
+                InterractionZone.SetActive(false);
+
+                //anim crouch & collider gets smaller
+            }
         }
     }
 
