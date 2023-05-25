@@ -171,9 +171,10 @@ public class PlayerController : MonoBehaviour
         }
         else if (collision.tag == "Trampoline")
         {
-            verticalVelocity.y += (jumpSpeed * jumpHeight) * 2;
+            Vector3 Boom = new Vector3(0f,200f, 0f);
 
-            controller.Move(verticalVelocity * Time.deltaTime);
+            controller.Move(Boom);
+            
 
             print("weewoo");
         }
