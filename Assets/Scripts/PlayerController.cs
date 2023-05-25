@@ -116,7 +116,7 @@ public class PlayerController : MonoBehaviour
 
     public void Crouch(InputAction.CallbackContext context)
     {
-        ///Speed/2, no jump, no stun, no pull/push
+        ///Speed/2, no jump, no stun, no pull/push, no interact
         if (context.performed)
         {
             if (isCrouching)
@@ -161,7 +161,7 @@ public class PlayerController : MonoBehaviour
 
     //public void Pickable(InputAction.CallbackContext context)
     //{
-    //    if (context.started)
+    //    if (context.started && !isCrouching)
     //    {
     //        InterractionZone.SetActive(true); 
     //    }
