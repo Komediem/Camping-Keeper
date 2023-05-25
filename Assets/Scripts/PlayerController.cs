@@ -67,17 +67,16 @@ public class PlayerController : MonoBehaviour
         if (isJumping)
         {
             float jumpHeight = Mathf.Clamp01(20);
-            verticalVelocity = Mathf.Sqrt(jumpHeight * -2f * Time.deltaTime); //jumpSpeed * jumpHeight;
+            verticalVelocity = jumpSpeed * jumpHeight;
 
             if (verticalVelocity >= jumpSpeed)
+            {
                 isJumping = false;
+            }
         }
         else
         {
-            if (verticalVelocity < 0)
-            { 
-                verticalVelocity = -2f; 
-            }
+            verticalVelocity -= gravity * 2 * Time.deltaTime;
         }
 
         controller.Move(Vector3.up * verticalVelocity * Time.deltaTime);
@@ -148,4 +147,14 @@ public class PlayerController : MonoBehaviour
     //}
 
     #endregion
+
+    /*private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.collider.CompareTag("Roof"))
+        {
+            print("AAAHhhhhHHhHsqsbdshfsjvhjfdf");
+            verticalVelocity -= gravity;
+            
+        }
+    }*/
 }
