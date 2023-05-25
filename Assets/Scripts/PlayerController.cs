@@ -183,18 +183,8 @@ public class PlayerController : MonoBehaviour
             CheckJump();
 
             jumpSpeed = jumpDefault;
+
+            print("WeeWoo");
         }
     }
-
-    /*public void Trampoline()
-    {
-        //Vector3 Boom = new Vector3(0f, (jumpSpeed * jumpHeight * gravity) * 25, 0f); //8 * 1 * 10 = 80 * 15 = 1200 (goes up ~6 in game)
-        //controller.Move(Boom * Time.deltaTime);
-
-        controller.attachedRigidbody.AddForce(new Vector3(0f ,300f, 0f));   
-
-        trampoline = false;
-
-        print("weewoo");
-    }*/
 }
