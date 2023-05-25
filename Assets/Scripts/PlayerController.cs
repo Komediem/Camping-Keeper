@@ -1,6 +1,6 @@
 using UnityEngine.InputSystem;
 using UnityEngine;
-
+using Unity.VisualScripting;
 
 public class PlayerController : MonoBehaviour
 {
@@ -27,7 +27,7 @@ public class PlayerController : MonoBehaviour
     public GameObject InterractionZone;
     [SerializeField] private float gravity = 10.0f;
     [SerializeField] private bool isJumping;
-    private float verticalVelocity;
+    private Vector3 verticalVelocity;
 
     float movement;
 
@@ -67,19 +67,16 @@ public class PlayerController : MonoBehaviour
         if (isJumping)
         {
             float jumpHeight = Mathf.Clamp01(20);
-            verticalVelocity = jumpSpeed * jumpHeight;
-
-            if (verticalVelocity >= jumpSpeed)
-            {
-                isJumping = false;
-            }
+            verticalVelocity.y = jumpSpeed * jumpHeight;
+            
+            isJumping = false;
         }
         else
         {
-            verticalVelocity -= gravity * 2 * Time.deltaTime;
+            verticalVelocity.y -= gravity * 2 * Time.deltaTime;
         }
 
-        controller.Move(Vector3.up * verticalVelocity * Time.deltaTime);
+        controller.Move(verticalVelocity * Time.deltaTime);
     }
 
     private void OnControllerColliderHit(ControllerColliderHit hit)
@@ -148,13 +145,11 @@ public class PlayerController : MonoBehaviour
 
     #endregion
 
-    /*private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider collision)
     {
-        if (collision.collider.CompareTag("Roof"))
+        if (collision.tag == "Roof")
         {
-            print("AAAHhhhhHHhHsqsbdshfsjvhjfdf");
-            verticalVelocity -= gravity;
-            
+            verticalVelocity.y -= gravity;
         }
-    }*/
+    }
 }
