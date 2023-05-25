@@ -6,8 +6,8 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
 
-    public List<Transform> checkpoints = new();
-    public Transform checkpointsParent;
+    public List<GameObject> checkpoints = new();
+    public GameObject checkpointsParent;
     public GameObject CurrentCheckpoint;
     public GameObject Player;
 
@@ -15,9 +15,10 @@ public class GameManager : MonoBehaviour
     {
         instance = this;
 
+
         for(int i = 0; i < checkpointsParent.transform.childCount; i++)
         {
-            checkpoints.Add(checkpointsParent.transform.GetChild(i));
+            checkpoints.Add(checkpointsParent.transform.GetChild(i).gameObject);
         }
 
         Player = GameObject.Find("Player");
