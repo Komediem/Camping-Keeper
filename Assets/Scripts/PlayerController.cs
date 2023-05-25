@@ -28,7 +28,8 @@ public class PlayerController : MonoBehaviour
     public float jumpDefault;
     float jumpHeight = Mathf.Clamp01(20);
 
-    public GameObject Interract;
+    [SerializeField]
+    private GameObject Interract;
 
     [SerializeField] private float gravity = 10.0f;
     [SerializeField] private bool isJumping;
@@ -150,15 +151,12 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    public void Interraction(InputAction.CallbackContext context)
+    public void Interaction(InputAction.CallbackContext context)
     {
         if (context.started && !isCrouching)
         {
-            Interract.SetActive(true); 
-        }
-        else if (context.canceled || context.performed)
-        {
-            Interract.SetActive(false);
+            Interract.SetActive(true);
+            Invoke("InteractStop", 0.2f);
         }
     }
     #endregion
@@ -178,5 +176,10 @@ public class PlayerController : MonoBehaviour
 
             print("weewoo");
         }
+    }
+
+    private void InteractStop()
+    {
+        Interract.SetActive(false);
     }
 }

@@ -23,7 +23,6 @@ public class PlayerTriggerDetection : MonoBehaviour
         if (collision.tag == "Player")
         {
             //Outline.enabled = true;
-            Debug.Log("Player Detecté");
             InterractTextCanvas.SetActive(true);
             PlayerIsTrigger = true;
         }
