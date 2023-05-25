@@ -19,6 +19,7 @@ public class PlayerController : MonoBehaviour
     private Vector3 moveDampVelocity;
     private float speedValue;
     [Space]
+
     [Header("Jump Settings")]
     [Space]
     public float jumpSpeed = 8.0f;
@@ -28,7 +29,6 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private bool isJumping;
     private float verticalVelocity;
 
-
     float movement;
 
     private void Start()
@@ -37,6 +37,7 @@ public class PlayerController : MonoBehaviour
         jumpDefault = jumpSpeed;
         InterractionZone.SetActive(false);
     }
+
     private void Awake()
     {
         if (Instance) Destroy(this);
@@ -51,7 +52,6 @@ public class PlayerController : MonoBehaviour
         if (!lockMovements)
         {
             float x = movement;
-
             Vector3 move = transform.right * x;
 
             currentMoveVelocity = Vector3.SmoothDamp(currentMoveVelocity, move * speedValue, ref moveDampVelocity, moveSmoothTime);
@@ -67,14 +67,17 @@ public class PlayerController : MonoBehaviour
         if (isJumping)
         {
             float jumpHeight = Mathf.Clamp01(20);
-            verticalVelocity = jumpSpeed * jumpHeight;
+            verticalVelocity = Mathf.Sqrt(jumpHeight * -2f * Time.deltaTime); //jumpSpeed * jumpHeight;
 
             if (verticalVelocity >= jumpSpeed)
                 isJumping = false;
         }
         else
         {
-            verticalVelocity -= gravity * 2 * Time.deltaTime;
+            if (verticalVelocity < 0)
+            { 
+                verticalVelocity = -2f; 
+            }
         }
 
         controller.Move(Vector3.up * verticalVelocity * Time.deltaTime);
@@ -92,7 +95,6 @@ public class PlayerController : MonoBehaviour
     }
 
     #region Input
-
     public void Move(InputAction.CallbackContext context)
     {
         movement = context.ReadValue<float>();
@@ -111,7 +113,6 @@ public class PlayerController : MonoBehaviour
         {
             isJumping = false;
         }
-
     }
 
     public void Pause(InputAction.CallbackContext context)
@@ -121,6 +122,7 @@ public class PlayerController : MonoBehaviour
             PauseMenu.Instance.PauseGame();
         }
     }
+
     public void Interraction(InputAction.CallbackContext context)
     {
         if (context.started)
@@ -132,6 +134,7 @@ public class PlayerController : MonoBehaviour
             InterractionZone.SetActive(false);
         }
     }
+
     //public void Pickable(InputAction.CallbackContext context)
     //{
     //    if (context.started)
@@ -143,7 +146,6 @@ public class PlayerController : MonoBehaviour
     //        InterractionZone.SetActive(false);
     //    }
     //}
-
 
     #endregion
 }

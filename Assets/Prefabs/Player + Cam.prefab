@@ -502,9 +502,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4292055377032961779}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.286, y: 0, z: 0}
+  m_LocalPosition: {x: -1, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 278788667767926154}
   - {fileID: 1397333177}
@@ -629,19 +629,7 @@ MonoBehaviour:
     m_ActionId: 7d425355-2377-4881-9271-c84ee540cb19
     m_ActionName: Player/Crouch[/Keyboard/c,/DualShock4GamepadHID/buttonEast]
   - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_ActionId: 815be1eb-3feb-4f94-b066-4a0377ab767d
     m_ActionName: Player/Pull/Push[/Keyboard/w,/DualShock4GamepadHID/leftTrigger]
   - m_PersistentCalls:
@@ -724,7 +712,7 @@ MonoBehaviour:
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
-  m_Camera: {fileID: 0}
+  m_Camera: {fileID: 278788667767926155}
 --- !u!114 &427018784
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -820,5 +808,5 @@ Transform:
   m_Children:
   - {fileID: 4292055377032961781}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
