@@ -749,7 +749,7 @@ GameObject:
   - component: {fileID: 6330055503763038786}
   m_Layer: 0
   m_Name: Camera
-  m_TagString: Untagged
+  m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1048,6 +1048,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 753afef61ff78cc41a61ddc7664bfad1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rb: {fileID: 0}
   lockMovements: 0
   isCrouching: 0
   speed: 6
@@ -1058,6 +1059,7 @@ MonoBehaviour:
   Interract: {fileID: 660948951562820670}
   gravity: 9.8
   isJumping: 0
+  trampoline: 0
 --- !u!143 &4292055377032961780
 CharacterController:
   m_ObjectHideFlags: 0
@@ -1388,5 +1390,5 @@ Transform:
   m_Children:
   - {fileID: 4292055377032961781}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
