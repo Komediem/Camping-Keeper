@@ -26,7 +26,7 @@ public class PlayerController : MonoBehaviour
     [Space]
     public float jumpSpeed = 8.0f;
     public float jumpDefault;
-    public GameObject InterractionZone;
+    public GameObject Interract;
     [SerializeField] private float gravity = 10.0f;
     [SerializeField] private bool isJumping;
     private Vector3 verticalVelocity;
@@ -38,7 +38,7 @@ public class PlayerController : MonoBehaviour
         speedDefault = speed;
         jumpDefault = jumpSpeed;
 
-        InterractionZone.SetActive(false);
+        Interract.SetActive(false);
     }
 
     private void Awake()
@@ -132,7 +132,7 @@ public class PlayerController : MonoBehaviour
                 speed /= 2;
 
                 isJumping = false;
-                InterractionZone.SetActive(false);
+                Interract.SetActive(false);
 
                 //anim crouch & collider gets smaller
             }
@@ -151,25 +151,13 @@ public class PlayerController : MonoBehaviour
     {
         if (context.started && !isCrouching)
         {
-            InterractionZone.SetActive(true); 
+            Interract.SetActive(true); 
         }
         else if (context.canceled || context.performed)
         {
-            InterractionZone.SetActive(false);
+            Interract.SetActive(false);
         }
     }
-
-    //public void Pickable(InputAction.CallbackContext context)
-    //{
-    //    if (context.started && !isCrouching)
-    //    {
-    //        InterractionZone.SetActive(true); 
-    //    }
-    //    else if (context.canceled || context.performed)
-    //    {
-    //        InterractionZone.SetActive(false);
-    //    }
-    //}
     #endregion
 
     private void OnTriggerEnter(Collider collision)
