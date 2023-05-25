@@ -35,8 +35,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private bool isJumping;
 
     private Vector3 verticalVelocity;
-
-    public bool trampoline = false;
+    public float trampolineForce = 16f;
     [Space]
     float movement;
 
@@ -71,6 +70,8 @@ public class PlayerController : MonoBehaviour
             controller.Move(currentMoveVelocity * Time.deltaTime);
 
             CheckJump();
+
+            jumpSpeed = jumpDefault;
         }
     }
 
@@ -177,14 +178,16 @@ public class PlayerController : MonoBehaviour
 
         if (collision.gameObject.tag == "Trampoline")
         {
-            jumpSpeed *= 2;
-            isJumping = true;
+            if (controller.isGrounded)
+            {
+                jumpSpeed = trampolineForce;
 
-            CheckJump();
+                isJumping = true;
 
-            jumpSpeed = jumpDefault;
+                //CheckJump();
 
-            print("WeeWoo");
+                print("WeeWoo");
+            }
         }
     }
 }
