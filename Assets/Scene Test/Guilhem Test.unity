@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.14283544, g: 0.19136961, b: 0.29259425, a: 1}
+  m_IndirectSpecularColor: {r: 0.15287995, g: 0.2087656, b: 0.32496515, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -594,7 +594,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3557395396507793736, guid: d7a4ad75fe940914d852317b246025f4, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 15.08
+      value: 17.08
       objectReference: {fileID: 0}
     - target: {fileID: 3557395396507793736, guid: d7a4ad75fe940914d852317b246025f4, type: 3}
       propertyPath: m_LocalPosition.y
@@ -659,10 +659,6 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 1654791570}
     m_Modifications:
-    - target: {fileID: 2146622161270583659, guid: bbddab476dd26154a99f988f46c5eb25, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4790196886096270628, guid: bbddab476dd26154a99f988f46c5eb25, type: 3}
       propertyPath: m_Name
       value: Checkpoint
@@ -1596,7 +1592,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7425496837321290054, guid: 932ab48591573d649b2aa6e1db6d7388, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 13.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7425496838629524794, guid: 932ab48591573d649b2aa6e1db6d7388, type: 3}
       propertyPath: m_Name
@@ -1608,7 +1604,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7425496838629524797, guid: 932ab48591573d649b2aa6e1db6d7388, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 8.466232
+      value: 23.216228
       objectReference: {fileID: 0}
     - target: {fileID: 7425496838629524797, guid: 932ab48591573d649b2aa6e1db6d7388, type: 3}
       propertyPath: m_LocalPosition.y
@@ -3783,6 +3779,54 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1106526074883029176, guid: 0b808f0095528bf41ba9480bb86dffea, type: 3}
+      propertyPath: m_fontSize
+      value: 70
+      objectReference: {fileID: 0}
+    - target: {fileID: 1106526074883029176, guid: 0b808f0095528bf41ba9480bb86dffea, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 01571a5135a918848a810aa432d5dba7, type: 2}
+    - target: {fileID: 1106526074883029176, guid: 0b808f0095528bf41ba9480bb86dffea, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 70
+      objectReference: {fileID: 0}
+    - target: {fileID: 1106526074883029176, guid: 0b808f0095528bf41ba9480bb86dffea, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 9125396135783524710, guid: 01571a5135a918848a810aa432d5dba7, type: 2}
+    - target: {fileID: 1106526074883029176, guid: 0b808f0095528bf41ba9480bb86dffea, type: 3}
+      propertyPath: m_VerticalAlignment
+      value: 512
+      objectReference: {fileID: 0}
+    - target: {fileID: 1106526074883029176, guid: 0b808f0095528bf41ba9480bb86dffea, type: 3}
+      propertyPath: m_HorizontalAlignment
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1237088474169482053, guid: 0b808f0095528bf41ba9480bb86dffea, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4272810010712347742, guid: 0b808f0095528bf41ba9480bb86dffea, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: c301b62a6e8fd3b4f88e27a2cf71f66c, type: 2}
+    - target: {fileID: 4272810010712347742, guid: 0b808f0095528bf41ba9480bb86dffea, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -6809052651111633372, guid: c301b62a6e8fd3b4f88e27a2cf71f66c, type: 2}
+    - target: {fileID: 4272810011805823536, guid: 0b808f0095528bf41ba9480bb86dffea, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4272810012425848722, guid: 0b808f0095528bf41ba9480bb86dffea, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: c301b62a6e8fd3b4f88e27a2cf71f66c, type: 2}
+    - target: {fileID: 4272810012425848722, guid: 0b808f0095528bf41ba9480bb86dffea, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -6809052651111633372, guid: c301b62a6e8fd3b4f88e27a2cf71f66c, type: 2}
     - target: {fileID: 4272810012536966945, guid: 0b808f0095528bf41ba9480bb86dffea, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -3867,9 +3911,37 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4272810012536966946, guid: 0b808f0095528bf41ba9480bb86dffea, type: 3}
+      propertyPath: m_AdditionalShaderChannelsFlag
+      value: 31
+      objectReference: {fileID: 0}
     - target: {fileID: 4272810012536966957, guid: 0b808f0095528bf41ba9480bb86dffea, type: 3}
       propertyPath: m_Name
       value: Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 4272810012554100791, guid: 0b808f0095528bf41ba9480bb86dffea, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: c301b62a6e8fd3b4f88e27a2cf71f66c, type: 2}
+    - target: {fileID: 4272810012554100791, guid: 0b808f0095528bf41ba9480bb86dffea, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -6809052651111633372, guid: c301b62a6e8fd3b4f88e27a2cf71f66c, type: 2}
+    - target: {fileID: 6168039218099592879, guid: 0b808f0095528bf41ba9480bb86dffea, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 691.3844
+      objectReference: {fileID: 0}
+    - target: {fileID: 6168039218099592879, guid: 0b808f0095528bf41ba9480bb86dffea, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 172.8461
+      objectReference: {fileID: 0}
+    - target: {fileID: 6168039218099592879, guid: 0b808f0095528bf41ba9480bb86dffea, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6168039218099592879, guid: 0b808f0095528bf41ba9480bb86dffea, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -417.18
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
