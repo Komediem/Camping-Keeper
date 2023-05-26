@@ -36,7 +36,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float gravity = 9.8f;
     
 
-    private Vector3 verticalVelocity;
+    private Vector3 velocity;
 
     [SerializeField] private float trampolineForce = 16f;
     #endregion
@@ -84,16 +84,16 @@ public class PlayerController : MonoBehaviour
     {
         if (isJumping)
         {
-            verticalVelocity.y = jumpSpeed * jumpHeight;
+            velocity.y = jumpSpeed * jumpHeight;
             
             isJumping = false;
         }
         else
         {
-            verticalVelocity.y -= gravity * 2 * Time.deltaTime;
+            velocity.y -= gravity * 2 * Time.deltaTime;
         } 
         
-        controller.Move(verticalVelocity * Time.deltaTime);
+        controller.Move(velocity * Time.deltaTime);
 
         jumpSpeed = jumpDefault;
     }
@@ -193,12 +193,14 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerEnter(Collider collision)
     {
-        if (collision.gameObject.CompareTag("Roof"))
+        if (collision.CompareTag("Roof"))
         {
-            verticalVelocity.y -= gravity;
-        }
+            //velocity.y -= gravity;
+            velocity.y -= gravity * 2 * Time.deltaTime;
 
-        if (collision.gameObject.CompareTag("Trampoline"))
+            print("wawawa");
+        }
+        else if (collision.CompareTag("Trampoline"))
         {
             if (controller.isGrounded)
             {
@@ -206,8 +208,19 @@ public class PlayerController : MonoBehaviour
 
                 isJumping = true;
 
-                //print("WeeWoo");
+                print("WeeWoo");
             }
         }
     }
 }
+
+
+//if (collision.CompareTag("Roof"))
+//{
+//    print("waoh");
+
+//    velocity.y -= gravity;
+//    //velocity.y -= gravity * 2 * Time.deltaTime;
+
+//    print("wawawa");
+//}
