@@ -840,7 +840,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6478244165490467116}
   m_Layer: 0
-  m_Name: INTERRACT
+  m_Name: INTERACT
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -944,7 +944,7 @@ MonoBehaviour:
   gravity: 9.8
   trampolineForce: 16
   Interract: {fileID: 660948951562820670}
-  pull: 0
+  IsPulling: 0
 --- !u!143 &4292055377032961780
 CharacterController:
   m_ObjectHideFlags: 0
@@ -962,7 +962,7 @@ CharacterController:
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
-  m_Center: {x: -0.1644878, y: 0, z: 0}
+  m_Center: {x: -0.15, y: 0, z: 0}
 --- !u!114 &4292055377032961787
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1064,7 +1064,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 4292055377032961778}
         m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
-        m_MethodName: Interraction
+        m_MethodName: Interaction
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1275,5 +1275,5 @@ Transform:
   m_Children:
   - {fileID: 4292055377032961781}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

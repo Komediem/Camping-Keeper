@@ -8,8 +8,6 @@ public class Interraction : MonoBehaviour
     public bool InterractionTrigger;
     [Header("GameObject")]
     public GameObject InterractTextCanvas;
-    public GameObject Player;
-    public GameObject child;
     [Header("Script")]
     public PlayerController playerController;  
     public Outline Outline;
@@ -21,7 +19,6 @@ public class Interraction : MonoBehaviour
     }
     private void Awake()
     {
-        Player = GameObject.Find("Player");
         playerTriggerDetection = GetComponent<PlayerTriggerDetection>();
     }
     private void Update()
@@ -35,21 +32,20 @@ public class Interraction : MonoBehaviour
         {
             //Outline.enabled = false;
             InterractTextCanvas.SetActive(false);
-            playerController.speed = playerController.speed / 2f;
-            playerController.jumpSpeed = 0;
 
         }
         else
         {
-            playerController.speed = playerController.speedDefault;
-            playerController.jumpSpeed = playerController.jumpDefault;
+
         }
     }
 
     private void OnTriggerEnter(Collider collision)
     {
         if (collision.tag == "InterractZone")
-        {   
+        {
+            //Outline.enabled = true;
+            InterractTextCanvas.SetActive(true);
             InterractionTrigger = true;
         }
     }
@@ -57,6 +53,8 @@ public class Interraction : MonoBehaviour
     {
         if (collision.tag == "InterractZone")
         {
+            //Outline.enabled = false;
+            InterractTextCanvas.SetActive(false);
             InterractionTrigger = false;
         }
     }
