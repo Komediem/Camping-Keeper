@@ -1,5 +1,6 @@
 using UnityEngine.InputSystem;
 using UnityEngine;
+using UnityEngine.InputSystem.XR;
 
 public class PlayerController : MonoBehaviour
 {
@@ -7,48 +8,43 @@ public class PlayerController : MonoBehaviour
 
     private CharacterController controller;
 
-    [SerializeField] public Rigidbody rb;
-
+    #region Movement
+    [Header("Movement Settings")]
+    [Space]
+    float movement;
     public bool lockMovements;
 
     public bool isCrouching = false;
-
-    [Header("Movement Settings")]
     [Space]
     public float speed = 5f;
     public float speedDefault;
+    private float speedValue;
+
     [SerializeField] private float moveSmoothTime = 0.2f;
     private Vector3 currentMoveVelocity;
     private Vector3 moveDampVelocity;
-    private float speedValue;
     [Space]
+    #endregion
 
+    #region Jump
     [Header("Jump Settings")]
     [Space]
     public float jumpSpeed = 8f;
     public float jumpDefault;
-    float jumpHeight = 1f;
-
-    [SerializeField]
-    private GameObject Interract;
-
-    [SerializeField] private float gravity = 10.0f;
+    public float jumpHeight = 1f;
+    
     [SerializeField] private bool isJumping;
+    [SerializeField] private float gravity = 9.8f;
+    
 
     private Vector3 verticalVelocity;
-    public float trampolineForce = 16f;
+
+    [SerializeField] private float trampolineForce = 16f;
+    #endregion
+
     [Space]
-    float movement;
-
-    private void Start()
-    {
-        rb = GetComponent<Rigidbody>();
-
-        speedDefault = speed;
-        jumpDefault = jumpSpeed;
-
-        Interract.SetActive(false);
-    }
+    [SerializeField]
+    private GameObject Interract;
 
     private void Awake()
     {
@@ -57,6 +53,14 @@ public class PlayerController : MonoBehaviour
 
         controller = GetComponent<CharacterController>();
         speedValue = speed;
+    }
+
+    private void Start()
+    {
+        speedDefault = speed;
+        jumpDefault = jumpSpeed;
+
+        Interract.SetActive(false);
     }
 
     void Update()
@@ -71,8 +75,6 @@ public class PlayerController : MonoBehaviour
             controller.Move(currentMoveVelocity * Time.deltaTime);
 
             CheckJump();
-
-            jumpSpeed = jumpDefault;
         }
     }
 
@@ -90,6 +92,8 @@ public class PlayerController : MonoBehaviour
         } 
         
         controller.Move(verticalVelocity * Time.deltaTime);
+
+        jumpSpeed = jumpDefault;
     }
 
     private void OnControllerColliderHit(ControllerColliderHit hit)
@@ -126,7 +130,7 @@ public class PlayerController : MonoBehaviour
 
     public void Crouch(InputAction.CallbackContext context)
     {
-        ///Speed/2, no jump, no stun, no pull/push, no interact
+        ///Speed/2, no jump, no interact, no stun, no pull/push
         if (context.performed)
         {
             if (isCrouching)
@@ -144,6 +148,7 @@ public class PlayerController : MonoBehaviour
                 isJumping = false;
                 Interract.SetActive(false);
 
+                //needs to be unable to stun
                 //anim crouch & collider gets smaller
             }
         }
@@ -167,6 +172,11 @@ public class PlayerController : MonoBehaviour
     }
     #endregion
 
+    private void InteractStop()
+    {
+        Interract.SetActive(false);
+    }
+
     private void OnTriggerEnter(Collider collision)
     {
         if (collision.tag == "Roof")
@@ -182,15 +192,8 @@ public class PlayerController : MonoBehaviour
 
                 isJumping = true;
 
-                //CheckJump();
-
-                print("WeeWoo");
+                //print("WeeWoo");
             }
         }
-    }
-
-    private void InteractStop()
-    {
-        Interract.SetActive(false);
     }
 }
