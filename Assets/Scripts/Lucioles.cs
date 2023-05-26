@@ -17,7 +17,7 @@ public class Lucioles : MonoBehaviour
         if (collision.tag == "Player")
         {
             Debug.Log("Bing Chilling");
-            fireflies.Stop();
+            //fireflies.Stop();
             PlayerMentalHealth.instance.mentalHealth += gainValue;
 
             if(PlayerMentalHealth.instance.mentalHealth >= PlayerMentalHealth.instance.maxMentalHealth)
