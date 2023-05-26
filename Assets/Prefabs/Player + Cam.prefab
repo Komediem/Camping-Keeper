@@ -873,11 +873,11 @@ GameObject:
   m_Component:
   - component: {fileID: 4292055377032961781}
   - component: {fileID: 4292055377032961777}
-  - component: {fileID: 4292055377032961778}
   - component: {fileID: 4292055377032961780}
   - component: {fileID: 4292055377032961787}
-  - component: {fileID: 427018784}
+  - component: {fileID: 4292055377032961778}
   - component: {fileID: 1885791655}
+  - component: {fileID: 427018784}
   - component: {fileID: 2012846509}
   m_Layer: 0
   m_Name: Player
@@ -920,33 +920,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 1
---- !u!114 &4292055377032961778
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4292055377032961779}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 753afef61ff78cc41a61ddc7664bfad1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rb: {fileID: 0}
-  lockMovements: 0
-  isCrouching: 0
-  speed: 6
-  speedDefault: 0
-  moveSmoothTime: 0.2
-  jumpSpeed: 9
-  jumpDefault: 0
-  jumpHeight: 1
-  isJumping: 0
-  gravity: 9.8
-  trampolineForce: 16
-  trampolineBox: {fileID: 0}
-  Interract: {fileID: 660948951562820670}
-  IsPulling: 0
 --- !u!143 &4292055377032961780
 CharacterController:
   m_ObjectHideFlags: 0
@@ -1123,7 +1096,7 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 278788667767926155}
---- !u!114 &427018784
+--- !u!114 &4292055377032961778
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1132,10 +1105,24 @@ MonoBehaviour:
   m_GameObject: {fileID: 4292055377032961779}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eeada1b3d424fa54791477b0410b94ac, type: 3}
+  m_Script: {fileID: 11500000, guid: 753afef61ff78cc41a61ddc7664bfad1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  forceMagnitude: 1
+  rb: {fileID: 0}
+  lockMovements: 0
+  isCrouching: 0
+  speed: 6
+  speedDefault: 0
+  moveSmoothTime: 0.2
+  jumpSpeed: 9
+  jumpDefault: 0
+  jumpHeight: 1
+  isJumping: 0
+  gravity: 9.8
+  trampolineForce: 16
+  trampolineBox: {fileID: 0}
+  Interract: {fileID: 660948951562820670}
+  IsPulling: 0
 --- !u!114 &1885791655
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1150,6 +1137,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mentalHealth: 0
   maxMentalHealth: 0
+--- !u!114 &427018784
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4292055377032961779}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eeada1b3d424fa54791477b0410b94ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  forceMagnitude: 1
 --- !u!212 &2012846509
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1277,5 +1277,5 @@ Transform:
   m_Children:
   - {fileID: 4292055377032961781}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

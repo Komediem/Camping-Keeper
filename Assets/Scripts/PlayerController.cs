@@ -188,17 +188,6 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    public void Pull(InputAction.CallbackContext context)
-    {
-        if (context.performed && !isCrouching)
-        {
-            IsPulling = true;
-        }
-        else if (context.canceled)
-        {
-            IsPulling = false;
-        }
-    }
     #endregion
 
     private void InteractStop()
