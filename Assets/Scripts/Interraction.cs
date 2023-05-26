@@ -34,7 +34,6 @@ public class Interraction : MonoBehaviour
         if (playerTriggerDetection.PlayerIsTrigger == true && InterractionTrigger == true ) //( && verifier si touche maintenue)
         {
             //Outline.enabled = false;
-            //child.transform.SetParent(Player.transform); // Sets "Player" as the new parent of the child GameObject.
             InterractTextCanvas.SetActive(false);
             playerController.speed = playerController.speed / 2f;
             playerController.jumpSpeed = 0;
@@ -42,7 +41,6 @@ public class Interraction : MonoBehaviour
         }
         else
         {
-            //child.transform.SetParent(null);        // Setting the parent to ‘null’ unparents the GameObject and turns child into a top-level object in the hierarchy
             playerController.speed = playerController.speedDefault;
             playerController.jumpSpeed = playerController.jumpDefault;
         }
