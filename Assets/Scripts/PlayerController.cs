@@ -140,12 +140,14 @@ public class PlayerController : MonoBehaviour
                 isCrouching = false;
 
                 speed *= 2;
+                speedValue *= 2;
             }
             else
             {
                 isCrouching = true;
 
                 speed /= 2;
+                speedValue /= 2;
 
                 isJumping = false;
                 Interract.SetActive(false);
