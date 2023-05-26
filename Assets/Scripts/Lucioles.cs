@@ -16,12 +16,14 @@ public class Lucioles : MonoBehaviour
     {
         if (collision.tag == "Player")
         {
+            Debug.Log("Bing");
             fireflies.Stop();
             PlayerMentalHealth.instance.mentalHealth += gainValue;
 
             if(PlayerMentalHealth.instance.mentalHealth >= PlayerMentalHealth.instance.maxMentalHealth)
             {
                 PlayerMentalHealth.instance.mentalHealth = PlayerMentalHealth.instance.maxMentalHealth;
+                Debug.Log("Chilling");
             }
         }
     }
