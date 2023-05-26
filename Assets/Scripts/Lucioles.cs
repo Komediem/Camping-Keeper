@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Assertions.Must;
 
 public class Lucioles : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class Lucioles : MonoBehaviour
     private void Start()
     {
         fireflies.Play();
+        this.GetComponent<BoxCollider>().enabled = true;
     }
 
     private void OnTriggerEnter(Collider collision)
@@ -19,6 +21,7 @@ public class Lucioles : MonoBehaviour
             Debug.Log("Bing Chilling");
             //fireflies.Stop();
             PlayerMentalHealth.instance.mentalHealth += gainValue;
+            this.GetComponent<BoxCollider>().enabled = false;
 
             if(PlayerMentalHealth.instance.mentalHealth >= PlayerMentalHealth.instance.maxMentalHealth)
             {
