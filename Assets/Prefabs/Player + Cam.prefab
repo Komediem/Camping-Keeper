@@ -877,8 +877,8 @@ GameObject:
   - component: {fileID: 4292055377032961780}
   - component: {fileID: 4292055377032961787}
   - component: {fileID: 427018784}
-  - component: {fileID: 2012846509}
   - component: {fileID: 1885791655}
+  - component: {fileID: 2012846509}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -932,6 +932,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 753afef61ff78cc41a61ddc7664bfad1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rb: {fileID: 0}
   lockMovements: 0
   isCrouching: 0
   speed: 6
@@ -943,6 +944,7 @@ MonoBehaviour:
   isJumping: 0
   gravity: 9.8
   trampolineForce: 16
+  trampolineBox: {fileID: 0}
   Interract: {fileID: 660948951562820670}
   IsPulling: 0
 --- !u!143 &4292055377032961780
@@ -959,7 +961,7 @@ CharacterController:
   m_Height: 2
   m_Radius: 0.5
   m_SlopeLimit: 45
-  m_StepOffset: 0.3
+  m_StepOffset: 0.2
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: -0.15, y: 0, z: 0}
@@ -1134,6 +1136,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   forceMagnitude: 1
+--- !u!114 &1885791655
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4292055377032961779}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62241804042258b4dae3bd7e5e26a3c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mentalHealth: 0
+  maxMentalHealth: 0
 --- !u!212 &2012846509
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1186,20 +1202,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1885791655
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4292055377032961779}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62241804042258b4dae3bd7e5e26a3c9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mentalHealth: 0
-  maxMentalHealth: 0
 --- !u!1 &5191240746514114675
 GameObject:
   m_ObjectHideFlags: 0
@@ -1275,5 +1277,5 @@ Transform:
   m_Children:
   - {fileID: 4292055377032961781}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
