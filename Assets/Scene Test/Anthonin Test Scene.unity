@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 1188.0479, g: 1423.1816, b: 1875.0176, a: 1}
+  m_IndirectSpecularColor: {r: 1283.5898, g: 1555.9258, b: 2090.5977, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -396,29 +396,13 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 660948951562820670, guid: a389da2f4438b3a4e9c5202b88c93942, type: 3}
-      propertyPath: m_Name
-      value: INTERACT
-      objectReference: {fileID: 0}
-    - target: {fileID: 660948951562820670, guid: a389da2f4438b3a4e9c5202b88c93942, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4292055377032961780, guid: a389da2f4438b3a4e9c5202b88c93942, type: 3}
-      propertyPath: m_Center.x
-      value: -0.15
-      objectReference: {fileID: 0}
-    - target: {fileID: 4292055377032961787, guid: a389da2f4438b3a4e9c5202b88c93942, type: 3}
-      propertyPath: m_ActionEvents.Array.data[6].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: Interaction
-      objectReference: {fileID: 0}
     - target: {fileID: 6330055504169505633, guid: a389da2f4438b3a4e9c5202b88c93942, type: 3}
       propertyPath: m_Name
       value: Player + Cam
       objectReference: {fileID: 0}
     - target: {fileID: 6330055504169505634, guid: a389da2f4438b3a4e9c5202b88c93942, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 6330055504169505634, guid: a389da2f4438b3a4e9c5202b88c93942, type: 3}
       propertyPath: m_LocalPosition.x
@@ -463,17 +447,12 @@ PrefabInstance:
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: a389da2f4438b3a4e9c5202b88c93942, type: 3}
---- !u!1 &427018775 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4292055377032961779, guid: a389da2f4438b3a4e9c5202b88c93942, type: 3}
-  m_PrefabInstance: {fileID: 316329388}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &427018779 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4292055377032961778, guid: a389da2f4438b3a4e9c5202b88c93942, type: 3}
   m_PrefabInstance: {fileID: 316329388}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 427018775}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 753afef61ff78cc41a61ddc7664bfad1, type: 3}
@@ -598,11 +577,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4790196886096270631, guid: bbddab476dd26154a99f988f46c5eb25, type: 3}
   m_PrefabInstance: {fileID: 4790196885732814885}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1157529046 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7425496838629524794, guid: 932ab48591573d649b2aa6e1db6d7388, type: 3}
-  m_PrefabInstance: {fileID: 272707447}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1157529047 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7425496838629524797, guid: 932ab48591573d649b2aa6e1db6d7388, type: 3}
@@ -704,7 +678,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!1 &1924592314
 GameObject:
@@ -801,7 +775,7 @@ RectTransform:
   m_Children:
   - {fileID: 39261402}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -859,7 +833,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2101948868
 MonoBehaviour:
@@ -951,8 +925,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   InterractionTrigger: 0
   InterractTextCanvas: {fileID: 39261401}
-  Player: {fileID: 427018775}
-  child: {fileID: 1157529046}
   playerController: {fileID: 427018779}
   Outline: {fileID: 0}
   playerTriggerDetection: {fileID: 2134708241}
@@ -989,7 +961,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4701844697175950998, guid: 7af61aaf7e2242e4fb0f84d2f0d52c5e, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4701844697175950998, guid: 7af61aaf7e2242e4fb0f84d2f0d52c5e, type: 3}
       propertyPath: m_LocalPosition.x

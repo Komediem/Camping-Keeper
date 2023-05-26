@@ -1,7 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class PushPull : MonoBehaviour
 {
@@ -28,7 +25,10 @@ public class PushPull : MonoBehaviour
 
     public void PullPush()
     {
+        if (PushPullTrigger)
+        {
 
+        }
     }
 
     private void OnTriggerEnter(Collider collision)
@@ -49,15 +49,17 @@ public class PushPull : MonoBehaviour
 
     public void pull()
     {
-        if (playerController.IsPulling == true)
+        if (playerController.IsPulling && !playerController.isCrouching)
         {
-            _child.transform.SetParent(Player.transform); // Sets "Player" as the new parent of the child GameObject.
+            _child.transform.SetParent(Player.transform);                   // Sets "Player" as the new parent of the child GameObject.
+
             playerController.speed = playerController.speed / 2f;
             playerController.jumpSpeed = 0;
         }
         else
         {
-            _child.transform.SetParent(null);        // Setting the parent to ‘null’ unparents the GameObject and turns child into a top-level object in the hierarchy
+            _child.transform.SetParent(null);                              // Setting the parent to ‘null’ unparents the GameObject and turns child into a top-level object in the hierarchy
+
             playerController.speed = playerController.speedDefault;
             playerController.jumpSpeed = playerController.jumpDefault;
         }
