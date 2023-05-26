@@ -10,16 +10,15 @@ public class PushPull : MonoBehaviour
     [SerializeField] private GameObject _child;
     [SerializeField] public PlayerController playerController;
 
-
-    void Start()
-    {
-        PushPullTrigger = false;
-    }
     private void Awake()
     {
         Player = GameObject.Find("Player");
         GameObject _child = this.gameObject;
+    }
 
+    void Start()
+    {
+        PushPullTrigger = false;
     }
 
     void Update()
@@ -39,6 +38,7 @@ public class PushPull : MonoBehaviour
             PushPullTrigger = true;
         }
     }
+
     private void OnTriggerExit(Collider collision)
     {
         if (collision.tag == "PushPull")
@@ -62,8 +62,4 @@ public class PushPull : MonoBehaviour
             playerController.jumpSpeed = playerController.jumpDefault;
         }
     }
-
-
 }
-
-

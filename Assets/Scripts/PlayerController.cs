@@ -1,11 +1,15 @@
 using UnityEngine.InputSystem;
 using UnityEngine;
+using UnityEditor;
 
 public class PlayerController : MonoBehaviour
 {
     public static PlayerController Instance;
 
     private CharacterController controller;
+
+    public Rigidbody rb;
+    [SerializeField][Range(0.5F, 2)] private float arrowLength = 1.0F;
 
     #region Movement
     [Header("Movement Settings")]
@@ -55,6 +59,8 @@ public class PlayerController : MonoBehaviour
 
         controller = GetComponent<CharacterController>();
         speedValue = speed;
+
+        rb = GetComponent<Rigidbody>();
     }
 
     private void Start()
@@ -221,6 +227,14 @@ public class PlayerController : MonoBehaviour
 
     public void OnDrawGizmos()
     {
-        
+        if (!Application.isPlaying) return;
+
+        var position = transform.position;
+        var velocity = rb.velocity;
+
+        if (velocity.magnitude < 0.1f) return;
+
+        Handles.color = Color.red;
+        Handles.ArrowHandleCap(0, position, Quaternion.LookRotation(velocity), arrowLength, EventType.Repaint);
     }
 }
