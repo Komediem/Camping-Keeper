@@ -372,7 +372,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &152863322
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2973,7 +2973,7 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_AdditionalShaderChannelsFlag: 31
+  m_AdditionalShaderChannelsFlag: 7
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
@@ -3376,7 +3376,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Actions: {fileID: -944628639613478452, guid: e67c89c6072fd744da39b1e0cfb78897, type: 3}
-  m_NotificationBehavior: 0
+  m_NotificationBehavior: 3
   m_UIInputModule: {fileID: 1006917698}
   m_DeviceLostEvent:
     m_PersistentCalls:
@@ -3478,6 +3478,7 @@ MonoBehaviour:
   canvasRectTransform: {fileID: 1858949009}
   canvas: {fileID: 1858949008}
   cursorSpeed: 1000
+  padding: 50
 --- !u!1 &2073742527
 GameObject:
   m_ObjectHideFlags: 0
