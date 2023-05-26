@@ -9,7 +9,7 @@ public class PlayerController : MonoBehaviour
     private CharacterController controller;
 
     public Rigidbody rb;
-    [SerializeField][Range(0.5F, 2)] private float arrowLength = 1.0F;
+    //[SerializeField][Range(0.5F, 2)] private float arrowLength = 1.0F;
 
     #region Movement
     [Header("Movement Settings")]
@@ -35,14 +35,16 @@ public class PlayerController : MonoBehaviour
     public float jumpSpeed = 8f;
     public float jumpDefault;
     public float jumpHeight = 1f;
-    
+
     [SerializeField] private bool isJumping;
     [SerializeField] private float gravity = 9.8f;
-    
+
 
     private Vector3 velocity;
 
+    //Trampoline settings
     [SerializeField] private float trampolineForce = 16f;
+    public Collider trampolineBox;
     #endregion
 
     [Space]
@@ -91,14 +93,19 @@ public class PlayerController : MonoBehaviour
         if (isJumping)
         {
             velocity.y = jumpSpeed * jumpHeight;
-            
+
             isJumping = false;
+
+
+            trampolineBox.enabled = false;
+            print("Mercy is for the WEAK");
+
         }
         else
         {
             velocity.y -= gravity * 2 * Time.deltaTime;
-        } 
-        
+        }
+
         controller.Move(velocity * Time.deltaTime);
 
         jumpSpeed = jumpDefault;
@@ -123,8 +130,8 @@ public class PlayerController : MonoBehaviour
 
     public void Jump(InputAction.CallbackContext context)
     {
-        if(context.started) 
-        { 
+        if (context.started)
+        {
             if (controller.isGrounded && !isCrouching)
             {
                 isJumping = true;
@@ -207,8 +214,15 @@ public class PlayerController : MonoBehaviour
 
             print("wawawa");
         }
-        else if (collision.CompareTag("Trampoline"))
+
+        if (collision.CompareTag("TrampoCheck"))
         {
+            trampolineBox.enabled = true;
+        }
+        if (collision.CompareTag("Trampoline"))
+        {
+            trampolineBox.enabled = false;
+
             if (isCrouching)
             {
                 jumpSpeed = trampolineForce / 2;
@@ -225,7 +239,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    public void OnDrawGizmos()
+    /*public void OnDrawGizmos()
     {
         if (!Application.isPlaying) return;
 
@@ -236,5 +250,5 @@ public class PlayerController : MonoBehaviour
 
         Handles.color = Color.red;
         Handles.ArrowHandleCap(0, position, Quaternion.LookRotation(velocity), arrowLength, EventType.Repaint);
-    }
+    }*/
 }
