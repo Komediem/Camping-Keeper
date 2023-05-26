@@ -201,7 +201,12 @@ public class PlayerController : MonoBehaviour
         }
         else if (collision.CompareTag("Trampoline"))
         {
-            if (controller.isGrounded)
+            if (isCrouching)
+            {
+                jumpSpeed = trampolineForce / 2;
+                isJumping = true;
+            }
+            else if (controller.isGrounded && !isJumping)
             {
                 jumpSpeed = trampolineForce;
 
@@ -212,14 +217,3 @@ public class PlayerController : MonoBehaviour
         }
     }
 }
-
-
-//if (collision.CompareTag("Roof"))
-//{
-//    print("waoh");
-
-//    velocity.y -= gravity;
-//    //velocity.y -= gravity * 2 * Time.deltaTime;
-
-//    print("wawawa");
-//}
