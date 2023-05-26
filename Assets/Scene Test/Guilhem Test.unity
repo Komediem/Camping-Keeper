@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.15288204, g: 0.20876703, b: 0.32497293, a: 1}
+  m_IndirectSpecularColor: {r: 0.1528947, g: 0.20878449, b: 0.324974, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3383,25 +3383,6 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
---- !u!1 &1885791646 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4292055377032961779, guid: a389da2f4438b3a4e9c5202b88c93942, type: 3}
-  m_PrefabInstance: {fileID: 6330055503763038784}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1885791655
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1885791646}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62241804042258b4dae3bd7e5e26a3c9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mentalHealth: 0
-  maxMentalHealth: 0
 --- !u!1001 &1898702745
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3552,6 +3533,22 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 307977907}
     m_Modifications:
+    - target: {fileID: 1032911472105027494, guid: 5485efcc2ecf06c438776618610c5f45, type: 3}
+      propertyPath: m_BoundingSphereOverride.w
+      value: 2.524355e-29
+      objectReference: {fileID: 0}
+    - target: {fileID: 1032911472105027494, guid: 5485efcc2ecf06c438776618610c5f45, type: 3}
+      propertyPath: m_BoundingSphereOverride.x
+      value: 8.1e-44
+      objectReference: {fileID: 0}
+    - target: {fileID: 1032911472105027494, guid: 5485efcc2ecf06c438776618610c5f45, type: 3}
+      propertyPath: m_BoundingSphereOverride.y
+      value: 1.1185e-41
+      objectReference: {fileID: 0}
+    - target: {fileID: 1032911472105027494, guid: 5485efcc2ecf06c438776618610c5f45, type: 3}
+      propertyPath: m_BoundingSphereOverride.z
+      value: 6e-44
+      objectReference: {fileID: 0}
     - target: {fileID: 1032911472115636222, guid: 5485efcc2ecf06c438776618610c5f45, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -3600,8 +3597,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fireflies
       objectReference: {fileID: 0}
-    - target: {fileID: 3106475933327152084, guid: 5485efcc2ecf06c438776618610c5f45, type: 3}
-      propertyPath: m_Enabled
+    - target: {fileID: 8160788040760230558, guid: 5485efcc2ecf06c438776618610c5f45, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8813150457703503463, guid: 5485efcc2ecf06c438776618610c5f45, type: 3}
+      propertyPath: CollisionModule.enabled
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8813150457703503463, guid: 5485efcc2ecf06c438776618610c5f45, type: 3}
@@ -3780,10 +3781,6 @@ PrefabInstance:
     - target: {fileID: 6330055504169505633, guid: a389da2f4438b3a4e9c5202b88c93942, type: 3}
       propertyPath: m_Name
       value: Player + Cam
-      objectReference: {fileID: 0}
-    - target: {fileID: 6330055504169505633, guid: a389da2f4438b3a4e9c5202b88c93942, type: 3}
-      propertyPath: m_TagString
-      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 6330055504169505634, guid: a389da2f4438b3a4e9c5202b88c93942, type: 3}
       propertyPath: m_RootOrder

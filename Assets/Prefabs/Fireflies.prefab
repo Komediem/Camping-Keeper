@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1032911472115636222}
   - component: {fileID: 1032911472115636221}
-  - component: {fileID: 3106475933327152084}
+  - component: {fileID: 8160788040760230558}
   m_Layer: 0
   m_Name: Fireflies
   m_TagString: Untagged
@@ -48,19 +48,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gainValue: 30
   fireflies: {fileID: 8813150457703503463}
---- !u!135 &3106475933327152084
-SphereCollider:
+--- !u!65 &8160788040760230558
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1032911472115636223}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 2
-  m_Center: {x: 0, y: 1.5, z: 0}
+  m_Size: {x: 3, y: 3, z: 1}
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!1001 &1032911472266115482
 PrefabInstance:
   m_ObjectHideFlags: 0
