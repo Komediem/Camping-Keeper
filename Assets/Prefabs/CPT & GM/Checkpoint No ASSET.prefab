@@ -60,6 +60,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67bb9df5279928a4cbc74d04dd9f177e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  flames: {fileID: 2146622161270583659}
 --- !u!1001 &967673298
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -120,12 +121,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: FEUU
       objectReference: {fileID: 0}
+    - target: {fileID: 2146622160308679865, guid: b45030e79eaa3464ca53bf9e95acc3e3, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: b45030e79eaa3464ca53bf9e95acc3e3, type: 3}
 --- !u!4 &2146622161270583652 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2146622160308679862, guid: b45030e79eaa3464ca53bf9e95acc3e3, type: 3}
+  m_PrefabInstance: {fileID: 967673298}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2146622161270583659 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2146622160308679865, guid: b45030e79eaa3464ca53bf9e95acc3e3, type: 3}
   m_PrefabInstance: {fileID: 967673298}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1801210220

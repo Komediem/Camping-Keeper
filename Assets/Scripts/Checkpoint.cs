@@ -15,16 +15,13 @@ public class Checkpoint : MonoBehaviour
     private void OnTriggerEnter(Collider collision)
     {
         if (IsActivate == true) return;
-        if (collision.tag == "Player")
+        if (collision.tag == "InterractZone")
         {
-            //if(touche d'interaction est pressé)
-            {
-                GameManager.instance.CurrentCheckpoint = gameObject;
-                IsActivate = true;
+            GameManager.instance.CurrentCheckpoint = gameObject;
+            IsActivate = true;
 
-                //Activation des flammes
-                flames.SetActive(true);
-            }
+            //Activation des flammes
+            flames.SetActive(true);
         }
     }
 }
