@@ -1,6 +1,5 @@
 using UnityEngine.InputSystem;
 using UnityEngine;
-using UnityEngine.InputSystem.XR;
 
 public class PlayerController : MonoBehaviour
 {
@@ -45,6 +44,9 @@ public class PlayerController : MonoBehaviour
     [Space]
     [SerializeField]
     private GameObject Interract;
+
+    [Header("PushPull/Pull")]
+    public bool pull = false;
 
     private void Awake()
     {
@@ -170,6 +172,18 @@ public class PlayerController : MonoBehaviour
             Invoke("InteractStop", 0.2f);
         }
     }
+
+    public void Pull(InputAction.CallbackContext context)
+    {
+        if (context.performed && !isCrouching)
+        {
+            pull = true;
+        }
+        else if (context.canceled)
+        {
+            pull = false;
+        }
+    }
     #endregion
 
     private void InteractStop()
@@ -179,12 +193,12 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerEnter(Collider collision)
     {
-        if (collision.tag == "Roof")
+        if (collision.gameObject.CompareTag("Roof"))
         {
             verticalVelocity.y -= gravity;
         }
 
-        if (collision.gameObject.tag == "Trampoline")
+        if (collision.gameObject.CompareTag("Trampoline"))
         {
             if (controller.isGrounded)
             {
