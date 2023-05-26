@@ -878,7 +878,6 @@ GameObject:
   - component: {fileID: 4292055377032961787}
   - component: {fileID: 427018784}
   - component: {fileID: 2012846509}
-  - component: {fileID: 1777879550}
   - component: {fileID: 1885791655}
   m_Layer: 0
   m_Name: Player
@@ -1187,20 +1186,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!136 &1777879550
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4292055377032961779}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: -0.16448784, y: 0, z: 0}
 --- !u!114 &1885791655
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1290,5 +1275,5 @@ Transform:
   m_Children:
   - {fileID: 4292055377032961781}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
