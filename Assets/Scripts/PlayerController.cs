@@ -46,7 +46,7 @@ public class PlayerController : MonoBehaviour
     private GameObject Interract;
 
     [Header("PushPull/Pull")]
-    public bool pull = false;
+    public bool IsPulling = false;
 
     private void Awake()
     {
@@ -177,11 +177,11 @@ public class PlayerController : MonoBehaviour
     {
         if (context.performed && !isCrouching)
         {
-            pull = true;
+            IsPulling = true;
         }
         else if (context.canceled)
         {
-            pull = false;
+            IsPulling = false;
         }
     }
     #endregion

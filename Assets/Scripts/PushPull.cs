@@ -49,7 +49,7 @@ public class PushPull : MonoBehaviour
 
     public void pull()
     {
-        if (IsPulling == true)
+        if (playerController.IsPulling == true)
         {
             _child.transform.SetParent(Player.transform); // Sets "Player" as the new parent of the child GameObject.
             playerController.speed = playerController.speed / 2f;
