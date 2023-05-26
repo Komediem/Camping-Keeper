@@ -195,8 +195,7 @@ public class PlayerController : MonoBehaviour
     {
         if (collision.CompareTag("Roof"))
         {
-            //velocity.y -= gravity;
-            velocity.y -= gravity * 2 * Time.deltaTime;
+            velocity.y -= gravity;
 
             print("wawawa");
         }
