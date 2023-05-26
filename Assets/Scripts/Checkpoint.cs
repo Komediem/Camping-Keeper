@@ -5,13 +5,26 @@ using UnityEngine;
 public class Checkpoint : MonoBehaviour
 {
     private bool IsActivate;
+    [SerializeField] private GameObject flames;
+
+    private void Start()
+    {
+        flames.SetActive(false);
+    }
+
     private void OnTriggerEnter(Collider collision)
     {
         if (IsActivate == true) return;
         if (collision.tag == "Player")
         {
-            GameManager.instance.CurrentCheckpoint = gameObject;
-            IsActivate = true;
+            //if(touche d'interaction est pressé)
+            {
+                GameManager.instance.CurrentCheckpoint = gameObject;
+                IsActivate = true;
+
+                //Activation des flammes
+                flames.SetActive(true);
+            }
         }
     }
 }
