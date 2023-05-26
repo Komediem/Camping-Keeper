@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.15288097, g: 0.20876959, b: 0.32496858, a: 1}
+  m_IndirectSpecularColor: {r: 0.15289783, g: 0.20879431, b: 0.32497826, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -290,8 +290,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 2004101571}
   - {fileID: 552048028}
+  - {fileID: 688666469}
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -962,7 +962,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 2
-    m_TransformParent: {fileID: 307977907}
+    m_TransformParent: {fileID: 688666469}
     m_Modifications:
     - target: {fileID: 266735164, guid: 29343b7dd62380944842b4ae033610b8, type: 3}
       propertyPath: m_BoundingSphereOverride.w
@@ -970,19 +970,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 266735164, guid: 29343b7dd62380944842b4ae033610b8, type: 3}
       propertyPath: m_BoundingSphereOverride.x
-      value: 5.6e-44
+      value: 1e-45
       objectReference: {fileID: 0}
     - target: {fileID: 266735164, guid: 29343b7dd62380944842b4ae033610b8, type: 3}
       propertyPath: m_BoundingSphereOverride.y
-      value: 3.805e-42
+      value: 1.1833e-41
       objectReference: {fileID: 0}
     - target: {fileID: 266735164, guid: 29343b7dd62380944842b4ae033610b8, type: 3}
       propertyPath: m_BoundingSphereOverride.z
       value: 6e-44
       objectReference: {fileID: 0}
+    - target: {fileID: 8366344673083912178, guid: 29343b7dd62380944842b4ae033610b8, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8366344673083912179, guid: 29343b7dd62380944842b4ae033610b8, type: 3}
       propertyPath: m_Name
-      value: FireFlies
+      value: FireFliesParticles
       objectReference: {fileID: 0}
     - target: {fileID: 8366344673083912189, guid: 29343b7dd62380944842b4ae033610b8, type: 3}
       propertyPath: CollisionModule.type
@@ -1063,6 +1067,52 @@ PrefabInstance:
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 29343b7dd62380944842b4ae033610b8, type: 3}
+--- !u!1 &688666468
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 688666469}
+  - component: {fileID: 688666470}
+  m_Layer: 0
+  m_Name: Fireflies
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &688666469
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 688666468}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 2004101571}
+  m_Father: {fileID: 307977907}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &688666470
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 688666468}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c6ab45973a842147820ec93c13727b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gainValue: 30
 --- !u!1 &689047533
 GameObject:
   m_ObjectHideFlags: 0
@@ -3485,6 +3535,25 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!1 &1885791646 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4292055377032961779, guid: a389da2f4438b3a4e9c5202b88c93942, type: 3}
+  m_PrefabInstance: {fileID: 6330055503763038784}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1885791655
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1885791646}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62241804042258b4dae3bd7e5e26a3c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mentalHealth: 0
+  maxMentalHealth: 0
 --- !u!1001 &1898702745
 PrefabInstance:
   m_ObjectHideFlags: 0

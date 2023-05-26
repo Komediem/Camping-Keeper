@@ -11,9 +11,9 @@ public class PlayerMentalHealth : MonoBehaviour
 
     private void Awake()
     {
-        maxMentalHealth = 100;
-
-        mentalHealth = maxMentalHealth;
         instance = this;
+
+        maxMentalHealth = 100;
+        mentalHealth = maxMentalHealth;
     }
 }
