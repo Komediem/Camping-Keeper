@@ -802,10 +802,10 @@ MonoBehaviour:
   jumpSpeed: 9
   jumpDefault: 0
   jumpHeight: 1
-  canJumping: 0
+  canJump: 0
   gravity: 9.8
-  trampolineForce: 16
-  trampolineBox: {fileID: 0}
+  trampolineForce: 20
+  canTrampo: 0
   Interract: {fileID: 660948951562820670}
   isPulling: 0
 --- !u!114 &1885791655
@@ -897,7 +897,7 @@ Transform:
   m_Children:
   - {fileID: 4292055377032961781}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8800993261595791989
 GameObject:

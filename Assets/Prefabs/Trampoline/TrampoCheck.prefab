@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &4185454767440700402
+--- !u!1 &2343413709057386679
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,11 +8,11 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 3557395396507793736}
-  - component: {fileID: 500378768011687661}
-  - component: {fileID: 2383887028701561383}
-  - component: {fileID: 12219868358894859}
-  - component: {fileID: 3951012839892295357}
+  - component: {fileID: 3156648365066105357}
+  - component: {fileID: 2045040379687484840}
+  - component: {fileID: 4288981735297436002}
+  - component: {fileID: 1926321636829179470}
+  - component: {fileID: 3189695927533721080}
   m_Layer: 0
   m_Name: Props_Tent_Trampoline
   m_TagString: Trampoline
@@ -20,37 +20,36 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &3557395396507793736
+--- !u!4 &3156648365066105357
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4185454767440700402}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_GameObject: {fileID: 2343413709057386679}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: -9, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 7956187201766883260}
-  m_Father: {fileID: 0}
+  m_Children: []
+  m_Father: {fileID: 8429274702172861689}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &500378768011687661
+--- !u!33 &2045040379687484840
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4185454767440700402}
+  m_GameObject: {fileID: 2343413709057386679}
   m_Mesh: {fileID: -6844451193531919450, guid: 25a7b9e42399e7440989928ee8d149d3, type: 3}
---- !u!23 &2383887028701561383
+--- !u!23 &4288981735297436002
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4185454767440700402}
+  m_GameObject: {fileID: 2343413709057386679}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -86,13 +85,13 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &12219868358894859
+--- !u!64 &1926321636829179470
 MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4185454767440700402}
+  m_GameObject: {fileID: 2343413709057386679}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
@@ -100,20 +99,20 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -6844451193531919450, guid: 25a7b9e42399e7440989928ee8d149d3, type: 3}
---- !u!65 &3951012839892295357
+--- !u!65 &3189695927533721080
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4185454767440700402}
+  m_GameObject: {fileID: 2343413709057386679}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 5.4, y: 2.25, z: 2.45}
   m_Center: {x: 0, y: 1.15, z: 0}
---- !u!1 &7956187201766883250
+--- !u!1 &8429274702172861687
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -121,8 +120,9 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 7956187201766883260}
-  - component: {fileID: 7956187201766883261}
+  - component: {fileID: 8429274702172861689}
+  - component: {fileID: 8429274702172861688}
+  - component: {fileID: 8429274702172861686}
   m_Layer: 0
   m_Name: TrampoCheck
   m_TagString: TrampoCheck
@@ -130,31 +130,45 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &7956187201766883260
+--- !u!4 &8429274702172861689
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7956187201766883250}
+  m_GameObject: {fileID: 8429274702172861687}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 9, z: 0}
+  m_LocalPosition: {x: 52, y: 6.5, z: -2.38}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 3557395396507793736}
+  m_Children:
+  - {fileID: 3156648365066105357}
+  m_Father: {fileID: 0}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &7956187201766883261
+--- !u!65 &8429274702172861688
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7956187201766883250}
+  m_GameObject: {fileID: 8429274702172861687}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 5.45, y: 0.5, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &8429274702172861686
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8429274702172861687}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 285f1023666f5a74aad59d130813e174, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  trampoBox: {fileID: 3189695927533721080}

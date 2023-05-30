@@ -1,6 +1,5 @@
 using UnityEngine.InputSystem;
 using UnityEngine;
-using UnityEditor;
 
 public class PlayerController : MonoBehaviour
 {
@@ -37,14 +36,15 @@ public class PlayerController : MonoBehaviour
     public float jumpDefault;
     public float jumpHeight = 1f;
 
-    [SerializeField] private bool canJumping;
+    [SerializeField] public bool canJump;
     [SerializeField] private float gravity = 9.8f;
 
     private Vector3 velocity;
 
     //Trampoline settings
     [SerializeField] private float trampolineForce = 16f;
-    public Collider trampolineBox;
+
+    public bool canTrampo = false;
     #endregion
 
     [Space]
@@ -101,16 +101,13 @@ public class PlayerController : MonoBehaviour
 
     void CheckJump()
     {
-        if (canJumping)
+        if (canJump)
         {
             velocity.y = jumpSpeed * jumpHeight;
 
-            canJumping = false;
+            canJump = false;
 
-
-            trampolineBox.enabled = false;
             print("Mercy is for the WEAK");
-
         }
         else
         {
@@ -143,14 +140,14 @@ public class PlayerController : MonoBehaviour
     {
         if (context.started)
         {
-            if (controller.isGrounded && !isCrouching)
+            if (controller.isGrounded && !isCrouching && !isPulling)
             {
-                canJumping = true;
+                canJump = true;
             }
         }
         else if (context.canceled)
         {
-            canJumping = false;
+            canJump = false;
         }
     }
 
@@ -173,7 +170,7 @@ public class PlayerController : MonoBehaviour
                 speed /= 2;
                 speedValue /= 2;
 
-                canJumping = false;
+                canJump = false;
                 Interract.SetActive(false);
 
                 //needs to be unable to stun
@@ -226,29 +223,24 @@ public class PlayerController : MonoBehaviour
             print("wawawa");
         }
 
-        //----------------------------------------------------------------------------------------------------------------------------------
-        if (collision.CompareTag("TrampoCheck"))
+        if (collision.CompareTag("Trampoline"))
         {
-            trampolineBox.enabled = true;
-        }
-        if (collision.CompareTag("Trampoline")) //make empty put multiple bounce boxes
-        {
-            trampolineBox.enabled = false;
-
             if (isCrouching)
             {
                 jumpSpeed = trampolineForce / 2;
-                canJumping = true;
+
+                canJump = true;
+
+                print("Redacted");
             }
-            else if (controller.isGrounded && !canJumping)
+            else if (controller.isGrounded && !canJump)
             {
                 jumpSpeed = trampolineForce;
 
-                canJumping = true;
+                canJump = true;
 
                 print("WeeWoo");
             }
         }
-        //----------------------------------------------------------------------------------------------------------------------------------
     }
 }
