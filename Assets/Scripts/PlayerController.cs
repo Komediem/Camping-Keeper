@@ -21,7 +21,7 @@ public class PlayerController : MonoBehaviour
     [Space]
     public float speed = 5f;
     public float speedDefault;
-    private float speedValue;
+    public float speedValue;
 
     [SerializeField] private float moveSmoothTime = 0.2f;
     private Vector3 currentMoveVelocity;
@@ -165,16 +165,19 @@ public class PlayerController : MonoBehaviour
             }
             else
             {
-                isCrouching = true;
+                if (!isPulling)
+                {
+                    isCrouching = true;
 
-                speed /= 2;
-                speedValue /= 2;
+                    speed /= 2;
+                    speedValue /= 2;
 
-                canJump = false;
-                Interract.SetActive(false);
+                    canJump = false;
+                    Interract.SetActive(false);
 
-                //needs to be unable to stun
-                //anim crouch & collider gets smaller
+                    //needs to be unable to stun
+                    //anim crouch & collider gets smaller
+                }
             }
         }
     }
@@ -200,10 +203,21 @@ public class PlayerController : MonoBehaviour
     {
         if (context.performed && !isCrouching)
         {
+            speed /= 2;
+            speedValue /= 2;
+
+            canJump = false;
+            isCrouching = false;
+
+            Interract.SetActive(false);
+
             isPulling = true;
         }
-        else if (context.canceled)
+        else if (context.canceled && !isCrouching)
         {
+            speed *= 2;
+            speedValue *= 2;
+
             isPulling = false;
         }
     }

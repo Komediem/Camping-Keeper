@@ -56,17 +56,14 @@ public class PushPull : MonoBehaviour
     {
         if (PlayerController.Instance.isPulling && !PlayerController.Instance.isCrouching)
         {
-            _child.transform.SetParent(Player.transform);                   // Sets "Player" as the new parent of the child GameObject.
+            _child.transform.SetParent(Player.transform); // Sets "Player" as the new parent of the child GameObject.
 
-            PlayerController.Instance.speed = PlayerController.Instance.speed / 2f;
-            PlayerController.Instance.jumpSpeed = 0;
+            PlayerController.Instance.canJump = false;
+            PlayerController.Instance.isCrouching = false;
         }
         else
         {
-            _child.transform.SetParent(null);                              // Setting the parent to ‘null’ unparents the GameObject and turns child into a top-level object in the hierarchy
-
-            PlayerController.Instance.speed = PlayerController.Instance.speedDefault;
-            PlayerController.Instance.jumpSpeed = PlayerController.Instance.jumpDefault;
+            _child.transform.SetParent(null); // Setting the parent to ‘null’ unparents the GameObject and turns child into a top-level object in the hierarchy
         }
     }
 }
