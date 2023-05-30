@@ -41,7 +41,7 @@ public class PushPull : MonoBehaviour
 
     private void OnTriggerEnter(Collider collision)
     {
-        if (collision.tag == "Player")
+        if (collision.CompareTag("Player"))
         {
             PushPullTrigger = true;
         }
@@ -49,7 +49,7 @@ public class PushPull : MonoBehaviour
 
     private void OnTriggerExit(Collider collision)
     {
-        if (collision.tag == "Player")
+        if (collision.CompareTag("Player"))
         {
             PushPullTrigger = false;
         }
