@@ -89,6 +89,15 @@ public class PlayerController : MonoBehaviour
             controller.Move(currentMoveVelocity * Time.deltaTime);
 
             CheckJump();
+
+            if (movement != 0)
+            {
+                playerAnimator.SetBool("isWalking", true);
+            }
+            else
+            {
+                playerAnimator.SetBool("isWalking", false);
+            }
         }
     }
 
@@ -111,15 +120,6 @@ public class PlayerController : MonoBehaviour
         }
 
         controller.Move(velocity * Time.deltaTime);
-
-        if(movement != 0)
-        {
-            playerAnimator.SetBool("isWalking", true);
-        }
-        else
-        {
-            playerAnimator.SetBool("isWalking", false);
-        }
 
         jumpSpeed = jumpDefault;
     }
@@ -251,17 +251,4 @@ public class PlayerController : MonoBehaviour
             }
         }
     }
-
-    /*public void OnDrawGizmos()
-    {
-        if (!Application.isPlaying) return;
-
-        var position = transform.position;
-        var velocity = rb.velocity;
-
-        if (velocity.magnitude < 0.1f) return;
-
-        Handles.color = Color.red;
-        Handles.ArrowHandleCap(0, position, Quaternion.LookRotation(velocity), arrowLength, EventType.Repaint);
-    }*/
 }
