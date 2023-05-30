@@ -6,18 +6,21 @@ public class PushPull : MonoBehaviour
     public bool PushPullTrigger;
     public bool isPulling;
 
+    [Header("Don't need to assign :")]
     [SerializeField] private GameObject Player;
     [SerializeField] private GameObject _child;
-    [SerializeField] public PlayerController playerController;
+    private PlayerController playerController;
 
     private void Awake()
     {
         Player = GameObject.Find("Player");
-        GameObject _child = this.gameObject;
+        _child = this.gameObject;
     }
 
     void Start()
     {
+        playerController = GetComponent<PlayerController>();
+
         PushPullTrigger = false;
         isPulling = false;
     }
