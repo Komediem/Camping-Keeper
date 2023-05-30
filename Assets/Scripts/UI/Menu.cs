@@ -80,7 +80,7 @@ public class Menu : MonoBehaviour
         Buttons.SetActive(true);
     }
 
-    public void resetOptionsDefault()
+    public void ResetOptionsDefault()
     {
         fullscreenToggle.isOn = true;
         Screen.fullScreen = true;
