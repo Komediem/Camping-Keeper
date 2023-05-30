@@ -4,7 +4,6 @@ using UnityEngine.InputSystem;
 public class PushPull : MonoBehaviour
 {
     public bool PushPullTrigger;
-    public bool isPulling;
 
     [Header("Don't need to assign :")]
     [SerializeField] private GameObject Player;
@@ -22,7 +21,6 @@ public class PushPull : MonoBehaviour
         playerController = GetComponent<PlayerController>();
 
         PushPullTrigger = false;
-        isPulling = false;
     }
 
     void Update()
@@ -59,7 +57,7 @@ public class PushPull : MonoBehaviour
 
     public void pull()
     {
-        if (isPulling && !playerController.isCrouching)
+        if (playerController.isPulling && !playerController.isCrouching)
         {
             _child.transform.SetParent(Player.transform);                   // Sets "Player" as the new parent of the child GameObject.
 
@@ -72,18 +70,6 @@ public class PushPull : MonoBehaviour
 
             playerController.speed = playerController.speedDefault;
             playerController.jumpSpeed = playerController.jumpDefault;
-        }
-    }
-
-    public void Pull(InputAction.CallbackContext context)
-    {
-        if (context.performed && !playerController.isCrouching)
-        {
-            isPulling = true;
-        }
-        else if (context.canceled)
-        {
-            isPulling = false;
         }
     }
 }

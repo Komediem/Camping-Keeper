@@ -53,6 +53,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private GameObject Interract;
 
+    public bool isPulling = false;
+
     private void Awake()
     {
         if (Instance) Destroy(this);
@@ -72,6 +74,7 @@ public class PlayerController : MonoBehaviour
         jumpDefault = jumpSpeed;
 
         Interract.SetActive(false);
+        isPulling = false;
     }
 
     void Update()
@@ -189,6 +192,17 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    public void Pull(InputAction.CallbackContext context)
+    {
+        if (context.performed && !isCrouching)
+        {
+            isPulling = true;
+        }
+        else if (context.canceled)
+        {
+            isPulling = false;
+        }
+    }
     #endregion
 
     private void InteractStop()
