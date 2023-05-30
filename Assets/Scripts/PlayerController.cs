@@ -11,6 +11,8 @@ public class PlayerController : MonoBehaviour
     public Rigidbody rb;
     //[SerializeField][Range(0.5F, 2)] private float arrowLength = 1.0F;
 
+    public Animator playerAnimator;
+
     #region Movement
     [Header("Movement Settings")]
     [Space]
@@ -60,6 +62,8 @@ public class PlayerController : MonoBehaviour
         speedValue = speed;
 
         rb = GetComponent<Rigidbody>();
+
+        playerAnimator = GetComponentInChildren<Animator>();
     }
 
     private void Start()
