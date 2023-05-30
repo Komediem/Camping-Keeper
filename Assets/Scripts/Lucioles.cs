@@ -7,6 +7,7 @@ public class Lucioles : MonoBehaviour
 {
     [SerializeField] private float gainValue;
     [SerializeField] private ParticleSystem fireflies;
+    [SerializeField] private GameObject firefliesFog;
 
     private void Start()
     {
@@ -19,7 +20,8 @@ public class Lucioles : MonoBehaviour
         if (collision.tag == "Player")
         {
             Debug.Log("Bing Chilling");
-            //fireflies.Stop();
+            fireflies.Stop();
+            firefliesFog.SetActive(false);
             PlayerMentalHealth.instance.mentalHealth += gainValue;
             this.GetComponent<BoxCollider>().enabled = false;
 
