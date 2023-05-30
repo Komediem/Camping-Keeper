@@ -36,7 +36,7 @@ public class PlayerController : MonoBehaviour
     public float jumpDefault;
     public float jumpHeight = 1f;
 
-    [SerializeField] private bool isJumping;
+    [SerializeField] private bool canJumping;
     [SerializeField] private float gravity = 9.8f;
 
 
@@ -90,11 +90,11 @@ public class PlayerController : MonoBehaviour
 
     void CheckJump()
     {
-        if (isJumping)
+        if (canJumping)
         {
             velocity.y = jumpSpeed * jumpHeight;
 
-            isJumping = false;
+            canJumping = false;
 
 
             trampolineBox.enabled = false;
@@ -134,12 +134,12 @@ public class PlayerController : MonoBehaviour
         {
             if (controller.isGrounded && !isCrouching)
             {
-                isJumping = true;
+                canJumping = true;
             }
         }
         else if (context.canceled)
         {
-            isJumping = false;
+            canJumping = false;
         }
     }
 
@@ -162,7 +162,7 @@ public class PlayerController : MonoBehaviour
                 speed /= 2;
                 speedValue /= 2;
 
-                isJumping = false;
+                canJumping = false;
                 Interract.SetActive(false);
 
                 //needs to be unable to stun
@@ -215,13 +215,13 @@ public class PlayerController : MonoBehaviour
             if (isCrouching)
             {
                 jumpSpeed = trampolineForce / 2;
-                isJumping = true;
+                canJumping = true;
             }
-            else if (controller.isGrounded && !isJumping)
+            else if (controller.isGrounded && !canJumping)
             {
                 jumpSpeed = trampolineForce;
 
-                isJumping = true;
+                canJumping = true;
 
                 print("WeeWoo");
             }
