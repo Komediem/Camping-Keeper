@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerMentalHealth : MonoBehaviour
 {
     public static PlayerMentalHealth instance;
-    
+
     public float mentalHealth;
     public float maxMentalHealth;
 
@@ -15,5 +15,9 @@ public class PlayerMentalHealth : MonoBehaviour
 
         maxMentalHealth = 100;
         mentalHealth = maxMentalHealth;
+    }
+    public void TakeDamage(int amount)
+    {
+        mentalHealth -= amount;
     }
 }
