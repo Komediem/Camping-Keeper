@@ -8,7 +8,6 @@ public class PushPull : MonoBehaviour
     [Header("Don't need to assign :")]
     [SerializeField] private GameObject Player;
     [SerializeField] private GameObject _child;
-    private PlayerController playerController;
 
     private void Awake()
     {
@@ -18,8 +17,6 @@ public class PushPull : MonoBehaviour
 
     void Start()
     {
-        playerController = GetComponent<PlayerController>();
-
         PushPullTrigger = false;
     }
 
@@ -35,7 +32,7 @@ public class PushPull : MonoBehaviour
     {
         if (PushPullTrigger)
         {
-
+            Pull();
         }
     }
 
@@ -55,21 +52,21 @@ public class PushPull : MonoBehaviour
         }
     }
 
-    public void pull()
+    public void Pull()
     {
-        if (playerController.isPulling && !playerController.isCrouching)
+        if (PlayerController.Instance.isPulling && !PlayerController.Instance.isCrouching)
         {
             _child.transform.SetParent(Player.transform);                   // Sets "Player" as the new parent of the child GameObject.
 
-            playerController.speed = playerController.speed / 2f;
-            playerController.jumpSpeed = 0;
+            PlayerController.Instance.speed = PlayerController.Instance.speed / 2f;
+            PlayerController.Instance.jumpSpeed = 0;
         }
         else
         {
             _child.transform.SetParent(null);                              // Setting the parent to ‘null’ unparents the GameObject and turns child into a top-level object in the hierarchy
 
-            playerController.speed = playerController.speedDefault;
-            playerController.jumpSpeed = playerController.jumpDefault;
+            PlayerController.Instance.speed = PlayerController.Instance.speedDefault;
+            PlayerController.Instance.jumpSpeed = PlayerController.Instance.jumpDefault;
         }
     }
 }
