@@ -877,7 +877,6 @@ GameObject:
   - component: {fileID: 4292055377032961787}
   - component: {fileID: 4292055377032961778}
   - component: {fileID: 1885791655}
-  - component: {fileID: 427018784}
   - component: {fileID: 2012846509}
   m_Layer: 0
   m_Name: Player
@@ -1117,7 +1116,7 @@ MonoBehaviour:
   jumpSpeed: 9
   jumpDefault: 0
   jumpHeight: 1
-  isJumping: 0
+  canJumping: 0
   gravity: 9.8
   trampolineForce: 16
   trampolineBox: {fileID: 0}
@@ -1137,19 +1136,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mentalHealth: 0
   maxMentalHealth: 0
---- !u!114 &427018784
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4292055377032961779}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eeada1b3d424fa54791477b0410b94ac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  forceMagnitude: 1
 --- !u!212 &2012846509
 SpriteRenderer:
   m_ObjectHideFlags: 0

@@ -51,9 +51,6 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private GameObject Interract;
 
-    [Header("PushPull/Pull")]
-    public bool IsPulling = false;
-
     private void Awake()
     {
         if (Instance) Destroy(this);

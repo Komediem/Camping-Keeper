@@ -27,7 +27,7 @@ public class PushPull : MonoBehaviour
 
     void Update()
     {
-        if (!playerController.lockMovements && !playerController.isCrouching)
+        if (!PlayerController.Instance.lockMovements && !PlayerController.Instance.isCrouching)
         {
             PullPush();
         }
@@ -43,7 +43,7 @@ public class PushPull : MonoBehaviour
 
     private void OnTriggerEnter(Collider collision)
     {
-        if (collision.tag == "PushPull")
+        if (collision.tag == "Player")
         {
             PushPullTrigger = true;
         }
@@ -51,7 +51,7 @@ public class PushPull : MonoBehaviour
 
     private void OnTriggerExit(Collider collision)
     {
-        if (collision.tag == "PushPull")
+        if (collision.tag == "Player")
         {
             PushPullTrigger = false;
         }
@@ -59,7 +59,7 @@ public class PushPull : MonoBehaviour
 
     public void pull()
     {
-        if (playerController.IsPulling && !playerController.isCrouching)
+        if (isPulling && !playerController.isCrouching)
         {
             _child.transform.SetParent(Player.transform);                   // Sets "Player" as the new parent of the child GameObject.
 
