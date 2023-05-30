@@ -7,6 +7,7 @@ public class PickableNextLevel : MonoBehaviour
 {
     public Animator animator;
     public float TempsPickupAnimation;
+    public GameObject model;
 
     void NextLevel()
     {
@@ -18,6 +19,8 @@ public class PickableNextLevel : MonoBehaviour
         if (collision.tag == "Pickable")
         {
             Debug.Log("Saucisse");
+
+            model.SetActive(false);
 
             //animator.SetBool("IsPicking", true);
             //add more option when you pick up
