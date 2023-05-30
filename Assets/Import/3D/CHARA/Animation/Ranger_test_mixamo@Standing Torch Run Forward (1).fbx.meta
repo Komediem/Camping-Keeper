@@ -1,10 +1,13 @@
 fileFormatVersion: 2
-guid: cb016a6727df04d43ad9484cac37bfa6
+guid: 38fda653510aae84b80f9b6e10f62a23
 ModelImporter:
   serializedVersion: 22103
   internalIDToNameTable:
   - first:
       74: -203655887218126122
+    second: Standing Torch Run Forward (1)
+  - first:
+      74: -8283636554949763893
     second: Standing Torch Run Forward
   externalObjects: {}
   materials:
@@ -59,7 +62,21 @@ ModelImporter:
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
-      events: []
+      events:
+      - time: 0.37472692
+        functionName: Pas
+        data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.91430604
+        functionName: NewEvent
+        data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
       transformMask: []
       maskType: 3
       maskSource: {instanceID: 0}
