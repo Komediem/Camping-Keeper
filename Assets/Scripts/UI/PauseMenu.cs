@@ -43,7 +43,7 @@ public class PauseMenu : MonoBehaviour
             {
                 Paused();
 
-                //if (LookWithMouse.Instance.playerInput.currentControlScheme != "Gamepad")
+                //if (GamepadCursor.Instance.playerInput.currentControlScheme != "Gamepad")
                 //{
                     Cursor.visible = true;
                     Cursor.lockState = CursorLockMode.Confined;
@@ -131,7 +131,7 @@ public class PauseMenu : MonoBehaviour
         Buttons.SetActive(true);
     }
 
-    public void resetOptionsDefault()
+    public void ResetOptionsDefault()
     {
         fullscreenToggle.isOn = true;
         Screen.fullScreen = true;

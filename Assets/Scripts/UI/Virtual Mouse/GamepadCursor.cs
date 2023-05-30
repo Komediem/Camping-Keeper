@@ -5,10 +5,12 @@ using UnityEngine.InputSystem.Users;
 
 public class GamepadCursor : MonoBehaviour
 {
-    [SerializeField] 
+    private static GamepadCursor Instance;
+
+    [SerializeField]
     private PlayerInput playerInput;
 
-    [SerializeField] 
+    [SerializeField]
     private RectTransform cursorTransform;
 
     [SerializeField]
@@ -30,6 +32,12 @@ public class GamepadCursor : MonoBehaviour
     private string previousControlSceme = "";
     private const string gamepadScheme = "Gamepad";
     private const string mouseScheme = "Keyboard&Mouse";
+
+    private void Awake()
+    {
+        if (Instance) Destroy(this);
+        else Instance = this;
+    }
 
     private void Update()
     {

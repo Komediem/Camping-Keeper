@@ -9,7 +9,6 @@ public class PlayerController : MonoBehaviour
     private CharacterController controller;
 
     public Rigidbody rb;
-    //[SerializeField][Range(0.5F, 2)] private float arrowLength = 1.0F;
 
     public Animator playerAnimator;
 
@@ -40,7 +39,6 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField] private bool canJumping;
     [SerializeField] private float gravity = 9.8f;
-
 
     private Vector3 velocity;
 
@@ -228,11 +226,12 @@ public class PlayerController : MonoBehaviour
             print("wawawa");
         }
 
+        //----------------------------------------------------------------------------------------------------------------------------------
         if (collision.CompareTag("TrampoCheck"))
         {
             trampolineBox.enabled = true;
         }
-        if (collision.CompareTag("Trampoline"))
+        if (collision.CompareTag("Trampoline")) //make empty put multiple bounce boxes
         {
             trampolineBox.enabled = false;
 
@@ -250,5 +249,6 @@ public class PlayerController : MonoBehaviour
                 print("WeeWoo");
             }
         }
+        //----------------------------------------------------------------------------------------------------------------------------------
     }
 }
