@@ -16,8 +16,16 @@ public class PlayerMentalHealth : MonoBehaviour
         maxMentalHealth = 100;
         mentalHealth = maxMentalHealth;
     }
+
+    private void Start()
+    {
+        
+    }
+
     public void TakeDamage(int amount)
     {
         mentalHealth -= amount;
     }
+
+
 }

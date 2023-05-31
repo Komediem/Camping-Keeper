@@ -6,21 +6,21 @@ using UnityEngine.AI;
 
 public class Enemy : MonoBehaviour
 {
-    public NavMeshAgent agent;
+    public NavMeshAgent agent; //navmesh
 
-    public Transform player;
+    public Transform player; //position player
 
-    public LayerMask whatIsGround, whatIsPlayer;
+    public LayerMask whatIsGround, whatIsPlayer; //quoi sol, quoi player
 
     #region Attacking
-    public float timeBetweenAttacks;
-    bool alreadyAttacked;
-    private Animator animator;
+    public float timeBetweenAttacks; // CD attaque
+    bool alreadyAttacked; //bool vérifie si ennemi attaque
+    private Animator animator; //animator ennemi --> switch animation walk, attack 
     #endregion
 
     #region Range
-    public float sightRange, attackRange;
-    public bool playerInSightRange, playerInAttackRange;
+    public float sightRange, attackRange; //zone attaque et repérage joueur
+    public bool playerInSightRange, playerInAttackRange; //bool vérification si joueur détecté
     #endregion
 
     private void Awake()

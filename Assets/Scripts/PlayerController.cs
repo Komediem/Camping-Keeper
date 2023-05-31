@@ -11,6 +11,10 @@ public class PlayerController : MonoBehaviour
 
     public Animator playerAnimator;
 
+    [SerializeField] public GameObject LightLantern;
+
+    public float LightTime;
+
     #region Movement
     [Header("Movement Settings")]
     [Space]
@@ -48,8 +52,7 @@ public class PlayerController : MonoBehaviour
     #endregion
 
     [Space]
-    [SerializeField]
-    private GameObject Interract;
+    public GameObject Interract;
 
     public bool isPulling = false;
 
@@ -60,6 +63,9 @@ public class PlayerController : MonoBehaviour
 
         controller = GetComponent<CharacterController>();
         speedValue = speed;
+
+        LightLantern = GameObject.Find("LightHitBox");
+
 
         rb = GetComponent<Rigidbody>();
 
@@ -72,6 +78,7 @@ public class PlayerController : MonoBehaviour
         jumpDefault = jumpSpeed;
 
         Interract.SetActive(false);
+        LightLantern.SetActive(false);
         isPulling = false;
     }
 
@@ -221,9 +228,23 @@ public class PlayerController : MonoBehaviour
             isPulling = false;
         }
     }
+    public void Light(InputAction.CallbackContext context)
+    {
+        if (context.started && !isCrouching)
+        {
+            LightLantern.SetActive(true);
+            //play animation faire attention au moment ou la light se coupe
+            Invoke("LightStop", LightTime);
+        }
+    }
+
     #endregion
 
     private void InteractStop()
+    {
+        Interract.SetActive(false);
+    }
+    private void LightStop()
     {
         Interract.SetActive(false);
     }
