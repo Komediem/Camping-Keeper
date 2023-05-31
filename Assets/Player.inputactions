@@ -435,7 +435,29 @@
                 {
                     "name": "",
                     "id": "f25a7477-49d6-44db-8d35-300d9b5f149e",
+                    "path": "<Gamepad>/rightStick",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "Navigation",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "81930225-e558-481d-a496-186aaad67cf0",
                     "path": "<Gamepad>/leftStick",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "Navigation",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "0d76bf43-d8d6-4c99-a4bb-086aeb90cb59",
+                    "path": "<VirtualMouse>/delta",
                     "interactions": "",
                     "processors": "",
                     "groups": "Gamepad",
@@ -469,6 +491,17 @@
                     "name": "",
                     "id": "91c89842-70b7-4e01-9807-7190d84f5562",
                     "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "Cancel",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "95733c6f-84e6-43a7-9700-97eb310662fd",
+                    "path": "<Keyboard>/backspace",
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard&Mouse",
@@ -592,7 +625,7 @@
                     "path": "<TrackedDevice>/devicePosition",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "Keyboard&Mouse;Gamepad",
                     "action": "TrackedDevicePosition",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -603,7 +636,7 @@
                     "path": "<TrackedDevice>/deviceRotation",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "Keyboard&Mouse;Gamepad",
                     "action": "TrackedDeviceOrientation",
                     "isComposite": false,
                     "isPartOfComposite": false

@@ -160,8 +160,8 @@ public class PlayerController : MonoBehaviour
             {
                 isCrouching = false;
 
-                speed *= 2;
-                speedValue *= 2;
+                speed = speedDefault;
+                speedValue = speedDefault;
             }
             else
             {
@@ -215,8 +215,8 @@ public class PlayerController : MonoBehaviour
         }
         else if (context.canceled && !isCrouching)
         {
-            speed *= 2;
-            speedValue *= 2;
+            speed = speedDefault;
+            speedValue = speedDefault;
 
             isPulling = false;
         }
