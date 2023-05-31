@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 1931.5566, g: 2003.0391, b: 2335.6875, a: 1}
+  m_IndirectSpecularColor: {r: 2027.0957, g: 2135.789, b: 2551.164, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -400,7 +400,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &152863322
 RectTransform:
   m_ObjectHideFlags: 0
@@ -419,7 +419,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 25, y: 25}
+  m_SizeDelta: {x: 48, y: 48}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &152863323
 MonoBehaviour:
@@ -434,14 +434,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0.87890935, b: 1, a: 1}
+  m_Color: {r: 1, g: 0.16470589, b: 0.09411765, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: f9161c6c9e06dc445ada3ee16d991f90, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -730,7 +730,7 @@ MonoBehaviour:
     m_Mode: 4
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 1816910522}
-    m_SelectOnDown: {fileID: 653987249}
+    m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
@@ -1277,7 +1277,7 @@ MonoBehaviour:
   m_Navigation:
     m_Mode: 4
     m_WrapAround: 0
-    m_SelectOnUp: {fileID: 1787221705}
+    m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 1589793344}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
@@ -1762,7 +1762,7 @@ MonoBehaviour:
   m_Navigation:
     m_Mode: 4
     m_WrapAround: 1
-    m_SelectOnUp: {fileID: 238760088}
+    m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 1630865158}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
@@ -2795,7 +2795,7 @@ MonoBehaviour:
     m_Mode: 4
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 1589793344}
-    m_SelectOnDown: {fileID: 389561977}
+    m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
@@ -2959,7 +2959,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1858949011}
         m_TargetAssemblyTypeName: Menu, Assembly-CSharp
-        m_MethodName: resetOptionsDefault
+        m_MethodName: ResetOptionsDefault
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3462,6 +3462,7 @@ GameObject:
   - component: {fileID: 2052191471}
   - component: {fileID: 2052191473}
   - component: {fileID: 2052191472}
+  - component: {fileID: 2052191474}
   m_Layer: 0
   m_Name: Gamepad Cursor
   m_TagString: Untagged
@@ -3594,17 +3595,59 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2052191470}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 99bdce6ffdd68b6439641b3eda21a7fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2052191474
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2052191470}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af54e223a9930834aa1e249a2858e505, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   playerInput: {fileID: 2052191472}
   cursorTransform: {fileID: 152863322}
-  canvasRectTransform: {fileID: 1858949009}
+  canvasTransform: {fileID: 1858949009}
   canvas: {fileID: 1858949008}
-  cursorSpeed: 1000
-  padding: 50
+  cursorSpeed: 950
+  smoothFunction:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 2
+      outSlope: 2
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  padding: 25
+  hideRealMouse: 1
+  initialMouseAnchors: {x: 0.5, y: 0.5}
+  inactiveHideTime: 4
+  useStick: 0
+  useButton: 1
+  useTrigger: 3
 --- !u!1 &2073742527
 GameObject:
   m_ObjectHideFlags: 0
