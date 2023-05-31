@@ -41,6 +41,7 @@ public class PlayerController : MonoBehaviour
     public float jumpHeight = 1f;
 
     [SerializeField] public bool canJump;
+    [SerializeField] private bool isJumping;
     [SerializeField] private float gravity = 9.8f;
 
     private Vector3 velocity;
@@ -150,6 +151,7 @@ public class PlayerController : MonoBehaviour
             if (controller.isGrounded && !isCrouching && !isPulling)
             {
                 canJump = true;
+                isJumping = true;
             }
         }
         else if (context.canceled)
@@ -167,8 +169,8 @@ public class PlayerController : MonoBehaviour
             {
                 isCrouching = false;
 
-                speed *= 2;
-                speedValue *= 2;
+                speed = speedDefault;
+                speedValue = speedDefault;
             }
             else
             {
@@ -222,8 +224,8 @@ public class PlayerController : MonoBehaviour
         }
         else if (context.canceled && !isCrouching)
         {
-            speed *= 2;
-            speedValue *= 2;
+            speed = speedDefault;
+            speedValue = speedDefault;
 
             isPulling = false;
         }

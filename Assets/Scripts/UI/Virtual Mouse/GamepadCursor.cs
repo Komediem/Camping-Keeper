@@ -65,7 +65,7 @@ public class GamepadCursor : MonoBehaviour
         }
 
         //Pair the device to the user to use the PlayerInput component with the Event System & the Virtual Mouse
-        InputUser.PerformPairingWithDevice(virtualMouse, playerInput.user);
+        InputUser.PerformPairingWithDevice(virtualMouse);
 
         if(cursorTransform != null)
         {
@@ -80,7 +80,10 @@ public class GamepadCursor : MonoBehaviour
 
     private void OnDisable()
     {
-        if(virtualMouse != null && virtualMouse.added) InputSystem.RemoveDevice(virtualMouse);
+        if (virtualMouse != null && virtualMouse.added)
+        {
+            InputSystem.RemoveDevice(virtualMouse);
+        }
 
         InputSystem.onAfterUpdate -= UpdateMotion;
         playerInput.onControlsChanged -= OnControlsChanged;
@@ -110,6 +113,7 @@ public class GamepadCursor : MonoBehaviour
         {
             virtualMouse.CopyState<MouseState>(out var mouseState);
             mouseState.WithButton(MouseButton.Left, aButtonIsPressed);
+
             InputState.Change(virtualMouse, mouseState);
             previousMouseState = aButtonIsPressed;
         }
@@ -130,7 +134,7 @@ public class GamepadCursor : MonoBehaviour
     {
         if (playerInput.currentControlScheme == mouseScheme && previousControlSceme != mouseScheme)
         {
-             cursorTransform.gameObject.SetActive(false);
+            cursorTransform.gameObject.SetActive(false);
             Cursor.visible = true;
             currentMouse.WarpCursorPosition(virtualMouse.position.ReadValue());
 
