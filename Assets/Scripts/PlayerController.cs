@@ -171,6 +171,8 @@ public class PlayerController : MonoBehaviour
 
                 speed = speedDefault;
                 speedValue = speedDefault;
+
+                playerAnimator.SetBool("isCrouching", true);
             }
             else
             {
@@ -184,8 +186,10 @@ public class PlayerController : MonoBehaviour
                     canJump = false;
                     Interract.SetActive(false);
 
+                    playerAnimator.SetBool("isCrouching", false);
+
                     //needs to be unable to stun
-                    //anim crouch & collider gets smaller
+                    //collider gets smaller
                 }
             }
         }
