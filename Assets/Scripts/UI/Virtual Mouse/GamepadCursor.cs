@@ -446,5 +446,4 @@ public class GamepadCursor : MonoBehaviour
         //print("Gamepad " + Gamepad.current.aButton.IsPressed());
         print("ahaha " + Gamepad.current.buttonSouth.ReadValue());
     }
-
 }
