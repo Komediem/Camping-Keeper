@@ -433,8 +433,12 @@ public class GamepadCursor : MonoBehaviour
     {
         if(Gamepad.current.aButton.IsPressed())
         {
-            Gamepad.current.SetMotorSpeeds(0.65f, 1f);
-        }else InputSystem.ResetHaptics();
+            Gamepad.current.SetMotorSpeeds(0.75f, 1.25f);
+        }
+        else InputSystem.ResetHaptics();
+
+        Mouse.current.leftButton.IsPressed().Equals(Gamepad.current.aButton.isPressed);
+        Gamepad.current.aButton.IsPressed().Equals(Mouse.current.leftButton.isPressed);
 
         print("Mouse " + Mouse.current.leftButton.IsPressed());
         print("Gamepad " + Gamepad.current.aButton.IsPressed());
