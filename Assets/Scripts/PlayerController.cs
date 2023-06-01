@@ -227,13 +227,13 @@ public class PlayerController : MonoBehaviour
     {
         if (context.performed && !isCrouching)
         {
-            speed /= 2;
-            speedValue /= 2;
+            //speed /= 2;
+            //speedValue /= 2;
 
-            canJump = false;
-            isCrouching = false;
+            //canJump = false;
+            //isCrouching = false;
 
-            Interract.SetActive(false);
+            //Interract.SetActive(false);
 
             isPulling = true;
         }
