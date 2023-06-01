@@ -2,13 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class StepFeedbacks : MonoBehaviour
+public class CharacterFeedbacks : MonoBehaviour
 {
     private CharacterController characterController;
 
     [SerializeField] private GameObject stepParticle;
+    [SerializeField] private GameObject fallParticle;
     [SerializeField] private Transform stepPosition;
-    private GameObject particle;
 
     public void Awake()
     {
@@ -19,8 +19,14 @@ public class StepFeedbacks : MonoBehaviour
     {
         if(characterController.isGrounded)
         {
-            particle = Instantiate(stepParticle, stepPosition.position, Quaternion.identity);
+            GameObject particle = Instantiate(stepParticle, stepPosition.position, Quaternion.identity);
             Destroy(particle, 1);
         }
+    }
+
+    public void FallEffect()
+    {
+        GameObject particleFall = Instantiate(fallParticle, stepPosition.position, Quaternion.identity);
+        Destroy(particleFall, 1);
     }
 }
