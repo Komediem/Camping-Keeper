@@ -4,16 +4,9 @@ public class Trampoline : MonoBehaviour
 {
     public BoxCollider trampoBox;
 
-    private CharacterController controller;
-
-    private void Awake()
-    {
-        controller = FindObjectOfType<CharacterController>();
-    }
-
     private void Update()
     {
-        if (controller.isGrounded)
+        if (PlayerController.Instance.canJump)
         {
             trampoBox.enabled = false;
 

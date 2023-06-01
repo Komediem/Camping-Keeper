@@ -233,7 +233,7 @@ public class PlayerController : MonoBehaviour
         if (context.performed && !isCrouching)
         {
             //speed /= 2;
-            //speedValue /= 2;²
+            //speedValue /= 2;
 
             //canJump = false;
             //isCrouching = false;
