@@ -172,7 +172,9 @@ public class PlayerController : MonoBehaviour
                 speed = speedDefault;
                 speedValue = speedDefault;
 
-                playerAnimator.SetBool("isCrouching", true);
+                playerAnimator.SetBool("isCrouching", false);
+
+                playerAnimator.SetBool("isCrouchWalking", false);
             }
             else
             {
@@ -186,7 +188,16 @@ public class PlayerController : MonoBehaviour
                     canJump = false;
                     Interract.SetActive(false);
 
-                    playerAnimator.SetBool("isCrouching", false);
+                    playerAnimator.SetBool("isCrouching", true);
+
+                    if (movement != 0)
+                    {
+                        playerAnimator.SetBool("isCrouchWalking", true);
+                    }
+                    else
+                    {
+                        playerAnimator.SetBool("isCrouchWalking", false);
+                    }
 
                     //needs to be unable to stun
                     //collider gets smaller
