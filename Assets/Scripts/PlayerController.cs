@@ -137,8 +137,8 @@ public class PlayerController : MonoBehaviour
             rb.velocity = pushDirection * 10f;
         }
     }
-    #region Input
 
+    #region Input
     public void Move(InputAction.CallbackContext context)
     {
         movement = context.ReadValue<float>();
