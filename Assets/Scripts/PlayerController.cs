@@ -171,6 +171,9 @@ public class PlayerController : MonoBehaviour
                 speed = speedDefault;
                 speedValue = speedDefault;
 
+                controller.height = 2f;
+                controller.center = new(0, 1f, 0);
+
                 playerAnimator.SetBool("isCrouching", false);
 
                 playerAnimator.SetBool("isCrouchWalking", false);
@@ -186,6 +189,9 @@ public class PlayerController : MonoBehaviour
 
                     canJump = false;
                     Interract.SetActive(false);
+
+                    controller.height = 1.2f;
+                    controller.center = new(0, 0.6f, 0);
 
                     playerAnimator.SetBool("isCrouching", true);
 
@@ -282,6 +288,8 @@ public class PlayerController : MonoBehaviour
                 jumpSpeed = trampolineForce / 2;
 
                 canJump = true;
+
+                //Character Controller size
 
                 print("Redacted");
             }
