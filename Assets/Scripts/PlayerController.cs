@@ -7,6 +7,8 @@ public class PlayerController : MonoBehaviour
 
     private CharacterController controller;
 
+    public PushPull pushPull;
+
     public Rigidbody rb;
 
     public Animator playerAnimator;
@@ -41,7 +43,6 @@ public class PlayerController : MonoBehaviour
     public float jumpHeight = 1f;
 
     [SerializeField] public bool canJump;
-    [SerializeField] private bool isJumping;
     [SerializeField] private float gravity = 9.8f;
 
     private Vector3 velocity;
@@ -85,7 +86,7 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-            if (!lockMovements)
+        if (!lockMovements)
         {
             float x = movement;
             Vector3 move = transform.right * x;
@@ -137,8 +138,8 @@ public class PlayerController : MonoBehaviour
             rb.velocity = pushDirection * 10f;
         }
     }
-
     #region Input
+
     public void Move(InputAction.CallbackContext context)
     {
         movement = context.ReadValue<float>();
@@ -151,7 +152,6 @@ public class PlayerController : MonoBehaviour
             if (controller.isGrounded && !isCrouching && !isPulling)
             {
                 canJump = true;
-                isJumping = true;
             }
         }
         else if (context.canceled)
@@ -227,13 +227,13 @@ public class PlayerController : MonoBehaviour
     {
         if (context.performed && !isCrouching)
         {
-            speed /= 2;
-            speedValue /= 2;
+            //speed /= 2;
+            //speedValue /= 2;
 
-            canJump = false;
-            isCrouching = false;
+            //canJump = false;
+            //isCrouching = false;
 
-            Interract.SetActive(false);
+            //Interract.SetActive(false);
 
             isPulling = true;
         }
@@ -245,6 +245,7 @@ public class PlayerController : MonoBehaviour
             isPulling = false;
         }
     }
+
     public void Light(InputAction.CallbackContext context)
     {
         if (context.started && !isCrouching)

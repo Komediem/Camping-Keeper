@@ -41,6 +41,11 @@ public class PushPull : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             PushPullTrigger = true;
+
+            PlayerController.Instance.speed /= 2;
+            PlayerController.Instance.speedValue /= 2;
+
+            PlayerController.Instance.Interract.SetActive(false);
         }
     }
 
@@ -49,6 +54,9 @@ public class PushPull : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             PushPullTrigger = false;
+
+            PlayerController.Instance.speed = PlayerController.Instance.speedDefault;
+            PlayerController.Instance.speedValue = PlayerController.Instance.speedDefault;
         }
     }
 
@@ -63,7 +71,7 @@ public class PushPull : MonoBehaviour
         }
         else
         {
-            _child.transform.SetParent(null); // Setting the parent to ‘null’ unparents the GameObject and turns child into a top-level object in the hierarchy
+            _child.transform.SetParent(null); // Setting the parent to "null" unparents the GameObject and turns child into a top-level object in the hierarchy
         }
     }
 }
