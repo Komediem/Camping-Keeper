@@ -447,7 +447,7 @@ public class GamepadCursor : MonoBehaviour
         //Mouse.current.leftButton.IsPressed().Equals(Gamepad.current.aButton.isPressed);
         //Gamepad.current.aButton.IsPressed().Equals(Mouse.current.leftButton.isPressed);
 
-        Mouse.current.leftButton.pressPoint = Gamepad.current.buttonSouth.pressPoint;
+        //Mouse.current.leftButton.pressPoint = Gamepad.current.buttonSouth.pressPoint;
 
         //print("Mouse " + Mouse.current.leftButton.IsPressed());
         //print("Gamepad " + Gamepad.current.aButton.IsPressed());
