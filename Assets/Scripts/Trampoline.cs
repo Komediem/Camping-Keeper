@@ -17,7 +17,7 @@ public class Trampoline : MonoBehaviour
         {
             trampoBox.enabled = false;
 
-            print("Boing Boig Dayo");
+            print("Boing Boing Dayo");
         }
     }
 
