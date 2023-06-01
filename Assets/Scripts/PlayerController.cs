@@ -68,7 +68,6 @@ public class PlayerController : MonoBehaviour
 
         LightLantern = GameObject.Find("LightHitBox");
 
-
         rb = GetComponent<Rigidbody>();
 
         playerAnimator = GetComponentInChildren<Animator>();
@@ -228,7 +227,7 @@ public class PlayerController : MonoBehaviour
         if (context.performed && !isCrouching)
         {
             //speed /= 2;
-            //speedValue /= 2;
+            //speedValue /= 2;²
 
             //canJump = false;
             //isCrouching = false;

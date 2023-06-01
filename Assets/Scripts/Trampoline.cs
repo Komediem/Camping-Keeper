@@ -4,11 +4,20 @@ public class Trampoline : MonoBehaviour
 {
     public BoxCollider trampoBox;
 
+    private CharacterController controller;
+
+    private void Awake()
+    {
+        controller = GetComponent<CharacterController>();
+    }
+
     private void Update()
     {
-        if (PlayerController.Instance.canJump)
+        if (controller.isGrounded)
         {
             trampoBox.enabled = false;
+
+            print("Boing Boig Dayo");
         }
     }
 
