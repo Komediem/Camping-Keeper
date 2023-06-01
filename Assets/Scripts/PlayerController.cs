@@ -114,11 +114,17 @@ public class PlayerController : MonoBehaviour
             velocity.y = jumpSpeed * jumpHeight;
 
             canJump = false;
+            playerAnimator.SetBool("isJumping", true);
 
             print("Mercy is for the WEAK");
         }
+
         else
         {
+            if (controller.isGrounded)
+            {
+                playerAnimator.SetBool("isJumping", false);
+            }
             velocity.y -= gravity * 2 * Time.deltaTime;
         }
 
