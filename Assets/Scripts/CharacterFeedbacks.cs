@@ -26,7 +26,7 @@ public class CharacterFeedbacks : MonoBehaviour
 
     public void FallEffect()
     {
-        GameObject particleFall = Instantiate(fallParticle, stepPosition.position, Quaternion.identity);
+        GameObject particleFall = Instantiate(fallParticle, stepPosition.position, Quaternion.Euler(-90, 0, 0));
         Destroy(particleFall, 1);
     }
 }
