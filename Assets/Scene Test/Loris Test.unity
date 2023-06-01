@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 1828.5762, g: 1922.0625, b: 2263.121, a: 1}
+  m_IndirectSpecularColor: {r: 1733.0566, g: 1789.2305, b: 2047.5703, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -393,7 +393,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Path: {fileID: 1842245597}
-  m_PathPosition: 0.05436313
+  m_PathPosition: 0.19762819
   m_PositionUnits: 0
   m_PathOffset: {x: 0, y: 0, z: 0}
   m_XDamping: 0
@@ -578,7 +578,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 718115831}
-  m_LocalRotation: {x: -0.054064482, y: 0.697642, z: 0.1153068, w: 0.70503694}
+  m_LocalRotation: {x: 0.08238078, y: 0.7067991, z: -0.020858532, w: 0.7022916}
   m_LocalPosition: {x: -105.65, y: -123.02, z: -112.42}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -814,8 +814,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1010030755}
-  m_LocalRotation: {x: 0.24883038, y: 0.054112997, z: -0.013925415, w: 0.96693397}
-  m_LocalPosition: {x: -42.41149, y: 3.068451, z: -18.527252}
+  m_LocalRotation: {x: 0.20768303, y: -0.022271864, z: 0.0047298707, w: 0.9779312}
+  m_LocalPosition: {x: -40.864418, y: 2.0393524, z: -18.617287}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1655,8 +1655,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1686734590}
-  m_LocalRotation: {x: 0.24883038, y: 0.054112997, z: -0.013925415, w: 0.96693397}
-  m_LocalPosition: {x: -103.53466, y: -122.50381, z: -112.37484}
+  m_LocalRotation: {x: 0.20768303, y: -0.022271864, z: 0.0047298707, w: 0.9779312}
+  m_LocalPosition: {x: -101.98759, y: -123.532906, z: -112.464874}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1737,8 +1737,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 6394793874383655216}
   - {fileID: 1331702058}
+  - {fileID: 6394793874383655216}
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1844,10 +1844,18 @@ MonoBehaviour:
   m_Waypoints:
   - position: {x: -2, y: 0, z: 0}
     roll: 0
-  - position: {x: 32.52602, y: 6.9326377, z: -0.00000058559044}
+  - position: {x: 17, y: 0.4, z: 0}
+    roll: 90
+  - position: {x: 33.75, y: 7.6, z: 0}
     roll: 0
-  - position: {x: 49.458946, y: 3.4391184, z: -0.0000007251957}
+  - position: {x: 36, y: 1.15, z: 0}
     roll: 0
+  - position: {x: 41, y: 7.74, z: 0}
+    roll: 0
+  - position: {x: 47.5, y: 1.15, z: 0}
+    roll: 0
+  - position: {x: 57, y: 0, z: 0}
+    roll: 180
 --- !u!4 &1842245598
 Transform:
   m_ObjectHideFlags: 0
