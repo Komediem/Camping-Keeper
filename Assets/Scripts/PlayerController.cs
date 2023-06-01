@@ -85,7 +85,7 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        if (!lockMovements)
+            if (!lockMovements)
         {
             float x = movement;
             Vector3 move = transform.right * x;

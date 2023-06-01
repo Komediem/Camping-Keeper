@@ -10,6 +10,9 @@ public class PlayerMentalHealth : MonoBehaviour
     public float mentalHealth;
     public float maxMentalHealth;
 
+    //[SerializeField] [Range(1f, 10f)] public float VignettagePourcent;
+
+
     [SerializeField] private GameObject Vignettage;
 
     private void Awake()
