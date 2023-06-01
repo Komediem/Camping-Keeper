@@ -8,7 +8,7 @@ public class Trampoline : MonoBehaviour
 
     private void Awake()
     {
-        controller = GetComponent<CharacterController>();
+        controller = FindObjectOfType<CharacterController>();
     }
 
     private void Update()
