@@ -196,18 +196,25 @@ public class GamepadCursor : MonoBehaviour
         catch (System.Exception) { }
 
         // Remove virtual mouse and unsubscribe to events
-        if (virtualMouse != null && virtualMouse.added) InputSystem.RemoveDevice(virtualMouse);
+        if (virtualMouse != null && virtualMouse.added)
+        {
+            InputSystem.RemoveDevice(virtualMouse);
+        }
+
         InputSystem.onAfterUpdate -= UpdateMotion;
         playerInput.onControlsChanged -= OnControlsChange;
 
         // Hide virtual cursor sprite
-        if (cursorImage != null) cursorImage.enabled = false;
+        if (cursorImage != null)
+        {
+            cursorImage.enabled = false;
+        }
+
         isVirtualCursorVisible = false;
 
         // Show real cursor
         Cursor.visible = true;
     }
-
 
     private void OnControlsChange(PlayerInput obj)
     {
@@ -437,8 +444,8 @@ public class GamepadCursor : MonoBehaviour
         }
         else InputSystem.ResetHaptics();
 
-        Mouse.current.leftButton.IsPressed().Equals(Gamepad.current.aButton.isPressed);
-        Gamepad.current.aButton.IsPressed().Equals(Mouse.current.leftButton.isPressed);
+        //Mouse.current.leftButton.IsPressed().Equals(Gamepad.current.aButton.isPressed);
+        //Gamepad.current.aButton.IsPressed().Equals(Mouse.current.leftButton.isPressed);
 
         Mouse.current.leftButton.pressPoint = Gamepad.current.buttonSouth.pressPoint;
 
