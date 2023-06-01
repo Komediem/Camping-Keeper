@@ -68,7 +68,6 @@ public class PlayerController : MonoBehaviour
 
         LightLantern = GameObject.Find("LightHitBox");
 
-
         rb = GetComponent<Rigidbody>();
 
         playerAnimator = GetComponentInChildren<Animator>();
@@ -138,8 +137,8 @@ public class PlayerController : MonoBehaviour
             rb.velocity = pushDirection * 10f;
         }
     }
-    #region Input
 
+    #region Input
     public void Move(InputAction.CallbackContext context)
     {
         movement = context.ReadValue<float>();
@@ -228,7 +227,7 @@ public class PlayerController : MonoBehaviour
         if (context.performed && !isCrouching)
         {
             //speed /= 2;
-            //speedValue /= 2;
+            //speedValue /= 2;²
 
             //canJump = false;
             //isCrouching = false;
