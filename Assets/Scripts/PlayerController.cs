@@ -153,7 +153,7 @@ public class PlayerController : MonoBehaviour
             {
                 playerAnimator.SetBool("isJumping", false);
             }
-            velocity.y -= gravity;
+            velocity.y -= gravity * 2 * Time.deltaTime;
         }
 
         controller.Move(velocity * Time.deltaTime);

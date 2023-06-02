@@ -20,12 +20,22 @@ public class Menu : MonoBehaviour
 
     public bool isMenuActive = true;
 
-    private void Start() 
+    private void Start()
     {
         if (Instance) Destroy(this);
         else Instance = this;
 
-        if (SceneManager.GetActiveScene().buildIndex == 0)
+        if (SceneManager.GetActiveScene().buildIndex != 0)
+        {
+            MainMenu.SetActive(false);
+            MainButtons.SetActive(false);
+            OptionsWindow.SetActive(false);
+
+            isMenuActive = false;
+
+            PlayerController.Instance.lockMovements = false;
+        }
+        else
         {
             PlayerController.Instance.lockMovements = true;
 
@@ -37,16 +47,6 @@ public class Menu : MonoBehaviour
             Cursor.lockState = CursorLockMode.Confined;
 
             isMenuActive = true;
-        }
-        else
-        {
-            MainMenu.SetActive(false);
-            MainButtons.SetActive(false);
-            OptionsWindow.SetActive(false);
-
-            isMenuActive = false;
-
-            PlayerController.Instance.lockMovements = false;
         }
     }
 
