@@ -88,7 +88,15 @@ public class PlayerController : MonoBehaviour
         if (!lockMovements)
         {
             float x = movement;
-            Vector3 move = transform.right * x;
+            if(x > 0)
+            {
+                transform.rotation = Quaternion.Euler(0, 0, 0);
+            }
+            else if(x < 0)
+            {
+                transform.rotation = Quaternion.Euler(0, 180, 0);
+            }
+            Vector3 move = transform.right * Mathf.Abs(x);
 
             currentMoveVelocity = Vector3.SmoothDamp(currentMoveVelocity, move * speedValue, ref moveDampVelocity, moveSmoothTime);
 
@@ -129,7 +137,7 @@ public class PlayerController : MonoBehaviour
         }
 
         controller.Move(velocity * Time.deltaTime);
-
+        
         jumpSpeed = jumpDefault;
     }
 
