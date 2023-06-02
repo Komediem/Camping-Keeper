@@ -103,6 +103,7 @@ public class PauseMenu : MonoBehaviour
         Screen.fullScreen = SaveSystem.instance.isFulscreen;
 
         musicSlider.value = SaveSystem.instance.music;
+        GetComponent<AudioSource>().volume = SaveSystem.instance.music;
 
         Buttons.SetActive(false); //to make sure you can't click them while in the options menu
         OptionsWindow.SetActive(true); //options menu
