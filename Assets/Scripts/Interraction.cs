@@ -10,7 +10,6 @@ public class Interraction : MonoBehaviour
     public GameObject InterractTextCanvas;
     [Header("Script")]
     public PlayerController playerController;  
-    public Outline Outline;
     public PlayerTriggerDetection playerTriggerDetection;
 
     private void Start()
@@ -59,10 +58,3 @@ public class Interraction : MonoBehaviour
         }
     }
 }
-/*
-                       |-------------------------------------------------------------------|
-                       | - If player is Trigger && Hold input interraction                 |
-                       |                                                                   |
-                       | - Put object child player until he stop holding the input         |
-                       |-------------------------------------------------------------------|
-*/
