@@ -13,26 +13,30 @@ public class UITutos : MonoBehaviour
     {
         if(other.CompareTag("TutoJump"))
         {
-            tutoText.text = "Press " + "E" + " to Jump";
+            tutoText.text = "Press " + "Space Bar" + " to Jump";
             StartCoroutine(tutoTextSpawn());
+            other.GetComponent<BoxCollider>().enabled = false;
         }
 
         if(other.CompareTag("TutoPushPull"))
         {
-            tutoText.text = "Hold " + "Z" + " to Push";
+            tutoText.text = "Hold " + "Z" + " to Push or Pull";
             StartCoroutine(tutoTextSpawn());
+            other.GetComponent<BoxCollider>().enabled = false;
         }
 
         if(other.CompareTag("TutoCrouch"))
         {
             tutoText.text = "Press " + "C" + " to Crouch";
             StartCoroutine(tutoTextSpawn());
+            other.GetComponent<BoxCollider>().enabled = false;
         }
 
         if(other.CompareTag("TutoInteract"))
         {
             tutoText.text = "Press " + "E" + " to Interact";
             StartCoroutine(tutoTextSpawn());
+            other.GetComponent<BoxCollider>().enabled = false;
         }
     }
 
