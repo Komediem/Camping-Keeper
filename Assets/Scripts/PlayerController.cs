@@ -88,11 +88,11 @@ public class PlayerController : MonoBehaviour
         if (!lockMovements)
         {
             float x = movement;
-            if(x > 0)
+            if (x > 0)
             {
                 transform.rotation = Quaternion.Euler(0, 0, 0);
             }
-            else if(x < 0)
+            else if (x < 0)
             {
                 transform.rotation = Quaternion.Euler(0, 180, 0);
             }
@@ -106,11 +106,18 @@ public class PlayerController : MonoBehaviour
 
             if (movement != 0)
             {
-                playerAnimator.SetBool("isWalking", true);
+                if (isCrouching)
+                {
+                    playerAnimator.SetBool("isCrouchWalking", true);
+                }
+                else playerAnimator.SetBool("isWalking", true);
+
             }
             else
             {
                 playerAnimator.SetBool("isWalking", false);
+
+                playerAnimator.SetBool("isCrouchWalking", false);
             }
         }
     }
@@ -208,15 +215,6 @@ public class PlayerController : MonoBehaviour
                     controller.center = new(0, 0.6f, 0);
 
                     playerAnimator.SetBool("isCrouching", true);
-
-                    if (movement != 0)
-                    {
-                        playerAnimator.SetBool("isCrouchWalking", true);
-                    }
-                    else
-                    {
-                        playerAnimator.SetBool("isCrouchWalking", false);
-                    }
 
                     //needs to be unable to stun
                     //collider gets smaller
