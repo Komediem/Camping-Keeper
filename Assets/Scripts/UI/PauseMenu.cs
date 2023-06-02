@@ -7,6 +7,8 @@ public class PauseMenu : MonoBehaviour
 {
     public static PauseMenu Instance;
 
+    public GameObject virtualCursor;
+    [Space]
     public static bool gameIsPaused;
 
     public AudioSource audioSource;
@@ -58,7 +60,7 @@ public class PauseMenu : MonoBehaviour
         Buttons.SetActive(true);
         OptionsWindow.SetActive(false);
 
-        EventSystem.current.SetSelectedGameObject(Buttons.transform.GetChild(0).gameObject);
+        virtualCursor.SetActive(true);
 
         Time.timeScale = 0;
 
@@ -72,6 +74,8 @@ public class PauseMenu : MonoBehaviour
     {
         pauseMenu.SetActive(false);
         Buttons.SetActive(false);
+
+        virtualCursor.SetActive(false);
 
         Time.timeScale = 1;
 

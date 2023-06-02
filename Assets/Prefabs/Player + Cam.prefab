@@ -385,6 +385,7 @@ GameObject:
   - component: {fileID: 4292055377032961787}
   - component: {fileID: 4292055377032961778}
   - component: {fileID: 1885791655}
+  - component: {fileID: 1056455556}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -673,6 +674,20 @@ MonoBehaviour:
   mentalHealth: 0
   maxMentalHealth: 0
   Vignettage: {fileID: 0}
+--- !u!114 &1056455556
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4292055377032961779}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34f7f9a23b83f0e449e55fba6527c864, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tutoText: {fileID: 0}
+  tutoTextObject: {fileID: 0}
 --- !u!1 &5191240746514114675
 GameObject:
   m_ObjectHideFlags: 0
@@ -833,6 +848,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7595275987823104919, guid: feea049bdb166234bb979ccf1c6a787f, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 030ee669b624cb9489666202fba1ee08, type: 2}
     - target: {fileID: 919132149155446097, guid: feea049bdb166234bb979ccf1c6a787f, type: 3}
       propertyPath: m_Name
       value: Chara_rigged

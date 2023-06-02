@@ -227,7 +227,7 @@ public class PlayerController : MonoBehaviour
 
     public void Pause(InputAction.CallbackContext context)
     {
-        if (context.performed)
+        if (context.performed || !Menu.Instance.MainMenu)
         {
             PauseMenu.Instance.PauseGame();
         }
@@ -295,7 +295,7 @@ public class PlayerController : MonoBehaviour
             print("wawawa");
         }
 
-        if (collision.CompareTag("Trampoline"))
+        if (collision.CompareTag("Trampoline") && collision.GetComponent<BoxCollider>().enabled)
         {
             if (isCrouching)
             {

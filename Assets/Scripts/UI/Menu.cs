@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class Menu : MonoBehaviour
@@ -10,7 +9,9 @@ public class Menu : MonoBehaviour
 
     public GameObject MainButtons;
     public GameObject OptionsWindow;
+
     [Space]
+
     public Toggle fullscreenToggle;
 
     public new AudioSource audio; //musica !!
@@ -30,7 +31,7 @@ public class Menu : MonoBehaviour
 
         Cursor.lockState = CursorLockMode.Confined;
 
-        EventSystem.current.SetSelectedGameObject(MainButtons.transform.GetChild(0).gameObject);
+        //EventSystem.current.SetSelectedGameObject(MainButtons.transform.GetChild(0).gameObject);
     }
 
     public void StartGame() //new game or continue from save
@@ -67,7 +68,7 @@ public class Menu : MonoBehaviour
         MainButtons.SetActive(false); //to make sure you can't click them while in the options menu
         OptionsWindow.SetActive(true); //options menu
 
-        EventSystem.current.SetSelectedGameObject(OptionsWindow.transform.GetChild(0).gameObject);
+        //EventSystem.current.SetSelectedGameObject(OptionsWindow.transform.GetChild(0).gameObject);
     }
 
     public void FullScreen()
