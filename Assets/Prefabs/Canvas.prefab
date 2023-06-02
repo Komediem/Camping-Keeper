@@ -559,7 +559,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 4
+    m_Mode: 0
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 4272810012305303613}
     m_SelectOnDown: {fileID: 4272810012785028552}
@@ -1285,7 +1285,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 4
+    m_Mode: 0
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 4272810011810646666}
     m_SelectOnDown: {fileID: 4272810012515353698}
@@ -1337,6 +1337,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4272810011805823543}
+  - component: {fileID: 8536794177643265104}
   m_Layer: 5
   m_Name: Pause Menu
   m_TagString: Untagged
@@ -1368,6 +1369,20 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &8536794177643265104
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4272810011805823536}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef5dd94b591279440bd6fb4154c8a30f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  input: {fileID: 0}
+  virtualCursor: {fileID: 0}
 --- !u!1 &4272810011810646772
 GameObject:
   m_ObjectHideFlags: 0
@@ -1459,7 +1474,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 4
+    m_Mode: 0
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 4272810012515353698}
     m_SelectOnDown: {fileID: 4272810011765321298}
@@ -1788,7 +1803,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 4
+    m_Mode: 0
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 4272810012416279249}
     m_SelectOnDown: {fileID: 4272810010878569270}
@@ -1890,7 +1905,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 4
+    m_Mode: 0
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 4272810012785028552}
     m_SelectOnDown: {fileID: 4272810012305303613}
@@ -2163,7 +2178,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 4
+    m_Mode: 0
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 4272810011765321298}
     m_SelectOnDown: {fileID: 4272810011810646666}
@@ -2341,6 +2356,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54a3aaa7cf8a7e84b903e2539507be7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  virtualCursor: {fileID: 0}
   audioSource: {fileID: 4272810012536966950}
   pauseMenu: {fileID: 4272810011805823536}
   Buttons: {fileID: 4272810010947823810}
@@ -2881,7 +2897,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 4
+    m_Mode: 0
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 4272810010878569270}
     m_SelectOnDown: {fileID: 4272810012416279249}

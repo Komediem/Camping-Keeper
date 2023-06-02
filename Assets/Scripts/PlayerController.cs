@@ -81,12 +81,20 @@ public class PlayerController : MonoBehaviour
         jumpDefault = jumpSpeed;
 
         Interract.SetActive(false);
+        
         LightLantern.SetActive(false);
+        
         isPulling = false;
     }
 
     void Update()
     {
+        if (Menu.Instance.isMenuActive)
+        {
+            //player animation in the menu
+            print("hello there");
+        }
+
         if (!lockMovements)
         {
             float x = movement;
@@ -227,7 +235,7 @@ public class PlayerController : MonoBehaviour
 
     public void Pause(InputAction.CallbackContext context)
     {
-        if (context.performed || !Menu.Instance.MainMenu)
+        if (context.performed && !Menu.Instance.isMenuActive)
         {
             PauseMenu.Instance.PauseGame();
         }
