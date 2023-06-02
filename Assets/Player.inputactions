@@ -340,7 +340,7 @@
                 },
                 {
                     "name": "Submit",
-                    "type": "Button",
+                    "type": "PassThrough",
                     "id": "ca791f7c-32b9-4c33-ab7c-8b23637b4a40",
                     "expectedControlType": "Button",
                     "processors": "",
@@ -349,7 +349,7 @@
                 },
                 {
                     "name": "Cancel",
-                    "type": "Button",
+                    "type": "PassThrough",
                     "id": "7c5b2179-e88d-4cfd-bfb3-2a822856544e",
                     "expectedControlType": "Button",
                     "processors": "",
@@ -458,6 +458,17 @@
                     "name": "",
                     "id": "986e8e9c-3032-444e-981a-b7e16a707232",
                     "path": "<Keyboard>/enter",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "Submit",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "d3af6677-49d1-40b9-a66c-4273dfe5feb5",
+                    "path": "<Mouse>/leftButton",
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard&Mouse",
@@ -645,6 +656,17 @@
                     "name": "",
                     "id": "eac79b66-0f93-471f-bda6-6cbf641420c3",
                     "path": "<VirtualMouse>/position",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "Point",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "6e7e37c1-6710-4601-a137-4166b2104182",
+                    "path": "<Gamepad>/leftStick",
                     "interactions": "",
                     "processors": "",
                     "groups": "Gamepad",

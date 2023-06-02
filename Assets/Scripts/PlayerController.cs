@@ -121,7 +121,6 @@ public class PlayerController : MonoBehaviour
                     playerAnimator.SetBool("isCrouchWalking", true);
                 }
                 else playerAnimator.SetBool("isWalking", true);
-
             }
             else
             {
@@ -150,7 +149,7 @@ public class PlayerController : MonoBehaviour
             {
                 playerAnimator.SetBool("isJumping", false);
             }
-            velocity.y -= gravity * 2 * Time.deltaTime;
+            velocity.y -= gravity;
         }
 
         controller.Move(velocity * Time.deltaTime);
@@ -227,7 +226,6 @@ public class PlayerController : MonoBehaviour
                     playerAnimator.SetBool("isCrouching", true);
 
                     //needs to be unable to stun
-                    //collider gets smaller
                 }
             }
         }
