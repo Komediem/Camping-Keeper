@@ -1,13 +1,13 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class MenuCheck : MonoBehaviour
 {
     public GameObject MainMenu;
 
-    private void Awake()
+    private void Start()
     {
         MainMenu.SetActive(false);
+
+        Menu.Instance.StartGame();
     }
 }

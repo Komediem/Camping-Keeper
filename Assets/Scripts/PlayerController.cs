@@ -1,5 +1,6 @@
 using UnityEngine.InputSystem;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -94,7 +95,7 @@ public class PlayerController : MonoBehaviour
             if (Menu.Instance.isMenuActive)
             {
                 //player animation in the menu
-                print("hello there");
+                print("Menu Anim");
             }
         }
 
@@ -236,9 +237,16 @@ public class PlayerController : MonoBehaviour
 
     public void Pause(InputAction.CallbackContext context)
     {
-        if (context.performed && !Menu.Instance.isMenuActive)
+        if (context.performed)
         {
-            PauseMenu.Instance.PauseGame();
+            if (SceneManager.GetActiveScene().buildIndex != 0)
+            {
+                PauseMenu.Instance.PauseGame();
+            }
+            else if (!Menu.Instance.isMenuActive)
+            {
+                PauseMenu.Instance.PauseGame();
+            }
         }
     }
 
