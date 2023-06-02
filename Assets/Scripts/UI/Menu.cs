@@ -1,45 +1,55 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
-using UnityEngine.SceneManagement;
-using System.IO;
 using UnityEngine.UI;
 
 public class Menu : MonoBehaviour
 {
     public static Menu Instance;
 
+    public GameObject MainMenu;
+
+    public GameObject MainButtons;
+    public GameObject OptionsWindow;
+    [Space]
     public Toggle fullscreenToggle;
 
     public new AudioSource audio; //musica !!
     public Slider musicSlider;
-
-    public GameObject Buttons;
-    public GameObject OptionsWindow;
 
     private void Start() 
     {
         if (Instance) Destroy(this);
         else Instance = this;
 
+        PlayerController.Instance.lockMovements = true;
+
         //to make sure there is no problem on start
-        Buttons.SetActive(true);
+        MainMenu.SetActive(true);
+        MainButtons.SetActive(true);
         OptionsWindow.SetActive(false);
 
-        Cursor.visible = true;
         Cursor.lockState = CursorLockMode.Confined;
 
-        EventSystem.current.SetSelectedGameObject(Buttons.transform.GetChild(0).gameObject);
+        EventSystem.current.SetSelectedGameObject(MainButtons.transform.GetChild(0).gameObject);
     }
 
     public void StartGame() //new game or continue from save
     {
+        OptionsWindow.SetActive(false);
+        MainButtons.SetActive(false);
+        MainMenu.SetActive(false);
+
         SaveSystem.instance.Load();
 
-        SceneManager.LoadScene(SaveSystem.instance._lvl);
+        //SceneManager.LoadScene(SaveSystem.instance._lvl);
+
+        PlayerController.Instance.lockMovements = false;
     }
 
-     public void ExitGame() //close App
+    public void ExitGame() //close App
      {
+        Application.OpenURL("https://artfx.school/");
+
         Application.Quit();
      }
 
@@ -52,9 +62,12 @@ public class Menu : MonoBehaviour
         Screen.fullScreen = SaveSystem.instance.isFulscreen;
 
         musicSlider.value = SaveSystem.instance.music;
+        audio.volume = SaveSystem.instance.music;
 
-        Buttons.SetActive(false); //to make sure you can't click them while in the options menu
+        MainButtons.SetActive(false); //to make sure you can't click them while in the options menu
         OptionsWindow.SetActive(true); //options menu
+
+        EventSystem.current.SetSelectedGameObject(OptionsWindow.transform.GetChild(0).gameObject);
     }
 
     public void FullScreen()
@@ -77,7 +90,7 @@ public class Menu : MonoBehaviour
         SaveSystem.instance.SaveOptions(); //save options when closing the options menu
 
         OptionsWindow.SetActive(false);
-        Buttons.SetActive(true);
+        MainButtons.SetActive(true);
     }
 
     public void ResetOptionsDefault()
@@ -86,5 +99,6 @@ public class Menu : MonoBehaviour
         Screen.fullScreen = true;
 
         musicSlider.value = musicSlider.maxValue;
+        audio.volume = musicSlider.maxValue;
     }
 }
