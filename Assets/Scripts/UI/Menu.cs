@@ -48,7 +48,7 @@ public class Menu : MonoBehaviour
 
     public void ExitGame() //close App
      {
-        Application.OpenURL("https://www.google.com");
+        Application.OpenURL("https://artfx.school/");
 
         Application.Quit();
      }
@@ -99,5 +99,6 @@ public class Menu : MonoBehaviour
         Screen.fullScreen = true;
 
         musicSlider.value = musicSlider.maxValue;
+        audio.volume = musicSlider.maxValue;
     }
 }
