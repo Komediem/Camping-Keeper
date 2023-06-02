@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class Menu : MonoBehaviour
@@ -24,16 +25,29 @@ public class Menu : MonoBehaviour
         if (Instance) Destroy(this);
         else Instance = this;
 
-        PlayerController.Instance.lockMovements = true;
+        if (SceneManager.GetActiveScene().buildIndex == 0)
+        {
+            PlayerController.Instance.lockMovements = true;
 
-        //to make sure there is no problem on start
-        MainMenu.SetActive(true);
-        MainButtons.SetActive(true);
-        OptionsWindow.SetActive(false);
+            //to make sure there is no problem on start
+            MainMenu.SetActive(true);
+            MainButtons.SetActive(true);
+            OptionsWindow.SetActive(false);
 
-        Cursor.lockState = CursorLockMode.Confined;
+            Cursor.lockState = CursorLockMode.Confined;
 
-        isMenuActive = true;
+            isMenuActive = true;
+        }
+        else
+        {
+            MainMenu.SetActive(false);
+            MainButtons.SetActive(false);
+            OptionsWindow.SetActive(false);
+
+            isMenuActive = false;
+
+            PlayerController.Instance.lockMovements = false;
+        }
     }
 
     public void StartGame() //new game or continue from save
