@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class Menu : MonoBehaviour
@@ -17,21 +18,36 @@ public class Menu : MonoBehaviour
     public new AudioSource audio; //musica !!
     public Slider musicSlider;
 
+    public bool isMenuActive = true;
+
     private void Start() 
     {
         if (Instance) Destroy(this);
         else Instance = this;
 
-        PlayerController.Instance.lockMovements = true;
+        if (SceneManager.GetActiveScene().buildIndex == 0)
+        {
+            PlayerController.Instance.lockMovements = true;
 
-        //to make sure there is no problem on start
-        MainMenu.SetActive(true);
-        MainButtons.SetActive(true);
-        OptionsWindow.SetActive(false);
+            //to make sure there is no problem on start
+            MainMenu.SetActive(true);
+            MainButtons.SetActive(true);
+            OptionsWindow.SetActive(false);
 
-        Cursor.lockState = CursorLockMode.Confined;
+            Cursor.lockState = CursorLockMode.Confined;
 
-        //EventSystem.current.SetSelectedGameObject(MainButtons.transform.GetChild(0).gameObject);
+            isMenuActive = true;
+        }
+        else
+        {
+            MainMenu.SetActive(false);
+            MainButtons.SetActive(false);
+            OptionsWindow.SetActive(false);
+
+            isMenuActive = false;
+
+            PlayerController.Instance.lockMovements = false;
+        }
     }
 
     public void StartGame() //new game or continue from save
@@ -44,11 +60,15 @@ public class Menu : MonoBehaviour
 
         //SceneManager.LoadScene(SaveSystem.instance._lvl);
 
+        isMenuActive = false;
+
         PlayerController.Instance.lockMovements = false;
     }
 
     public void ExitGame() //close App
      {
+        isMenuActive = false;
+
         Application.OpenURL("https://artfx.school/");
 
         Application.Quit();

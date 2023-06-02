@@ -1,5 +1,6 @@
 using UnityEngine.InputSystem;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -75,16 +76,29 @@ public class PlayerController : MonoBehaviour
 
     private void Start()
     {
+        Application.targetFrameRate = Screen.currentResolution.refreshRate;
+
         speedDefault = speed;
         jumpDefault = jumpSpeed;
 
         Interract.SetActive(false);
+        
         LightLantern.SetActive(false);
+        
         isPulling = false;
     }
 
     void Update()
     {
+        if (Menu.Instance != null)
+        {
+            if (Menu.Instance.isMenuActive)
+            {
+                //player animation in the menu
+                print("Menu Anim");
+            }
+        }
+
         if (!lockMovements)
         {
             float x = movement;
@@ -111,7 +125,6 @@ public class PlayerController : MonoBehaviour
                     playerAnimator.SetBool("isCrouchWalking", true);
                 }
                 else playerAnimator.SetBool("isWalking", true);
-
             }
             else
             {
@@ -140,7 +153,7 @@ public class PlayerController : MonoBehaviour
             {
                 playerAnimator.SetBool("isJumping", false);
             }
-            velocity.y -= gravity * 2 * Time.deltaTime;
+            velocity.y -= gravity;
         }
 
         controller.Move(velocity * Time.deltaTime);
@@ -217,7 +230,6 @@ public class PlayerController : MonoBehaviour
                     playerAnimator.SetBool("isCrouching", true);
 
                     //needs to be unable to stun
-                    //collider gets smaller
                 }
             }
         }
@@ -225,9 +237,16 @@ public class PlayerController : MonoBehaviour
 
     public void Pause(InputAction.CallbackContext context)
     {
-        if (context.performed || !Menu.Instance.MainMenu)
+        if (context.performed)
         {
-            PauseMenu.Instance.PauseGame();
+            if (SceneManager.GetActiveScene().buildIndex != 0)
+            {
+                PauseMenu.Instance.PauseGame();
+            }
+            else if (!Menu.Instance.isMenuActive)
+            {
+                PauseMenu.Instance.PauseGame();
+            }
         }
     }
 
