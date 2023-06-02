@@ -89,10 +89,13 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        if (Menu.Instance.isMenuActive)
+        if (Menu.Instance != null)
         {
-            //player animation in the menu
-            print("hello there");
+            if (Menu.Instance.isMenuActive)
+            {
+                //player animation in the menu
+                print("hello there");
+            }
         }
 
         if (!lockMovements)
