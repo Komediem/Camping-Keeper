@@ -182,12 +182,10 @@ public class GamepadCursor : MonoBehaviour
 
         // Inactive time
         inactiveTime = inactiveHideTime;
-
     }
 
     private void OnDisable()
     {
-
         // Remove ftom the list
         try
         {
@@ -302,6 +300,7 @@ public class GamepadCursor : MonoBehaviour
             if (leftValue.x != 0 || leftValue.y != 0) deltaValue = leftValue;
             else deltaValue = Gamepad.current.rightStick.ReadValue();
         }
+
         deltaValue = new Vector2(Smooth(deltaValue.x), Smooth(deltaValue.y));
         deltaValue *= cursorSpeed * Time.unscaledDeltaTime;
 
@@ -451,6 +450,7 @@ public class GamepadCursor : MonoBehaviour
 
         //print("Mouse " + Mouse.current.leftButton.IsPressed());
         //print("Gamepad " + Gamepad.current.aButton.IsPressed());
-        print("ahaha " + Gamepad.current.buttonSouth.ReadValue());
+
+        print("Gamepad Value : " + Gamepad.current.buttonSouth.ReadValue());
     }
 }
