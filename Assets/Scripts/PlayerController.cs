@@ -75,6 +75,8 @@ public class PlayerController : MonoBehaviour
 
     private void Start()
     {
+        Application.targetFrameRate = Screen.currentResolution.refreshRate;
+
         speedDefault = speed;
         jumpDefault = jumpSpeed;
 
