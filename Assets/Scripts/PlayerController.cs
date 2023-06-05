@@ -1,5 +1,5 @@
-using UnityEngine.InputSystem;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
@@ -7,8 +7,6 @@ public class PlayerController : MonoBehaviour
     public static PlayerController Instance;
 
     private CharacterController controller;
-
-    public PushPull pushPull;
 
     public Rigidbody rb;
 
@@ -250,15 +248,6 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    public void Interaction(InputAction.CallbackContext context)
-    {
-        if (context.started && !isCrouching)
-        {
-            Interract.SetActive(true);
-            Invoke("InteractStop", 0.2f);
-        }
-    }
-
     public void Pull(InputAction.CallbackContext context)
     {
         if (context.performed && !isCrouching)
@@ -279,6 +268,15 @@ public class PlayerController : MonoBehaviour
             speedValue = speedDefault;
 
             isPulling = false;
+        }
+    }
+
+    public void Interaction(InputAction.CallbackContext context)
+    {
+        if (context.started && !isCrouching)
+        {
+            Interract.SetActive(true);
+            Invoke("InteractStop", 0.2f);
         }
     }
 
