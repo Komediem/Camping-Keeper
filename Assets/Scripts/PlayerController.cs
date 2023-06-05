@@ -57,6 +57,8 @@ public class PlayerController : MonoBehaviour
 
     public bool isPulling = false;
 
+    public bool PushPullTrigger;
+
     private void Awake()
     {
         if (Instance) Destroy(this);
@@ -84,6 +86,7 @@ public class PlayerController : MonoBehaviour
         LightLantern.SetActive(false);
 
         isPulling = false;
+        PushPullTrigger = false;
     }
 
     void Update()
@@ -102,14 +105,16 @@ public class PlayerController : MonoBehaviour
             //if(!controller.isGrounded) velocity.y -= gravity * 2 * Time.deltaTime;
 
             float x = movement;
-
-            if (x > 0)
-            {
-                transform.rotation = Quaternion.Euler(0, 0, 0);
-            }
-            else if (x < 0)
-            {
-                transform.rotation = Quaternion.Euler(0, 180, 0);
+            if (!PushPullTrigger) 
+            { 
+                if (x > 0)
+                {
+                    transform.rotation = Quaternion.Euler(0, 0, 0);
+                }
+                else if (x < 0)
+                {
+                    transform.rotation = Quaternion.Euler(0, 180, 0);
+                }
             }
 
             Vector3 move = transform.right * Mathf.Abs(x);
@@ -134,6 +139,7 @@ public class PlayerController : MonoBehaviour
 
                 playerAnimator.SetBool("isCrouchWalking", false);
             }
+            print(currentMoveVelocity);
         }
 
         print("velocity : " + velocity);
