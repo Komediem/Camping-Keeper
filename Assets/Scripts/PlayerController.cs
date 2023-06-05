@@ -80,9 +80,9 @@ public class PlayerController : MonoBehaviour
         jumpDefault = jumpSpeed;
 
         Interract.SetActive(false);
-        
+
         LightLantern.SetActive(false);
-        
+
         isPulling = false;
     }
 
@@ -99,6 +99,8 @@ public class PlayerController : MonoBehaviour
 
         if (!lockMovements)
         {
+            //if(!controller.isGrounded) velocity.y -= gravity * 2 * Time.deltaTime;
+
             float x = movement;
 
             if (x > 0)
@@ -133,6 +135,8 @@ public class PlayerController : MonoBehaviour
                 playerAnimator.SetBool("isCrouchWalking", false);
             }
         }
+
+        print("velocity : " + velocity);
     }
 
     void CheckJump()
@@ -146,18 +150,26 @@ public class PlayerController : MonoBehaviour
 
             print("Mercy is for the WEAK");
         }
-
         else
         {
             if (controller.isGrounded)
             {
                 playerAnimator.SetBool("isJumping", false);
+
+                velocity.y = -1f;
+
+                print("kill me");
             }
-            velocity.y -= gravity * 2 * Time.deltaTime;
+            else
+            {
+                velocity.y -= gravity * 2 * Time.deltaTime;
+
+                print("go down");
+            }
         }
 
         controller.Move(velocity * Time.deltaTime);
-        
+
         jumpSpeed = jumpDefault;
     }
 
@@ -287,6 +299,7 @@ public class PlayerController : MonoBehaviour
         if (context.started && !isCrouching)
         {
             LightLantern.SetActive(true);
+
             //play animation faire attention au moment ou la light se coupe
             Invoke("LightStop", LightTime);
         }
@@ -308,9 +321,9 @@ public class PlayerController : MonoBehaviour
     {
         if (collision.CompareTag("Roof"))
         {
-            velocity.y -= gravity;
+            //velocity.y -= gravity * 2 * Time.deltaTime;
 
-            print("wawawa");
+            //print("Roof");
         }
 
         if (collision.CompareTag("Trampoline") && collision.GetComponent<BoxCollider>().enabled)
@@ -323,7 +336,7 @@ public class PlayerController : MonoBehaviour
 
                 //Character Controller size
 
-                print("Redacted");
+                //print("crouch trampoline");
             }
             else if (controller.isGrounded && !canJump)
             {
@@ -331,7 +344,7 @@ public class PlayerController : MonoBehaviour
 
                 canJump = true;
 
-                print("WeeWoo");
+                //print("trampoline");
             }
         }
     }

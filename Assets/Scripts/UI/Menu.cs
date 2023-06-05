@@ -69,8 +69,10 @@ public class Menu : MonoBehaviour
      {
         isMenuActive = false;
 
-        Application.OpenURL("https://artfx.school/");
+        //Application.OpenURL("https://artfx.school/");
 
+        ScreenCapture.CaptureScreenshot(Application.persistentDataPath + ".png");
+        
         Application.Quit();
      }
 
