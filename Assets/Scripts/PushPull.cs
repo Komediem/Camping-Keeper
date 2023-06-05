@@ -1,10 +1,9 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.XR;
 
 public class PushPull : MonoBehaviour
 {
-    public bool PushPullTrigger;
-
     [Header("Don't need to assign :")]
     [SerializeField] private GameObject Player;
     [SerializeField] private GameObject _child;
@@ -17,7 +16,7 @@ public class PushPull : MonoBehaviour
 
     void Start()
     {
-        PushPullTrigger = false;
+        
     }
 
     void Update()
@@ -30,7 +29,7 @@ public class PushPull : MonoBehaviour
 
     public void PullPush()
     {
-        if (PushPullTrigger)
+        if (PlayerController.Instance.PushPullTrigger)
         {
             Pull();
         }
@@ -40,8 +39,7 @@ public class PushPull : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            PushPullTrigger = true;
-
+            PlayerController.Instance.PushPullTrigger = true;
             PlayerController.Instance.speed /= 2;
             PlayerController.Instance.speedValue /= 2;
 
@@ -53,7 +51,7 @@ public class PushPull : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            PushPullTrigger = false;
+            PlayerController.Instance.PushPullTrigger = false;
 
             PlayerController.Instance.speed = PlayerController.Instance.speedDefault;
             PlayerController.Instance.speedValue = PlayerController.Instance.speedDefault;
