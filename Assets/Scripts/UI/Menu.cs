@@ -20,12 +20,22 @@ public class Menu : MonoBehaviour
 
     public bool isMenuActive = true;
 
-    private void Start() 
+    private void Start()
     {
         if (Instance) Destroy(this);
         else Instance = this;
 
-        if (SceneManager.GetActiveScene().buildIndex == 0)
+        if (SceneManager.GetActiveScene().buildIndex != 0)
+        {
+            MainMenu.SetActive(false);
+            MainButtons.SetActive(false);
+            OptionsWindow.SetActive(false);
+
+            isMenuActive = false;
+
+            PlayerController.Instance.lockMovements = false;
+        }
+        else
         {
             PlayerController.Instance.lockMovements = true;
 
@@ -37,16 +47,6 @@ public class Menu : MonoBehaviour
             Cursor.lockState = CursorLockMode.Confined;
 
             isMenuActive = true;
-        }
-        else
-        {
-            MainMenu.SetActive(false);
-            MainButtons.SetActive(false);
-            OptionsWindow.SetActive(false);
-
-            isMenuActive = false;
-
-            PlayerController.Instance.lockMovements = false;
         }
     }
 
@@ -69,8 +69,10 @@ public class Menu : MonoBehaviour
      {
         isMenuActive = false;
 
-        Application.OpenURL("https://artfx.school/");
+        //Application.OpenURL("https://artfx.school/");
 
+        ScreenCapture.CaptureScreenshot(Application.persistentDataPath + ".png");
+        
         Application.Quit();
      }
 
@@ -87,8 +89,6 @@ public class Menu : MonoBehaviour
 
         MainButtons.SetActive(false); //to make sure you can't click them while in the options menu
         OptionsWindow.SetActive(true); //options menu
-
-        //EventSystem.current.SetSelectedGameObject(OptionsWindow.transform.GetChild(0).gameObject);
     }
 
     public void FullScreen()

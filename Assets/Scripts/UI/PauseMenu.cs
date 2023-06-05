@@ -95,7 +95,7 @@ public class PauseMenu : MonoBehaviour
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.Confined;
 
-        SceneManager.LoadScene("Menu");
+        SceneManager.LoadScene(0);
     }
 
     /// Options Window

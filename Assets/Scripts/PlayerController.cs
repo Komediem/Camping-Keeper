@@ -1,5 +1,5 @@
-using UnityEngine.InputSystem;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
@@ -7,8 +7,6 @@ public class PlayerController : MonoBehaviour
     public static PlayerController Instance;
 
     private CharacterController controller;
-
-    public PushPull pushPull;
 
     public Rigidbody rb;
 
@@ -59,6 +57,8 @@ public class PlayerController : MonoBehaviour
 
     public bool isPulling = false;
 
+    public bool PushPullTrigger;
+
     private void Awake()
     {
         if (Instance) Destroy(this);
@@ -82,10 +82,11 @@ public class PlayerController : MonoBehaviour
         jumpDefault = jumpSpeed;
 
         Interract.SetActive(false);
-        
+
         LightLantern.SetActive(false);
-        
+
         isPulling = false;
+        PushPullTrigger = false;
     }
 
     void Update()
@@ -95,21 +96,27 @@ public class PlayerController : MonoBehaviour
             if (Menu.Instance.isMenuActive)
             {
                 //player animation in the menu
-                print("Menu Anim");
+                //print("Menu Anim");
             }
         }
 
         if (!lockMovements)
         {
+            //if(!controller.isGrounded) velocity.y -= gravity * 2 * Time.deltaTime;
+
             float x = movement;
-            if (x > 0)
-            {
-                transform.rotation = Quaternion.Euler(0, 0, 0);
+            if (!PushPullTrigger) 
+            { 
+                if (x > 0)
+                {
+                    transform.rotation = Quaternion.Euler(0, 0, 0);
+                }
+                else if (x < 0)
+                {
+                    transform.rotation = Quaternion.Euler(0, 180, 0);
+                }
             }
-            else if (x < 0)
-            {
-                transform.rotation = Quaternion.Euler(0, 180, 0);
-            }
+
             Vector3 move = transform.right * Mathf.Abs(x);
 
             currentMoveVelocity = Vector3.SmoothDamp(currentMoveVelocity, move * speedValue, ref moveDampVelocity, moveSmoothTime);
@@ -132,7 +139,10 @@ public class PlayerController : MonoBehaviour
 
                 playerAnimator.SetBool("isCrouchWalking", false);
             }
+            print(currentMoveVelocity);
         }
+
+        print("velocity : " + velocity);
     }
 
     void CheckJump()
@@ -146,18 +156,26 @@ public class PlayerController : MonoBehaviour
 
             print("Mercy is for the WEAK");
         }
-
         else
         {
             if (controller.isGrounded)
             {
                 playerAnimator.SetBool("isJumping", false);
+
+                velocity.y = -1f;
+
+                print("kill me");
             }
-            velocity.y -= gravity;
+            else
+            {
+                velocity.y -= gravity * 2 * Time.deltaTime;
+
+                print("go down");
+            }
         }
 
         controller.Move(velocity * Time.deltaTime);
-        
+
         jumpSpeed = jumpDefault;
     }
 
@@ -250,15 +268,6 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    public void Interaction(InputAction.CallbackContext context)
-    {
-        if (context.started && !isCrouching)
-        {
-            Interract.SetActive(true);
-            Invoke("InteractStop", 0.2f);
-        }
-    }
-
     public void Pull(InputAction.CallbackContext context)
     {
         if (context.performed && !isCrouching)
@@ -282,11 +291,21 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    public void Interaction(InputAction.CallbackContext context)
+    {
+        if (context.started && !isCrouching)
+        {
+            Interract.SetActive(true);
+            Invoke("InteractStop", 0.2f);
+        }
+    }
+
     public void Light(InputAction.CallbackContext context)
     {
         if (context.started && !isCrouching)
         {
             LightLantern.SetActive(true);
+
             //play animation faire attention au moment ou la light se coupe
             Invoke("LightStop", LightTime);
         }
@@ -298,6 +317,7 @@ public class PlayerController : MonoBehaviour
     {
         Interract.SetActive(false);
     }
+
     private void LightStop()
     {
         Interract.SetActive(false);
@@ -307,9 +327,9 @@ public class PlayerController : MonoBehaviour
     {
         if (collision.CompareTag("Roof"))
         {
-            velocity.y -= gravity;
+            //velocity.y -= gravity * 2 * Time.deltaTime;
 
-            print("wawawa");
+            //print("Roof");
         }
 
         if (collision.CompareTag("Trampoline") && collision.GetComponent<BoxCollider>().enabled)
@@ -322,7 +342,7 @@ public class PlayerController : MonoBehaviour
 
                 //Character Controller size
 
-                print("Redacted");
+                //print("crouch trampoline");
             }
             else if (controller.isGrounded && !canJump)
             {
@@ -330,7 +350,7 @@ public class PlayerController : MonoBehaviour
 
                 canJump = true;
 
-                print("WeeWoo");
+                //print("trampoline");
             }
         }
     }
