@@ -87,8 +87,6 @@ public class Menu : MonoBehaviour
 
         MainButtons.SetActive(false); //to make sure you can't click them while in the options menu
         OptionsWindow.SetActive(true); //options menu
-
-        //EventSystem.current.SetSelectedGameObject(OptionsWindow.transform.GetChild(0).gameObject);
     }
 
     public void FullScreen()
