@@ -14,7 +14,7 @@ public class Trampoline : MonoBehaviour
         if (PlayerController.Instance.canJump /*|| characterController.isGrounded*/)
         {
             trampoBox.enabled = false;
-            print("Boing Boing Dayo");
+            //print("Boing Boing Dayo");
         }
     }
 
