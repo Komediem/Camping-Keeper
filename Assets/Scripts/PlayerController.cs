@@ -104,20 +104,19 @@ public class PlayerController : MonoBehaviour
         {
             //if(!controller.isGrounded) velocity.y -= gravity * 2 * Time.deltaTime;
 
-            float x = movement;
             if (!PushPullTrigger) 
-            { 
-                if (x > 0)
+            {
+                if (movement > 0)
                 {
                     transform.rotation = Quaternion.Euler(0, 0, 0);
                 }
-                else if (x < 0)
+                else if (movement < 0)
                 {
                     transform.rotation = Quaternion.Euler(0, 180, 0);
                 }
             }
 
-            Vector3 move = transform.right * Mathf.Abs(x);
+            Vector3 move = transform.right * Mathf.Abs(movement);
 
             currentMoveVelocity = Vector3.SmoothDamp(currentMoveVelocity, move * speedValue, ref moveDampVelocity, moveSmoothTime);
 
@@ -142,7 +141,7 @@ public class PlayerController : MonoBehaviour
             print(currentMoveVelocity);
         }
 
-        print("velocity : " + velocity);
+        //print("velocity : " + velocity);
     }
 
     void CheckJump()
@@ -152,6 +151,7 @@ public class PlayerController : MonoBehaviour
             velocity.y = jumpSpeed * jumpHeight;
 
             canJump = false;
+
             playerAnimator.SetBool("isJumping", true);
 
             print("Mercy is for the WEAK");
@@ -164,13 +164,13 @@ public class PlayerController : MonoBehaviour
 
                 velocity.y = -1f;
 
-                print("kill me");
+                //print("kill me");
             }
             else
             {
                 velocity.y -= gravity * 2 * Time.deltaTime;
 
-                print("go down");
+                //print("go down");
             }
         }
 
@@ -272,14 +272,6 @@ public class PlayerController : MonoBehaviour
     {
         if (context.performed && !isCrouching)
         {
-            //speed /= 2;
-            //speedValue /= 2;
-
-            //canJump = false;
-            //isCrouching = false;
-
-            //Interract.SetActive(false);
-
             isPulling = true;
         }
         else if (context.canceled && !isCrouching)
@@ -310,7 +302,6 @@ public class PlayerController : MonoBehaviour
             Invoke("LightStop", LightTime);
         }
     }
-
     #endregion
 
     private void InteractStop()
@@ -327,7 +318,7 @@ public class PlayerController : MonoBehaviour
     {
         if (collision.CompareTag("Roof"))
         {
-            //velocity.y -= gravity * 2 * Time.deltaTime;
+            velocity.y -= gravity * 2 * Time.deltaTime;
 
             //print("Roof");
         }
