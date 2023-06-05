@@ -298,6 +298,7 @@ public class PlayerController : MonoBehaviour
     {
         Interract.SetActive(false);
     }
+
     private void LightStop()
     {
         Interract.SetActive(false);
