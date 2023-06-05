@@ -22,7 +22,7 @@ public class PickableNextLevel : MonoBehaviour
 
             model.SetActive(false);
 
-            //animator.SetBool("IsPicking", true);
+            animator.SetBool("IsPicking", true);
             //add more option when you pick up
             Invoke("NextLevel", TempsPickupAnimation);
         }
