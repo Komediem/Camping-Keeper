@@ -40,6 +40,7 @@ public class PushPull : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             PlayerController.Instance.PushPullTrigger = true;
+
             PlayerController.Instance.speed /= 2;
             PlayerController.Instance.speedValue /= 2;
 
