@@ -93,13 +93,14 @@ public class PlayerController : MonoBehaviour
             if (Menu.Instance.isMenuActive)
             {
                 //player animation in the menu
-                print("Menu Anim");
+                //print("Menu Anim");
             }
         }
 
         if (!lockMovements)
         {
             float x = movement;
+
             if (x > 0)
             {
                 transform.rotation = Quaternion.Euler(0, 0, 0);
@@ -108,6 +109,7 @@ public class PlayerController : MonoBehaviour
             {
                 transform.rotation = Quaternion.Euler(0, 180, 0);
             }
+
             Vector3 move = transform.right * Mathf.Abs(x);
 
             currentMoveVelocity = Vector3.SmoothDamp(currentMoveVelocity, move * speedValue, ref moveDampVelocity, moveSmoothTime);
