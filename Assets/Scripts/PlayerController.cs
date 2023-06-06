@@ -102,7 +102,7 @@ public class PlayerController : MonoBehaviour
 
         if (!lockMovements)
         {
-            //if(!controller.isGrounded) velocity.y -= gravity * 2 * Time.deltaTime;
+            if(!controller.isGrounded) velocity.y -= gravity * Time.deltaTime;
 
             if (!PushPullTrigger) 
             {
@@ -138,10 +138,15 @@ public class PlayerController : MonoBehaviour
 
                 playerAnimator.SetBool("isCrouchWalking", false);
             }
-            print(currentMoveVelocity);
+            //print(currentMoveVelocity);
         }
 
-        //print("velocity : " + velocity);
+        if(velocity.y < -9)
+        {
+            velocity.y = -4.5f;
+        }
+
+        print("velocity : " + velocity);
     }
 
     void CheckJump()
@@ -154,7 +159,7 @@ public class PlayerController : MonoBehaviour
 
             playerAnimator.SetBool("isJumping", true);
 
-            print("Mercy is for the WEAK");
+            print("Jump");
         }
         else
         {
@@ -162,13 +167,11 @@ public class PlayerController : MonoBehaviour
             {
                 playerAnimator.SetBool("isJumping", false);
 
-                velocity.y = -1f;
-
                 //print("kill me");
             }
             else
             {
-                velocity.y -= gravity * 2 * Time.deltaTime;
+                velocity.y -= gravity * Time.deltaTime;
 
                 //print("go down");
             }
