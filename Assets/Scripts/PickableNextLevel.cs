@@ -20,8 +20,6 @@ public class PickableNextLevel : MonoBehaviour
         {
             Debug.Log("Saucisse");
 
-            model.SetActive(false);
-
             animator.SetBool("isPicking", true);
             //add more option when you pick up
             Invoke("NextLevel", TempsPickupAnimation);
