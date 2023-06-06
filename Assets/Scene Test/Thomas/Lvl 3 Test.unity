@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 17.227566, g: 22.116837, b: 30.101841, a: 1}
+  m_IndirectSpecularColor: {r: 18.008415, g: 23.640911, b: 32.97278, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1842,7 +1842,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &364674095
 Transform:
   m_ObjectHideFlags: 0
@@ -4107,8 +4107,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 877881474}
-  m_LocalRotation: {x: 0.007601166, y: -0.6909283, z: 0.007265522, w: 0.7228469}
-  m_LocalPosition: {x: 153.16, y: -122.650154, z: -95.24599}
+  m_LocalRotation: {x: 0.21451868, y: -0.01585632, z: 0.0034830326, w: 0.976585}
+  m_LocalPosition: {x: -73.30435, y: -122.69335, z: -95.24599}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -7904,9 +7904,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1310343025}
   - component: {fileID: 1310343027}
-  - component: {fileID: 1310343026}
+  - component: {fileID: 1310343028}
   m_Layer: 0
-  m_Name: Jump1ToMainCam2 (1)
+  m_Name: MainCam2ToFailJump2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7927,20 +7927,6 @@ Transform:
   m_Father: {fileID: 154490294}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1310343026
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1310343024}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 53297b0cee813b0408e9d2c300524753, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  VCamJump1: {fileID: 740770642}
-  MainVCam2: {fileID: 689762299}
 --- !u!65 &1310343027
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7954,6 +7940,21 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 38.403076, y: 0.2, z: 3}
   m_Center: {x: 1.7015381, y: 0, z: 0}
+--- !u!114 &1310343028
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1310343024}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4cf7d23c3e3451146a8e00ec92744f81, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ok: 1
+  MainVCam2: {fileID: 689762299}
+  FailJumpVCam2: {fileID: 604367704}
 --- !u!1 &1326772717
 GameObject:
   m_ObjectHideFlags: 0
@@ -9945,7 +9946,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1792092055}
-  m_LocalRotation: {x: 0.0053605954, y: -0.69567215, z: 0.0051915776, w: 0.71832067}
+  m_LocalRotation: {x: 0.0053606005, y: -0.69567215, z: 0.0051915823, w: 0.71832067}
   m_LocalPosition: {x: 28.39, y: 0.10992432, z: -0.015983582}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
