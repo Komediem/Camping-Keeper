@@ -32,8 +32,6 @@ public class Menu : MonoBehaviour
 
         if (SceneManager.GetActiveScene().buildIndex != 0)
         {
-            playerAnimator.SetBool("isPriority", true);
-
             MainMenu.SetActive(false);
             MainButtons.SetActive(false);
             OptionsWindow.SetActive(false);
@@ -45,6 +43,9 @@ public class Menu : MonoBehaviour
         else
         {
             PlayerController.Instance.lockMovements = true;
+
+
+            playerAnimator.SetBool("isPriority", true);
 
             //to make sure there is no problem on start
             MainMenu.SetActive(true);
