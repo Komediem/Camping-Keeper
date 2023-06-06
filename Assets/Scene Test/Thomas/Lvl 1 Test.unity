@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.15292002, g: 0.20882282, b: 0.3250044, a: 1}
+  m_IndirectSpecularColor: {r: 0.1530039, g: 0.20961401, b: 0.33168054, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2248,6 +2248,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1512601267492602084, guid: 8aeefbe54dba833409a9d8d14a9a09f3, type: 3}
   m_PrefabInstance: {fileID: 354021086}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &376566934 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132148618259884, guid: a389da2f4438b3a4e9c5202b88c93942, type: 3}
+  m_PrefabInstance: {fileID: 1610665489}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &378933088
 GameObject:
   m_ObjectHideFlags: 0
@@ -3381,6 +3386,22 @@ Animator:
   m_CorrespondingSourceObject: {fileID: 4320050159860757720, guid: a389da2f4438b3a4e9c5202b88c93942, type: 3}
   m_PrefabInstance: {fileID: 1610665489}
   m_PrefabAsset: {fileID: 0}
+--- !u!111 &593346456
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 376566934}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: -203655887218126122, guid: 1cff25d97b3a75e45a9558a0957bda00, type: 3}
+  m_Animations:
+  - {fileID: 7400000, guid: 8296b8392c2fbfa4286cc3f1c61207ee, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 0
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1 &597754687 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4828515425807850914, guid: 034e940684b85304fb2f5307838313d8, type: 3}
@@ -10147,15 +10168,15 @@ PrefabInstance:
       objectReference: {fileID: 1056455550}
     - target: {fileID: 508526190521999806, guid: fad6430d5d05d7941ae19d945d4c5ea6, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.095349066
+      value: 0.09534908
       objectReference: {fileID: 0}
     - target: {fileID: 508526190521999806, guid: fad6430d5d05d7941ae19d945d4c5ea6, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.39418045
+      value: 0.39418048
       objectReference: {fileID: 0}
     - target: {fileID: 508526190521999806, guid: fad6430d5d05d7941ae19d945d4c5ea6, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.041159604
+      value: -0.04115961
       objectReference: {fileID: 0}
     - target: {fileID: 508526190944761565, guid: fad6430d5d05d7941ae19d945d4c5ea6, type: 3}
       propertyPath: m_LocalPosition.x
