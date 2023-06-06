@@ -102,6 +102,7 @@ public class PlayerController : MonoBehaviour
 
         if (!lockMovements)
         {
+            Vector3 move;
             //if(!controller.isGrounded) velocity.y -= gravity * 2 * Time.deltaTime;
 
             if (!PushPullTrigger) 
@@ -114,9 +115,11 @@ public class PlayerController : MonoBehaviour
                 {
                     transform.rotation = Quaternion.Euler(0, 180, 0);
                 }
+                move = transform.right * Mathf.Abs(movement);
             }
+           
 
-            Vector3 move = transform.right * Mathf.Abs(movement);
+            else move = transform.right * movement;
 
             currentMoveVelocity = Vector3.SmoothDamp(currentMoveVelocity, move * speedValue, ref moveDampVelocity, moveSmoothTime);
 
