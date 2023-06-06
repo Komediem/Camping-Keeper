@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1569705612282182675}
   - component: {fileID: 6944894736383744133}
   - component: {fileID: 4903650161781509089}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Spot Light (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -228,7 +228,7 @@ GameObject:
   - component: {fileID: 4017271172028827821}
   - component: {fileID: 7758675058810262969}
   - component: {fileID: 7985179648650712194}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Spot Light (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -445,7 +445,7 @@ GameObject:
   - component: {fileID: 8232886481856047468}
   - component: {fileID: 2607474639505567061}
   - component: {fileID: 6530021426268432277}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Spot Light (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -660,8 +660,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1140455990759335230}
-  m_Layer: 0
-  m_Name: VAN
+  - component: {fileID: 1106126418}
+  m_Layer: 7
+  m_Name: Van_Collision
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -685,8 +686,21 @@ Transform:
   - {fileID: 8232886481856047468}
   - {fileID: 1569705612282182675}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1106126418
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6848485213029911627}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 10.288704, y: 3.885355, z: 3.5603027}
+  m_Center: {x: 0.9018898, y: 1.9855523, z: 1.2801514}
 --- !u!1 &7567488604267928629
 GameObject:
   m_ObjectHideFlags: 0
@@ -698,7 +712,7 @@ GameObject:
   - component: {fileID: 90193194566725624}
   - component: {fileID: 5367168246788959003}
   - component: {fileID: 9020467495410098775}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Spot Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -995,6 +1009,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: b3d86543a88dc7c48af404b8ae2c3c94, type: 3}
       propertyPath: m_Name
       value: VAN_Merged
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b3d86543a88dc7c48af404b8ae2c3c94, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
