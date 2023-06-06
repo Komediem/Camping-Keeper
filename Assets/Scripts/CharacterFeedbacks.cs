@@ -5,6 +5,7 @@ using UnityEngine;
 public class CharacterFeedbacks : MonoBehaviour
 {
     private CharacterController characterController;
+    private PickableNextLevel pickable;
 
     [SerializeField] private GameObject stepParticle;
     [SerializeField] private GameObject fallParticle;
@@ -13,6 +14,7 @@ public class CharacterFeedbacks : MonoBehaviour
     public void Awake()
     {
         characterController = GetComponentInParent<CharacterController>();
+        pickable = FindObjectOfType<PickableNextLevel>();  
     }
 
     public void StepEffets()
@@ -28,5 +30,10 @@ public class CharacterFeedbacks : MonoBehaviour
     {
         GameObject particleFall = Instantiate(fallParticle, stepPosition.position, Quaternion.Euler(-90, 0, 0));
         Destroy(particleFall, 1);
+    }
+
+    public void DespawnModel()
+    {
+        pickable.model.SetActive(false);
     }
 }
