@@ -32,6 +32,8 @@ public class Menu : MonoBehaviour
 
         if (SceneManager.GetActiveScene().buildIndex != 0)
         {
+            playerAnimator.SetBool("isPriority", true);
+
             MainMenu.SetActive(false);
             MainButtons.SetActive(false);
             OptionsWindow.SetActive(false);
