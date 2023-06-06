@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -10,6 +11,10 @@ public class Menu : MonoBehaviour
 
     public GameObject MainButtons;
     public GameObject OptionsWindow;
+
+    public Animator playerAnimator;
+    public Transform beginPosition;
+    public GameObject player;
 
     [Space]
 
@@ -60,8 +65,16 @@ public class Menu : MonoBehaviour
 
         //SceneManager.LoadScene(SaveSystem.instance._lvl);
 
+        playerAnimator.SetBool("isScared", true);
+
         isMenuActive = false;
 
+        StartCoroutine(LockMovementBeginning());
+    }
+
+    IEnumerator LockMovementBeginning()
+    {
+        yield return new WaitForSeconds(5.5f);
         PlayerController.Instance.lockMovements = false;
     }
 
