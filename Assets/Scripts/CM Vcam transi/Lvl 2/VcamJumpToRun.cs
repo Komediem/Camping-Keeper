@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class VcamRunToJump : MonoBehaviour
+public class VcamJumpToRun : MonoBehaviour
 {
 
     #region Cam
@@ -13,8 +13,8 @@ public class VcamRunToJump : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            VCamRun.SetActive(false);
-            VCamJump.SetActive(true);
+            VCamRun.SetActive(true);
+            VCamJump.SetActive(false);
         }
     }
 }

@@ -2,19 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class VcamRunToJump : MonoBehaviour
+public class VcamPuzzelToJump : MonoBehaviour
 {
 
+
     #region Cam
-    public GameObject VCamRun;
     public GameObject VCamJump;
+    public GameObject VCamPuzzel;
     #endregion
     private void OnTriggerEnter(Collider collision)
     {
         if (collision.CompareTag("Player"))
         {
-            VCamRun.SetActive(false);
             VCamJump.SetActive(true);
+            VCamPuzzel.SetActive(false);
         }
     }
 }
