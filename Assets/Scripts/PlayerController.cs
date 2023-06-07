@@ -135,7 +135,7 @@ public class PlayerController : MonoBehaviour
 
                 velocity.y = -10f;
 
-                print("grounded");
+                //print("grounded");
             }
 
             if (movement != 0)
@@ -171,13 +171,12 @@ public class PlayerController : MonoBehaviour
 
             //print("Mercy is for the WEAK");
         }
-
-        if (!canJump && isJumping)
+        else
         {
-            //if (velocity.y > -20)
-            //{
-                velocity.y -= gravity * 2 * Time.deltaTime;
-            //}
+            if (velocity.y > -20)
+            {
+                velocity.y -= gravity * Time.deltaTime * 2;
+            }
 
             //print("go down");
         }
