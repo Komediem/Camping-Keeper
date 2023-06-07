@@ -20,7 +20,7 @@ public class PlayerMentalHealth : MonoBehaviour
         maxMentalHealth = 100;
         mentalHealth = maxMentalHealth;
 
-       Vignettage = GameObject.Find("Vignettage");
+        Vignettage = GameObject.Find("Vignettage");
     }
 
     private void Start()
