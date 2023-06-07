@@ -44,6 +44,9 @@ public class Menu : MonoBehaviour
         {
             PlayerController.Instance.lockMovements = true;
 
+
+            playerAnimator.SetBool("isPriority", true);
+
             //to make sure there is no problem on start
             MainMenu.SetActive(true);
             MainButtons.SetActive(true);
