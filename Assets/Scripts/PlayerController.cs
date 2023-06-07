@@ -41,7 +41,9 @@ public class PlayerController : MonoBehaviour
     public float jumpDefault;
     public float jumpHeight = 1f;
 
-    [SerializeField] public bool canJump;
+    public bool canJump;
+    public bool isJumping;
+
     [SerializeField] private float gravity = 9.8f;
 
     private Vector3 velocity;
@@ -127,6 +129,10 @@ public class PlayerController : MonoBehaviour
             if (controller.isGrounded)
             {
                 playerAnimator.SetBool("isJumping", false);
+                isJumping = false;
+
+                velocity.y = -10f;
+
                 print("grounded");
             }
 
@@ -144,8 +150,8 @@ public class PlayerController : MonoBehaviour
 
                 playerAnimator.SetBool("isCrouchWalking", false);
             }
-            print("move vel " + currentMoveVelocity);
-            //print("vel " + velocity);
+            //print("move vel " + currentMoveVelocity);
+            print("vel " + velocity);
         }
     }
 
@@ -158,32 +164,19 @@ public class PlayerController : MonoBehaviour
             canJump = false;
 
             playerAnimator.SetBool("isJumping", true);
+            isJumping = true;
 
             //print("Mercy is for the WEAK");
         }
         else
-        //{
-        //    if (controller.isGrounded)
-        //    {
-        //        playerAnimator.SetBool("isJumping", false);
+        {
+            if (velocity.y > -20)
+            {
+                velocity.y -= gravity * 2 * Time.deltaTime;
+            }
 
-        //        if (velocity.y > -10)
-        //        {
-        //            velocity.y = -gravity;
-        //        }
-
-        //        print("grounded go down");
-        //    }
-        //    else
-        //    {
-                if (velocity.y > -20)
-                {
-                    velocity.y -= gravity * 2 * Time.deltaTime;
-                }
-
-                print("not grounded go down");
-            //}
-        //}
+            //print("go down");
+        }
 
         controller.Move(velocity * Time.deltaTime);
 
