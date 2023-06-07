@@ -37,23 +37,13 @@ public class PlayerMentalHealth : MonoBehaviour
         mentalHealth -= amount;
     }
 
-    public void Death()
-    {
-        PlayerController.Instance.playerAnimator.SetBool("isDead", true);
-    }
-
     private void Update()
     {
         blackVignette.intensity.value = -mentalHealth / 100;
 
-        if(Input.GetKeyDown(KeyCode.Space))
-        {
-            TakeDamage(5);
-        }
-
         if(mentalHealth <= minMentalHealth)
         {
-            Death();
+            GameManager.instance.Die();
         }
     }
 }
