@@ -30,9 +30,10 @@ public class GameManager : MonoBehaviour
 
     public void Die()
     {
-        if(PlayerMentalHealth.instance.mentalHealth <= PlayerMentalHealth.instance.maxMentalHealth)
+        if(PlayerMentalHealth.instance.mentalHealth <= PlayerMentalHealth.instance.minMentalHealth)
         {
             // Add More thing when the player die
+            PlayerController.Instance.playerAnimator.SetBool("isDead", true);
         }
 
         Respawn();
