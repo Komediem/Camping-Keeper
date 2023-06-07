@@ -11,6 +11,7 @@ public class PickableNextLevel : MonoBehaviour
 
     void NextLevel()
     {
+        PlayerController.Instance.speed = PlayerController.Instance.speedDefault;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
@@ -18,8 +19,7 @@ public class PickableNextLevel : MonoBehaviour
     {
         if (collision.tag == "Pickable")
         {
-            Debug.Log("Saucisse");
-
+            PlayerController.Instance.speed = 0;
             animator.SetBool("isPicking", true);
             //add more option when you pick up
             Invoke("NextLevel", TempsPickupAnimation);
