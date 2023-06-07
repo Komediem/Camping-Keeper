@@ -171,12 +171,13 @@ public class PlayerController : MonoBehaviour
 
             //print("Mercy is for the WEAK");
         }
-        else
+
+        if (!canJump && isJumping)
         {
-            if (velocity.y > -20)
-            {
+            //if (velocity.y > -20)
+            //{
                 velocity.y -= gravity * 2 * Time.deltaTime;
-            }
+            //}
 
             //print("go down");
         }
