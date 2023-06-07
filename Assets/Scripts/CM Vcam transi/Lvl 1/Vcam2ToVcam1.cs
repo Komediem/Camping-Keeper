@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Vcam1ToVcam2 : MonoBehaviour
+public class Vcam2ToVcam1 : MonoBehaviour
 {
 
     #region Cam
@@ -13,7 +13,8 @@ public class Vcam1ToVcam2 : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            VCam1.SetActive(false);VCam2.SetActive(true);
+            VCam1.SetActive(true); 
+            VCam2.SetActive(false);
         }
     }
 }
