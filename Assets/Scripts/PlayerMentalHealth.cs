@@ -41,11 +41,6 @@ public class PlayerMentalHealth : MonoBehaviour
     {
         blackVignette.intensity.value = -mentalHealth / 100;
 
-        if(Input.GetKeyDown(KeyCode.Space))
-        {
-            TakeDamage(5);
-        }
-
         if(mentalHealth <= minMentalHealth)
         {
             GameManager.instance.Die();
