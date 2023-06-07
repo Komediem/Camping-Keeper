@@ -5,56 +5,29 @@ using UnityEngine.UI;
 
 public class Interraction : MonoBehaviour
 {
-    public bool InterractionTrigger;
     [Header("GameObject")]
-    public GameObject InterractTextCanvas;
-    [Header("Script")]
-    public PlayerController playerController;  
-    public PlayerTriggerDetection playerTriggerDetection;
+    public GameObject OutlineObject;
 
-    private void Start()
-    {
-        InterractionTrigger = false;
-    }
-    private void Awake()
-    {
-        playerTriggerDetection = GetComponent<PlayerTriggerDetection>();
-    }
     private void Update()
     {
-        Interract();
-    }
-
-    public void Interract()
-    {
-        if (playerTriggerDetection.PlayerIsTrigger == true && InterractionTrigger == true ) //( && verifier si touche maintenue)
+        if (PlayerController.Instance.IsJumping == true || PlayerController.Instance.isPulling == true || PlayerController.Instance.PushPullTrigger == true || PlayerController.Instance.isCrouching == true)
         {
-            //Outline.enabled = false;
-            InterractTextCanvas.SetActive(false);
-
-        }
-        else
-        {
-
-        }
+            OutlineObject.SetActive(false);
+        } 
     }
 
     private void OnTriggerEnter(Collider collision)
     {
-        if (collision.tag == "InterractZone")
+        if (collision.tag == "Player")
         {
-            //Outline.enabled = true;
-            InterractTextCanvas.SetActive(true);
-            InterractionTrigger = true;
+            OutlineObject.SetActive(true);
         }
     }
     private void OnTriggerExit(Collider collision)
     {
-        if (collision.tag == "InterractZone")
+        if (collision.tag == "Player")
         {
-            //Outline.enabled = false;
-            InterractTextCanvas.SetActive(false);
-            InterractionTrigger = false;
+            OutlineObject.SetActive(false); 
         }
     }
 }
