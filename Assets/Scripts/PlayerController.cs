@@ -106,7 +106,7 @@ public class PlayerController : MonoBehaviour
         {
             Vector3 move;
 
-            if (!PushPullTrigger) 
+            if (!PushPullTrigger)
             {
                 if (movement > 0)
                 {
@@ -150,8 +150,10 @@ public class PlayerController : MonoBehaviour
 
                 playerAnimator.SetBool("isCrouchWalking", false);
             }
+
             //print("move vel " + currentMoveVelocity);
-            print("vel " + velocity);
+            //print("vel " + velocity);
+            print(Time.deltaTime);
         }
     }
 
@@ -172,7 +174,7 @@ public class PlayerController : MonoBehaviour
         {
             if (velocity.y > -20)
             {
-                velocity.y -= gravity * 2 * Time.deltaTime;
+                velocity.y -= velocity.y * gravity * Time.deltaTime;
             }
 
             //print("go down");
