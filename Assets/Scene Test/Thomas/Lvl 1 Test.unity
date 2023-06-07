@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.1528879, g: 0.20878977, b: 0.32497448, a: 1}
+  m_IndirectSpecularColor: {r: 0.15305573, g: 0.20968214, b: 0.33173987, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2841,8 +2841,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 298926073}
-  m_LocalRotation: {x: 0.015370941, y: -0.6716099, z: 0.0139388, w: 0.74061435}
-  m_LocalPosition: {x: -11.269997, y: -124.92536, z: -96.16996}
+  m_LocalRotation: {x: -0.036246497, y: -0.4019619, z: -0.015925461, w: 0.91480017}
+  m_LocalPosition: {x: -78.64, y: -126.87729, z: -91.45}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2967,7 +2967,7 @@ GameObject:
   - component: {fileID: 320763276}
   - component: {fileID: 320763277}
   m_Layer: 0
-  m_Name: 1 To 2
+  m_Name: 1 To Wall
   m_TagString: Untagged
   m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -2981,7 +2981,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 320763274}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -24.32, y: -126.04, z: -87.79}
+  m_LocalPosition: {x: -21.6, y: -126.04, z: -87.79}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4284,6 +4284,20 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 4828515425807850914, guid: 034e940684b85304fb2f5307838313d8, type: 3}
   m_PrefabInstance: {fileID: 5747504498271151054}
   m_PrefabAsset: {fileID: 0}
+--- !u!64 &597754692
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 597754687}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -3196004302999683230, guid: 11d4a910b85fa214aa57f5a54bd895e8, type: 3}
 --- !u!1001 &620761569
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11886,11 +11900,15 @@ MonoBehaviour:
     roll: 0
   - position: {x: 41.32325, y: 0.20000005, z: 0}
     roll: 0
-  - position: {x: 44.656586, y: 0, z: 0.5}
+  - position: {x: 44.43907, y: 0, z: 0}
+    roll: 0
+  - position: {x: 47.123817, y: 0, z: 0.5}
     roll: 0
   - position: {x: 49.449577, y: 0, z: 2}
     roll: 0
-  - position: {x: 55.127853, y: 0, z: 0.5}
+  - position: {x: 51.804947, y: 0, z: 0.5}
+    roll: 0
+  - position: {x: 54.90471, y: 0.026924133, z: 0.0625}
     roll: 0
   - position: {x: 59.001373, y: 0, z: 0}
     roll: 0
@@ -11939,7 +11957,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2144531720}
-  m_LocalRotation: {x: -0.018299542, y: 0.70686996, z: 0.018299542, w: 0.70686996}
+  m_LocalRotation: {x: -0.018299678, y: 0.70686996, z: 0.018299678, w: 0.70686996}
   m_LocalPosition: {x: -11.269997, y: -123.92536, z: -99.16996}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -12037,8 +12055,28 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 593346453}
     - target: {fileID: 5747504497790836878, guid: 034e940684b85304fb2f5307838313d8, type: 3}
+      propertyPath: m_Radius
+      value: 0.0021726738
+      objectReference: {fileID: 0}
+    - target: {fileID: 5747504497790836878, guid: 034e940684b85304fb2f5307838313d8, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5747504497790836878, guid: 034e940684b85304fb2f5307838313d8, type: 3}
+      propertyPath: m_Center.x
+      value: -0.000026394206
+      objectReference: {fileID: 0}
+    - target: {fileID: 5747504497790836878, guid: 034e940684b85304fb2f5307838313d8, type: 3}
+      propertyPath: m_Center.y
+      value: 0.0010172896
+      objectReference: {fileID: 0}
+    - target: {fileID: 5747504497790836878, guid: 034e940684b85304fb2f5307838313d8, type: 3}
+      propertyPath: m_Center.z
+      value: 0.0003981876
+      objectReference: {fileID: 0}
+    - target: {fileID: 5747504497790836878, guid: 034e940684b85304fb2f5307838313d8, type: 3}
       propertyPath: m_IsTrigger
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5747504497790836878, guid: 034e940684b85304fb2f5307838313d8, type: 3}
