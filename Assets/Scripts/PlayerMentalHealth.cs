@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Rendering.HighDefinition;
+using UnityEngine.Rendering;
 
 public class PlayerMentalHealth : MonoBehaviour
 {
@@ -10,8 +12,8 @@ public class PlayerMentalHealth : MonoBehaviour
     public float mentalHealth;
     public float maxMentalHealth;
 
-
-    [SerializeField] private GameObject Vignettage;
+    [Header("Vignette")]
+    [SerializeField] private Vignette blackVignette;
 
     private void Awake()
     {
@@ -20,7 +22,7 @@ public class PlayerMentalHealth : MonoBehaviour
         maxMentalHealth = 100;
         mentalHealth = maxMentalHealth;
 
-        Vignettage = GameObject.Find("Vignettage");
+        blackVignette = FindObjectOfType<Vignette>();
     }
 
     private void Start()
@@ -35,10 +37,20 @@ public class PlayerMentalHealth : MonoBehaviour
 
     private void Update()
     {
-        // if (mentalHealth = 90)
-        // {
-        //      si dmg, alors augmenter le vignettage
-        // }
+        if (mentalHealth <= 75)
+        {
+            blackVignette.intensity.value = 1;
+        }
+
+        else if (mentalHealth <= 50)
+        {
+            blackVignette.intensity.value = 0.40f;
+        }
+
+        else if (mentalHealth <= 25)
+        {
+            blackVignette.intensity.value = 0.60f;
+        }
     }
 
 

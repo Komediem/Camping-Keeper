@@ -89,6 +89,8 @@ public class PlayerController : MonoBehaviour
 
         isPulling = false;
         PushPullTrigger = false;
+
+        velocity.y = -10f;
     }
 
     void Update()
@@ -152,8 +154,7 @@ public class PlayerController : MonoBehaviour
             }
 
             //print("move vel " + currentMoveVelocity);
-            //print("vel " + velocity);
-            print(Time.deltaTime);
+            print("vel " + velocity);
         }
     }
 
@@ -170,12 +171,13 @@ public class PlayerController : MonoBehaviour
 
             //print("Mercy is for the WEAK");
         }
-        else
+
+        if (!canJump && isJumping)
         {
-            if (velocity.y > -20)
-            {
-                velocity.y -= velocity.y * gravity * Time.deltaTime;
-            }
+            //if (velocity.y > -20)
+            //{
+                velocity.y -= gravity * 2 * Time.deltaTime;
+            //}
 
             //print("go down");
         }
