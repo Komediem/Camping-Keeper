@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 1733.0566, g: 1789.2305, b: 2047.5703, a: 1}
+  m_IndirectSpecularColor: {r: 1828.5762, g: 1922.0625, b: 2263.121, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -393,7 +393,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Path: {fileID: 1842245597}
-  m_PathPosition: 0.3853923
+  m_PathPosition: 4.575948
   m_PositionUnits: 0
   m_PathOffset: {x: 0, y: 0, z: 0}
   m_XDamping: 0
@@ -578,7 +578,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 718115831}
-  m_LocalRotation: {x: 0.08238078, y: 0.7067991, z: -0.020858532, w: 0.7022916}
+  m_LocalRotation: {x: 0.046555962, y: -0.70694524, z: -0.015115922, w: 0.70557255}
   m_LocalPosition: {x: -105.65, y: -123.02, z: -112.42}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -814,8 +814,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1010030755}
-  m_LocalRotation: {x: 0.063952416, y: -0.0014993801, z: 0.000096085765, w: 0.99795187}
-  m_LocalPosition: {x: -37.36425, y: 1.6834793, z: -18.648422}
+  m_LocalRotation: {x: -0.02424905, y: 0.022938777, z: 0.0005565537, w: 0.99944264}
+  m_LocalPosition: {x: 2.8033257, y: 9.599564, z: -17.955849}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1659,8 +1659,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1686734590}
-  m_LocalRotation: {x: 0.063952416, y: -0.0014993801, z: 0.000096085765, w: 0.99795187}
-  m_LocalPosition: {x: -98.48742, y: -123.88878, z: -112.49601}
+  m_LocalRotation: {x: -0.02424905, y: 0.022938777, z: 0.0005565537, w: 0.99944264}
+  m_LocalPosition: {x: -58.319843, y: -115.972694, z: -111.80344}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1903,7 +1903,7 @@ MonoBehaviour:
     pathColor: {r: 0, g: 1, b: 0, a: 1}
     inactivePathColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
     width: 0.2
-  m_Looped: 0
+  m_Looped: 1
   m_Waypoints:
   - position: {x: -2, y: 0, z: 0}
     roll: 0
@@ -1913,12 +1913,14 @@ MonoBehaviour:
     roll: 0
   - position: {x: 36, y: 1.15, z: 0}
     roll: 0
-  - position: {x: 41, y: 7.74, z: 0}
+  - position: {x: 41, y: 6.4040475, z: 0}
     roll: 0
+  - position: {x: 46.5, y: 5.65, z: 0}
+    roll: 90
   - position: {x: 47.5, y: 1.15, z: 0}
     roll: 0
   - position: {x: 57, y: 0, z: 0}
-    roll: 180
+    roll: 360
 --- !u!4 &1842245598
 Transform:
   m_ObjectHideFlags: 0
@@ -2169,10 +2171,6 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4292055377032961778, guid: a389da2f4438b3a4e9c5202b88c93942, type: 3}
-      propertyPath: jumpHeight
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4292055377032961787, guid: a389da2f4438b3a4e9c5202b88c93942, type: 3}
       propertyPath: m_Camera
       value: 
@@ -2191,11 +2189,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6330055504169505634, guid: a389da2f4438b3a4e9c5202b88c93942, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -8.08
+      value: 32.54
       objectReference: {fileID: 0}
     - target: {fileID: 6330055504169505634, guid: a389da2f4438b3a4e9c5202b88c93942, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.763
+      value: 12.4
       objectReference: {fileID: 0}
     - target: {fileID: 6330055504169505634, guid: a389da2f4438b3a4e9c5202b88c93942, type: 3}
       propertyPath: m_LocalPosition.z

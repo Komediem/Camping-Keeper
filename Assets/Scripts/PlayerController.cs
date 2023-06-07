@@ -103,7 +103,6 @@ public class PlayerController : MonoBehaviour
         if (!lockMovements)
         {
             Vector3 move;
-            //if(!controller.isGrounded) velocity.y -= gravity * 2 * Time.deltaTime;
 
             if (!PushPullTrigger) 
             {
@@ -117,8 +116,6 @@ public class PlayerController : MonoBehaviour
                 }
                 move = transform.right * Mathf.Abs(movement);
             }
-           
-
             else move = transform.right * movement;
 
             currentMoveVelocity = Vector3.SmoothDamp(currentMoveVelocity, move * speedValue, ref moveDampVelocity, moveSmoothTime);
@@ -126,6 +123,12 @@ public class PlayerController : MonoBehaviour
             controller.Move(currentMoveVelocity * Time.deltaTime);
 
             CheckJump();
+
+            if (controller.isGrounded)
+            {
+                playerAnimator.SetBool("isJumping", false);
+                print("grounded");
+            }
 
             if (movement != 0)
             {
@@ -141,10 +144,9 @@ public class PlayerController : MonoBehaviour
 
                 playerAnimator.SetBool("isCrouchWalking", false);
             }
-            print(currentMoveVelocity);
+            print("move vel " + currentMoveVelocity);
+            //print("vel " + velocity);
         }
-
-        //print("velocity : " + velocity);
     }
 
     void CheckJump()
@@ -157,25 +159,31 @@ public class PlayerController : MonoBehaviour
 
             playerAnimator.SetBool("isJumping", true);
 
-            print("Mercy is for the WEAK");
+            //print("Mercy is for the WEAK");
         }
         else
-        {
-            if (controller.isGrounded)
-            {
-                playerAnimator.SetBool("isJumping", false);
+        //{
+        //    if (controller.isGrounded)
+        //    {
+        //        playerAnimator.SetBool("isJumping", false);
 
-                velocity.y = -1f;
+        //        if (velocity.y > -10)
+        //        {
+        //            velocity.y = -gravity;
+        //        }
 
-                //print("kill me");
-            }
-            else
-            {
-                velocity.y -= gravity * 2 * Time.deltaTime;
+        //        print("grounded go down");
+        //    }
+        //    else
+        //    {
+                if (velocity.y > -20)
+                {
+                    velocity.y -= gravity * 2 * Time.deltaTime;
+                }
 
-                //print("go down");
-            }
-        }
+                print("not grounded go down");
+            //}
+        //}
 
         controller.Move(velocity * Time.deltaTime);
 
