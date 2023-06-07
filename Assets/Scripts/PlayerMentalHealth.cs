@@ -13,6 +13,7 @@ public class PlayerMentalHealth : MonoBehaviour
     public float maxMentalHealth;
 
     [Header("Vignette")]
+    [SerializeField] private Volume volume;
     [SerializeField] private Vignette blackVignette;
 
     private void Awake()
@@ -21,13 +22,12 @@ public class PlayerMentalHealth : MonoBehaviour
 
         maxMentalHealth = 100;
         mentalHealth = maxMentalHealth;
-
-        blackVignette = FindObjectOfType<Vignette>();
     }
 
     private void Start()
     {
-        
+        volume = FindObjectOfType<Volume>();
+        volume.profile.TryGet(out blackVignette);
     }
 
     public void TakeDamage(int amount)
@@ -37,20 +37,7 @@ public class PlayerMentalHealth : MonoBehaviour
 
     private void Update()
     {
-        if (mentalHealth <= 75)
-        {
-            blackVignette.intensity.value = 1;
-        }
-
-        else if (mentalHealth <= 50)
-        {
-            blackVignette.intensity.value = 0.40f;
-        }
-
-        else if (mentalHealth <= 25)
-        {
-            blackVignette.intensity.value = 0.60f;
-        }
+        blackVignette.intensity.value = mentalHealth / 100;
     }
 
 
