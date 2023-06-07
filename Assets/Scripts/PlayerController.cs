@@ -41,7 +41,9 @@ public class PlayerController : MonoBehaviour
     public float jumpDefault;
     public float jumpHeight = 1f;
 
-    [SerializeField] public bool canJump;
+    public bool canJump;
+    public bool isJumping;
+
     [SerializeField] private float gravity = 9.8f;
 
     private Vector3 velocity;
@@ -103,9 +105,8 @@ public class PlayerController : MonoBehaviour
         if (!lockMovements)
         {
             Vector3 move;
-            //if(!controller.isGrounded) velocity.y -= gravity * 2 * Time.deltaTime;
 
-            if (!PushPullTrigger) 
+            if (!PushPullTrigger)
             {
                 if (movement > 0)
                 {
@@ -117,8 +118,6 @@ public class PlayerController : MonoBehaviour
                 }
                 move = transform.right * Mathf.Abs(movement);
             }
-           
-
             else move = transform.right * movement;
 
             currentMoveVelocity = Vector3.SmoothDamp(currentMoveVelocity, move * speedValue, ref moveDampVelocity, moveSmoothTime);
@@ -126,6 +125,16 @@ public class PlayerController : MonoBehaviour
             controller.Move(currentMoveVelocity * Time.deltaTime);
 
             CheckJump();
+
+            if (controller.isGrounded)
+            {
+                playerAnimator.SetBool("isJumping", false);
+                isJumping = false;
+
+                velocity.y = -10f;
+
+                print("grounded");
+            }
 
             if (movement != 0)
             {
@@ -141,10 +150,11 @@ public class PlayerController : MonoBehaviour
 
                 playerAnimator.SetBool("isCrouchWalking", false);
             }
-            print(currentMoveVelocity);
-        }
 
-        //print("velocity : " + velocity);
+            //print("move vel " + currentMoveVelocity);
+            //print("vel " + velocity);
+            print(Time.deltaTime);
+        }
     }
 
     void CheckJump()
@@ -156,25 +166,18 @@ public class PlayerController : MonoBehaviour
             canJump = false;
 
             playerAnimator.SetBool("isJumping", true);
+            isJumping = true;
 
-            print("Mercy is for the WEAK");
+            //print("Mercy is for the WEAK");
         }
         else
         {
-            if (controller.isGrounded)
+            if (velocity.y > -20)
             {
-                playerAnimator.SetBool("isJumping", false);
-
-                velocity.y = -1f;
-
-                //print("kill me");
+                velocity.y -= velocity.y * gravity * Time.deltaTime;
             }
-            else
-            {
-                velocity.y -= gravity * 2 * Time.deltaTime;
 
-                //print("go down");
-            }
+            //print("go down");
         }
 
         controller.Move(velocity * Time.deltaTime);

@@ -19,8 +19,8 @@ public class Enemy : MonoBehaviour
     #endregion
 
     #region Range
-    public float sightRange, attackRange; //zone attaque et repérage joueur
-    public bool playerInSightRange, playerInAttackRange; //bool vérification si joueur détecté
+    public float sightRange, attackRange, lowdmgRange; //zone attaque et repérage joueur
+    public bool playerInSightRange, playerInAttackRange, PlayerLowDmgRange; //bool vérification si joueur détecté
     #endregion
 
     private void Awake()
@@ -35,6 +35,7 @@ public class Enemy : MonoBehaviour
         //Check for sight and attack range
         playerInSightRange = Physics.CheckSphere(transform.position, sightRange, whatIsPlayer);
         playerInAttackRange = Physics.CheckSphere(transform.position, attackRange, whatIsPlayer);
+        PlayerLowDmgRange = Physics.CheckSphere(transform.position, lowdmgRange, whatIsPlayer);
 
         if (playerInSightRange && !playerInAttackRange) ChasePlayer();
         if (playerInAttackRange && playerInSightRange) AttackPlayer();
@@ -78,6 +79,9 @@ public class Enemy : MonoBehaviour
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, attackRange);
         Gizmos.color = Color.yellow;
-        Gizmos.DrawWireSphere(transform.position, sightRange);
+        Gizmos.DrawWireSphere(transform.position, sightRange); 
+        Gizmos.color = Color.cyan;
+        Gizmos.DrawWireSphere(transform.position, lowdmgRange);
+
     }
 }
