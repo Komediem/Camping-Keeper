@@ -135,6 +135,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: LogPileFinal
       objectReference: {fileID: 0}
+    - target: {fileID: 8370221156420917955, guid: b37c4530d1441064082bb019a8c16f3c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9179232588250595449, guid: b37c4530d1441064082bb019a8c16f3c, type: 3}
       propertyPath: m_RootOrder
       value: 11
@@ -328,6 +332,10 @@ PrefabInstance:
     - target: {fileID: 4790196886096270628, guid: bbddab476dd26154a99f988f46c5eb25, type: 3}
       propertyPath: m_Name
       value: Checkpoint No ASSET
+      objectReference: {fileID: 0}
+    - target: {fileID: 4790196886096270628, guid: bbddab476dd26154a99f988f46c5eb25, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4790196886096270631, guid: bbddab476dd26154a99f988f46c5eb25, type: 3}
       propertyPath: m_RootOrder
@@ -886,8 +894,10 @@ MonoBehaviour:
   timeBetweenAttacks: 2
   sightRange: 29.94
   attackRange: 2
+  lowdmgRange: 15
   playerInSightRange: 0
   playerInAttackRange: 0
+  PlayerLowDmgRange: 0
 --- !u!195 &735885157
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -1045,6 +1055,10 @@ PrefabInstance:
     - target: {fileID: 5747504497276877726, guid: 034e940684b85304fb2f5307838313d8, type: 3}
       propertyPath: m_Name
       value: Pickable_1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5747504497276877726, guid: 034e940684b85304fb2f5307838313d8, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
@@ -1514,6 +1528,10 @@ PrefabInstance:
     - target: {fileID: 4066695775794342752, guid: 9f46f4d2ed28d4c46a7643951d99e84e, type: 3}
       propertyPath: m_Name
       value: Trashbin
+      objectReference: {fileID: 0}
+    - target: {fileID: 4066695775794342752, guid: 9f46f4d2ed28d4c46a7643951d99e84e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
