@@ -11,6 +11,7 @@ public class PlayerMentalHealth : MonoBehaviour
 
     public float mentalHealth;
     public float maxMentalHealth;
+    public float minMentalHealth;
 
     [Header("Vignette")]
     [SerializeField] private Volume volume;
@@ -20,7 +21,8 @@ public class PlayerMentalHealth : MonoBehaviour
     {
         instance = this;
 
-        maxMentalHealth = 100;
+        maxMentalHealth = 0;
+        minMentalHealth = -100;
         mentalHealth = maxMentalHealth;
     }
 
@@ -35,10 +37,23 @@ public class PlayerMentalHealth : MonoBehaviour
         mentalHealth -= amount;
     }
 
-    private void Update()
+    public void Death()
     {
-        blackVignette.intensity.value = mentalHealth / 100;
+        PlayerController.Instance.playerAnimator.SetBool("isDead", true);
     }
 
+    private void Update()
+    {
+        blackVignette.intensity.value = -mentalHealth / 100;
 
+        if(Input.GetKeyDown(KeyCode.Space))
+        {
+            TakeDamage(5);
+        }
+
+        if(mentalHealth <= minMentalHealth)
+        {
+            Death();
+        }
+    }
 }
