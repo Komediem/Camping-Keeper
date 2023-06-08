@@ -12,14 +12,14 @@ public class PlayerController : MonoBehaviour
 
     public Animator playerAnimator;
 
-    [SerializeField] public GameObject LightLantern;
+    public GameObject LightLantern;
 
     public float LightTime;
 
     #region Movement
     [Header("Movement Settings")]
     [Space]
-    float movement;
+    public float movement;
     public bool lockMovements;
 
     public bool isCrouching = false;
@@ -29,7 +29,7 @@ public class PlayerController : MonoBehaviour
     public float speedValue;
 
     [SerializeField] private float moveSmoothTime = 0.2f;
-    private Vector3 currentMoveVelocity;
+    public Vector3 currentMoveVelocity;
     private Vector3 moveDampVelocity;
     [Space]
     #endregion
@@ -122,9 +122,12 @@ public class PlayerController : MonoBehaviour
             }
             else move = transform.right * movement;
 
+            //currentMoveVelocity.y = -5f;
+
             currentMoveVelocity = Vector3.SmoothDamp(currentMoveVelocity, move * speedValue, ref moveDampVelocity, moveSmoothTime);
 
             controller.Move(currentMoveVelocity * Time.deltaTime);
+            //rb.MovePosition(currentMoveVelocity * Time.deltaTime);
 
             CheckJump();
 
@@ -154,7 +157,7 @@ public class PlayerController : MonoBehaviour
             }
 
             //print("move vel " + currentMoveVelocity);
-            print("vel " + velocity);
+            //print("vel " + velocity);
         }
     }
 
@@ -182,6 +185,7 @@ public class PlayerController : MonoBehaviour
         }
 
         controller.Move(velocity * Time.deltaTime);
+        //rb.MovePosition(velocity * Time.deltaTime);
 
         jumpSpeed = jumpDefault;
     }
@@ -352,5 +356,4 @@ public class PlayerController : MonoBehaviour
             }
         }
     }
-
 }
