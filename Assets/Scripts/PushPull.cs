@@ -50,7 +50,7 @@ public class PushPull : MonoBehaviour
 
     private void OnTriggerExit(Collider collision)
     {
-        if (PlayerController.Instance.isPulling == false && collision.CompareTag("Player"))
+        if (/*PlayerController.Instance.isPulling == false &&*/ collision.CompareTag("Player"))
         {
             PlayerController.Instance.PushPullTrigger = false;
 
@@ -63,18 +63,18 @@ public class PushPull : MonoBehaviour
     {
         if (PlayerController.Instance.isPulling && !PlayerController.Instance.isCrouching)
         {
-            //_child.transform.SetParent(Player.transform); // Sets "Player" as the new parent of the child GameObject.
+            _child.transform.SetParent(Player.transform); // Sets "Player" as the new parent of the child GameObject.
 
             PlayerController.Instance.canJump = false;
             PlayerController.Instance.isCrouching = false;
 
-            rb.MovePosition(PlayerController.Instance.transform.position);
+            //rb.MovePosition(PlayerController.Instance.transform.position);
             //rb.AddForce(rb.velocity);
 
         }
         else
         {
-            //_child.transform.SetParent(null); // Setting the parent to "null" unparents the GameObject and turns child into a top-level object in the hierarchy
+            _child.transform.SetParent(null); // Setting the parent to "null" unparents the GameObject and turns child into a top-level object in the hierarchy
         }
     }
 }

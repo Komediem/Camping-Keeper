@@ -127,7 +127,6 @@ public class PlayerController : MonoBehaviour
             currentMoveVelocity = Vector3.SmoothDamp(currentMoveVelocity, move * speedValue, ref moveDampVelocity, moveSmoothTime);
 
             controller.Move(currentMoveVelocity * Time.deltaTime);
-            //rb.MovePosition(currentMoveVelocity * Time.deltaTime);
 
             CheckJump();
 
@@ -185,7 +184,6 @@ public class PlayerController : MonoBehaviour
         }
 
         controller.Move(velocity * Time.deltaTime);
-        //rb.MovePosition(velocity * Time.deltaTime);
 
         jumpSpeed = jumpDefault;
     }
