@@ -48,7 +48,7 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField] private float gravity = 9.8f;
 
-    private Vector3 velocity;
+    [SerializeField] private Vector3 velocity;
 
     //Trampoline settings
     [SerializeField] private float trampolineForce = 16f;
@@ -62,6 +62,8 @@ public class PlayerController : MonoBehaviour
     public bool isPulling = false;
 
     public bool PushPullTrigger;
+
+    public float NombrePression;
 
     private void Awake()
     {
@@ -94,9 +96,11 @@ public class PlayerController : MonoBehaviour
 
         isPulling = false;
         PushPullTrigger = false;
+
         Raycast.SetActive(false);
 
         velocity.y = -10f;
+
     }
 
     void Update()
@@ -164,9 +168,6 @@ public class PlayerController : MonoBehaviour
 
                 playerAnimator.SetBool("isCrouchWalking", false);
             }
-
-            //print("move vel " + currentMoveVelocity);
-            //print("vel " + velocity);
         }
     }
 
@@ -320,6 +321,13 @@ public class PlayerController : MonoBehaviour
 
             //play animation faire attention au moment ou la light se coupe
             Invoke("LightStop", LightTime);
+        }
+    }
+    public void Spam(InputAction.CallbackContext context)
+    {
+        if (context.performed && SpamInput.Instance.IsActive)
+        {
+            NombrePression++;
         }
     }
     #endregion

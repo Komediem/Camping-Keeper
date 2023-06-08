@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.15301472, g: 0.20963421, b: 0.33168814, a: 1}
+  m_IndirectSpecularColor: {r: 0.15294725, g: 0.20886451, b: 0.3250563, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -666,7 +666,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 110190128}
-  m_LocalRotation: {x: 0.19876659, y: -0.050701022, z: 0.010297203, w: 0.9786804}
+  m_LocalRotation: {x: 0.09731196, y: -0.051489946, z: 0.0050412966, w: 0.99390835}
   m_LocalPosition: {x: -82.43716, y: -123.92536, z: -99.16996}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1799,6 +1799,14 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 894474206, guid: a389da2f4438b3a4e9c5202b88c93942, type: 3}
+      propertyPath: VCamMenu
+      value: 
+      objectReference: {fileID: 1627944903}
+    - target: {fileID: 894474206, guid: a389da2f4438b3a4e9c5202b88c93942, type: 3}
+      propertyPath: MainvCam1
+      value: 
+      objectReference: {fileID: 667152125}
     - target: {fileID: 6330055504169505633, guid: a389da2f4438b3a4e9c5202b88c93942, type: 3}
       propertyPath: m_Name
       value: Player + Cam

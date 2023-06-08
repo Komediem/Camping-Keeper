@@ -4,17 +4,15 @@ public class PushPull : MonoBehaviour
 {
     [Header("Don't need to assign :")]
     [SerializeField] private GameObject Player;
-    //[SerializeField] private GameObject _child;
 
     private void Awake()
     {
         Player = GameObject.Find("Player");
-        //_child = this.gameObject;
     }
 
     void Update()
     {
-        if (!PlayerController.Instance.lockMovements && !PlayerController.Instance.isCrouching)
+        if (!PlayerController.Instance.lockMovements && !PlayerController.Instance.isCrouching) ///if can move && isn't crouching
         {
             PullPush();
         }
@@ -22,7 +20,7 @@ public class PushPull : MonoBehaviour
 
     public void PullPush()
     {
-        if (PlayerController.Instance.PushPullTrigger)
+        if (PlayerController.Instance.PushPullTrigger) ///enter collider (bool)
         {
             Pull();
         }
@@ -30,7 +28,7 @@ public class PushPull : MonoBehaviour
 
     private void OnTriggerEnter(Collider collision)
     {
-        if (/*PlayerController.Instance.isPulling == true &&*/ collision.CompareTag("Player"))
+        if (collision.CompareTag("Player"))
         {
             PlayerController.Instance.PushPullTrigger = true;
 
@@ -43,7 +41,7 @@ public class PushPull : MonoBehaviour
 
     private void OnTriggerExit(Collider collision)
     {
-        if (/*PlayerController.Instance.isPulling == false &&*/ collision.CompareTag("Player"))
+        if (collision.CompareTag("Player"))
         {
             PlayerController.Instance.PushPullTrigger = false;
 
@@ -54,7 +52,7 @@ public class PushPull : MonoBehaviour
 
     public void Pull()
     {
-        if (PlayerController.Instance.isPulling && !PlayerController.Instance.isCrouching)
+        if (PlayerController.Instance.isPulling && !PlayerController.Instance.isCrouching) ///is button pressed && isn't crouching
         {
             gameObject.transform.SetParent(Player.transform); //Sets "Player" as the new parent of the child GameObject.
 
