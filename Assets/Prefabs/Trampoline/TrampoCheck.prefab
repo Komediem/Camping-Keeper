@@ -27,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 458843434}
   m_LocalRotation: {x: -0.30975953, y: 0.95081496, z: -0.00000018001528, w: 0.0000005525616}
-  m_LocalPosition: {x: 3.1259995, y: -8.573, z: -0.01499671}
+  m_LocalPosition: {x: 3.1259995, y: -9.25, z: -0.01499671}
   m_LocalScale: {x: 1, y: 2.6182132, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -124,7 +124,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1769957156}
   m_LocalRotation: {x: -0.0000007028785, y: 0.0000022563072, z: -0.30975953, w: 0.95081496}
-  m_LocalPosition: {x: -3.1279984, y: -8.573, z: -0.015003979}
+  m_LocalPosition: {x: -3.07, y: -9.29, z: -0.015003979}
   m_LocalScale: {x: 1, y: 2.6182132, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -207,6 +207,7 @@ GameObject:
   - component: {fileID: 4288981735297436002}
   - component: {fileID: 1926321636829179470}
   - component: {fileID: 3189695927533721080}
+  - component: {fileID: 2711627967326302481}
   m_Layer: 0
   m_Name: Props_Tent_Trampoline
   m_TagString: Trampoline
@@ -222,7 +223,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2343413709057386679}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -9, z: 0}
+  m_LocalPosition: {x: 0, y: -9.75, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -302,10 +303,30 @@ BoxCollider:
   m_GameObject: {fileID: 2343413709057386679}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 5.4, y: 2.25, z: 2.45}
   m_Center: {x: 0, y: 1.15, z: 0}
+--- !u!95 &2711627967326302481
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2343413709057386679}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a65b1cd57f875d744966a50c2ed48a9b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &8429274702172861687
 GameObject:
   m_ObjectHideFlags: 0
@@ -353,8 +374,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 5.45, y: 0.5, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 10.37, y: 0.39360523, z: 1}
+  m_Center: {x: 0, y: -2.97, z: 0}
 --- !u!114 &8429274702172861686
 MonoBehaviour:
   m_ObjectHideFlags: 0
