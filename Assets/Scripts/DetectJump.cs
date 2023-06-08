@@ -14,14 +14,6 @@ public class DetectJump : MonoBehaviour
         }
     }
 
-    /*private void OnTriggerStay(Collider other)
-    {
-        if (CompareTag("Untagged"))
-        {
-            cJump = true;
-        }
-    }*/
-
     private void OnTriggerExit(Collider other)
     {
         if (CompareTag("Untagged"))
@@ -29,15 +21,4 @@ public class DetectJump : MonoBehaviour
             cJump = false;
         }
     }
-
-
-    /*public void OnCollisionEnter(Collision collisions)
-    {
-        cJump = true;
-    }
-
-    public void OnCollisionExit(Collision collision)
-    {
-        cJump = false;
-    }*/
 }
