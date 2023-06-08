@@ -89,7 +89,8 @@ public class PushPull : MonoBehaviour
         else
         {
             gameObject.transform.SetParent(null); //Setting the parent to "null" unparents the GameObject and turns child into a top-level object in the hierarchy
-
+            
+            //resets Push/Pull Animation
             PlayerController.Instance.playerAnimator.SetBool("isPushAndPull", false);
             PlayerController.Instance.playerAnimator.SetBool("isPushing", false);
             PlayerController.Instance.playerAnimator.SetBool("isPulling", false);
