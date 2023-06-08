@@ -1,5 +1,50 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1046972783
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1046972784}
+  - component: {fileID: 1046972785}
+  m_Layer: 0
+  m_Name: ColliderCrouch
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1046972784
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1046972783}
+  m_LocalRotation: {x: 0.075601526, y: 0.70203775, z: -0.07573338, w: 0.7040539}
+  m_LocalPosition: {x: 528.9, y: 86.699974, z: 0.000029802322}
+  m_LocalScale: {x: 125, y: 125, z: 125}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4684733900125950478}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1046972785
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1046972783}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.15, y: 1.31, z: 7.9}
+  m_Center: {x: 0.3, y: 0.15, z: 1.49}
 --- !u!1 &52300948679414680
 GameObject:
   m_ObjectHideFlags: 0
@@ -521,9 +566,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5352620540979611828}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 62.735916, y: 0.06477225, z: 6.72188}
-  m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
+  m_LocalScale: {x: 0.008, y: 0.007999999, z: 0.008}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7000122899867420216}
@@ -537,8 +582,9 @@ Transform:
   - {fileID: 992955049588018220}
   - {fileID: 2482936236994789566}
   - {fileID: 4074988312237548751}
+  - {fileID: 1046972784}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5611146973371133885
 GameObject:

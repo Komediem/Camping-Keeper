@@ -30,8 +30,13 @@ public class PushPull : MonoBehaviour
 
     private void OnTriggerEnter(Collider collision)
     {
-        if (/*PlayerController.Instance.isPulling == true &&*/ collision.CompareTag("Player"))
+        if (collision.CompareTag("Player") /*&& PlayerController.Instance.isPulling*/)
         {
+            if (PlayerController.Instance.isPulling)
+            {
+                print("weewoo");
+            }
+
             PlayerController.Instance.PushPullTrigger = true;
 
             PlayerController.Instance.speed /= 2;
