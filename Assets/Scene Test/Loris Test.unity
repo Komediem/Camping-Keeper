@@ -1282,6 +1282,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 580119574117237667, guid: 89bdf6e969695624882243b44eff5e28, type: 3}
   m_PrefabInstance: {fileID: 1131526541}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1670741363 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4292055377032961787, guid: a389da2f4438b3a4e9c5202b88c93942, type: 3}
+  m_PrefabInstance: {fileID: 57372118105740779}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1672114463
 GameObject:
   m_ObjectHideFlags: 0
@@ -2009,6 +2020,10 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1199136050, guid: 0b808f0095528bf41ba9480bb86dffea, type: 3}
+      propertyPath: input
+      value: 
+      objectReference: {fileID: 1670741363}
     - target: {fileID: 4272810012536966945, guid: 0b808f0095528bf41ba9480bb86dffea, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -2097,6 +2112,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 8536794177643265104, guid: 0b808f0095528bf41ba9480bb86dffea, type: 3}
+      propertyPath: input
+      value: 
+      objectReference: {fileID: 1670741363}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 0b808f0095528bf41ba9480bb86dffea, type: 3}
