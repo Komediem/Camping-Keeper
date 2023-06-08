@@ -10,7 +10,8 @@ public class Interraction : MonoBehaviour
 
     private void Update()
     {
-        if (PlayerController.Instance.isJumping == true || PlayerController.Instance.isPulling == true || PlayerController.Instance.PushPullTrigger == true || PlayerController.Instance.isCrouching == true)
+        if (PlayerController.Instance.isJumping || PlayerController.Instance.isPulling  || PlayerController.Instance.PushPullTrigger 
+            || PlayerController.Instance.isCrouching  || Checkpoint.Instance.CheckpointIsActivate)
         {
             OutlineObject.SetActive(false);
         } 
