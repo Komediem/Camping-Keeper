@@ -58,10 +58,41 @@ public class PushPull : MonoBehaviour
 
             PlayerController.Instance.canJump = false;
             PlayerController.Instance.isCrouching = false;
+
+            ///Push/Pull Animations
+            if (PlayerController.Instance.movement == 0) //no movement
+            {
+                //Anim : Idle Push/Pull
+                PlayerController.Instance.playerAnimator.SetBool("isPushAndPull", true);
+
+                PlayerController.Instance.playerAnimator.SetBool("isPushing", false);
+                PlayerController.Instance.playerAnimator.SetBool("isPulling", false);
+            }
+            else if (PlayerController.Instance.movement > 0) //positive movement, to the right
+            {
+                //anim : push
+                PlayerController.Instance.playerAnimator.SetBool("isPushing", true);
+
+                PlayerController.Instance.playerAnimator.SetBool("isPushAndPull", false);
+                PlayerController.Instance.playerAnimator.SetBool("isPulling", false);
+            }
+            else if (PlayerController.Instance.movement < 0) //negative movement, to the left
+            {
+                //anim : pull
+                PlayerController.Instance.playerAnimator.SetBool("isPulling", true);
+
+                PlayerController.Instance.playerAnimator.SetBool("isPushAndPull", false);
+                PlayerController.Instance.playerAnimator.SetBool("isPushing", false);
+            }
+            ///end Push/Pull Anim
         }
         else
         {
             gameObject.transform.SetParent(null); //Setting the parent to "null" unparents the GameObject and turns child into a top-level object in the hierarchy
+
+            PlayerController.Instance.playerAnimator.SetBool("isPushAndPull", false);
+            PlayerController.Instance.playerAnimator.SetBool("isPushing", false);
+            PlayerController.Instance.playerAnimator.SetBool("isPulling", false);
         }
     }
 }
