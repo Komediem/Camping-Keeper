@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.1529117, g: 0.20881277, b: 0.32499564, a: 1}
+  m_IndirectSpecularColor: {r: 0.15301472, g: 0.20963421, b: 0.33168814, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -971,11 +971,6 @@ PrefabInstance:
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 0b808f0095528bf41ba9480bb86dffea, type: 3}
---- !u!1 &130984602 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1591320884, guid: 0b808f0095528bf41ba9480bb86dffea, type: 3}
-  m_PrefabInstance: {fileID: 130984601}
-  m_PrefabAsset: {fileID: 0}
 --- !u!224 &130984603 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4272810012536966945, guid: 0b808f0095528bf41ba9480bb86dffea, type: 3}
@@ -995,17 +990,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &130984606 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1591320886, guid: 0b808f0095528bf41ba9480bb86dffea, type: 3}
-  m_PrefabInstance: {fileID: 130984601}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 130984602}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!223 &130984607 stripped
@@ -1815,42 +1799,6 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 744957366, guid: a389da2f4438b3a4e9c5202b88c93942, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.373
-      objectReference: {fileID: 0}
-    - target: {fileID: 744957366, guid: a389da2f4438b3a4e9c5202b88c93942, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.173
-      objectReference: {fileID: 0}
-    - target: {fileID: 744957366, guid: a389da2f4438b3a4e9c5202b88c93942, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -0.077
-      objectReference: {fileID: 0}
-    - target: {fileID: 894474206, guid: a389da2f4438b3a4e9c5202b88c93942, type: 3}
-      propertyPath: VCamMenu
-      value: 
-      objectReference: {fileID: 1627944903}
-    - target: {fileID: 894474206, guid: a389da2f4438b3a4e9c5202b88c93942, type: 3}
-      propertyPath: MainvCam1
-      value: 
-      objectReference: {fileID: 667152125}
-    - target: {fileID: 1056455556, guid: a389da2f4438b3a4e9c5202b88c93942, type: 3}
-      propertyPath: tutoText
-      value: 
-      objectReference: {fileID: 130984606}
-    - target: {fileID: 1056455556, guid: a389da2f4438b3a4e9c5202b88c93942, type: 3}
-      propertyPath: tutoTextObject
-      value: 
-      objectReference: {fileID: 130984602}
-    - target: {fileID: 4292055377032961787, guid: a389da2f4438b3a4e9c5202b88c93942, type: 3}
-      propertyPath: m_Camera
-      value: 
-      objectReference: {fileID: 791087621}
-    - target: {fileID: 4292055377032961787, guid: a389da2f4438b3a4e9c5202b88c93942, type: 3}
-      propertyPath: m_UIInputModule
-      value: 
-      objectReference: {fileID: 1095564879}
     - target: {fileID: 6330055504169505633, guid: a389da2f4438b3a4e9c5202b88c93942, type: 3}
       propertyPath: m_Name
       value: Player + Cam
@@ -1898,18 +1846,6 @@ PrefabInstance:
     - target: {fileID: 6330055504169505634, guid: a389da2f4438b3a4e9c5202b88c93942, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6908924945542976861, guid: a389da2f4438b3a4e9c5202b88c93942, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.355
-      objectReference: {fileID: 0}
-    - target: {fileID: 6908924945542976861, guid: a389da2f4438b3a4e9c5202b88c93942, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.489
-      objectReference: {fileID: 0}
-    - target: {fileID: 6908924945542976861, guid: a389da2f4438b3a4e9c5202b88c93942, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -0.09
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
