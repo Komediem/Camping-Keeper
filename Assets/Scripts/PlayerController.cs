@@ -48,7 +48,7 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField] private float gravity = 9.8f;
 
-    private Vector3 velocity;
+    [SerializeField] private Vector3 velocity;
 
     //Trampoline settings
     [SerializeField] private float trampolineForce = 16f;
@@ -94,6 +94,7 @@ public class PlayerController : MonoBehaviour
 
         isPulling = false;
         PushPullTrigger = false;
+
         Raycast.SetActive(false);
 
         velocity.y = -10f;
@@ -164,9 +165,6 @@ public class PlayerController : MonoBehaviour
 
                 playerAnimator.SetBool("isCrouchWalking", false);
             }
-
-            //print("move vel " + currentMoveVelocity);
-            //print("vel " + velocity);
         }
     }
 
