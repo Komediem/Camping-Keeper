@@ -14,6 +14,8 @@ public class PlayerController : MonoBehaviour
 
     public GameObject LightLantern;
 
+    public GameObject Raycast;
+
     public float LightTime;
 
     #region Movement
@@ -71,6 +73,8 @@ public class PlayerController : MonoBehaviour
 
         LightLantern = GameObject.Find("LightHitBox");
 
+        Raycast = GameObject.Find("RayCast");
+
         rb = GetComponent<Rigidbody>();
 
         playerAnimator = GetComponentInChildren<Animator>();
@@ -89,12 +93,13 @@ public class PlayerController : MonoBehaviour
 
         isPulling = false;
         PushPullTrigger = false;
+        Raycast.SetActive(false);
 
         velocity.y = -10f;
     }
 
     void Update()
-    {
+    {      
         if (Menu.Instance != null)
         {
             if (Menu.Instance.isMenuActive)
@@ -144,9 +149,13 @@ public class PlayerController : MonoBehaviour
             {
                 if (isCrouching)
                 {
+                  
                     playerAnimator.SetBool("isCrouchWalking", true);
                 }
-                else playerAnimator.SetBool("isWalking", true);
+                else
+                {
+                    playerAnimator.SetBool("isWalking", true);
+                }
             }
             else
             {
@@ -225,10 +234,11 @@ public class PlayerController : MonoBehaviour
         ///Speed/2, no jump, no interact, no stun, no pull/push
         if (context.performed)
         {
-            if (isCrouching)
+            if (isCrouching && Raycastcrouch.Instance.CanStand)
             {
                 isCrouching = false;
-
+                Raycast.SetActive(false);
+                
                 speed = speedDefault;
                 speedValue = speedDefault;
 
@@ -239,12 +249,12 @@ public class PlayerController : MonoBehaviour
 
                 playerAnimator.SetBool("isCrouchWalking", false);
             }
-            else
+            else 
             {
-                if (!isPulling)
+                if (!isPulling && Raycastcrouch.Instance.CanStand)
                 {
                     isCrouching = true;
-
+                    Raycast.SetActive(true);
                     speed /= 2;
                     speedValue /= 2;
 
