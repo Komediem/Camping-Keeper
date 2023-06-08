@@ -17,7 +17,7 @@ public class SpamInput : MonoBehaviour
     {
         if (PlayerController.Instance.NombrePression >= SpamAvantAction)
         {
-
+            //Action suite au spam
         }
     }
 

@@ -4,9 +4,14 @@ using UnityEngine;
 
 public class Checkpoint : MonoBehaviour
 {
-    private bool IsActivate;
+    public bool CheckpointIsActivate;
     [SerializeField] private GameObject flames;
-
+    public static Checkpoint Instance;
+    private void Awake()
+    {
+        if (Instance) Destroy(this);
+        else Instance = this;
+    }
     private void Start()
     {
         flames.SetActive(false);
@@ -14,11 +19,11 @@ public class Checkpoint : MonoBehaviour
 
     private void OnTriggerEnter(Collider collision)
     {
-        if (IsActivate == true) return;
+        if (CheckpointIsActivate == true) return;
         if (collision.tag == "InterractZone")
         {
             GameManager.instance.CurrentCheckpoint = gameObject;
-            IsActivate = true;
+            CheckpointIsActivate = true;
 
             //Activation des flammes
             flames.SetActive(true);
