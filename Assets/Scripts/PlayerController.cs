@@ -285,8 +285,8 @@ public class PlayerController : MonoBehaviour
         }
         else if (context.canceled && !isCrouching)
         {
-            speed = speedDefault;
-            speedValue = speedDefault;
+            /*speed = speedDefault;
+            speedValue = speedDefault;*/
 
             isPulling = false;
         }
