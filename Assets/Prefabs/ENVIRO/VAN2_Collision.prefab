@@ -2876,6 +2876,7 @@ GameObject:
   - component: {fileID: 1989681747616379142}
   - component: {fileID: 2023941956857353939}
   - component: {fileID: 2023941956857353938}
+  - component: {fileID: 5409802223450370374}
   m_Layer: 7
   m_Name: VAN2_Collision
   m_TagString: Untagged
@@ -2890,7 +2891,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1213462459192503228}
-  m_LocalRotation: {x: -0, y: -0.70710576, z: -0, w: 0.70710784}
+  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 32.600822, y: 1.78, z: 15}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2899,7 +2900,7 @@ Transform:
   - {fileID: 8460078780860451513}
   - {fileID: 6032012384999579079}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!65 &2023941956857353939
 BoxCollider:
@@ -2927,6 +2928,26 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 3.035243, y: 2.0318236, z: 7.5258408}
   m_Center: {x: 0.06339085, y: 0.93518305, z: -0.53238106}
+--- !u!95 &5409802223450370374
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1213462459192503228}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 594d41eca086d8047981ce5a4cf7d32a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1292732068044750317
 GameObject:
   m_ObjectHideFlags: 0
@@ -5323,7 +5344,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2463931622930624391}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.000038753857, y: 0.124173574, z: 0.061133057}
+  m_LocalPosition: {x: -0.00003875386, y: 0.124173574, z: 0.06113306}
   m_LocalScale: {x: 25, y: 25, z: 25}
   m_ConstrainProportionsScale: 0
   m_Children:
