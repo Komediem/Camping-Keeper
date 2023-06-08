@@ -63,6 +63,8 @@ public class PlayerController : MonoBehaviour
 
     public bool PushPullTrigger;
 
+    public float NombrePression;
+
     private void Awake()
     {
         if (Instance) Destroy(this);
@@ -97,6 +99,7 @@ public class PlayerController : MonoBehaviour
         Raycast.SetActive(false);
 
         velocity.y = -10f;
+
     }
 
     void Update()
@@ -320,6 +323,13 @@ public class PlayerController : MonoBehaviour
 
             //play animation faire attention au moment ou la light se coupe
             Invoke("LightStop", LightTime);
+        }
+    }
+    public void Spam(InputAction.CallbackContext context)
+    {
+        if (context.performed && SpamInput.Instance.IsActive)
+        {
+            NombrePression++;
         }
     }
     #endregion
