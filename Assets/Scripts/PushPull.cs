@@ -1,21 +1,15 @@
 using UnityEngine;
-using UnityEngine.InputSystem;
-using UnityEngine.InputSystem.XR;
 
 public class PushPull : MonoBehaviour
 {
     [Header("Don't need to assign :")]
     [SerializeField] private GameObject Player;
-    [SerializeField] private GameObject _child;
-
-    private Rigidbody rb;
+    //[SerializeField] private GameObject _child;
 
     private void Awake()
     {
         Player = GameObject.Find("Player");
-        _child = this.gameObject;
-        
-        rb = GetComponent<Rigidbody>();
+        //_child = this.gameObject;
     }
 
     void Update()
@@ -23,7 +17,6 @@ public class PushPull : MonoBehaviour
         if (!PlayerController.Instance.lockMovements && !PlayerController.Instance.isCrouching)
         {
             PullPush();
-            print(rb.velocity);
         }
     }
 
@@ -37,7 +30,7 @@ public class PushPull : MonoBehaviour
 
     private void OnTriggerEnter(Collider collision)
     {
-        if (PlayerController.Instance.isPulling == true && collision.CompareTag("Player"))
+        if (/*PlayerController.Instance.isPulling == true &&*/ collision.CompareTag("Player"))
         {
             PlayerController.Instance.PushPullTrigger = true;
 
@@ -63,18 +56,14 @@ public class PushPull : MonoBehaviour
     {
         if (PlayerController.Instance.isPulling && !PlayerController.Instance.isCrouching)
         {
-            _child.transform.SetParent(Player.transform); // Sets "Player" as the new parent of the child GameObject.
+            gameObject.transform.SetParent(Player.transform); // Sets "Player" as the new parent of the child GameObject.
 
             PlayerController.Instance.canJump = false;
             PlayerController.Instance.isCrouching = false;
-
-            //rb.MovePosition(PlayerController.Instance.transform.position);
-            //rb.AddForce(rb.velocity);
-
         }
         else
         {
-            _child.transform.SetParent(null); // Setting the parent to "null" unparents the GameObject and turns child into a top-level object in the hierarchy
+            gameObject.transform.SetParent(null); // Setting the parent to "null" unparents the GameObject and turns child into a top-level object in the hierarchy
         }
     }
 }
