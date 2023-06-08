@@ -11,6 +11,8 @@ public class CharacterFeedbacks : MonoBehaviour
     [SerializeField] private GameObject fallParticle;
     [SerializeField] private Transform stepPosition;
 
+    [SerializeField] private Rigidbody lanternRb;
+
     public void Awake()
     {
         characterController = GetComponentInParent<CharacterController>();
@@ -35,5 +37,10 @@ public class CharacterFeedbacks : MonoBehaviour
     public void DespawnModel()
     {
         pickable.model.SetActive(false);
+    }
+
+    public void LanternFalling()
+    {
+        lanternRb.constraints = RigidbodyConstraints.None;
     }
 }
