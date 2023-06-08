@@ -2,10 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Vcam2ToVcam3 : MonoBehaviour
+public class Vcam3To2Vcame : MonoBehaviour
 {
-    [SerializeField]
-    private bool ok = true;
 
     #region Cam
     public GameObject VCam2;
@@ -15,19 +13,9 @@ public class Vcam2ToVcam3 : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-
-            if (ok)
-            {
-                ok = false;
-                VCam2.SetActive(false);
-                VCam3.SetActive(true);
-            }
-            else
-            {
-                ok = true;
-                VCam2.SetActive(true);
-                VCam3.SetActive(false);
-            }
+            VCam2.SetActive(false);
+            VCam3.SetActive(true);
         }
+
     }
 }

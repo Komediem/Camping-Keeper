@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class VcamRunToJump : MonoBehaviour
 {
-    [SerializeField]
-    private bool ok = true;
 
     #region Cam
     public GameObject VCamRun;
@@ -15,19 +13,8 @@ public class VcamRunToJump : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-
-            if (ok)
-            {
-                ok = false;
-                VCamRun.SetActive(false);
-                VCamJump.SetActive(true);
-            }
-            else
-            {
-                ok = true;
-                VCamRun.SetActive(true);
-                VCamJump.SetActive(false);
-            }
+            VCamRun.SetActive(false);
+            VCamJump.SetActive(true);
         }
     }
 }

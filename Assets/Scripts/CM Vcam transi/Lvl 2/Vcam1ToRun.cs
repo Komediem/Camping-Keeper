@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class Vcam1ToRun : MonoBehaviour
 {
-    [SerializeField]
-    private bool ok = true;
 
     #region Cam
     public GameObject VCam1;
@@ -15,19 +13,9 @@ public class Vcam1ToRun : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
+            VCam1.SetActive(false);
+            VCamRun.SetActive(true);
 
-            if (ok)
-            {
-                ok = false;
-                VCam1.SetActive(false);
-                VCamRun.SetActive(true);
-            }
-            else
-            {
-                ok = true;
-                VCam1.SetActive(true);
-                VCamRun.SetActive(false);
-            }
         }
     }
 }
