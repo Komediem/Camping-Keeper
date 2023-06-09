@@ -21,17 +21,7 @@ public class CharacterFeedbacks : MonoBehaviour
         characterController = GetComponentInParent<CharacterController>();
         pickable = FindObjectOfType<PickableNextLevel>();
         lanternLight = GetComponentInChildren<Light>();
-
-        lanternLightBool = false;
     }
-
-    /*public void Update()
-    {
-        if(lanternLightBool)
-        {
-            lanternLight.intensity -= Time.deltaTime;
-        }
-    }*/
 
     public void StepEffets()
     {
@@ -53,9 +43,8 @@ public class CharacterFeedbacks : MonoBehaviour
         pickable.model.SetActive(false);
     }
 
-    /*public void LanternFalling()
+    public void DeathRespawn()
     {
-        lanternRb.constraints = RigidbodyConstraints.None;
-        lanternLightBool = true;
-    }*/
+        GameManager.instance.Respawn();
+    }
 }
