@@ -2,18 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CamPuzzelToMainCam3 : MonoBehaviour
+public class FailJump4ToMainCam4 : MonoBehaviour
 {
     #region Cam
     public GameObject MainVCam4;
-    public GameObject CamPuzzel;
+    public GameObject FailJumpCam4;
     #endregion
     private void OnTriggerEnter(Collider collision)
     {
         if (collision.CompareTag("Player"))
         {
             MainVCam4.SetActive(true);
-            CamPuzzel.SetActive(false);
+            FailJumpCam4.SetActive(false);
         }
     }
 }
