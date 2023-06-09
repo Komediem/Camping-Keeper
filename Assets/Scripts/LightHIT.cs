@@ -1,6 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -14,6 +11,7 @@ public class LightHIT : MonoBehaviour
     {
         agent = GetComponent<NavMeshAgent>();
     }
+
     private void Start()
     {
         SpeedDefault = agent.speed;

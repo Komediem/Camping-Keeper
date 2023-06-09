@@ -10,9 +10,6 @@ public class PlayerController : MonoBehaviour
     public Rigidbody rb;
     public Animator playerAnimator;
 
-    public GameObject LightLantern;
-    public float LightTime;
-
     public GameObject Raycast;
 
     #region Movement
@@ -62,6 +59,15 @@ public class PlayerController : MonoBehaviour
     [Space]
     public float NombrePression;
 
+    #region Light
+    public GameObject LightLantern;
+    public float LightTime;
+
+    public float cooldownDuration = 3f;  // Duration of the cooldown in seconds
+    private float currentCooldown = 0f;  // Current cooldown progress
+    private bool isCooldown = false;  // Flag to check if the cooldown is active
+    #endregion
+
     private void Awake()
     {
         if (Instance) Destroy(this);
@@ -98,11 +104,12 @@ public class PlayerController : MonoBehaviour
         Raycast.SetActive(false);
 
         velocity.y = -10f;
-
     }
 
     void Update()
     {
+        Cooldown();
+
         if (!lockMovements)
         {
             Vector3 move;
@@ -154,6 +161,7 @@ public class PlayerController : MonoBehaviour
                 playerAnimator.SetBool("isCrouchWalking", false);
             }
         }
+        print(currentCooldown);
     }
 
     void CheckJump()
@@ -293,14 +301,46 @@ public class PlayerController : MonoBehaviour
 
     public void Light(InputAction.CallbackContext context)
     {
-        if (context.started && !isCrouching)
+        if (context.started && !isCrouching && !isCooldown)
         {
             LightLantern.SetActive(true);
 
             //Play Anmation, Be Carefull of the Moment Where The Light Cuts
             Invoke("LightStop", LightTime);
+
+            StartCooldown();
         }
     }
+
+    #region Cooldown
+    private void Cooldown()
+    {
+        if (isCooldown)
+        {
+            // Update the current cooldown progress
+            currentCooldown -= Time.deltaTime;
+
+            if (currentCooldown <= 0f)
+            {
+                // Cooldown has finished
+                isCooldown = false;
+                currentCooldown = 0f;
+                // Perform any actions you want to trigger after the cooldown finishes
+            }
+        }
+    }
+
+    public void StartCooldown()
+    {
+        if (!isCooldown)
+        {
+            isCooldown = true;
+            currentCooldown = cooldownDuration;
+            // Perform any actions you want to trigger at the start of the cooldown
+        }
+    }
+    #endregion
+
 
     public void Spam(InputAction.CallbackContext context)
     {
