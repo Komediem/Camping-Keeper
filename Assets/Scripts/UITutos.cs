@@ -25,8 +25,6 @@ public class UITutos : MonoBehaviour
         }
     }
 
-
-
     private void OnTriggerEnter(Collider other)
     {
         if(other.CompareTag("TutoJump"))
@@ -51,6 +49,12 @@ public class UITutos : MonoBehaviour
         {
             GameObject tutoInteract = tutoTexts[4];
             tutoInteract.SetActive(true);
+        }
+
+        if (other.CompareTag("TutoStun"))
+        {
+            GameObject tutoStun = tutoTexts[5];
+            tutoStun.SetActive(true);
         }
     }
 
