@@ -9,6 +9,8 @@ public class UITutos : MonoBehaviour
     [SerializeField] private TextMeshProUGUI tutoText;
     [SerializeField] private GameObject tutoTextObject;
 
+    [SerializeField] private Sprite[] tutoImages;
+
     private void OnTriggerEnter(Collider other)
     {
         if(other.CompareTag("TutoJump"))
