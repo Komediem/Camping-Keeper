@@ -459,7 +459,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1199136049
 Transform:
   m_ObjectHideFlags: 0
@@ -567,7 +567,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4285448173
+    rgba: 7258093
   m_fontColor: {r: 0.9294118, g: 0.7490196, b: 0.43137258, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -1140,7 +1140,7 @@ RectTransform:
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -1270,7 +1270,7 @@ GameObject:
   - component: {fileID: 5774403541783056617}
   - component: {fileID: 1316419817235016720}
   m_Layer: 5
-  m_Name: TutoText (1)
+  m_Name: TutoText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2077,7 +2077,7 @@ GameObject:
   - component: {fileID: 3134877172522790878}
   - component: {fileID: 3064146318477036560}
   m_Layer: 5
-  m_Name: TutoImage (1)
+  m_Name: TutoImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2226,6 +2226,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4308320196234654854}
+  - component: {fileID: 1376393833}
   m_Layer: 5
   m_Name: Tuto_PushAndPull
   m_TagString: Untagged
@@ -2256,6 +2257,26 @@ RectTransform:
   m_AnchoredPosition: {x: -26.200806, y: 404.45764}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!95 &1376393833
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2326192232265311223}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 980fcf2626070ba4e991a61fbce0642e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &2500883008582291627
 GameObject:
   m_ObjectHideFlags: 0
@@ -2341,6 +2362,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5871907727344944885}
+  - component: {fileID: 1157827259}
   m_Layer: 5
   m_Name: Tuto_Interaction
   m_TagString: Untagged
@@ -2370,6 +2392,26 @@ RectTransform:
   m_AnchoredPosition: {x: -26.200806, y: 404.45764}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!95 &1157827259
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2557675346997942998}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8e2e684b81c91f546b4a9bccc93004a7, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &2614975566758108839
 GameObject:
   m_ObjectHideFlags: 0
@@ -2462,7 +2504,7 @@ GameObject:
   - component: {fileID: 7001942339211914858}
   - component: {fileID: 4149918509817392705}
   m_Layer: 5
-  m_Name: TutoText (1)
+  m_Name: TutoText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2738,7 +2780,7 @@ GameObject:
   - component: {fileID: 8486440164310397271}
   - component: {fileID: 5360425881768522641}
   m_Layer: 5
-  m_Name: TutoImage (1)
+  m_Name: TutoImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3024,6 +3066,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8358049110147615391}
+  - component: {fileID: 1233420806}
   m_Layer: 5
   m_Name: Tuto_Crouch
   m_TagString: Untagged
@@ -3053,6 +3096,26 @@ RectTransform:
   m_AnchoredPosition: {x: -26.200806, y: 404.45764}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!95 &1233420806
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4162293873312190765}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a6ff5ea21b18d1e44b0cf6ff3bf7a6ea, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &4272810010705512131
 GameObject:
   m_ObjectHideFlags: 0
@@ -5024,7 +5087,7 @@ RectTransform:
   - {fileID: 1600833241}
   - {fileID: 556933340811171750}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -6147,8 +6210,8 @@ RectTransform:
   m_Father: {fileID: 5486454175682937289}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -6278,7 +6341,7 @@ GameObject:
   - component: {fileID: 3376289866212475987}
   - component: {fileID: 5538983595749250433}
   m_Layer: 5
-  m_Name: TutoText (1)
+  m_Name: TutoText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6413,7 +6476,7 @@ GameObject:
   - component: {fileID: 7179380940641044724}
   - component: {fileID: 8535023233381109596}
   m_Layer: 5
-  m_Name: TutoImage (1)
+  m_Name: TutoImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6486,6 +6549,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7606718883030545341}
+  - component: {fileID: 2114426238}
   m_Layer: 5
   m_Name: Tuto_Movement
   m_TagString: Untagged
@@ -6515,6 +6579,26 @@ RectTransform:
   m_AnchoredPosition: {x: -26.200806, y: 404.45764}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!95 &2114426238
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6594094339445906002}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b23cb5f462698654a9bd11a341a8ee0e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &7621109018198565205
 GameObject:
   m_ObjectHideFlags: 0
@@ -6564,7 +6648,7 @@ GameObject:
   - component: {fileID: 5250859220350812529}
   - component: {fileID: 3276486537305856956}
   m_Layer: 5
-  m_Name: TutoText (1)
+  m_Name: TutoText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6696,6 +6780,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7731677264952163853}
+  - component: {fileID: 242477254}
   m_Layer: 5
   m_Name: Tuto_Jump
   m_TagString: Untagged
@@ -6725,6 +6810,26 @@ RectTransform:
   m_AnchoredPosition: {x: -26.200806, y: 404.45764}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!95 &242477254
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7920228983038434665}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 5fac96b55c58ec24c8ea7a1c47e292d3, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &8084723009468676603
 GameObject:
   m_ObjectHideFlags: 0
@@ -6811,6 +6916,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3473355961651977669}
+  - component: {fileID: 443809927}
   m_Layer: 5
   m_Name: Tuto_Stun
   m_TagString: Untagged
@@ -6838,6 +6944,26 @@ RectTransform:
   m_AnchoredPosition: {x: -26.200806, y: 404.45764}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!95 &443809927
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8425519430117720489}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 6a08317e6a17cc14eab92b30fbeae815, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &9134913535335303162
 GameObject:
   m_ObjectHideFlags: 0
@@ -6850,7 +6976,7 @@ GameObject:
   - component: {fileID: 7572937486181965323}
   - component: {fileID: 8933632713776940219}
   m_Layer: 5
-  m_Name: TutoImage (1)
+  m_Name: TutoImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
