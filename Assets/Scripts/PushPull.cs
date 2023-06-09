@@ -5,7 +5,7 @@ public class PushPull : MonoBehaviour
     [Header("Don't need to assign :")]
     [SerializeField] private GameObject Player;
 
-    private bool isInteractable = false;
+    private bool isPushable = false;
     //private bool isPushing = false;
 
     private void Awake()
@@ -15,7 +15,7 @@ public class PushPull : MonoBehaviour
 
     void Update()
     {
-        if (isInteractable && !PlayerController.Instance.lockMovements && 
+        if (isPushable && !PlayerController.Instance.lockMovements && 
             !PlayerController.Instance.isCrouching && PlayerController.Instance.PushPullTrigger)
         {
             //isPushing = true;
@@ -32,7 +32,7 @@ public class PushPull : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            isInteractable = true;
+            isPushable = true;
 
             PlayerController.Instance.PushPullTrigger = true;
 
@@ -47,7 +47,7 @@ public class PushPull : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            isInteractable = false;
+            isPushable = false;
 
             PlayerController.Instance.PushPullTrigger = false;
 
