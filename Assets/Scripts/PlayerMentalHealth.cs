@@ -19,7 +19,8 @@ public class PlayerMentalHealth : MonoBehaviour
 
     private void Awake()
     {
-        instance = this;
+        if (instance) Destroy(this);
+        else instance = this;
 
         maxMentalHealth = 0;
         minMentalHealth = -100;
