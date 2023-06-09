@@ -5,47 +5,65 @@ using UnityEngine;
 
 public class UITutos : MonoBehaviour
 {
-    [Header("Texts")]
-    [SerializeField] private TextMeshProUGUI tutoText;
-    [SerializeField] private GameObject tutoTextObject;
+    public static UITutos instance;
 
-    [SerializeField] private Sprite[] tutoImages;
+    [Header("Texts")]
+    [SerializeField] private GameObject tutoTextObject;
+    [SerializeField] private List<GameObject> tutoTexts = new();
+
+    private void Awake()
+    {
+        if (instance) Destroy(this);
+        else instance = this;
+    }
+
+    private void Start()
+    {
+        for (int i = 0; i < tutoTextObject.transform.childCount; i++)
+        {
+            tutoTexts.Add(tutoTextObject.transform.GetChild(i).gameObject);
+        }
+    }
+
+
 
     private void OnTriggerEnter(Collider other)
     {
         if(other.CompareTag("TutoJump"))
         {
-            tutoText.text = "Press " + "Space Bar" + " to Jump";
-            StartCoroutine(tutoTextSpawn());
-            other.GetComponent<BoxCollider>().enabled = false;
+            GameObject tutoJump = tutoTexts[1];
+            tutoJump.SetActive(true);
         }
 
         if(other.CompareTag("TutoPushPull"))
         {
-            tutoText.text = "Hold " + "Z" + " to Push or Pull";
-            StartCoroutine(tutoTextSpawn());
-            other.GetComponent<BoxCollider>().enabled = false;
+            GameObject tutoPushPull = tutoTexts[2];
+            tutoPushPull.SetActive(true);
         }
 
         if(other.CompareTag("TutoCrouch"))
         {
-            tutoText.text = "Press " + "C" + " to Crouch";
-            StartCoroutine(tutoTextSpawn());
-            other.GetComponent<BoxCollider>().enabled = false;
+            GameObject tutoCrouch = tutoTexts[3];
+            tutoCrouch.SetActive(true);
         }
 
         if(other.CompareTag("TutoInteract"))
         {
-            tutoText.text = "Press " + "E" + " to Interact";
-            StartCoroutine(tutoTextSpawn());
-            other.GetComponent<BoxCollider>().enabled = false;
+            GameObject tutoInteract = tutoTexts[4];
+            tutoInteract.SetActive(true);
         }
     }
 
-    IEnumerator tutoTextSpawn()
+    /*IEnumerator tutoTextSpawn()
     {
         tutoTextObject.SetActive(true);
         yield return new WaitForSeconds(3);
         tutoTextObject.SetActive(false);
+    }*/
+
+    public void TutoMovement()
+    {
+        GameObject tutoMovement = tutoTexts[0];
+        tutoMovement.SetActive(true);
     }
 }

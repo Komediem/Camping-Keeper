@@ -89,6 +89,7 @@ public class Menu : MonoBehaviour
     {
         yield return new WaitForSeconds(5.5f);
         PlayerController.Instance.lockMovements = false;
+        UITutos.instance.TutoMovement();
     }
 
     public void ExitGame() //close App

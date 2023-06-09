@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CamPuzzelToMainCam3 : MonoBehaviour
+public class CamPuzzelToMainCam4 : MonoBehaviour
 {
     #region Cam
     public GameObject MainVCam4;
