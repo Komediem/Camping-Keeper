@@ -7,6 +7,9 @@ public class CharacterFeedbacks : MonoBehaviour
     private CharacterController characterController;
     private PickableNextLevel pickable;
 
+    [SerializeField] private Light lanternLight;
+    private bool lanternLightBool;
+
     [SerializeField] private GameObject stepParticle;
     [SerializeField] private GameObject fallParticle;
     [SerializeField] private Transform stepPosition;
@@ -16,7 +19,8 @@ public class CharacterFeedbacks : MonoBehaviour
     public void Awake()
     {
         characterController = GetComponentInParent<CharacterController>();
-        pickable = FindObjectOfType<PickableNextLevel>();  
+        pickable = FindObjectOfType<PickableNextLevel>();
+        lanternLight = GetComponentInChildren<Light>();
     }
 
     public void StepEffets()
@@ -39,8 +43,8 @@ public class CharacterFeedbacks : MonoBehaviour
         pickable.model.SetActive(false);
     }
 
-    public void LanternFalling()
+    public void DeathRespawn()
     {
-        lanternRb.constraints = RigidbodyConstraints.None;
+        GameManager.instance.Respawn();
     }
 }

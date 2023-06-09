@@ -86,6 +86,7 @@ public class PlayerController : MonoBehaviour
     {
         Application.targetFrameRate = Screen.currentResolution.refreshRate;
         Cursor.lockState = CursorLockMode.Confined;
+        Cursor.visible = true;
 
         speedDefault = speed;
         jumpDefault = jumpSpeed;

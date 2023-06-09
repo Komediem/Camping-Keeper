@@ -9,9 +9,10 @@ public class InteractionModeSwitcher : MonoBehaviour
 
     private void OnEnable()
     {
-        input.SwitchCurrentActionMap("UI");
+            Cursor.visible = true;
+            virtualCursor.SetActive(true);
 
-        virtualCursor.SetActive(true);
+            input.SwitchCurrentActionMap("UI");
     }
 
     private void OnDisable()
