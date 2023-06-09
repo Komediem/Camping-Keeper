@@ -1,4 +1,3 @@
-using JetBrains.Annotations;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -31,6 +30,8 @@ public class Menu : MonoBehaviour
         if (Instance) Destroy(this);
         else Instance = this;
 
+        Cursor.lockState = CursorLockMode.Confined;
+
         //assign all variables to prevent errors
         audio = GetComponent<AudioSource>();
 
@@ -39,7 +40,6 @@ public class Menu : MonoBehaviour
         OptionsWindow = GameObject.Find("Options");
 
         player = GameObject.Find("Player");
-        playerAnimator = FindObjectOfType<Animator>();
 
         if (SceneManager.GetActiveScene().buildIndex != 0)
         {
@@ -53,6 +53,8 @@ public class Menu : MonoBehaviour
         }
         else
         {
+            Cursor.visible = true;
+
             PlayerController.Instance.lockMovements = true;
 
             playerAnimator.SetBool("isPriority", true);
@@ -61,8 +63,6 @@ public class Menu : MonoBehaviour
             MainMenu.SetActive(true);
             MainButtons.SetActive(true);
             OptionsWindow.SetActive(false);
-
-            Cursor.lockState = CursorLockMode.Confined;
 
             isMenuActive = true;
         }
