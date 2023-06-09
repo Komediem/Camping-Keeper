@@ -95,6 +95,7 @@ Material:
     - _StencilWriteMaskDistortionVec: 4
     - _StencilWriteMaskGBuffer: 14
     - _StencilWriteMaskMV: 40
+    - _StupidHighEmissionCranker: 0.01
     - _SurfaceType: 1
     - _Threshold: 0.9
     - _TransparentBackfaceEnable: 0
@@ -114,7 +115,7 @@ Material:
     m_Colors:
     - _DoubleSidedConstants: {r: 1, g: 1, b: -1, a: 0}
     - _EmbersColor: {r: 1.5969613, g: 0.5540265, b: 0.36910897, a: 1}
-    - _Emission: {r: 178.90823, g: 178.90823, b: 178.90823, a: 0}
+    - _Emission: {r: 178.90823, g: 178.90823, b: 178.90823, a: 1}
     - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}
     - _fireColor: {r: 1.9058825, g: 0.62864184, b: 0.17961197, a: 1}
   m_BuildTextureStacks: []

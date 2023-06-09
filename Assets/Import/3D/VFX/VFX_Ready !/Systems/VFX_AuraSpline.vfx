@@ -14,13 +14,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   groupInfos: []
   stickyNoteInfos: []
-  categories: []
+  categories:
+  - name: Other
+    collapsed: 1
+  - name: GlobalSettings
+    collapsed: 1
+  - name: Turbulence
+    collapsed: 1
+  - name: Particles
+    collapsed: 1
   uiBounds:
     serializedVersion: 2
     x: -489
     y: -190
     width: 2837
-    height: 2765
+    height: 2827
 --- !u!114 &114350483966674976
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -90,6 +98,19 @@ MonoBehaviour:
   m_UISuperCollapsed: 0
   m_UIInfos: {fileID: 114340500867371532}
   m_ParameterInfo:
+  - name: Other
+    path: 
+    tooltip: 
+    sheetType: 
+    realType: 
+    defaultValue:
+      m_Type:
+        m_SerializableType: 
+      m_SerializableObject: 
+    min: -Infinity
+    max: Infinity
+    enumValues: []
+    descendantCount: 0
   - name: TargetPos
     path: TargetPos
     tooltip: 
@@ -173,6 +194,47 @@ MonoBehaviour:
     max: Infinity
     enumValues: []
     descendantCount: 0
+  - name: AttractionStrength
+    path: AttractionStrength
+    tooltip: 
+    sheetType: m_Float
+    realType: Single
+    defaultValue:
+      m_Type:
+        m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089
+      m_SerializableObject: 20
+    min: -Infinity
+    max: Infinity
+    enumValues: []
+    descendantCount: 0
+  - name: KillRadius
+    path: KillRadius
+    tooltip: 
+    sheetType: m_Float
+    realType: Single
+    defaultValue:
+      m_Type:
+        m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089
+      m_SerializableObject: 7
+    min: -Infinity
+    max: Infinity
+    enumValues: []
+    descendantCount: 0
+  - name: GlobalSettings
+    path: 
+    tooltip: 
+    sheetType: 
+    realType: 
+    defaultValue:
+      m_Type:
+        m_SerializableType: 
+      m_SerializableObject: 
+    min: -Infinity
+    max: Infinity
+    enumValues: []
+    descendantCount: 0
   - name: Color
     path: Color
     tooltip: 
@@ -187,8 +249,8 @@ MonoBehaviour:
     max: Infinity
     enumValues: []
     descendantCount: 0
-  - name: EffectDuration
-    path: EffectDuration
+  - name: GlobalDuration
+    path: GlobalDuration
     tooltip: 
     sheetType: m_Float
     realType: Single
@@ -196,7 +258,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
           PublicKeyToken=b77a5c561934e089
-      m_SerializableObject: 1
+      m_SerializableObject: 1.2
     min: -Infinity
     max: Infinity
     enumValues: []
@@ -215,30 +277,15 @@ MonoBehaviour:
     max: Infinity
     enumValues: []
     descendantCount: 0
-  - name: ParticlesGlobalSize
-    path: ParticlesGlobalSize
+  - name: Turbulence
+    path: 
     tooltip: 
-    sheetType: m_Float
-    realType: Single
+    sheetType: 
+    realType: 
     defaultValue:
       m_Type:
-        m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
-          PublicKeyToken=b77a5c561934e089
-      m_SerializableObject: 1
-    min: -Infinity
-    max: Infinity
-    enumValues: []
-    descendantCount: 0
-  - name: AttractionStrength
-    path: AttractionStrength
-    tooltip: 
-    sheetType: m_Float
-    realType: Single
-    defaultValue:
-      m_Type:
-        m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
-          PublicKeyToken=b77a5c561934e089
-      m_SerializableObject: 20
+        m_SerializableType: 
+      m_SerializableObject: 
     min: -Infinity
     max: Infinity
     enumValues: []
@@ -313,6 +360,33 @@ MonoBehaviour:
     max: Infinity
     enumValues: []
     descendantCount: 0
+  - name: Particles
+    path: 
+    tooltip: 
+    sheetType: 
+    realType: 
+    defaultValue:
+      m_Type:
+        m_SerializableType: 
+      m_SerializableObject: 
+    min: -Infinity
+    max: Infinity
+    enumValues: []
+    descendantCount: 0
+  - name: ParticlesGlobalSize
+    path: ParticlesGlobalSize
+    tooltip: 
+    sheetType: m_Float
+    realType: Single
+    defaultValue:
+      m_Type:
+        m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089
+      m_SerializableObject: 1
+    min: -Infinity
+    max: Infinity
+    enumValues: []
+    descendantCount: 0
   - name: ParticlesLifetime
     path: ParticlesLifetime
     tooltip: 
@@ -323,20 +397,6 @@ MonoBehaviour:
         m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
           PublicKeyToken=b77a5c561934e089
       m_SerializableObject: 2
-    min: -Infinity
-    max: Infinity
-    enumValues: []
-    descendantCount: 0
-  - name: KillRadius
-    path: KillRadius
-    tooltip: 
-    sheetType: m_Float
-    realType: Single
-    defaultValue:
-      m_Type:
-        m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
-          PublicKeyToken=b77a5c561934e089
-      m_SerializableObject: 7
     min: -Infinity
     max: Infinity
     enumValues: []
@@ -401,7 +461,7 @@ MonoBehaviour:
   m_UISuperCollapsed: 0
   m_InputSlots:
   - {fileID: 8926484042661615323}
-  - {fileID: 8926484042661615587}
+  - {fileID: 8926484042661615604}
   m_OutputSlots: []
   m_Label: Spawn system
   m_Data: {fileID: 8926484042661614595}
@@ -531,7 +591,6 @@ MonoBehaviour:
   m_Owners:
   - {fileID: 8926484042661614558}
   - {fileID: 8926484042661614583}
-  - {fileID: 8926484042661614585}
   dataType: 0
   capacity: 1000
   stripCapacity: 16
@@ -1039,9 +1098,7 @@ MonoBehaviour:
     - context: {fileID: 8926484042661614558}
       slotIndex: 0
   m_OutputFlowSlot:
-  - link:
-    - context: {fileID: 8926484042661614585}
-      slotIndex: 0
+  - link: []
   integration: 0
   angularIntegration: 0
   ageParticles: 1
@@ -1065,18 +1122,16 @@ MonoBehaviour:
   - {fileID: 8926484042661614589}
   - {fileID: 8926484042661615206}
   - {fileID: 8926484042661614593}
-  m_UIPosition: {x: 927, y: 2058}
+  m_UIPosition: {x: 929, y: 2120}
   m_UICollapsed: 0
   m_UISuperCollapsed: 0
   m_InputSlots:
   - {fileID: 8926484042661615593}
   m_OutputSlots: []
   m_Label: 
-  m_Data: {fileID: 8926484042661614568}
+  m_Data: {fileID: 8926484042661615603}
   m_InputFlowSlot:
-  - link:
-    - context: {fileID: 8926484042661614583}
-      slotIndex: 0
+  - link: []
   m_OutputFlowSlot:
   - link: []
   blendMode: 1
@@ -1396,7 +1451,7 @@ MonoBehaviour:
   m_ExposedName: TargetPos
   m_Exposed: 1
   m_Order: 0
-  m_Category: 
+  m_Category: Other
   m_Min:
     m_Type:
       m_SerializableType: 
@@ -3276,8 +3331,8 @@ MonoBehaviour:
   - {fileID: 8926484042661614762}
   m_ExposedName: AttractionStrength
   m_Exposed: 1
-  m_Order: 8
-  m_Category: 
+  m_Order: 4
+  m_Category: Other
   m_Min:
     m_Type:
       m_SerializableType: 
@@ -5717,7 +5772,7 @@ MonoBehaviour:
   useAlphaClipping: 0
   generateMotionVector: 0
   excludeFromTAA: 0
-  sortingPriority: 0
+  sortingPriority: 1
   m_SubOutputs:
   - {fileID: 8926484042661615062}
   cullMode: 0
@@ -6926,8 +6981,8 @@ MonoBehaviour:
   - {fileID: 8926484042661615245}
   m_ExposedName: NoiseSpeed
   m_Exposed: 1
-  m_Order: 9
-  m_Category: 
+  m_Order: 0
+  m_Category: Turbulence
   m_Min:
     m_Type:
       m_SerializableType: 
@@ -6999,15 +7054,15 @@ MonoBehaviour:
   m_Parent: {fileID: 114350483966674976}
   m_Children: []
   m_UIPosition: {x: 0, y: 0}
-  m_UICollapsed: 1
+  m_UICollapsed: 0
   m_UISuperCollapsed: 0
   m_InputSlots: []
   m_OutputSlots:
   - {fileID: 8926484042661615247}
   m_ExposedName: NoiseIntensity
   m_Exposed: 1
-  m_Order: 10
-  m_Category: 
+  m_Order: 1
+  m_Category: Turbulence
   m_Min:
     m_Type:
       m_SerializableType: 
@@ -8236,8 +8291,8 @@ MonoBehaviour:
   - {fileID: 8926484042661615294}
   m_ExposedName: TurbulenceIntensity
   m_Exposed: 1
-  m_Order: 12
-  m_Category: 
+  m_Order: 3
+  m_Category: Turbulence
   m_Min:
     m_Type:
       m_SerializableType: 
@@ -8316,8 +8371,8 @@ MonoBehaviour:
   - {fileID: 8926484042661615296}
   m_ExposedName: TurbulenceSpeed
   m_Exposed: 1
-  m_Order: 11
-  m_Category: 
+  m_Order: 2
+  m_Category: Turbulence
   m_Min:
     m_Type:
       m_SerializableType: 
@@ -8396,8 +8451,8 @@ MonoBehaviour:
   - {fileID: 8926484042661615298}
   m_ExposedName: TurbulenceScale
   m_Exposed: 1
-  m_Order: 13
-  m_Category: 
+  m_Order: 4
+  m_Category: Turbulence
   m_Min:
     m_Type:
       m_SerializableType: 
@@ -8531,15 +8586,15 @@ MonoBehaviour:
   m_Parent: {fileID: 114350483966674976}
   m_Children: []
   m_UIPosition: {x: 0, y: 0}
-  m_UICollapsed: 1
+  m_UICollapsed: 0
   m_UISuperCollapsed: 0
   m_InputSlots: []
   m_OutputSlots:
   - {fileID: 8926484042661615315}
-  m_ExposedName: EffectDuration
+  m_ExposedName: GlobalDuration
   m_Exposed: 1
-  m_Order: 5
-  m_Category: 
+  m_Order: 1
+  m_Category: GlobalSettings
   m_Min:
     m_Type:
       m_SerializableType: 
@@ -8585,7 +8640,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
           PublicKeyToken=b77a5c561934e089
-      m_SerializableObject: 1
+      m_SerializableObject: 1.2
     m_Space: 2147483647
   m_Property:
     name: o
@@ -8790,8 +8845,8 @@ MonoBehaviour:
   - {fileID: 8926484042661615426}
   m_ExposedName: KillRadius
   m_Exposed: 1
-  m_Order: 15
-  m_Category: 
+  m_Order: 5
+  m_Category: Other
   m_Min:
     m_Type:
       m_SerializableType: 
@@ -9072,7 +9127,7 @@ MonoBehaviour:
   m_ExposedName: PlayerMesh
   m_Exposed: 0
   m_Order: 1
-  m_Category: 
+  m_Category: Other
   m_Min:
     m_Type:
       m_SerializableType: 
@@ -9960,7 +10015,7 @@ MonoBehaviour:
   m_ExposedName: PlayerPos
   m_Exposed: 1
   m_Order: 3
-  m_Category: 
+  m_Category: Other
   m_Min:
     m_Type:
       m_SerializableType: 
@@ -10806,8 +10861,8 @@ MonoBehaviour:
   - {fileID: 8926484042661615522}
   m_ExposedName: ParticlesLifetime
   m_Exposed: 1
-  m_Order: 14
-  m_Category: 
+  m_Order: 1
+  m_Category: Particles
   m_Min:
     m_Type:
       m_SerializableType: 
@@ -10892,8 +10947,8 @@ MonoBehaviour:
   - {fileID: 8926484042661615526}
   m_ExposedName: SpawnRate
   m_Exposed: 1
-  m_Order: 6
-  m_Category: 
+  m_Order: 2
+  m_Category: GlobalSettings
   m_Min:
     m_Type:
       m_SerializableType: 
@@ -11237,15 +11292,15 @@ MonoBehaviour:
   m_Parent: {fileID: 114350483966674976}
   m_Children: []
   m_UIPosition: {x: 0, y: 0}
-  m_UICollapsed: 0
+  m_UICollapsed: 1
   m_UISuperCollapsed: 0
   m_InputSlots: []
   m_OutputSlots:
   - {fileID: 8926484042661615551}
   m_ExposedName: Color
   m_Exposed: 1
-  m_Order: 4
-  m_Category: 
+  m_Order: 0
+  m_Category: GlobalSettings
   m_Min:
     m_Type:
       m_SerializableType: 
@@ -11702,8 +11757,8 @@ MonoBehaviour:
   - {fileID: 8926484042661615564}
   m_ExposedName: ParticlesGlobalSize
   m_Exposed: 1
-  m_Order: 7
-  m_Category: 
+  m_Order: 0
+  m_Category: Particles
   m_Min:
     m_Type:
       m_SerializableType: 
@@ -12322,15 +12377,15 @@ MonoBehaviour:
   m_Parent: {fileID: 114350483966674976}
   m_Children: []
   m_UIPosition: {x: 0, y: 0}
-  m_UICollapsed: 0
+  m_UICollapsed: 1
   m_UISuperCollapsed: 0
   m_InputSlots: []
   m_OutputSlots:
   - {fileID: 8926484042661615583}
   m_ExposedName: InitialVeclocity
   m_Exposed: 1
-  m_Order: 16
-  m_Category: 
+  m_Order: 2
+  m_Category: Particles
   m_Min:
     m_Type:
       m_SerializableType: 
@@ -12484,40 +12539,6 @@ MonoBehaviour:
   m_Direction: 1
   m_LinkedSlots:
   - {fileID: 8926484042661614570}
---- !u!114 &8926484042661615587
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4d246e354feb93041a837a9ef59437cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_UIIgnoredErrors: []
-  m_Parent: {fileID: 0}
-  m_Children: []
-  m_UIPosition: {x: 0, y: 0}
-  m_UICollapsed: 1
-  m_UISuperCollapsed: 0
-  m_MasterSlot: {fileID: 8926484042661615587}
-  m_MasterData:
-    m_Owner: {fileID: 8926484042661614555}
-    m_Value:
-      m_Type:
-        m_SerializableType: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
-          PublicKeyToken=b77a5c561934e089
-      m_SerializableObject: 1
-    m_Space: 2147483647
-  m_Property:
-    name: LoopCount
-    m_serializedType:
-      m_SerializableType: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
-        PublicKeyToken=b77a5c561934e089
-  m_Direction: 0
-  m_LinkedSlots: []
 --- !u!114 &8926484042661615589
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12607,7 +12628,7 @@ MonoBehaviour:
   m_ExposedName: LanternMesh
   m_Exposed: 1
   m_Order: 2
-  m_Category: 
+  m_Category: Other
   m_Min:
     m_Type:
       m_SerializableType: 
@@ -13002,6 +13023,68 @@ MonoBehaviour:
     name: a
     m_serializedType:
       m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+  m_Direction: 0
+  m_LinkedSlots: []
+--- !u!114 &8926484042661615603
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d78581a96eae8bf4398c282eb0b098bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_UIIgnoredErrors: []
+  m_Parent: {fileID: 114350483966674976}
+  m_Children: []
+  m_UIPosition: {x: 0, y: 0}
+  m_UICollapsed: 1
+  m_UISuperCollapsed: 0
+  title: 
+  m_Owners:
+  - {fileID: 8926484042661614585}
+  dataType: 0
+  capacity: 128
+  stripCapacity: 1
+  particlePerStripCount: 128
+  needsComputeBounds: 0
+  boundsMode: 0
+  m_Space: 0
+--- !u!114 &8926484042661615604
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d246e354feb93041a837a9ef59437cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_UIIgnoredErrors: []
+  m_Parent: {fileID: 0}
+  m_Children: []
+  m_UIPosition: {x: 0, y: 0}
+  m_UICollapsed: 1
+  m_UISuperCollapsed: 0
+  m_MasterSlot: {fileID: 8926484042661615604}
+  m_MasterData:
+    m_Owner: {fileID: 8926484042661614555}
+    m_Value:
+      m_Type:
+        m_SerializableType: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089
+      m_SerializableObject: 1
+    m_Space: 2147483647
+  m_Property:
+    name: LoopCount
+    m_serializedType:
+      m_SerializableType: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
         PublicKeyToken=b77a5c561934e089
   m_Direction: 0
   m_LinkedSlots: []
