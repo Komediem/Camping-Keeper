@@ -19,7 +19,7 @@ public class PickableNextLevel : MonoBehaviour
     {
         if (collision.tag == "Pickable")
         {
-            PlayerController.Instance.speed = 0;
+            PlayerController.Instance.lockMovements = true; 
             animator.SetBool("isPicking", true);
             //add more option when you pick up
             Invoke("NextLevel", TempsPickupAnimation);
