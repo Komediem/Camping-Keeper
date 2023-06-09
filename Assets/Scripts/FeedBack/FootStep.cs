@@ -24,7 +24,7 @@ public class FootStep : MonoBehaviour
     private AudioClip GetRandomClip()
     {
         int index = Random.Range(0, audioClip.Length - 1);
-        audioSource.volume = Random.Range(0.6f, 0.8f);
+        audioSource.volume = Random.Range(0.2f, 0.4f);
         audioSource.pitch = Random.Range(0.95f, 1.05f);
         return audioClip[index];
     }
