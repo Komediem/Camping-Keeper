@@ -42,4 +42,9 @@ public class CharacterFeedbacks : MonoBehaviour
     {
         pickable.model.SetActive(false);
     }
+
+    public void DeathRespawn()
+    {
+        GameManager.instance.Respawn();
+    }
 }
