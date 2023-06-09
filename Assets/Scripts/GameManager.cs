@@ -11,6 +11,8 @@ public class GameManager : MonoBehaviour
     public GameObject CurrentCheckpoint;
     public GameObject Player;
 
+    [SerializeField] private float deathAnimTime;
+
     private void Awake()
     {
         instance = this;
@@ -23,18 +25,16 @@ public class GameManager : MonoBehaviour
 
         Player = GameObject.Find("Player");
     }
-    private void Update()
-    {
-
-    }
 
     public void Die()
     {
         PlayerController.Instance.playerAnimator.SetBool("isDead", true);
-        Respawn();
+        Invoke("Respawn", deathAnimTime);
     }
-    private void Respawn()
+    void Respawn()
     {
+        print("saucisse");
+
         Player.GetComponent<CharacterController>().enabled = false;
 
         Player.transform.position = CurrentCheckpoint.transform.position; //TP Checkpoint
@@ -43,6 +43,6 @@ public class GameManager : MonoBehaviour
 
         PlayerMentalHealth.instance.mentalHealth = PlayerMentalHealth.instance.maxMentalHealth;
 
-        //PlayerController.Instance.playerAnimator.SetBool("isDead", false);
+        PlayerController.Instance.playerAnimator.SetBool("isDead", false);
     }
 }
