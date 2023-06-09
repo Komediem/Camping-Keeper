@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.15295, g: 0.20886442, b: 0.32505953, a: 1}
+  m_IndirectSpecularColor: {r: 0.15890938, g: 0.21989377, b: 0.35328007, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -830,7 +830,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1591320886, guid: 0b808f0095528bf41ba9480bb86dffea, type: 3}
       propertyPath: m_fontColor32.rgba
-      value: 124698605
+      value: 7258093
       objectReference: {fileID: 0}
     - target: {fileID: 1400580377136915366, guid: 0b808f0095528bf41ba9480bb86dffea, type: 3}
       propertyPath: m_AnchorMax.x
@@ -843,6 +843,10 @@ PrefabInstance:
     - target: {fileID: 1839094327054439128, guid: 0b808f0095528bf41ba9480bb86dffea, type: 3}
       propertyPath: m_Color.a
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2847107865285693875, guid: 0b808f0095528bf41ba9480bb86dffea, type: 3}
+      propertyPath: m_Name
+      value: TutoText
       objectReference: {fileID: 0}
     - target: {fileID: 4272810012536966945, guid: 0b808f0095528bf41ba9480bb86dffea, type: 3}
       propertyPath: m_Pivot.x
@@ -956,6 +960,10 @@ PrefabInstance:
       propertyPath: virtualCursor
       value: 
       objectReference: {fileID: 1235578864}
+    - target: {fileID: 9134913535335303162, guid: 0b808f0095528bf41ba9480bb86dffea, type: 3}
+      propertyPath: m_Name
+      value: TutoImage
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 0b808f0095528bf41ba9480bb86dffea, type: 3}
@@ -1460,6 +1468,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac0b09e7857660247b1477e93731de29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &242477252 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7920228983038434665, guid: 0b808f0095528bf41ba9480bb86dffea, type: 3}
+  m_PrefabInstance: {fileID: 130984601}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &242477254
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 242477252}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 5fac96b55c58ec24c8ea7a1c47e292d3, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &247310889
 PrefabInstance:
   m_ObjectHideFlags: 0
