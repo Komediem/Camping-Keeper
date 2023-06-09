@@ -1,3 +1,4 @@
+using JetBrains.Annotations;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -38,7 +39,7 @@ public class Menu : MonoBehaviour
         OptionsWindow = GameObject.Find("Options");
 
         player = GameObject.Find("Player");
-
+        playerAnimator = FindObjectOfType<Animator>();
 
         if (SceneManager.GetActiveScene().buildIndex != 0)
         {

@@ -37,15 +37,17 @@ public class PauseMenu : MonoBehaviour
 
     private void Start()
     {
-        gameIsPaused = false;
+        //gameIsPaused = false;
 
-        OptionsWindow.SetActive(false);
+        //OptionsWindow.SetActive(false);
 
-        Buttons.SetActive(false);
+        //Buttons.SetActive(false);
 
-        pauseMenu.SetActive(false);
+        //pauseMenu.SetActive(false);
 
-        virtualCursor.SetActive(false);
+        //virtualCursor.SetActive(false);
+
+        Resume();
     }
 
 
