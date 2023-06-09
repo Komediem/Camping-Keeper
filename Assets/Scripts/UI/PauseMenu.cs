@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -25,11 +24,28 @@ public class PauseMenu : MonoBehaviour
     {
         if (Instance) Destroy(this);
         else Instance = this;
+
+        //assign all variables to prevent errors
+        virtualCursor = GameObject.Find("VirtualCursor");
+
+        audioSource = GetComponent<AudioSource>();
+
+        pauseMenu = GameObject.Find("Pause Menu");
+        Buttons = GameObject.Find("PauseMenuBoutons");
+        OptionsWindow = GameObject.Find("PauseOptions");
     }
 
     private void Start()
     {
         gameIsPaused = false;
+
+        OptionsWindow.SetActive(false);
+
+        Buttons.SetActive(false);
+
+        pauseMenu.SetActive(false);
+
+        virtualCursor.SetActive(false);
     }
 
 

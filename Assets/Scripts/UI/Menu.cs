@@ -30,6 +30,16 @@ public class Menu : MonoBehaviour
         if (Instance) Destroy(this);
         else Instance = this;
 
+        //assign all variables to prevent errors
+        audio = GetComponent<AudioSource>();
+
+        MainMenu = GameObject.Find("Main Menu");
+        MainButtons = GameObject.Find("MenuBoutons");
+        OptionsWindow = GameObject.Find("Options");
+
+        player = GameObject.Find("Player");
+
+
         if (SceneManager.GetActiveScene().buildIndex != 0)
         {
             MainMenu.SetActive(false);
@@ -43,7 +53,6 @@ public class Menu : MonoBehaviour
         else
         {
             PlayerController.Instance.lockMovements = true;
-
 
             playerAnimator.SetBool("isPriority", true);
 
@@ -82,15 +91,15 @@ public class Menu : MonoBehaviour
     }
 
     public void ExitGame() //close App
-     {
+    {
         isMenuActive = false;
 
         //Application.OpenURL("https://artfx.school/");
 
         ScreenCapture.CaptureScreenshot(Application.persistentDataPath + ".png");
-        
+
         Application.Quit();
-     }
+    }
 
     /// Options Window
 	public void Options() //from menu to options
