@@ -16,10 +16,13 @@ public class Enemy : MonoBehaviour
     public float timeBetweenAttacks; // CD attaque
     bool alreadyAttacked; //bool vérifie si ennemi attaque
     private Animator animator; //animator ennemi --> switch animation walk, attack 
+    public float CooldownForDMG;
+    public float Timer = 0;
+    public int AmountDMG;
     #endregion
 
     #region Range
-    public float sightRange, attackRange, lowdmgRange; //zone attaque et repérage joueur
+    public float sightRange, attackRange, lowdmgRange; //zone attaque / repérage joueur / zone dmg with time
     public bool playerInSightRange, playerInAttackRange, PlayerLowDmgRange; //bool vérification si joueur détecté
     #endregion
 
@@ -37,8 +40,11 @@ public class Enemy : MonoBehaviour
         playerInAttackRange = Physics.CheckSphere(transform.position, attackRange, whatIsPlayer);
         PlayerLowDmgRange = Physics.CheckSphere(transform.position, lowdmgRange, whatIsPlayer);
 
-        if (playerInSightRange && !playerInAttackRange) ChasePlayer();
-        if (playerInAttackRange && playerInSightRange) AttackPlayer();
+        if (playerInSightRange && !PlayerLowDmgRange &&!playerInAttackRange) ChasePlayer();
+        if (playerInSightRange && PlayerLowDmgRange && !playerInAttackRange) DmgScdPlayer();
+        if (playerInAttackRange && PlayerLowDmgRange && playerInSightRange) AttackPlayer();
+
+        Timer++;
     }
 
    
@@ -47,6 +53,16 @@ public class Enemy : MonoBehaviour
         agent.SetDestination(player.position);
 
     }
+
+    private void DmgScdPlayer()
+    {
+        if(Timer >= CooldownForDMG)
+        {
+            PlayerMentalHealth.instance.TakeDamage(AmountDMG);
+            Timer = 0;
+        }
+    }
+
     private void AttackPlayer()
     {
         //Make sure enemy doesn't move

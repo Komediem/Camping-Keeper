@@ -552,7 +552,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!65 &582902755
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1169,9 +1169,12 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   timeBetweenAttacks: 2
-  sightRange: 29.94
+  CooldownForDMG: 0
+  Timer: 0
+  AmountDMG: 0
+  sightRange: 0.8
   attackRange: 2
-  lowdmgRange: 15
+  lowdmgRange: 2.92
   playerInSightRange: 0
   playerInAttackRange: 0
   PlayerLowDmgRange: 0
@@ -1395,6 +1398,10 @@ PrefabInstance:
     - target: {fileID: 7811308987839453743, guid: 59b3f2e4f8891cd479312b3986e9f449, type: 3}
       propertyPath: m_Name
       value: Palissade_Hole_1m
+      objectReference: {fileID: 0}
+    - target: {fileID: 7811308987839453743, guid: 59b3f2e4f8891cd479312b3986e9f449, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
@@ -1693,7 +1700,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1728498595
 Transform:
   m_ObjectHideFlags: 0

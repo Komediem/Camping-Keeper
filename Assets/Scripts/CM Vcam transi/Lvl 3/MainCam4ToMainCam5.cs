@@ -2,18 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CamPuzzelToMainCam3 : MonoBehaviour
+public class MainCam4ToMainCam5 : MonoBehaviour
 {
     #region Cam
+    public GameObject MainVCam5;
     public GameObject MainVCam4;
-    public GameObject CamPuzzel;
     #endregion
     private void OnTriggerEnter(Collider collision)
     {
         if (collision.CompareTag("Player"))
         {
-            MainVCam4.SetActive(true);
-            CamPuzzel.SetActive(false);
+            MainVCam5.SetActive(true);
+            MainVCam4.SetActive(false);
         }
     }
 }
