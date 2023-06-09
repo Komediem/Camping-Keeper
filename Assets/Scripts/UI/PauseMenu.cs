@@ -29,25 +29,17 @@ public class PauseMenu : MonoBehaviour
         virtualCursor = GameObject.Find("VirtualCursor");
 
         audioSource = GetComponent<AudioSource>();
-
-        pauseMenu = GameObject.Find("Pause Menu");
-        Buttons = GameObject.Find("PauseMenuBoutons");
-        OptionsWindow = GameObject.Find("PauseOptions");
     }
 
     private void Start()
     {
-        //gameIsPaused = false;
+        gameIsPaused = false;
 
-        //OptionsWindow.SetActive(false);
+        OptionsWindow.SetActive(false);
 
-        //Buttons.SetActive(false);
+        Buttons.SetActive(false);
 
-        //pauseMenu.SetActive(false);
-
-        //virtualCursor.SetActive(false);
-
-        Resume();
+        pauseMenu.SetActive(false);
     }
 
 
@@ -55,20 +47,22 @@ public class PauseMenu : MonoBehaviour
     {
         //if (!GameOver.Instance.isGameOver && !WinSystem.Instance.isGameWin)
         //{
-            if (gameIsPaused)
-            {
-                Resume();
-            }
-            else
-            {
-                Paused();
+        if (gameIsPaused)
+        {
+            Resume();
 
-                //if (GamepadCursor.Instance.playerInput.currentControlScheme != "Gamepad")
-                //{
-                    Cursor.visible = true;
-                    Cursor.lockState = CursorLockMode.Confined;
-                //}
-            }
+            virtualCursor.SetActive(false);
+        }
+        else
+        {
+            Paused();
+
+            //if (GamepadCursor.Instance.playerInput.currentControlScheme != "Gamepad")
+            //{
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.Confined;
+            //}
+        }
         //}
     }
 
@@ -82,6 +76,8 @@ public class PauseMenu : MonoBehaviour
 
         Time.timeScale = 0;
 
+        PlayerController.Instance.lockMovements = true;
+
         gameIsPaused = true;
 
         Cursor.visible = true;
@@ -93,9 +89,9 @@ public class PauseMenu : MonoBehaviour
         pauseMenu.SetActive(false);
         Buttons.SetActive(false);
 
-        virtualCursor.SetActive(false);
-
         Time.timeScale = 1;
+
+        PlayerController.Instance.lockMovements = false;
 
         gameIsPaused = false;
 
