@@ -31,9 +31,9 @@ public class GameManager : MonoBehaviour
         PlayerController.Instance.playerAnimator.SetBool("isDead", true);
         Invoke("Respawn", deathAnimTime);
     }
-    void Respawn()
+    private void Respawn()
     {
-        print("saucisse");
+        Debug.Log("Saucisse");
 
         Player.GetComponent<CharacterController>().enabled = false;
 
