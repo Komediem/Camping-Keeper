@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PushPull : MonoBehaviour
 {
@@ -73,6 +74,8 @@ public class PushPull : MonoBehaviour
 
                 PlayerController.Instance.playerAnimator.SetBool("isPushing", false);
                 PlayerController.Instance.playerAnimator.SetBool("isPulling", false);
+
+                InputSystem.ResetHaptics();
             }
             else if (PlayerController.Instance.movement > 0) //positive movement, to the right
             {
@@ -81,6 +84,8 @@ public class PushPull : MonoBehaviour
 
                 PlayerController.Instance.playerAnimator.SetBool("isPushAndPull", false);
                 PlayerController.Instance.playerAnimator.SetBool("isPulling", false);
+
+                Gamepad.current.SetMotorSpeeds(0.75f, 1.5f);
             }
             else if (PlayerController.Instance.movement < 0) //negative movement, to the left
             {
@@ -89,6 +94,8 @@ public class PushPull : MonoBehaviour
 
                 PlayerController.Instance.playerAnimator.SetBool("isPushAndPull", false);
                 PlayerController.Instance.playerAnimator.SetBool("isPushing", false);
+
+                Gamepad.current.SetMotorSpeeds(1.5f, 0.75f);
             }
             ///end Push/Pull Anim
         }
@@ -100,6 +107,8 @@ public class PushPull : MonoBehaviour
             PlayerController.Instance.playerAnimator.SetBool("isPushAndPull", false);
             PlayerController.Instance.playerAnimator.SetBool("isPushing", false);
             PlayerController.Instance.playerAnimator.SetBool("isPulling", false);
+
+            InputSystem.ResetHaptics();
         }
     }
 }
