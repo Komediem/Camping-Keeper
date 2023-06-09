@@ -43,6 +43,6 @@ public class GameManager : MonoBehaviour
 
         PlayerMentalHealth.instance.mentalHealth = PlayerMentalHealth.instance.maxMentalHealth;
 
-        PlayerController.Instance.playerAnimator.SetBool("isDead", false);
+        //PlayerController.Instance.playerAnimator.SetBool("isDead", false);
     }
 }
