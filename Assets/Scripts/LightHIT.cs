@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -16,6 +17,11 @@ public class LightHIT : MonoBehaviour
     private void Start()
     {
         SpeedDefault = agent.speed;
+    }
+
+    private void Update()
+    {
+       
     }
 
     private void OnTriggerEnter(Collider collision)

@@ -5,18 +5,15 @@ using UnityEngine.SceneManagement;
 public class PlayerController : MonoBehaviour
 {
     public static PlayerController Instance;
-
     private CharacterController controller;
 
     public Rigidbody rb;
-
     public Animator playerAnimator;
 
     public GameObject LightLantern;
+    public float LightTime;
 
     public GameObject Raycast;
-
-    public float LightTime;
 
     #region Movement
     [Header("Movement Settings")]
@@ -47,7 +44,6 @@ public class PlayerController : MonoBehaviour
     public bool isJumping;
 
     [SerializeField] private float gravity = 9.8f;
-
     [SerializeField] private Vector3 velocity;
 
     //Trampoline settings
@@ -59,10 +55,11 @@ public class PlayerController : MonoBehaviour
     [Space]
     public GameObject Interract;
 
+    [Space]
     public bool isPulling = false;
-
     public bool PushPullTrigger;
 
+    [Space]
     public float NombrePression;
 
     private void Awake()
@@ -105,16 +102,7 @@ public class PlayerController : MonoBehaviour
     }
 
     void Update()
-    {      
-        if (Menu.Instance != null)
-        {
-            if (Menu.Instance.isMenuActive)
-            {
-                //player animation in the menu
-                //print("Menu Anim");
-            }
-        }
-
+    {
         if (!lockMovements)
         {
             Vector3 move;
@@ -129,14 +117,12 @@ public class PlayerController : MonoBehaviour
                 {
                     transform.rotation = Quaternion.Euler(0, 180, 0);
                 }
+
                 move = transform.right * Mathf.Abs(movement);
             }
             else move = transform.right * movement;
 
-            //currentMoveVelocity.y = -5f;
-
             currentMoveVelocity = Vector3.SmoothDamp(currentMoveVelocity, move * speedValue, ref moveDampVelocity, moveSmoothTime);
-
             controller.Move(currentMoveVelocity * Time.deltaTime);
 
             CheckJump();
@@ -148,14 +134,13 @@ public class PlayerController : MonoBehaviour
 
                 velocity.y = -10f;
 
-                //print("grounded");
+                //print("Grounded");
             }
 
             if (movement != 0)
             {
                 if (isCrouching)
                 {
-                  
                     playerAnimator.SetBool("isCrouchWalking", true);
                 }
                 else
@@ -166,7 +151,6 @@ public class PlayerController : MonoBehaviour
             else
             {
                 playerAnimator.SetBool("isWalking", false);
-
                 playerAnimator.SetBool("isCrouchWalking", false);
             }
         }
@@ -185,14 +169,9 @@ public class PlayerController : MonoBehaviour
 
             //print("Mercy is for the WEAK");
         }
-        else
+        else if (velocity.y > -20)
         {
-            if (velocity.y > -20)
-            {
-                velocity.y -= gravity * Time.deltaTime * 2;
-            }
-
-            //print("go down");
+            velocity.y -= gravity * Time.deltaTime * 2;
         }
 
         controller.Move(velocity * Time.deltaTime);
@@ -234,32 +213,34 @@ public class PlayerController : MonoBehaviour
 
     public void Crouch(InputAction.CallbackContext context)
     {
-        ///Speed/2, no jump, no interact, no stun, no pull/push
+        ///Speed/2, no Jump, no Interact, no Stun, no Pull/Push
         if (context.performed)
         {
             if (isCrouching && Raycastcrouch.Instance.CanStand)
             {
                 isCrouching = false;
-                Raycast.SetActive(false);
-                
+
                 speed = speedDefault;
                 speedValue = speedDefault;
+
+                Raycast.SetActive(false);
 
                 controller.height = 2f;
                 controller.center = new(0, 1f, 0);
 
                 playerAnimator.SetBool("isCrouching", false);
-
                 playerAnimator.SetBool("isCrouchWalking", false);
             }
-            else 
+            else
             {
                 if (!isPulling && Raycastcrouch.Instance.CanStand)
                 {
                     isCrouching = true;
-                    Raycast.SetActive(true);
+
                     speed /= 2;
                     speedValue /= 2;
+
+                    Raycast.SetActive(true);
 
                     canJump = false;
                     Interract.SetActive(false);
@@ -268,8 +249,6 @@ public class PlayerController : MonoBehaviour
                     controller.center = new(0, 0.6f, 0);
 
                     playerAnimator.SetBool("isCrouching", true);
-
-                    //needs to be unable to stun
                 }
             }
         }
@@ -298,9 +277,6 @@ public class PlayerController : MonoBehaviour
         }
         else if (context.canceled && !isCrouching)
         {
-            /*speed = speedDefault;
-            speedValue = speedDefault;*/
-
             isPulling = false;
         }
     }
@@ -310,6 +286,7 @@ public class PlayerController : MonoBehaviour
         if (context.started && !isCrouching)
         {
             Interract.SetActive(true);
+
             Invoke("InteractStop", 0.2f);
         }
     }
@@ -320,10 +297,11 @@ public class PlayerController : MonoBehaviour
         {
             LightLantern.SetActive(true);
 
-            //play animation faire attention au moment ou la light se coupe
+            //Play Anmation, Be Carefull of the Moment Where The Light Cuts
             Invoke("LightStop", LightTime);
         }
     }
+
     public void Spam(InputAction.CallbackContext context)
     {
         if (context.performed && SpamInput.Instance.IsActive)
@@ -349,7 +327,7 @@ public class PlayerController : MonoBehaviour
         {
             velocity.y -= gravity * 2 * Time.deltaTime;
 
-            //print("Roof");
+            //print("Roof Hit");
         }
 
         if (collision.CompareTag("Trampoline") && collision.GetComponent<BoxCollider>().enabled)

@@ -5,6 +5,9 @@ public class PushPull : MonoBehaviour
     [Header("Don't need to assign :")]
     [SerializeField] private GameObject Player;
 
+    private bool isPushable = false;
+    //private bool isPushing = false;
+
     private void Awake()
     {
         Player = GameObject.Find("Player");
@@ -12,17 +15,16 @@ public class PushPull : MonoBehaviour
 
     void Update()
     {
-        if (!PlayerController.Instance.lockMovements && !PlayerController.Instance.isCrouching) ///if can move && isn't crouching
+        if (isPushable && !PlayerController.Instance.lockMovements && 
+            !PlayerController.Instance.isCrouching && PlayerController.Instance.PushPullTrigger)
         {
-            PullPush();
-        }
-    }
+            //isPushing = true;
 
-    public void PullPush()
-    {
-        if (PlayerController.Instance.PushPullTrigger) ///enter collider (bool)
-        {
             Pull();
+        }
+        else
+        {
+            //isPushing = false;
         }
     }
 
@@ -30,6 +32,8 @@ public class PushPull : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
+            isPushable = true;
+
             PlayerController.Instance.PushPullTrigger = true;
 
             PlayerController.Instance.speed /= 2;
@@ -43,6 +47,8 @@ public class PushPull : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
+            isPushable = false;
+
             PlayerController.Instance.PushPullTrigger = false;
 
             PlayerController.Instance.speed = PlayerController.Instance.speedDefault;
@@ -90,7 +96,7 @@ public class PushPull : MonoBehaviour
         {
             gameObject.transform.SetParent(null); //Setting the parent to "null" unparents the GameObject and turns child into a top-level object in the hierarchy
             
-            //resets Push/Pull Animation
+            //Resets Push/Pull Animation
             PlayerController.Instance.playerAnimator.SetBool("isPushAndPull", false);
             PlayerController.Instance.playerAnimator.SetBool("isPushing", false);
             PlayerController.Instance.playerAnimator.SetBool("isPulling", false);
