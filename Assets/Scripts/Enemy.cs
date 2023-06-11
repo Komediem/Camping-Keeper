@@ -14,16 +14,24 @@ public class Enemy : MonoBehaviour
 
     #region Attacking
     public float timeBetweenAttacks; // CD attaque
-    bool alreadyAttacked; //bool vérifie si ennemi attaque
+    bool alreadyAttacked; //bool vï¿½rifie si ennemi attaque
     private Animator animator; //animator ennemi --> switch animation walk, attack 
+    [Header("Dmg With Time")]
+    [Space]
+    public float lowdmgRange;
+    public bool PlayerDmgRange;
     public float CooldownForDMG;
     public float Timer = 0;
     public int AmountDMG;
     #endregion
 
     #region Range
-    public float sightRange, attackRange, lowdmgRange; //zone attaque / repérage joueur / zone dmg with time
-    public bool playerInSightRange, playerInAttackRange, PlayerLowDmgRange; //bool vérification si joueur détecté
+    [Header("Spot & Attack Player")]
+    [Space]
+    public float sightRange; //repï¿½rage joueur 
+    public float attackRange; //zone attaque 
+    public bool playerInSightRange;  //bool vï¿½rification si joueur dï¿½tectï¿½
+    public bool playerInAttackRange;  //bool vï¿½rification si joueur dï¿½tectï¿½
     #endregion
 
     private void Awake()
@@ -38,11 +46,11 @@ public class Enemy : MonoBehaviour
         //Check for sight and attack range
         playerInSightRange = Physics.CheckSphere(transform.position, sightRange, whatIsPlayer);
         playerInAttackRange = Physics.CheckSphere(transform.position, attackRange, whatIsPlayer);
-        PlayerLowDmgRange = Physics.CheckSphere(transform.position, lowdmgRange, whatIsPlayer);
+        PlayerDmgRange = Physics.CheckSphere(transform.position, lowdmgRange, whatIsPlayer);
 
-        if (playerInSightRange && !PlayerLowDmgRange &&!playerInAttackRange) ChasePlayer();
-        if (playerInSightRange && PlayerLowDmgRange && !playerInAttackRange) DmgScdPlayer();
-        if (playerInAttackRange && PlayerLowDmgRange && playerInSightRange) AttackPlayer();
+        if (playerInSightRange && !PlayerDmgRange &&!playerInAttackRange) ChasePlayer();
+        if (playerInSightRange && PlayerDmgRange && !playerInAttackRange) DmgScdPlayer();
+        if (playerInAttackRange && PlayerDmgRange && playerInSightRange) AttackPlayer();
 
         Timer++;
     }
