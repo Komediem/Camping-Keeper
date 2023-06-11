@@ -4,11 +4,7 @@ using UnityEngine;
 
 public class EnemyDMG2Player : MonoBehaviour
 {
-
-    private void Awake()
-    {
-
-    }
+    public int EnemyDMG;
 
     private void OnTriggerEnter(Collider collision)
     {
@@ -18,7 +14,7 @@ public class EnemyDMG2Player : MonoBehaviour
             if (healthComponent != null)
             {
                 Debug.Log(PlayerMentalHealth.instance.mentalHealth);
-                healthComponent.TakeDamage(40);
+                healthComponent.TakeDamage(EnemyDMG);
             }
         }
     }
