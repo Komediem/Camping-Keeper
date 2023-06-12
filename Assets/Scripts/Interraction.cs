@@ -1,4 +1,3 @@
-using JetBrains.Annotations;
 using UnityEngine;
 
 public class Interraction : MonoBehaviour
@@ -6,20 +5,20 @@ public class Interraction : MonoBehaviour
     [Header("GameObject")]
     public GameObject OutlineObject;
 
-    //private PushPull pushPull;
+    private PushPull pushPull;
 
     private bool obstacle = false;
 
     private void Awake()
     {
-        //pushPull = GetComponentInParent<PushPull>();
+        pushPull = GetComponentInParent<PushPull>();
     }
 
     private void Update()
     {
-        //CheckCollisions();
+        CheckCollisions();
 
-        if (PlayerController.Instance.isJumping || PlayerController.Instance.isPulling 
+        if (PlayerController.Instance.isJumping || PlayerController.Instance.isPulling
             || PlayerController.Instance.isCrouching || GameManager.instance.checkpointInstance.CheckpointIsActivate)
         {
             OutlineObject.SetActive(false);
@@ -32,7 +31,7 @@ public class Interraction : MonoBehaviour
         {
             OutlineObject.SetActive(true);
         }
-        if (collision.CompareTag("Obstacle"))
+        if (collision.tag == "Obstacle")
         {
             obstacle = true;
         }
@@ -44,21 +43,24 @@ public class Interraction : MonoBehaviour
             OutlineObject.SetActive(false);
         }
 
-        /*if (collision.CompareTag("Obstacle")) //why is it always active ?
+        if (collision.tag == "Obstacle") //why is it always active ?
         {
             obstacle = false;
-        }*/
+        }
     }
 
     public void CheckCollisions()
     {
-        if (obstacle)
+        if (PlayerController.Instance.isPulling && pushPull.isPushable)
         {
-            print("A");
-        }
-        else
-        {
-            print("B");
+            if (obstacle)
+            {
+                print("A");
+            }
+            else
+            {
+                print("B");
+            }
         }
     }
 }

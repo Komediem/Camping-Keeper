@@ -8,7 +8,7 @@ public class PushPull : MonoBehaviour
 
     public Rigidbody rb;
 
-    private bool isPushable = false;
+    public bool isPushable = false;
 
     private void Awake()
     {
