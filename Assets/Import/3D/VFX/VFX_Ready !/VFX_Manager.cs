@@ -16,4 +16,5 @@ public class VFX_Manager : MonoBehaviour
     {
         Dust = GetComponentInChildren<VisualEffect>();
     }
+
 }

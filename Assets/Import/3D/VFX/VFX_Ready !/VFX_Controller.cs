@@ -8,17 +8,23 @@ using UnityEngine.VFX;
 [RequireComponent(typeof(VisualEffect))]
 public class VFX_Controller : VFX_Manager
 {
-/*    private playerObject Player;
+/*    private playerController Player;
 
 
-    private void OnCollisionEnter(Collision collision)
+
+    
+    public void Dust()  
     {
-        if (collision.gameObject.tag == "Player")
+        public void OnCollisionEnter(Collision collision)
         {
-            if (visualEffect != null) visualEffect.Play();
+            if (collision.gameObject.tag == "Player")
+            {
+                if (Dust != null) visualEffect.Play();
+            }
+
+
+
         }
-
-
 
     }
 
