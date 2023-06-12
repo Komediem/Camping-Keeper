@@ -10,8 +10,9 @@ public class CharacterFeedbacks : MonoBehaviour
 
     [SerializeField] private VisualEffect stepParticle;
     [SerializeField] private GameObject fallParticle;
-    [SerializeField] private Animator blackScreenTransition;
     [SerializeField] private Transform stepPosition;
+
+    [SerializeField] private Animator blackScreenTransition;
 
     [SerializeField] private Rigidbody lanternRb;
 
@@ -45,5 +46,10 @@ public class CharacterFeedbacks : MonoBehaviour
     public void DeathRespawn()
     {
         GameManager.instance.Respawn();
+    }
+
+    public void BlackscreenFade()
+    {
+        blackScreenTransition.SetTrigger("transiActive");
     }
 }
