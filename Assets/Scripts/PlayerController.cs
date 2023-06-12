@@ -165,7 +165,6 @@ public class PlayerController : MonoBehaviour
                 playerAnimator.SetBool("isCrouchWalking", false);
             }
         }
-        print(currentCooldown);
     }
 
     void CheckJump()

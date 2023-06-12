@@ -12,6 +12,8 @@ public class CharacterFeedbacks : MonoBehaviour
     [SerializeField] private GameObject fallParticle;
     [SerializeField] private Transform stepPosition;
 
+    [SerializeField] private Animator blackScreenTransition;
+
     [SerializeField] private Rigidbody lanternRb;
 
     public void Awake()
@@ -24,9 +26,9 @@ public class CharacterFeedbacks : MonoBehaviour
     {
         if(characterController.isGrounded)
         {
-            VisualEffect particle = Instantiate(stepParticle, stepPosition.position, Quaternion.identity);
+            /*VisualEffect particle = Instantiate(stepParticle, stepPosition.position, Quaternion.identity);
             particle.Play();
-            Destroy(particle, 1);
+            Destroy(particle, 1);*/
         }
     }
 
@@ -44,5 +46,10 @@ public class CharacterFeedbacks : MonoBehaviour
     public void DeathRespawn()
     {
         GameManager.instance.Respawn();
+    }
+
+    public void BlackscreenFade()
+    {
+        blackScreenTransition.SetTrigger("transiActive");
     }
 }

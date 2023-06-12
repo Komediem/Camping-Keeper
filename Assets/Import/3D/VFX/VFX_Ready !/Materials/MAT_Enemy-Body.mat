@@ -88,6 +88,12 @@ Material:
     - _StencilWriteMaskGBuffer: 14
     - _StencilWriteMaskMV: 40
     - _Stretch: 6
+    - _StunBool: 0
+    - _StunDirection: 0
+    - _StunIntensity: 1
+    - _StunSpeed: 16
+    - _StunX: 1
+    - _StunZ: 1
     - _SurfaceType: 1
     - _TransparentBackfaceEnable: 0
     - _TransparentCullMode: 2
@@ -110,6 +116,8 @@ Material:
     - _Color: {r: 0, g: 0, b: 0, a: 0}
     - _DoubleSidedConstants: {r: 1, g: 1, b: -1, a: 0}
     - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}
+    - _StunDirection: {r: 0.5, g: 0, b: 0, a: 0}
+    - _StunDirectionMultiplier: {r: 0, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []
 --- !u!114 &9009297260045394411
 MonoBehaviour:

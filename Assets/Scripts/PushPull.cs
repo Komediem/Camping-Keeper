@@ -6,12 +6,14 @@ public class PushPull : MonoBehaviour
     [Header("Don't need to assign :")]
     [SerializeField] private GameObject Player;
 
+    public Rigidbody rb;
+
     private bool isPushable = false;
-    //private bool isPushing = false;
 
     private void Awake()
     {
         Player = GameObject.Find("Player");
+        rb = GetComponent<Rigidbody>();
     }
 
     void Update()
@@ -19,13 +21,7 @@ public class PushPull : MonoBehaviour
         if (isPushable && !PlayerController.Instance.lockMovements && 
             !PlayerController.Instance.isCrouching && PlayerController.Instance.PushPullTrigger)
         {
-            //isPushing = true;
-
             Pull();
-        }
-        else
-        {
-            //isPushing = false;
         }
     }
 
