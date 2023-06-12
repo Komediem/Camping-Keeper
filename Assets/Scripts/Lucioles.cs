@@ -9,12 +9,14 @@ public class Lucioles : MonoBehaviour
     [SerializeField] private float gainValue;
 
     [SerializeField] private VisualEffect fireflies;
+    [SerializeField] private AudioSource firefliesSound;
 
     private bool trigger;
 
     private void Start()
     {
         this.GetComponent<BoxCollider>().enabled = true;
+        firefliesSound = this.GetComponent<AudioSource>();
     }
 
     private void Update()
@@ -28,6 +30,7 @@ public class Lucioles : MonoBehaviour
         {
             Debug.Log("Bing Chilling");
             trigger = true;
+            firefliesSound.Play();
             PlayerMentalHealth.instance.mentalHealth += gainValue;
             this.GetComponent<BoxCollider>().enabled = false;
 
