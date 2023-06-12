@@ -7,7 +7,6 @@ using UnityEngine.VFX;
 public class Lucioles : MonoBehaviour
 {
     [SerializeField] private float gainValue;
-    //[SerializeField] private GameObject firefliesFog;
 
     [SerializeField] private VisualEffect fireflies;
 
@@ -29,7 +28,6 @@ public class Lucioles : MonoBehaviour
         {
             Debug.Log("Bing Chilling");
             trigger = true;
-            //firefliesFog.SetActive(false);
             PlayerMentalHealth.instance.mentalHealth += gainValue;
             this.GetComponent<BoxCollider>().enabled = false;
 
