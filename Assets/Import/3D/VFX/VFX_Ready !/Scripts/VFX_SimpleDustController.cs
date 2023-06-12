@@ -1,6 +1,8 @@
 using UnityEngine;
 using UnityEngine.VFX;
 
+[RequireComponent(typeof(VisualEffect))]
+
 public class VFX_SimpleDustController : MonoBehaviour
 {
     [SerializeField] private VisualEffect dustVFX;
