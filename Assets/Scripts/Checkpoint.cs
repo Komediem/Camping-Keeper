@@ -6,11 +6,9 @@ public class Checkpoint : MonoBehaviour
 {
     public bool CheckpointIsActivate;
     [SerializeField] private GameObject flames;
-    public static Checkpoint Instance;
     private void Awake()
     {
-        if (Instance) Destroy(this);
-        else Instance = this;
+        GameManager.instance.checkpointInstance = this;
     }
     private void Start()
     {
