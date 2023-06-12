@@ -13,6 +13,8 @@ public class Menu : MonoBehaviour
     public GameObject OptionsWindow;
 
     public Animator playerAnimator;
+    public Animator blackscreen;
+
     public Transform beginPosition;
     public GameObject player;
 
@@ -49,6 +51,8 @@ public class Menu : MonoBehaviour
 
             isMenuActive = false;
 
+            blackscreen.SetBool("transiActive", true);
+            blackscreen.SetBool("transiActive", false);
             PlayerController.Instance.lockMovements = false;
         }
         else
@@ -63,6 +67,8 @@ public class Menu : MonoBehaviour
             MainMenu.SetActive(true);
             MainButtons.SetActive(true);
             OptionsWindow.SetActive(false);
+
+            blackscreen.SetBool("transiActive", false);
 
             isMenuActive = true;
         }
