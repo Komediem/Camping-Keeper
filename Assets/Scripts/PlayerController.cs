@@ -65,8 +65,8 @@ public class PlayerController : MonoBehaviour
     public float LightTime;
 
     public float cooldownDuration = 3f;  // Duration of the cooldown in seconds
-    private float currentCooldown = 0f;  // Current cooldown progress
-    private bool isCooldown = false;  // Flag to check if the cooldown is active
+    public float currentCooldown = 0f;  // Current cooldown progress
+    public bool isCooldown = false;  // Flag to check if the cooldown is active
 
     [Space]
     public float NombrePression;
@@ -312,11 +312,18 @@ public class PlayerController : MonoBehaviour
             Invoke("LightStop", LightTime);
 
             StartCooldown();
+
+            if (NombrePression >= SpamRequire)
+            {
+                SpamActive = true;
+            }
+
+            NombrePression++;
         }
     }
 
     #region Cooldown
-    private void Cooldown()
+    public void Cooldown()
     {
         if (isCooldown)
         {
@@ -343,19 +350,6 @@ public class PlayerController : MonoBehaviour
         }
     }
     #endregion
-
-
-    public void Spam(InputAction.CallbackContext context)
-    {
-        if (context.performed && SpamInput.Instance.IsActive)
-        {
-            if (NombrePression >= SpamRequire)
-            {
-                SpamActive = true;
-            }
-            NombrePression++;
-        }
-    }
     #endregion
 
     private void InteractStop()
@@ -400,3 +394,4 @@ public class PlayerController : MonoBehaviour
         }
     }
 }
+
