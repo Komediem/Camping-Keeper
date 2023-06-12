@@ -5,15 +5,16 @@ using UnityEngine.VFX;
 
 public class VFX_Manager : MonoBehaviour
 {
-    public VisualEffect Dust;
-    public VisualEffect AuraSpline;
-    public VisualEffect FireFlies;
-    public VisualEffect Sparks;
-    public VisualEffect Sparkle;
-    public VisualEffect Enemy;
+    [SerializeField] private VisualEffect Dust;
+    [SerializeField] private VisualEffect AuraSpline;
+    [SerializeField] private VisualEffect FireFlies;
+    [SerializeField] private VisualEffect Sparks;
+    [SerializeField] private VisualEffect Sparkle;
+    [SerializeField] private VisualEffect Enemy;
 
     private void Start()
     {
         Dust = GetComponentInChildren<VisualEffect>();
     }
+
 }
