@@ -389,6 +389,8 @@ public class PlayerController : MonoBehaviour
 
                 canJump = true;
 
+                collision.GetComponent<JumpFeedbackClass>().ReturnFeedback();
+
                 //print("trampoline");
             }
         }
