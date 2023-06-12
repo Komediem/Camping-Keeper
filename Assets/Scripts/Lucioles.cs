@@ -2,17 +2,25 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Assertions.Must;
+using UnityEngine.VFX;
 
 public class Lucioles : MonoBehaviour
 {
     [SerializeField] private float gainValue;
-    [SerializeField] private ParticleSystem fireflies;
-    [SerializeField] private GameObject firefliesFog;
+    //[SerializeField] private GameObject firefliesFog;
+
+    [SerializeField] private VisualEffect fireflies;
+
+    private bool trigger;
 
     private void Start()
     {
-        fireflies.Play();
         this.GetComponent<BoxCollider>().enabled = true;
+    }
+
+    private void Update()
+    {
+        fireflies.SetBool("Trigger", trigger);
     }
 
     private void OnTriggerEnter(Collider collision)
@@ -20,8 +28,8 @@ public class Lucioles : MonoBehaviour
         if (collision.tag == "Player")
         {
             Debug.Log("Bing Chilling");
-            fireflies.Stop();
-            firefliesFog.SetActive(false);
+            trigger = true;
+            //firefliesFog.SetActive(false);
             PlayerMentalHealth.instance.mentalHealth += gainValue;
             this.GetComponent<BoxCollider>().enabled = false;
 
@@ -29,6 +37,10 @@ public class Lucioles : MonoBehaviour
             {
                 PlayerMentalHealth.instance.mentalHealth = PlayerMentalHealth.instance.maxMentalHealth;
             }
+        }
+        else
+        {
+            trigger = false;
         }
     }
 }
