@@ -1,34 +1,64 @@
-using System.Collections;
-using System.Collections.Generic;
+using JetBrains.Annotations;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class Interraction : MonoBehaviour
 {
     [Header("GameObject")]
     public GameObject OutlineObject;
 
+    //private PushPull pushPull;
+
+    private bool obstacle = false;
+
+    private void Awake()
+    {
+        //pushPull = GetComponentInParent<PushPull>();
+    }
+
     private void Update()
     {
-        if (PlayerController.Instance.isJumping || PlayerController.Instance.isPulling  || PlayerController.Instance.PushPullTrigger 
-            || PlayerController.Instance.isCrouching  || GameManager.instance.checkpointInstance.CheckpointIsActivate)
+        //CheckCollisions();
+
+        if (PlayerController.Instance.isJumping || PlayerController.Instance.isPulling 
+            || PlayerController.Instance.isCrouching || GameManager.instance.checkpointInstance.CheckpointIsActivate)
         {
             OutlineObject.SetActive(false);
-        } 
+        }
     }
 
     private void OnTriggerEnter(Collider collision)
     {
-        if (collision.tag == "Player")
+        if (collision.CompareTag("Player"))
         {
             OutlineObject.SetActive(true);
+        }
+        if (collision.CompareTag("Obstacle"))
+        {
+            obstacle = true;
         }
     }
     private void OnTriggerExit(Collider collision)
     {
-        if (collision.tag == "Player")
+        if (collision.CompareTag("Player"))
         {
-            OutlineObject.SetActive(false); 
+            OutlineObject.SetActive(false);
+        }
+
+        /*if (collision.CompareTag("Obstacle")) //why is it always active ?
+        {
+            obstacle = false;
+        }*/
+    }
+
+    public void CheckCollisions()
+    {
+        if (obstacle)
+        {
+            print("A");
+        }
+        else
+        {
+            print("B");
         }
     }
 }
