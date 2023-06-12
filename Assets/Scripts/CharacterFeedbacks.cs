@@ -26,9 +26,9 @@ public class CharacterFeedbacks : MonoBehaviour
     {
         if(characterController.isGrounded)
         {
-            VisualEffect particle = Instantiate(stepParticle, stepPosition.position, Quaternion.identity);
+            /*VisualEffect particle = Instantiate(stepParticle, stepPosition.position, Quaternion.identity);
             particle.Play();
-            Destroy(particle, 1);
+            Destroy(particle, 1);*/
         }
     }
 
