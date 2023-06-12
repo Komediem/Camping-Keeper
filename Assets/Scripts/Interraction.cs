@@ -18,8 +18,7 @@ public class Interraction : MonoBehaviour
     {
         CheckCollisions();
 
-        if (PlayerController.Instance.isJumping || PlayerController.Instance.isPulling
-            || PlayerController.Instance.isCrouching || GameManager.instance.checkpointInstance.CheckpointIsActivate)
+        if (PlayerController.Instance.isJumping || PlayerController.Instance.isPulling || PlayerController.Instance.isCrouching || GameManager.instance.checkpointInstance.CheckpointIsActivate || PlayerController.Instance.SpamActive)
         {
             OutlineObject.SetActive(false);
         }
