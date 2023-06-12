@@ -30,7 +30,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 6343609931704138785}
+  - {fileID: 271440865437242600}
   m_Father: {fileID: 0}
   m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -47,7 +47,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gainValue: 0
-  fireflies: {fileID: 6343609931704138791}
+  fireflies: {fileID: 271440865437242606}
 --- !u!65 &3547950594704919963
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -61,7 +61,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2, y: 2, z: 2}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!1001 &3547950595929512826
+--- !u!1001 &7706089820433920947
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -95,15 +95,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7581209483030751067, guid: ae34346c746ce0f4caacb9cc0e84cb74, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7581209483030751067, guid: ae34346c746ce0f4caacb9cc0e84cb74, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7581209483030751067, guid: ae34346c746ce0f4caacb9cc0e84cb74, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7581209483030751067, guid: ae34346c746ce0f4caacb9cc0e84cb74, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -126,20 +126,12 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7581209483030751069, guid: ae34346c746ce0f4caacb9cc0e84cb74, type: 3}
-      propertyPath: m_PropertySheet.m_Bool.m_Array.Array.data[0].m_Value
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7581209483030751069, guid: ae34346c746ce0f4caacb9cc0e84cb74, type: 3}
       propertyPath: m_PropertySheet.m_Float.m_Array.Array.data[0].m_Name
       value: KillSphereRadius
       objectReference: {fileID: 0}
     - target: {fileID: 7581209483030751069, guid: ae34346c746ce0f4caacb9cc0e84cb74, type: 3}
       propertyPath: m_PropertySheet.m_Float.m_Array.Array.data[0].m_Value
       value: 0.6
-      objectReference: {fileID: 0}
-    - target: {fileID: 7581209483030751069, guid: ae34346c746ce0f4caacb9cc0e84cb74, type: 3}
-      propertyPath: m_PropertySheet.m_Bool.m_Array.Array.data[0].m_Overridden
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7581209483030751069, guid: ae34346c746ce0f4caacb9cc0e84cb74, type: 3}
       propertyPath: m_PropertySheet.m_Float.m_Array.Array.data[0].m_Overridden
@@ -160,13 +152,13 @@ PrefabInstance:
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: ae34346c746ce0f4caacb9cc0e84cb74, type: 3}
---- !u!4 &6343609931704138785 stripped
+--- !u!4 &271440865437242600 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7581209483030751067, guid: ae34346c746ce0f4caacb9cc0e84cb74, type: 3}
-  m_PrefabInstance: {fileID: 3547950595929512826}
+  m_PrefabInstance: {fileID: 7706089820433920947}
   m_PrefabAsset: {fileID: 0}
---- !u!2083052967 &6343609931704138791 stripped
+--- !u!2083052967 &271440865437242606 stripped
 VisualEffect:
   m_CorrespondingSourceObject: {fileID: 7581209483030751069, guid: ae34346c746ce0f4caacb9cc0e84cb74, type: 3}
-  m_PrefabInstance: {fileID: 3547950595929512826}
+  m_PrefabInstance: {fileID: 7706089820433920947}
   m_PrefabAsset: {fileID: 0}
