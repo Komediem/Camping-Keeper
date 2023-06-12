@@ -26,6 +26,7 @@ public class CharacterFeedbacks : MonoBehaviour
         {
             VisualEffect particle = Instantiate(stepParticle, stepPosition.position, Quaternion.identity);
             particle.Play();
+            Destroy(particle, 1);
         }
     }
 
