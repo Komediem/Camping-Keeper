@@ -57,7 +57,8 @@ public class PlayerController : MonoBehaviour
     public bool PushPullTrigger;
 
     [Space]
-    public float NombrePression;
+    public float SpamRequire;
+    public bool SpamActive = false;
 
     #region Light
     public GameObject LightLantern;
@@ -66,6 +67,9 @@ public class PlayerController : MonoBehaviour
     public float cooldownDuration = 3f;  // Duration of the cooldown in seconds
     private float currentCooldown = 0f;  // Current cooldown progress
     private bool isCooldown = false;  // Flag to check if the cooldown is active
+
+    [Space]
+    public float NombrePression;
     #endregion
 
     private void Awake()
@@ -345,6 +349,10 @@ public class PlayerController : MonoBehaviour
     {
         if (context.performed && SpamInput.Instance.IsActive)
         {
+            if (NombrePression >= SpamRequire)
+            {
+                SpamActive = true;
+            }
             NombrePression++;
         }
     }
