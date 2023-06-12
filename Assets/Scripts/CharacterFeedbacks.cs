@@ -1,16 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.VFX;
 
 public class CharacterFeedbacks : MonoBehaviour
 {
     private CharacterController characterController;
     private PickableNextLevel pickable;
 
-    [SerializeField] private Light lanternLight;
-    private bool lanternLightBool;
-
-    [SerializeField] private GameObject stepParticle;
+    [SerializeField] private VisualEffect stepParticle;
     [SerializeField] private GameObject fallParticle;
     [SerializeField] private Transform stepPosition;
 
@@ -20,15 +18,14 @@ public class CharacterFeedbacks : MonoBehaviour
     {
         characterController = GetComponentInParent<CharacterController>();
         pickable = FindObjectOfType<PickableNextLevel>();
-        lanternLight = GetComponentInChildren<Light>();
     }
 
     public void StepEffets()
     {
         if(characterController.isGrounded)
         {
-            GameObject particle = Instantiate(stepParticle, stepPosition.position, Quaternion.identity);
-            Destroy(particle, 1);
+            VisualEffect particle = Instantiate(stepParticle, stepPosition.position, Quaternion.identity);
+            particle.Play();
         }
     }
 
