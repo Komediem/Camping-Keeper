@@ -10,6 +10,7 @@ public class CharacterFeedbacks : MonoBehaviour
 
     [SerializeField] private VisualEffect stepParticle;
     [SerializeField] private GameObject fallParticle;
+    [SerializeField] private Animator blackScreenTransition;
     [SerializeField] private Transform stepPosition;
 
     [SerializeField] private Rigidbody lanternRb;
