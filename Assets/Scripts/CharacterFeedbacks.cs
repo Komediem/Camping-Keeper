@@ -50,6 +50,7 @@ public class CharacterFeedbacks : MonoBehaviour
 
     public void BlackscreenFade()
     {
-        blackScreenTransition.SetTrigger("transiActive");
+        blackScreenTransition.SetBool("transiActive", true);
+        blackScreenTransition.SetBool("transiActive", false);
     }
 }

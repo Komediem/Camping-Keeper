@@ -9,6 +9,8 @@ public class PickableNextLevel : MonoBehaviour
     public float TempsPickupAnimation;
     public GameObject model;
 
+    [SerializeField] private Animator blackScreenTransition;
+
     void NextLevel()
     {
         PlayerController.Instance.speed = PlayerController.Instance.speedDefault;
@@ -22,6 +24,7 @@ public class PickableNextLevel : MonoBehaviour
             PlayerController.Instance.lockMovements = true; 
             animator.SetBool("isPicking", true);
             //add more option when you pick up
+            blackScreenTransition.SetBool("transiActive", true);
             Invoke("NextLevel", TempsPickupAnimation);
         }
     }
