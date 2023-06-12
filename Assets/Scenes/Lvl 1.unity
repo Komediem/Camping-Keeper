@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.2106003, g: 0.34960663, b: 0.8528579, a: 1}
+  m_IndirectSpecularColor: {r: 0.21051058, g: 0.34946692, b: 0.8526056, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1973,7 +1973,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 2
-    m_TransformParent: {fileID: 417468544}
+    m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 277034314, guid: 0b808f0095528bf41ba9480bb86dffea, type: 3}
       propertyPath: m_IsActive
@@ -1983,6 +1983,10 @@ PrefabInstance:
       propertyPath: MainButtons
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 564248769, guid: 0b808f0095528bf41ba9480bb86dffea, type: 3}
+      propertyPath: blackscreen
+      value: 
+      objectReference: {fileID: 903363359}
     - target: {fileID: 564248769, guid: 0b808f0095528bf41ba9480bb86dffea, type: 3}
       propertyPath: beginPosition
       value: 
@@ -2089,7 +2093,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4272810012536966945, guid: 0b808f0095528bf41ba9480bb86dffea, type: 3}
       propertyPath: m_RootOrder
-      value: -1
+      value: 23
       objectReference: {fileID: 0}
     - target: {fileID: 4272810012536966945, guid: 0b808f0095528bf41ba9480bb86dffea, type: 3}
       propertyPath: m_AnchorMax.x
@@ -5084,6 +5088,10 @@ PrefabInstance:
       propertyPath: stepParticle
       value: 
       objectReference: {fileID: 1478899941}
+    - target: {fileID: 1230554203475583634, guid: a389da2f4438b3a4e9c5202b88c93942, type: 3}
+      propertyPath: blackScreenTransition
+      value: 
+      objectReference: {fileID: 903363359}
     - target: {fileID: 1330755670166280977, guid: a389da2f4438b3a4e9c5202b88c93942, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 52.08898
@@ -5430,7 +5438,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6330055504169505634, guid: a389da2f4438b3a4e9c5202b88c93942, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 7.218
+      value: 155.968
       objectReference: {fileID: 0}
     - target: {fileID: 6330055504169505634, guid: a389da2f4438b3a4e9c5202b88c93942, type: 3}
       propertyPath: m_LocalPosition.y
@@ -5438,7 +5446,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6330055504169505634, guid: a389da2f4438b3a4e9c5202b88c93942, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 15
+      value: 15.25
       objectReference: {fileID: 0}
     - target: {fileID: 6330055504169505634, guid: a389da2f4438b3a4e9c5202b88c93942, type: 3}
       propertyPath: m_LocalRotation.w
@@ -7058,7 +7066,6 @@ Transform:
   - {fileID: 1702462609}
   - {fileID: 1982512324}
   - {fileID: 2061836830}
-  - {fileID: 130984603}
   - {fileID: 315232119}
   - {fileID: 845909323}
   - {fileID: 591050184}
@@ -7658,6 +7665,10 @@ PrefabInstance:
       propertyPath: animator
       value: 
       objectReference: {fileID: 306477136}
+    - target: {fileID: 5747504497276877727, guid: 034e940684b85304fb2f5307838313d8, type: 3}
+      propertyPath: blackScreenTransition
+      value: 
+      objectReference: {fileID: 903363359}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 034e940684b85304fb2f5307838313d8, type: 3}
@@ -14579,6 +14590,11 @@ PrefabInstance:
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: c5d2c739ad29a0649a5257e7a2ae9aa7, type: 3}
+--- !u!95 &903363359 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 617198796, guid: 0b808f0095528bf41ba9480bb86dffea, type: 3}
+  m_PrefabInstance: {fileID: 130984601}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &909488806
 PrefabInstance:
   m_ObjectHideFlags: 0
