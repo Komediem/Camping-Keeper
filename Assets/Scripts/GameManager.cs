@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     public GameObject checkpointsParent;
     public GameObject CurrentCheckpoint;
     public GameObject Player;
+    public Checkpoint checkpointInstance;
 
     [SerializeField] private float deathAnimTime;
 
@@ -32,8 +33,6 @@ public class GameManager : MonoBehaviour
     }
     public void Respawn()
     {
-        Debug.Log("Saucisse");
-
         Player.GetComponent<CharacterController>().enabled = false;
 
         Player.transform.position = CurrentCheckpoint.transform.position; //TP Checkpoint
