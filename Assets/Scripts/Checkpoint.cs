@@ -18,7 +18,7 @@ public class Checkpoint : MonoBehaviour
     private void OnTriggerEnter(Collider collision)
     {
         if (CheckpointIsActivate == true) return;
-        if (collision.tag == "InterractZone")
+        if (collision.tag == "Player")
         {
             GameManager.instance.CurrentCheckpoint = gameObject;
             CheckpointIsActivate = true;
