@@ -294,6 +294,10 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 660948951562820670, guid: a389da2f4438b3a4e9c5202b88c93942, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4906553058342032316, guid: a389da2f4438b3a4e9c5202b88c93942, type: 3}
       propertyPath: VelocityModule.y.scalar
       value: 0.6
@@ -344,11 +348,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6330055504169505634, guid: a389da2f4438b3a4e9c5202b88c93942, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 9.097
+      value: -0.01
       objectReference: {fileID: 0}
     - target: {fileID: 6330055504169505634, guid: a389da2f4438b3a4e9c5202b88c93942, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 5.159
+      value: 1.8
       objectReference: {fileID: 0}
     - target: {fileID: 6330055504169505634, guid: a389da2f4438b3a4e9c5202b88c93942, type: 3}
       propertyPath: m_LocalRotation.w
@@ -376,6 +380,22 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6330055504169505634, guid: a389da2f4438b3a4e9c5202b88c93942, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8677932784152767153, guid: a389da2f4438b3a4e9c5202b88c93942, type: 3}
+      propertyPath: m_PropertySheet.m_Float.m_Array.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8677932784152767153, guid: a389da2f4438b3a4e9c5202b88c93942, type: 3}
+      propertyPath: m_PropertySheet.m_Float.m_Array.Array.data[3].m_Name
+      value: RemainingDuration
+      objectReference: {fileID: 0}
+    - target: {fileID: 8677932784152767153, guid: a389da2f4438b3a4e9c5202b88c93942, type: 3}
+      propertyPath: m_PropertySheet.m_Float.m_Array.Array.data[3].m_Value
+      value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8677932784152767153, guid: a389da2f4438b3a4e9c5202b88c93942, type: 3}
+      propertyPath: m_PropertySheet.m_Float.m_Array.Array.data[3].m_Overridden
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -1026,7 +1046,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!64 &843970377
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1383,6 +1403,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: c2d43993cbcf51d43b5111c36f3a489a, type: 3}
       propertyPath: m_Name
       value: Rock_001
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c2d43993cbcf51d43b5111c36f3a489a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
@@ -1856,6 +1880,10 @@ PrefabInstance:
     - target: {fileID: 2146622160308679865, guid: b45030e79eaa3464ca53bf9e95acc3e3, type: 3}
       propertyPath: m_Name
       value: FEUU
+      objectReference: {fileID: 0}
+    - target: {fileID: 2146622160308679865, guid: b45030e79eaa3464ca53bf9e95acc3e3, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []

@@ -1,11 +1,14 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
+using UnityEngine.VFX;
 
 public class PlayerController : MonoBehaviour
 {
     public static PlayerController Instance;
     private CharacterController controller;
+
+    [SerializeField] VisualEffect sparksVFX;
 
     public Rigidbody rb;
     public Animator playerAnimator;
@@ -87,6 +90,8 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody>();
 
         playerAnimator = GetComponentInChildren<Animator>();
+
+        sparksVFX = GetComponentInChildren<VisualEffect>();
     }
 
     private void Start()
@@ -304,7 +309,7 @@ public class PlayerController : MonoBehaviour
         if (context.started && !isCrouching && !isCooldown)
         {
             LightLantern.SetActive(true);
-
+            sparksVFX.Play();
             //Play Anmation, Be Carefull of the Moment Where The Light Cuts
             Invoke("LightStop", LightTime);
 
