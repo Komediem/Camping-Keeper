@@ -12,7 +12,7 @@ public class InteractionModeSwitcher : MonoBehaviour
     private void OnEnable()
     {
         Cursor.visible = true;
-        virtualCursor.SetActive(true);
+        //virtualCursor.SetActive(true);
 
         input.SwitchCurrentActionMap("UI");
     }
@@ -20,7 +20,7 @@ public class InteractionModeSwitcher : MonoBehaviour
     private void OnDisable()
     {
         Cursor.visible = false;
-        virtualCursor.SetActive(false);
+        //virtualCursor.SetActive(false);
 
         input.SwitchCurrentActionMap("Player");
     }
