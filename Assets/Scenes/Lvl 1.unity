@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.21050236, g: 0.3494495, b: 0.8526034, a: 1}
+  m_IndirectSpecularColor: {r: 0.21053149, g: 0.34952196, b: 0.852713, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1966,6 +1966,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 564248769, guid: 0b808f0095528bf41ba9480bb86dffea, type: 3}
+      propertyPath: scream
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 564248769, guid: 0b808f0095528bf41ba9480bb86dffea, type: 3}
       propertyPath: MainButtons
       value: 
       objectReference: {fileID: 0}
@@ -2151,6 +2155,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4272810012536966945, guid: 0b808f0095528bf41ba9480bb86dffea, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4272810012536966950, guid: 0b808f0095528bf41ba9480bb86dffea, type: 3}
+      propertyPath: Pan2D
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4272810012536966950, guid: 0b808f0095528bf41ba9480bb86dffea, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 78a78cdf8c03aaf4ab654c764172c72e, type: 3}
+    - target: {fileID: 4272810012536966950, guid: 0b808f0095528bf41ba9480bb86dffea, type: 3}
+      propertyPath: m_PlayOnAwake
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4272810012536966957, guid: 0b808f0095528bf41ba9480bb86dffea, type: 3}
