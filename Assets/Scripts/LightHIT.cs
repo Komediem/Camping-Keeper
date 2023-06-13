@@ -17,12 +17,7 @@ public class LightHIT : MonoBehaviour
         SpeedDefault = agent.speed;
     }
 
-    private void Update()
-    {
-       
-    }
-
-    private void OnTriggerEnter(Collider collision)
+    public void OnTriggerEnter(Collider collision)
     {
         if (collision.tag == "LightHitBox")
         {
