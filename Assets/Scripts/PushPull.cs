@@ -56,7 +56,7 @@ public class PushPull : MonoBehaviour
                 PlayerController.Instance.playerAnimator.SetBool("isPulling", false);
                 //
 
-                Gamepad.current.SetMotorSpeeds(0.5f, 1.25f);
+                Gamepad.current.SetMotorSpeeds(0.5f, 0.75f);
             }
             else if (PlayerController.Instance.movement < 0) //negative movement, to the left
             {
@@ -67,7 +67,7 @@ public class PushPull : MonoBehaviour
                 PlayerController.Instance.playerAnimator.SetBool("isPushing", false);
                 //
 
-                Gamepad.current.SetMotorSpeeds(1.25f, 0.5f);
+                Gamepad.current.SetMotorSpeeds(0.75f, 0.25f);
             }
         }
         else
