@@ -242,8 +242,7 @@ public class PlayerController : MonoBehaviour
                 playerAnimator.SetBool("isCrouching", false);
                 playerAnimator.SetBool("isCrouchWalking", false);
             }
-
-            if (!isCrouching && Raycastcrouch.Instance.CanStand && !isPulling)
+            else if (Raycastcrouch.Instance.CanStand && !isPulling)
             {
                 isCrouching = true;
 
@@ -395,4 +394,3 @@ public class PlayerController : MonoBehaviour
         }
     }
 }
-
