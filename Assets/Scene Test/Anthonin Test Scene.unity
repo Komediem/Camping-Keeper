@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 2062.1973, g: 2297, b: 2867.9766, a: 1}
+  m_IndirectSpecularColor: {r: 1966.6152, g: 2164.1758, b: 2652.3555, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1141,6 +1141,7 @@ MonoBehaviour:
   attackRange: 1.75
   playerInSightRange: 0
   playerInAttackRange: 0
+  BIGAmountDMG: 0
 --- !u!195 &735885157
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -2286,6 +2287,14 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 316329389}
+    - target: {fileID: 2536327182312781620, guid: 873681ef14e580d448b5176cf85d8e5a, type: 3}
+      propertyPath: AmountDMG
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2536327182312781620, guid: 873681ef14e580d448b5176cf85d8e5a, type: 3}
+      propertyPath: BIGAmountDMG
+      value: 40
+      objectReference: {fileID: 0}
     - target: {fileID: 2653187048246849093, guid: 873681ef14e580d448b5176cf85d8e5a, type: 3}
       propertyPath: m_Enabled
       value: 0

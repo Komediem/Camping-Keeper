@@ -10,7 +10,6 @@ public class Spam : MonoBehaviour
     public GameObject FinalEnemy;
     public GameObject OutlineKID;
     public GameObject LightENDGAME;
-    public float TempsAnimation;
     public float DelayENDGAME;
     public bool NoCD = false;
     //public GameObject [Name Canvas Object];
