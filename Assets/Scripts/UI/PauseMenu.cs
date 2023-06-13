@@ -27,6 +27,11 @@ public class PauseMenu : MonoBehaviour
 
         //assign all variables to prevent errors
         virtualCursor = GameObject.Find("VirtualCursor");
+        if (virtualCursor == null)
+        {
+            virtualCursor = GameObject.Find("VirtualMouse");
+
+        }
 
         audioSource = GetComponent<AudioSource>();
     }
