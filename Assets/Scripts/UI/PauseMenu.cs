@@ -28,7 +28,7 @@ public class PauseMenu : MonoBehaviour
         if (Instance) Destroy(this);
         else Instance = this;
 
-        //assign all variables to prevent errors
+        //assign some variables to murder errors
         virtualCursor = GameObject.Find("VirtualCursor");
         if (virtualCursor == null)
         {
@@ -61,6 +61,7 @@ public class PauseMenu : MonoBehaviour
         else
         {
             EventSystem.current.SetSelectedGameObject(Buttons.transform.GetChild(0).gameObject);
+
             Paused();
         }
     }
