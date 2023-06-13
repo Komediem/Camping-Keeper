@@ -58,13 +58,6 @@ public class UITutos : MonoBehaviour
         }
     }
 
-    /*IEnumerator tutoTextSpawn()
-    {
-        tutoTextObject.SetActive(true);
-        yield return new WaitForSeconds(3);
-        tutoTextObject.SetActive(false);
-    }*/
-
     public void TutoMovement()
     {
         GameObject tutoMovement = tutoTexts[0];

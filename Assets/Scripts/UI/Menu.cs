@@ -42,8 +42,14 @@ public class Menu : MonoBehaviour
 
         player = GameObject.Find("Player");
 
+        EventSystem.current.SetSelectedGameObject(MainButtons.transform.GetChild(0).gameObject);
+
         if (SceneManager.GetActiveScene().buildIndex != 0) //not in menu scene
         {
+            Cursor.visible = false;
+
+            PlayerController.Instance.lockMovements = false;
+
             MainMenu.SetActive(false);
             MainButtons.SetActive(false);
             OptionsWindow.SetActive(false);
@@ -53,8 +59,6 @@ public class Menu : MonoBehaviour
 
             blackscreen.SetBool("transiActive", true);
             blackscreen.SetBool("transiActive", false);
-
-            PlayerController.Instance.lockMovements = false;
         }
         else
         {
@@ -70,11 +74,9 @@ public class Menu : MonoBehaviour
             OptionsWindow.SetActive(false);
             OptionsButtons.SetActive(false);
 
-            blackscreen.SetBool("transiActive", false);
-
             isMenuActive = true;
-
-            EventSystem.current.SetSelectedGameObject(MainButtons.transform.GetChild(0).gameObject);
+            
+            blackscreen.SetBool("transiActive", false);
         }
     }
 
@@ -101,7 +103,13 @@ public class Menu : MonoBehaviour
     IEnumerator LockMovementBeginning()
     {
         yield return new WaitForSeconds(5.5f);
+
         PlayerController.Instance.lockMovements = false;
+
+        PlayerController.Instance.speed = PlayerController.Instance.speedDefault;
+        PlayerController.Instance.speedValue = PlayerController.Instance.speedDefault;
+        PlayerController.Instance.jumpSpeed = PlayerController.Instance.jumpDefault;
+
         UITutos.instance.TutoMovement();
     }
 
