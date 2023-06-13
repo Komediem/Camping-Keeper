@@ -48,40 +48,31 @@ public class PauseMenu : MonoBehaviour
         Buttons.SetActive(false);
 
         pauseMenu.SetActive(false);
+
+        Cursor.lockState = CursorLockMode.Confined;
     }
 
     public void PauseGame()
     {
-        //if (!GameOver.Instance.isGameOver && !WinSystem.Instance.isGameWin)
-        //{
         if (gameIsPaused)
         {
             Resume();
-
-            virtualCursor.SetActive(false);
         }
         else
         {
             Paused();
-
-            //if (GamepadCursor.Instance.playerInput.currentControlScheme != "Gamepad")
-            //{
-            Cursor.visible = true;
-            Cursor.lockState = CursorLockMode.Confined;
-            //}
         }
-        //}
     }
 
     void Paused()
     {
-        EventSystem.current.SetSelectedGameObject(Buttons.transform.GetChild(0).gameObject);
-
         pauseMenu.SetActive(true);
         Buttons.SetActive(true);
         OptionsWindow.SetActive(false);
 
-        virtualCursor.SetActive(true);
+        EventSystem.current.SetSelectedGameObject(Buttons.transform.GetChild(0).gameObject);
+
+        //virtualCursor.SetActive(true);
 
         Time.timeScale = 0;
 
@@ -90,7 +81,6 @@ public class PauseMenu : MonoBehaviour
         gameIsPaused = true;
 
         Cursor.visible = true;
-        Cursor.lockState = CursorLockMode.Confined;
     }
 
     public void Resume()
@@ -105,7 +95,9 @@ public class PauseMenu : MonoBehaviour
         gameIsPaused = false;
 
         Cursor.visible = false;
-        Cursor.lockState = CursorLockMode.Locked;
+        //Cursor.lockState = CursorLockMode.Locked;
+
+        //virtualCursor.SetActive(false);
     }
 
     public void LoadMainMenu()
@@ -134,6 +126,7 @@ public class PauseMenu : MonoBehaviour
 
         Buttons.SetActive(false); //to make sure you can't click them while in the options menu
         OptionsWindow.SetActive(true); //options menu
+        OptionsButtons.SetActive(true);
 
         EventSystem.current.SetSelectedGameObject(OptionsButtons.transform.GetChild(0).gameObject);
     }
@@ -158,6 +151,8 @@ public class PauseMenu : MonoBehaviour
         SaveSystem.instance.SaveOptions(); //save options when closing the options menu
 
         OptionsWindow.SetActive(false);
+        OptionsButtons.SetActive(false);
+
         Buttons.SetActive(true);
 
         EventSystem.current.SetSelectedGameObject(Buttons.transform.GetChild(0).gameObject);
@@ -169,5 +164,6 @@ public class PauseMenu : MonoBehaviour
         Screen.fullScreen = true;
 
         musicSlider.value = musicSlider.maxValue;
+        GetComponent<AudioSource>().volume = musicSlider.maxValue;
     }
 }
