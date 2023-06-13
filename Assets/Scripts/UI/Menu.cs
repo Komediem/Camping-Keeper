@@ -97,14 +97,14 @@ public class Menu : MonoBehaviour
 
         playerAnimator.SetBool("isScared", true);
 
-        isMenuActive = false;
-
         StartCoroutine(LockMovementBeginning());
     }
 
     IEnumerator LockMovementBeginning()
     {
         yield return new WaitForSeconds(5.5f);
+
+        isMenuActive = false;
 
         PlayerController.Instance.lockMovements = false;
 
