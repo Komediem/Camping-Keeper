@@ -22,7 +22,7 @@ public class Menu : MonoBehaviour
 
     public Toggle fullscreenToggle;
 
-    public new AudioSource audio; //musica !!
+    public AudioSource scream; //musica !!
     public Slider musicSlider;
 
     public bool isMenuActive = true;
@@ -35,7 +35,7 @@ public class Menu : MonoBehaviour
         Cursor.lockState = CursorLockMode.Confined;
 
         //assign all variables to prevent errors
-        audio = GetComponent<AudioSource>();
+        scream = GetComponent<AudioSource>();
 
         MainMenu = GameObject.Find("Main Menu");
         MainButtons = GameObject.Find("MenuBoutons");
@@ -82,6 +82,8 @@ public class Menu : MonoBehaviour
 
         SaveSystem.instance.Load();
 
+        scream.Play();
+
         //SceneManager.LoadScene(SaveSystem.instance._lvl);
 
         playerAnimator.SetBool("isScared", true);
@@ -118,7 +120,7 @@ public class Menu : MonoBehaviour
         Screen.fullScreen = SaveSystem.instance.isFulscreen;
 
         musicSlider.value = SaveSystem.instance.music;
-        audio.volume = SaveSystem.instance.music;
+        scream.volume = SaveSystem.instance.music;
 
         MainButtons.SetActive(false); //to make sure you can't click them while in the options menu
         OptionsWindow.SetActive(true); //options menu
@@ -131,7 +133,7 @@ public class Menu : MonoBehaviour
 
     public void VolumeSlider()
     {
-        audio.volume = musicSlider.value;
+        scream.volume = musicSlider.value;
     }
 
     public void SensitivitySlider()
@@ -153,6 +155,6 @@ public class Menu : MonoBehaviour
         Screen.fullScreen = true;
 
         musicSlider.value = musicSlider.maxValue;
-        audio.volume = musicSlider.maxValue;
+        scream.volume = musicSlider.maxValue;
     }
 }
