@@ -15,7 +15,7 @@ public class PauseMenu : MonoBehaviour
     [Space]
     public GameObject pauseMenu;
     public GameObject Buttons; //buttons of the Pause Menu
-  
+
     [Space]
     public GameObject OptionsWindow;
     public GameObject OptionsButtons; //buttons of the options
@@ -33,7 +33,6 @@ public class PauseMenu : MonoBehaviour
         if (virtualCursor == null)
         {
             virtualCursor = GameObject.Find("VirtualMouse");
-
         }
 
         audioSource = GetComponent<AudioSource>();
@@ -44,12 +43,12 @@ public class PauseMenu : MonoBehaviour
         gameIsPaused = false;
 
         OptionsWindow.SetActive(false);
+        OptionsButtons.SetActive(false);
 
         Buttons.SetActive(false);
 
         pauseMenu.SetActive(false);
     }
-
 
     public void PauseGame()
     {
