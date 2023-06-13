@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 5.731035, g: 8.775288, b: 19.843254, a: 1}
+  m_IndirectSpecularColor: {r: 0.3784715, g: 1.159621, b: 1.5976739, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1485,6 +1485,69 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6885580961236434250, guid: c06a0d46e8f606749b2e8b0f84ccbe62, type: 3}
   m_PrefabInstance: {fileID: 164266711}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &191566083
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 191566086}
+  - component: {fileID: 191566085}
+  - component: {fileID: 191566084}
+  m_Layer: 0
+  m_Name: Box Volume
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &191566084
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 191566083}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IsGlobal: 0
+  priority: 0
+  blendDistance: 40
+  weight: 1
+  sharedProfile: {fileID: 11400000, guid: 6d73122d6d73f6f40a9bd944cb0d68b2, type: 2}
+--- !u!65 &191566085
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 191566083}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!4 &191566086
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 191566083}
+  m_LocalRotation: {x: -0, y: 0.017253058, z: -0, w: 0.9998512}
+  m_LocalPosition: {x: 199.8, y: 18.3, z: 57.7}
+  m_LocalScale: {x: 161.13708, y: 41.704693, z: 112.48444}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 29
+  m_LocalEulerAnglesHint: {x: 0, y: 1.977, z: 0}
 --- !u!1001 &191871155
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8438,8 +8501,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 806530448}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 89.37245, y: 4.5012226, z: 82.02629}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 84.30464, y: 4.5012226, z: 82.02629}
+  m_LocalScale: {x: 1.5986351, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1952303143}
@@ -8470,7 +8533,7 @@ MonoBehaviour:
     m_EditorPositiveFade: {x: 0, y: 0, z: 0}
     m_EditorNegativeFade: {x: 0, y: 0, z: 0}
     m_EditorAdvancedFade: 0
-    size: {x: 249.31174, y: 24.700254, z: 22.37555}
+    size: {x: 274.3, y: 24.700254, z: 22.37555}
     invertFade: 0
     distanceFadeStart: 10000
     distanceFadeEnd: 10000
@@ -12117,8 +12180,20 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7930518077375976282, guid: 6112eb4eb7217e6408ee80bcd8b03891, type: 3}
+      propertyPath: m_Color.b
+      value: 0.78985363
+      objectReference: {fileID: 0}
+    - target: {fileID: 7930518077375976282, guid: 6112eb4eb7217e6408ee80bcd8b03891, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7930518077375976282, guid: 6112eb4eb7217e6408ee80bcd8b03891, type: 3}
+      propertyPath: m_Color.r
+      value: 0.7216981
+      objectReference: {fileID: 0}
+    - target: {fileID: 7930518077375976282, guid: 6112eb4eb7217e6408ee80bcd8b03891, type: 3}
       propertyPath: m_Intensity
-      value: 1000
+      value: 120
       objectReference: {fileID: 0}
     - target: {fileID: 7930518077375976282, guid: 6112eb4eb7217e6408ee80bcd8b03891, type: 3}
       propertyPath: m_AreaSize.x
@@ -12142,7 +12217,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7930518077375976284, guid: 6112eb4eb7217e6408ee80bcd8b03891, type: 3}
       propertyPath: m_Intensity
-      value: 1000
+      value: 120
       objectReference: {fileID: 0}
     - target: {fileID: 7930518077375976284, guid: 6112eb4eb7217e6408ee80bcd8b03891, type: 3}
       propertyPath: m_ShapeWidth
@@ -21401,8 +21476,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1832272421}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 87.36781, y: 4.5012226, z: 35.651802}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 82.3, y: 4.5012226, z: 35.651802}
+  m_LocalScale: {x: 1.5986351, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1952303143}
@@ -21433,7 +21508,7 @@ MonoBehaviour:
     m_EditorPositiveFade: {x: 0, y: 0, z: 0}
     m_EditorNegativeFade: {x: 0, y: 0, z: 0}
     m_EditorAdvancedFade: 0
-    size: {x: 245.3024, y: 24.700254, z: 30.626549}
+    size: {x: 274.3, y: 24.700254, z: 22.37555}
     invertFade: 0
     distanceFadeStart: 10000
     distanceFadeEnd: 10000
@@ -21681,8 +21756,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1880478513}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 90.91135, y: 4.5012226, z: 61.776295}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 85.84354, y: 4.5012226, z: 61.776295}
+  m_LocalScale: {x: 1.5986351, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1952303143}
@@ -21713,7 +21788,7 @@ MonoBehaviour:
     m_EditorPositiveFade: {x: 0, y: 0, z: 0}
     m_EditorNegativeFade: {x: 0, y: 0, z: 0}
     m_EditorAdvancedFade: 0
-    size: {x: 252.38947, y: 24.700254, z: 22.37555}
+    size: {x: 274.3, y: 24.700254, z: 22.37555}
     invertFade: 0
     distanceFadeStart: 10000
     distanceFadeEnd: 10000

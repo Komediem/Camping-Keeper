@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -13,9 +14,11 @@ public class PauseMenu : MonoBehaviour
     public AudioSource audioSource;
     [Space]
     public GameObject pauseMenu;
-    public GameObject Buttons; //buttons of the Main Menu
+    public GameObject Buttons; //buttons of the Pause Menu
+  
     [Space]
     public GameObject OptionsWindow;
+    public GameObject OptionsButtons; //buttons of the options
     [Space]
     public Toggle fullscreenToggle;
     public Slider musicSlider;
@@ -27,6 +30,11 @@ public class PauseMenu : MonoBehaviour
 
         //assign all variables to prevent errors
         virtualCursor = GameObject.Find("VirtualCursor");
+        if (virtualCursor == null)
+        {
+            virtualCursor = GameObject.Find("VirtualMouse");
+
+        }
 
         audioSource = GetComponent<AudioSource>();
     }
@@ -68,6 +76,8 @@ public class PauseMenu : MonoBehaviour
 
     void Paused()
     {
+        EventSystem.current.SetSelectedGameObject(Buttons.transform.GetChild(0).gameObject);
+
         pauseMenu.SetActive(true);
         Buttons.SetActive(true);
         OptionsWindow.SetActive(false);
@@ -125,6 +135,8 @@ public class PauseMenu : MonoBehaviour
 
         Buttons.SetActive(false); //to make sure you can't click them while in the options menu
         OptionsWindow.SetActive(true); //options menu
+
+        EventSystem.current.SetSelectedGameObject(OptionsButtons.transform.GetChild(0).gameObject);
     }
 
     public void FullScreen()
@@ -148,6 +160,8 @@ public class PauseMenu : MonoBehaviour
 
         OptionsWindow.SetActive(false);
         Buttons.SetActive(true);
+
+        EventSystem.current.SetSelectedGameObject(Buttons.transform.GetChild(0).gameObject);
     }
 
     public void ResetOptionsDefault()
