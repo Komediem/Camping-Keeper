@@ -23,7 +23,6 @@ public class ENDGAMEEnemy : MonoBehaviour
     {
         if (collision.tag == "LightENDGAME")
         {
-
             Invoke("EnemyKill", ENDGAME);
         }
     }
@@ -31,6 +30,11 @@ public class ENDGAMEEnemy : MonoBehaviour
     void EnemyKill()
     {
         Destroy(EnemyEND);
+        Invoke("SkipScene", 0.5f);
+    }
+
+    void SkipScene()
+    {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }

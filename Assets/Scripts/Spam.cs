@@ -20,6 +20,7 @@ public class Spam : MonoBehaviour
     {
         agent = GetComponent<NavMeshAgent>();
         LightENDGAME.SetActive(false);
+        FinalEnemy = GameObject.Find("FinalEnemy");
     }
 
     private void Update()
