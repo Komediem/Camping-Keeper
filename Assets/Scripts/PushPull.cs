@@ -3,12 +3,13 @@ using UnityEngine.InputSystem;
 
 public class PushPull : MonoBehaviour
 {
-    [Header("Don't need to assign :")]
+    [Header("Don't assign :")]
     [SerializeField] private GameObject Player;
 
-    public Rigidbody rb;
+    [SerializeField] public Rigidbody rb;
 
     public bool isPushable = false;
+    [SerializeField] private bool obstacle = false;
 
     private void Awake()
     {
@@ -18,38 +19,12 @@ public class PushPull : MonoBehaviour
 
     void Update()
     {
-        if (isPushable && !PlayerController.Instance.lockMovements && 
+        CheckCollisions();
+
+        if (isPushable && !PlayerController.Instance.lockMovements &&
             !PlayerController.Instance.isCrouching && PlayerController.Instance.PushPullTrigger)
         {
             Pull();
-        }
-    }
-
-    private void OnTriggerEnter(Collider collision)
-    {
-        if (collision.CompareTag("Player"))
-        {
-            isPushable = true;
-
-            PlayerController.Instance.PushPullTrigger = true;
-
-            PlayerController.Instance.speed /= 2;
-            PlayerController.Instance.speedValue /= 2;
-
-            PlayerController.Instance.Interract.SetActive(false);
-        }
-    }
-
-    private void OnTriggerExit(Collider collision)
-    {
-        if (collision.CompareTag("Player"))
-        {
-            isPushable = false;
-
-            PlayerController.Instance.PushPullTrigger = false;
-
-            PlayerController.Instance.speed = PlayerController.Instance.speedDefault;
-            PlayerController.Instance.speedValue = PlayerController.Instance.speedDefault;
         }
     }
 
@@ -98,13 +73,66 @@ public class PushPull : MonoBehaviour
         else
         {
             gameObject.transform.SetParent(null); //Setting the parent to "null" unparents the GameObject and turns child into a top-level object in the hierarchy
-            
+
             //Resets Push/Pull Animation
             PlayerController.Instance.playerAnimator.SetBool("isPushAndPull", false);
             PlayerController.Instance.playerAnimator.SetBool("isPushing", false);
             PlayerController.Instance.playerAnimator.SetBool("isPulling", false);
 
             InputSystem.ResetHaptics();
+        }
+    }
+
+    public void CheckCollisions()
+    {
+        if (PlayerController.Instance.isPulling && isPushable)
+        {
+            if (obstacle)
+            {
+                print("A");
+            }
+            else
+            {
+                print("B");
+            }
+        }
+    }
+
+    private void OnTriggerEnter(Collider collision)
+    {
+        if (collision.CompareTag("Player"))
+        {
+            isPushable = true;
+
+            PlayerController.Instance.PushPullTrigger = true;
+
+            PlayerController.Instance.speed /= 2;
+            PlayerController.Instance.speedValue /= 2;
+
+            PlayerController.Instance.Interract.SetActive(false);
+        }
+
+        if (collision.CompareTag("Obstacle"))
+        {
+            obstacle = true;
+        }
+    }
+
+    private void OnTriggerExit(Collider collision)
+    {
+        if (collision.CompareTag("Player"))
+        {
+            isPushable = false;
+
+            PlayerController.Instance.PushPullTrigger = false;
+
+            PlayerController.Instance.speed = PlayerController.Instance.speedDefault;
+            PlayerController.Instance.speedValue = PlayerController.Instance.speedDefault;
+        }
+
+        if (collision.CompareTag("Obstacle"))
+        {
+            obstacle = false;
         }
     }
 }
