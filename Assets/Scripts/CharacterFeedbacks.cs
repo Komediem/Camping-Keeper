@@ -16,13 +16,13 @@ public class CharacterFeedbacks : MonoBehaviour
 
     [SerializeField] private Rigidbody lanternRb;
 
-    [SerializeField] private ParticleSystem[] stepParticles;
+    [SerializeField] private ParticleSystem[] particleSystems;
 
     public void Awake()
     {
         characterController = GetComponentInParent<CharacterController>();
         pickable = FindObjectOfType<PickableNextLevel>();
-        stepParticles = GetComponentsInChildren<ParticleSystem>();
+        particleSystems = GetComponentsInChildren<ParticleSystem>();
     }
 
     public void StepEffets()
@@ -39,17 +39,28 @@ public class CharacterFeedbacks : MonoBehaviour
     {
         if (characterController.isGrounded)
         {
-            stepParticles[0].Play();
+            particleSystems[0].Play();
         }
-
     }
 
     public void FootStepsEvent_R()
     {
         if (characterController.isGrounded)
         {
-            stepParticles[1].Play();
+            particleSystems[1].Play();
         }
+    }
+
+    public void JumpDust()
+    {
+        particleSystems[2].Play();
+        particleSystems[3].Play();
+    }
+
+
+    public void JumpEvent()
+    {
+
     }
 
     public void FallEffect()
