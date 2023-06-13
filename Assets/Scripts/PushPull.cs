@@ -36,7 +36,6 @@ public class PushPull : MonoBehaviour
             PlayerController.Instance.canJump = false;
             PlayerController.Instance.isCrouching = false;
 
-            ///Push/Pull Animations
             if (PlayerController.Instance.movement == 0) //no movement
             {
                 //Anim : Idle Push/Pull
@@ -44,6 +43,7 @@ public class PushPull : MonoBehaviour
 
                 PlayerController.Instance.playerAnimator.SetBool("isPushing", false);
                 PlayerController.Instance.playerAnimator.SetBool("isPulling", false);
+                //
 
                 InputSystem.ResetHaptics();
             }
@@ -54,8 +54,9 @@ public class PushPull : MonoBehaviour
 
                 PlayerController.Instance.playerAnimator.SetBool("isPushAndPull", false);
                 PlayerController.Instance.playerAnimator.SetBool("isPulling", false);
+                //
 
-                Gamepad.current.SetMotorSpeeds(0.75f, 1.5f);
+                Gamepad.current.SetMotorSpeeds(0.5f, 1.25f);
             }
             else if (PlayerController.Instance.movement < 0) //negative movement, to the left
             {
@@ -64,10 +65,10 @@ public class PushPull : MonoBehaviour
 
                 PlayerController.Instance.playerAnimator.SetBool("isPushAndPull", false);
                 PlayerController.Instance.playerAnimator.SetBool("isPushing", false);
+                //
 
-                Gamepad.current.SetMotorSpeeds(1.5f, 0.75f);
+                Gamepad.current.SetMotorSpeeds(1.25f, 0.5f);
             }
-            ///end Push/Pull Anim
         }
         else
         {
@@ -77,6 +78,7 @@ public class PushPull : MonoBehaviour
             PlayerController.Instance.playerAnimator.SetBool("isPushAndPull", false);
             PlayerController.Instance.playerAnimator.SetBool("isPushing", false);
             PlayerController.Instance.playerAnimator.SetBool("isPulling", false);
+            //
 
             InputSystem.ResetHaptics();
         }
@@ -88,6 +90,7 @@ public class PushPull : MonoBehaviour
         {
             if (obstacle)
             {
+                rb.AddForce(5f,0,0);
                 print("A");
             }
             else
