@@ -8,6 +8,8 @@ public class Menu : MonoBehaviour
 {
     public static Menu Instance;
 
+    [SerializeField] private GameObject movementText;
+
     public GameObject MainMenu;
 
     public GameObject MainButtons;
@@ -113,7 +115,7 @@ public class Menu : MonoBehaviour
         PlayerController.Instance.speedValue = PlayerController.Instance.speedDefault;
         PlayerController.Instance.jumpSpeed = PlayerController.Instance.jumpDefault;
 
-        UITutos.instance.TutoMovement();
+        movementText.SetActive(true);
     }
 
     public void ExitGame() //close App
