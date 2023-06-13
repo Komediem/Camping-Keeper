@@ -23,6 +23,7 @@ public class Enemy : MonoBehaviour
     public float CooldownForDMG;
     public float Timer = 0;
     public int AmountDMG;
+
     #endregion
 
     #region Range
@@ -32,6 +33,7 @@ public class Enemy : MonoBehaviour
     public float attackRange; //zone attaque 
     public bool playerInSightRange;  //bool v�rification si joueur d�tect�
     public bool playerInAttackRange;  //bool v�rification si joueur d�tect�
+    public int BIGAmountDMG;
     #endregion
 
     private void Awake()
@@ -85,6 +87,7 @@ public class Enemy : MonoBehaviour
             ///Attack code here
             animator.SetBool("IsWalking", false);
             animator.SetBool("IsAttacking", true);
+            PlayerMentalHealth.instance.TakeDamage(BIGAmountDMG);
             ///
 
             alreadyAttacked = true;
