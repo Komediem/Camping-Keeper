@@ -33,6 +33,7 @@ public class Spam : MonoBehaviour
 
         if (NoCD)
         {
+            //SpamInputFeedbackTUTO
             PlayerController.Instance.cooldownDuration = 0;
         }
     }
@@ -45,13 +46,7 @@ public class Spam : MonoBehaviour
             OutlineKID.SetActive(false);
             NoCD = true;
             FinalEnemy.SetActive(true);
-            Invoke("EnemyApprochPlayer", TempsAnimation);
         }
-    }
-
-    void EnemyApprochPlayer()
-    {
-        agent.speed = 0;
     }
 
     void ENDGAME()
