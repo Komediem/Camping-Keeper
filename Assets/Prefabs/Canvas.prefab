@@ -5185,7 +5185,7 @@ RectTransform:
   - {fileID: 556933340811171750}
   - {fileID: 617198793}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -5288,6 +5288,7 @@ MonoBehaviour:
   pauseMenu: {fileID: 4272810011805823536}
   Buttons: {fileID: 4272810010947823810}
   OptionsWindow: {fileID: 4272810010705512131}
+  OptionsButtons: {fileID: 4272810011630412659}
   fullscreenToggle: {fileID: 4272810012416279249}
   musicSlider: {fileID: 4272810012305303613}
 --- !u!114 &564248769
@@ -5305,6 +5306,7 @@ MonoBehaviour:
   MainMenu: {fileID: 1199136048}
   MainButtons: {fileID: 277034314}
   OptionsWindow: {fileID: 3861791227176390558}
+  OptionsButtons: {fileID: 3719422595364316847}
   playerAnimator: {fileID: 0}
   blackscreen: {fileID: 617198796}
   beginPosition: {fileID: 0}
@@ -5323,8 +5325,8 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_audioClip: {fileID: 8300000, guid: 78a78cdf8c03aaf4ab654c764172c72e, type: 3}
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -5335,7 +5337,7 @@ AudioSource:
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
-  Pan2D: 0
+  Pan2D: 1
   rolloffMode: 0
   BypassEffects: 0
   BypassListenerEffects: 0

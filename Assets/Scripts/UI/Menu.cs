@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -10,11 +11,13 @@ public class Menu : MonoBehaviour
     public GameObject MainMenu;
 
     public GameObject MainButtons;
+    [Space]
     public GameObject OptionsWindow;
-
+    public GameObject OptionsButtons;
+    [Space]
     public Animator playerAnimator;
     public Animator blackscreen;
-
+    [Space]
     public Transform beginPosition;
     public GameObject player;
 
@@ -24,7 +27,7 @@ public class Menu : MonoBehaviour
 
     public AudioSource scream; //musica !!
     public Slider musicSlider;
-
+    [Space]
     public bool isMenuActive = true;
 
     private void Start()
@@ -37,22 +40,20 @@ public class Menu : MonoBehaviour
         //assign all variables to prevent errors
         scream = GetComponent<AudioSource>();
 
-        MainMenu = GameObject.Find("Main Menu");
-        MainButtons = GameObject.Find("MenuBoutons");
-        OptionsWindow = GameObject.Find("Options");
-
         player = GameObject.Find("Player");
 
-        if (SceneManager.GetActiveScene().buildIndex != 0)
+        if (SceneManager.GetActiveScene().buildIndex != 0) //not in menu scene
         {
             MainMenu.SetActive(false);
             MainButtons.SetActive(false);
             OptionsWindow.SetActive(false);
+            OptionsButtons.SetActive(false);
 
             isMenuActive = false;
 
             blackscreen.SetBool("transiActive", true);
             blackscreen.SetBool("transiActive", false);
+
             PlayerController.Instance.lockMovements = false;
         }
         else
@@ -67,16 +68,20 @@ public class Menu : MonoBehaviour
             MainMenu.SetActive(true);
             MainButtons.SetActive(true);
             OptionsWindow.SetActive(false);
+            OptionsButtons.SetActive(false);
 
             blackscreen.SetBool("transiActive", false);
 
             isMenuActive = true;
+
+            EventSystem.current.SetSelectedGameObject(MainButtons.transform.GetChild(0).gameObject);
         }
     }
 
     public void StartGame() //new game or continue from save
     {
         OptionsWindow.SetActive(false);
+        OptionsButtons.SetActive(false);
         MainButtons.SetActive(false);
         MainMenu.SetActive(false);
 
@@ -124,6 +129,9 @@ public class Menu : MonoBehaviour
 
         MainButtons.SetActive(false); //to make sure you can't click them while in the options menu
         OptionsWindow.SetActive(true); //options menu
+        OptionsButtons.SetActive(true); //options buttons
+
+        EventSystem.current.SetSelectedGameObject(OptionsButtons.transform.GetChild(0).gameObject);
     }
 
     public void FullScreen()
@@ -146,7 +154,10 @@ public class Menu : MonoBehaviour
         SaveSystem.instance.SaveOptions(); //save options when closing the options menu
 
         OptionsWindow.SetActive(false);
+        OptionsButtons.SetActive(false);
         MainButtons.SetActive(true);
+        
+        EventSystem.current.SetSelectedGameObject(MainButtons.transform.GetChild(0).gameObject);
     }
 
     public void ResetOptionsDefault()
