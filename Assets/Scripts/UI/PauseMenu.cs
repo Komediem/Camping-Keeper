@@ -75,21 +75,19 @@ public class PauseMenu : MonoBehaviour
 
         //virtualCursor.SetActive(true);
 
-        Time.timeScale = 0;
-
         PlayerController.Instance.lockMovements = true;
 
         gameIsPaused = true;
 
         Cursor.visible = true;
+        
+        Time.timeScale = 0;
     }
 
     public void Resume()
     {
         pauseMenu.SetActive(false);
         Buttons.SetActive(false);
-
-        Time.timeScale = 1;
 
         PlayerController.Instance.lockMovements = false;
 
@@ -99,6 +97,8 @@ public class PauseMenu : MonoBehaviour
         //Cursor.lockState = CursorLockMode.Locked;
 
         //virtualCursor.SetActive(false);
+
+        Time.timeScale = 1;
     }
 
     public void LoadMainMenu()

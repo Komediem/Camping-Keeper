@@ -24,4 +24,19 @@ public class InteractionModeSwitcher : MonoBehaviour
 
         input.SwitchCurrentActionMap("Player");
     }
+
+    private void Update()
+    {
+        if (gameObject.activeSelf)
+        {
+            if (input.currentControlScheme == "Gamepad")
+            {
+                Cursor.visible = false;
+            }
+            else
+            {
+                Cursor.visible = true;
+            }
+        }
+    }
 }

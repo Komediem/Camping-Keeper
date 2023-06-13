@@ -41,6 +41,7 @@ public class Menu : MonoBehaviour
         scream = GetComponent<AudioSource>();
 
         player = GameObject.Find("Player");
+        playerAnimator = PlayerController.Instance.playerAnimator;
 
         if (SceneManager.GetActiveScene().buildIndex != 0) //not in menu scene
         {
