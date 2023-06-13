@@ -40,11 +40,6 @@ public class Menu : MonoBehaviour
         //assign all variables to prevent errors
         scream = GetComponent<AudioSource>();
 
-        //MainMenu = GameObject.Find("Main Menu");
-        //MainButtons = GameObject.Find("MenuBoutons");
-        //OptionsWindow = GameObject.Find("Options");
-        //OptionsButtons = GameObject.Find("OptionsButtons");
-
         player = GameObject.Find("Player");
 
         if (SceneManager.GetActiveScene().buildIndex != 0) //not in menu scene
