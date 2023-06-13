@@ -8,10 +8,12 @@ public class FootStep : MonoBehaviour
 {
     [SerializeField] AudioClip[] audioClip;
     private AudioSource audioSource;
+    [SerializeField] private ParticleSystem[] stepParticles;
 
     private void Awake()
     {
         audioSource = GetComponent<AudioSource>();
+        stepParticles = GetComponentsInChildren<ParticleSystem>();
     }
 
     public void _Footsteps()
@@ -20,6 +22,15 @@ public class FootStep : MonoBehaviour
         audioSource.PlayOneShot(clip);
     }
 
+    public void FootStepsEvent_L()
+    {
+        stepParticles[0].Play();
+    }
+
+    public void FootStepsEvent_R()
+    {
+        stepParticles[1].Play();
+    }
 
     private AudioClip GetRandomClip()
     {
