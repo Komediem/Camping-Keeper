@@ -9,7 +9,7 @@ public class PushPull : MonoBehaviour
     [SerializeField] public Rigidbody rb;
 
     public bool isPushable = false;
-    [SerializeField] private bool obstacle = false;
+    public bool obstacle = false;
 
     private void Awake()
     {
@@ -19,11 +19,10 @@ public class PushPull : MonoBehaviour
 
     void Update()
     {
-        CheckCollisions();
-
-        if (isPushable && !PlayerController.Instance.lockMovements &&
-            !PlayerController.Instance.isCrouching && PlayerController.Instance.PushPullTrigger)
+        if (isPushable && !PlayerController.Instance.lockMovements && !PlayerController.Instance.isCrouching && PlayerController.Instance.PushPullTrigger)
         {
+            CheckCollisions();
+
             Pull();
         }
     }
