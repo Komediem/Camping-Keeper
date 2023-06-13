@@ -339,6 +339,51 @@ Transform:
   m_Father: {fileID: 4292055377032961781}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &389455513771227317
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3917993406663947062}
+  - component: {fileID: 947207587575745097}
+  m_Layer: 0
+  m_Name: LightENDGAME
+  m_TagString: LightHitBox
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3917993406663947062
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 389455513771227317}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6460203353547771854}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &947207587575745097
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 389455513771227317}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 5.7780952, y: 5.098191, z: 15.521642}
+  m_Center: {x: -0.11393413, y: 0.057534456, z: -7.502708}
 --- !u!1 &660948951562820670
 GameObject:
   m_ObjectHideFlags: 0
@@ -756,11 +801,13 @@ MonoBehaviour:
   Interract: {fileID: 660948951562820670}
   isPulling: 0
   PushPullTrigger: 0
-  SpamRequire: 0
+  SpamRequire: 10
   SpamActive: 0
   LightLantern: {fileID: 0}
   LightTime: 0.5
   cooldownDuration: 3
+  currentCooldown: 0
+  isCooldown: 0
   NombrePression: 0
 --- !u!114 &1885791655
 MonoBehaviour:
@@ -1785,6 +1832,7 @@ MonoBehaviour:
   stepParticle: {fileID: 2421102528587516256, guid: f5b985bc395eaad44aed7137b82c2091, type: 3}
   fallParticle: {fileID: 7599196974944566474, guid: dff4d470db9ad0f4d8bb4f06dc0e1d2b, type: 3}
   stepPosition: {fileID: 1679325572}
+  blackScreenTransition: {fileID: 0}
   lanternRb: {fileID: 0}
 --- !u!114 &1266063463581017602
 MonoBehaviour:
@@ -1891,6 +1939,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 48c4ec6f5d785c64da30ff9839b6dd5d, type: 3}
       insertIndex: -1
       addedObject: {fileID: 9129565154008006866}
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 48c4ec6f5d785c64da30ff9839b6dd5d, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3917993406663947062}
   m_SourcePrefab: {fileID: 100100000, guid: 48c4ec6f5d785c64da30ff9839b6dd5d, type: 3}
 --- !u!4 &6460203353547771854 stripped
 Transform:

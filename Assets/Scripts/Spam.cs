@@ -8,7 +8,8 @@ using UnityEngine.SceneManagement;
 public class Spam : MonoBehaviour
 {
     public GameObject FinalEnemy;
-    public GameObject Outline;
+    public GameObject OutlineKID;
+    public GameObject LightENDGAME;
     public NavMeshAgent agent; //navmesh
     public float TempsAnimation;
     public float DelayENDGAME;
@@ -18,16 +19,16 @@ public class Spam : MonoBehaviour
     private void Awake()
     {
         agent = GetComponent<NavMeshAgent>();
+        LightENDGAME.SetActive(false);
     }
 
     private void Update()
     {
         if (PlayerController.Instance.SpamActive)
         {
-            Debug.Log("Spam.SpamActive");
-            //Rayon laser ?
+            LightENDGAME.SetActive(true);
             //Animation Destruction Enemy
-            //Invoke("ENDGAME", DelayENDGAME); Ajouter un invoke pour la fin du jeu
+            Invoke("ENDGAME", DelayENDGAME); 
         }
 
         if (NoCD)
@@ -41,7 +42,7 @@ public class Spam : MonoBehaviour
         if (collision.tag == "SpamBOX")
         {
             PlayerController.Instance.speed = 0;
-            Outline.SetActive(false);
+            OutlineKID.SetActive(false);
             NoCD = true;
             FinalEnemy.SetActive(true);
             Invoke("EnemyApprochPlayer", TempsAnimation);
@@ -55,7 +56,6 @@ public class Spam : MonoBehaviour
 
     void ENDGAME()
     {
-        Debug.Log("Spam.EndGame");
         //                                               -- Choisir entre skip next scene ou mettre un canvas fin du jeu. --
         //
         //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
