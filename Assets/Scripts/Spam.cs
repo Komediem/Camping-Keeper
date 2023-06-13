@@ -10,7 +10,6 @@ public class Spam : MonoBehaviour
     public GameObject FinalEnemy;
     public GameObject OutlineKID;
     public GameObject LightENDGAME;
-    public NavMeshAgent agent; //navmesh
     public float TempsAnimation;
     public float DelayENDGAME;
     public bool NoCD = false;
@@ -18,9 +17,9 @@ public class Spam : MonoBehaviour
 
     private void Awake()
     {
-        agent = GetComponent<NavMeshAgent>();
         LightENDGAME.SetActive(false);
         FinalEnemy = GameObject.Find("FinalEnemy");
+        FinalEnemy.SetActive(false);    
     }
 
     private void Update()
@@ -43,10 +42,11 @@ public class Spam : MonoBehaviour
     {
         if (collision.tag == "SpamBOX")
         {
-            PlayerController.Instance.speed = 0;
+            PlayerController.Instance.lockMovements = true;
             OutlineKID.SetActive(false);
             NoCD = true;
             FinalEnemy.SetActive(true);
+            //switch camera
         }
     }
 
