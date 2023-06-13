@@ -60,6 +60,7 @@ public class PauseMenu : MonoBehaviour
         }
         else
         {
+            EventSystem.current.SetSelectedGameObject(Buttons.transform.GetChild(0).gameObject);
             Paused();
         }
     }
@@ -70,7 +71,7 @@ public class PauseMenu : MonoBehaviour
         Buttons.SetActive(true);
         OptionsWindow.SetActive(false);
 
-        EventSystem.current.SetSelectedGameObject(Buttons.transform.GetChild(0).gameObject);
+        //EventSystem.current.SetSelectedGameObject(Buttons.transform.GetChild(0).gameObject);
 
         //virtualCursor.SetActive(true);
 
@@ -104,8 +105,8 @@ public class PauseMenu : MonoBehaviour
     {
         Resume();
 
-        SaveSystem.instance.Save(SceneManager.GetActiveScene().buildIndex); //saving the current scene, not the next one
-        SaveSystem.instance.SaveOptions(); //save options when closing the options menu
+        //SaveSystem.instance.Save(SceneManager.GetActiveScene().buildIndex); //saving the current scene, not the next one
+        //SaveSystem.instance.SaveOptions(); //save options when closing the options menu
 
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.Confined;
@@ -116,13 +117,13 @@ public class PauseMenu : MonoBehaviour
     /// Options Window
 	public void Options() //from menu to options
     {
-        SaveSystem.instance.LoadOptions(); //load options when entering options menu
+        //SaveSystem.instance.LoadOptions(); //load options when entering options menu
 
-        fullscreenToggle.isOn = SaveSystem.instance.isFulscreen;
-        Screen.fullScreen = SaveSystem.instance.isFulscreen;
+        //fullscreenToggle.isOn = SaveSystem.instance.isFulscreen;
+        Screen.fullScreen = fullscreenToggle.isOn;
 
-        musicSlider.value = SaveSystem.instance.music;
-        GetComponent<AudioSource>().volume = SaveSystem.instance.music;
+        //musicSlider.value = SaveSystem.instance.music;
+        GetComponent<AudioSource>().volume = musicSlider.value;
 
         Buttons.SetActive(false); //to make sure you can't click them while in the options menu
         OptionsWindow.SetActive(true); //options menu
@@ -148,7 +149,7 @@ public class PauseMenu : MonoBehaviour
 
     public void OptionsBack() //from options back to the main menu
     {
-        SaveSystem.instance.SaveOptions(); //save options when closing the options menu
+        //SaveSystem.instance.SaveOptions(); //save options when closing the options menu
 
         OptionsWindow.SetActive(false);
         OptionsButtons.SetActive(false);
