@@ -19,7 +19,9 @@ public class Spam : MonoBehaviour
     {
         LightENDGAME.SetActive(false);
         FinalEnemy = GameObject.Find("FinalEnemy");
-        FinalEnemy.SetActive(false);    
+        OutlineKID = GameObject.Find("LittleGirlOutline");
+        FinalEnemy.SetActive(false);
+        OutlineKID.SetActive(false);    
     }
 
     private void Update()
