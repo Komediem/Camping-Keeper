@@ -242,26 +242,25 @@ public class PlayerController : MonoBehaviour
                 playerAnimator.SetBool("isCrouching", false);
                 playerAnimator.SetBool("isCrouchWalking", false);
             }
-            else
+
+            if (!isCrouching && Raycastcrouch.Instance.CanStand && !isPulling)
             {
-                if (!isPulling && Raycastcrouch.Instance.CanStand)
-                {
-                    isCrouching = true;
+                isCrouching = true;
 
-                    speed /= 2;
-                    speedValue /= 2;
+                speed /= 2;
+                speedValue /= 2;
 
-                    Raycast.SetActive(true);
+                Raycast.SetActive(true);
 
-                    canJump = false;
-                    Interract.SetActive(false);
+                canJump = false;
+                Interract.SetActive(false);
 
-                    controller.height = 1.2f;
-                    controller.center = new(0, 0.6f, 0);
+                controller.height = 1.2f;
+                controller.center = new(0, 0.6f, 0);
 
-                    playerAnimator.SetBool("isCrouching", true);
-                }
+                playerAnimator.SetBool("isCrouching", true);
             }
+
         }
     }
 
