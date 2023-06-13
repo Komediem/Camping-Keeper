@@ -20,7 +20,6 @@ public class FootStep : MonoBehaviour
         audioSource.PlayOneShot(clip);
     }
 
-
     private AudioClip GetRandomClip()
     {
         int index = Random.Range(0, audioClip.Length - 1);

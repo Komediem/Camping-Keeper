@@ -255,11 +255,10 @@ public class PlayerController : MonoBehaviour
                 Interract.SetActive(false);
 
                 controller.height = 1.2f;
-                controller.center = new(0, 0.6f, 0);
+                controller.center = new(0, 0.6f, 0); 
 
                 playerAnimator.SetBool("isCrouching", true);
             }
-
         }
     }
 

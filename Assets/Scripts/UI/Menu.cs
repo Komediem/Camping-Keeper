@@ -42,8 +42,6 @@ public class Menu : MonoBehaviour
 
         player = GameObject.Find("Player");
 
-        EventSystem.current.SetSelectedGameObject(MainButtons.transform.GetChild(0).gameObject);
-
         if (SceneManager.GetActiveScene().buildIndex != 0) //not in menu scene
         {
             Cursor.visible = false;
@@ -52,6 +50,7 @@ public class Menu : MonoBehaviour
 
             MainMenu.SetActive(false);
             MainButtons.SetActive(false);
+
             OptionsWindow.SetActive(false);
             OptionsButtons.SetActive(false);
 
@@ -60,7 +59,7 @@ public class Menu : MonoBehaviour
             blackscreen.SetBool("transiActive", true);
             blackscreen.SetBool("transiActive", false);
         }
-        else
+        else //in menu scene
         {
             Cursor.visible = true;
 
@@ -71,12 +70,15 @@ public class Menu : MonoBehaviour
             //to make sure there is no problem on start
             MainMenu.SetActive(true);
             MainButtons.SetActive(true);
+
             OptionsWindow.SetActive(false);
-            OptionsButtons.SetActive(false);
+            OptionsButtons.SetActive(true);
 
             isMenuActive = true;
             
-            blackscreen.SetBool("transiActive", false);
+            blackscreen.SetBool("transiActive", false); 
+            
+            EventSystem.current.SetSelectedGameObject(MainButtons.transform.GetChild(0).gameObject);
         }
     }
 
@@ -127,15 +129,16 @@ public class Menu : MonoBehaviour
     /// Options Window
 	public void Options() //from menu to options
     {
-        SaveSystem.instance.LoadOptions(); //load options when entering options menu
+        //SaveSystem.instance.LoadOptions(); //load options when entering options menu
 
-        fullscreenToggle.isOn = SaveSystem.instance.isFulscreen;
-        Screen.fullScreen = SaveSystem.instance.isFulscreen;
+        //fullscreenToggle.isOn = SaveSystem.instance.isFulscreen;
+        Screen.fullScreen = fullscreenToggle.isOn;
 
-        musicSlider.value = SaveSystem.instance.music;
-        scream.volume = SaveSystem.instance.music;
+        //musicSlider.value = SaveSystem.instance.music;
+        scream.volume = musicSlider.value;
 
         MainButtons.SetActive(false); //to make sure you can't click them while in the options menu
+
         OptionsWindow.SetActive(true); //options menu
         OptionsButtons.SetActive(true); //options buttons
 
@@ -159,10 +162,10 @@ public class Menu : MonoBehaviour
 
     public void OptionsBack() //from options back to the main menu
     {
-        SaveSystem.instance.SaveOptions(); //save options when closing the options menu
+        //SaveSystem.instance.SaveOptions(); //save options when closing the options menu
 
         OptionsWindow.SetActive(false);
-        OptionsButtons.SetActive(false);
+
         MainButtons.SetActive(true);
         
         EventSystem.current.SetSelectedGameObject(MainButtons.transform.GetChild(0).gameObject);

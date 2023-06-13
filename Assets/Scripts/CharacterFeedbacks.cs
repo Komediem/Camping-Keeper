@@ -16,10 +16,13 @@ public class CharacterFeedbacks : MonoBehaviour
 
     [SerializeField] private Rigidbody lanternRb;
 
+    [SerializeField] private ParticleSystem[] stepParticles;
+
     public void Awake()
     {
         characterController = GetComponentInParent<CharacterController>();
         pickable = FindObjectOfType<PickableNextLevel>();
+        stepParticles = GetComponentsInChildren<ParticleSystem>();
     }
 
     public void StepEffets()
@@ -29,6 +32,23 @@ public class CharacterFeedbacks : MonoBehaviour
             /*VisualEffect particle = Instantiate(stepParticle, stepPosition.position, Quaternion.identity);
             particle.Play();
             Destroy(particle, 1);*/
+        }
+    }
+
+    public void FootStepsEvent_L()
+    {
+        if (characterController.isGrounded)
+        {
+            stepParticles[0].Play();
+        }
+
+    }
+
+    public void FootStepsEvent_R()
+    {
+        if (characterController.isGrounded)
+        {
+            stepParticles[1].Play();
         }
     }
 
