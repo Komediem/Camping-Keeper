@@ -6,20 +6,20 @@ public class PushPull : MonoBehaviour
     [Header("Don't assign :")]
     [SerializeField] private GameObject Player;
 
-    [SerializeField] public Rigidbody rb;
+    //[SerializeField] public Rigidbody rb;
 
     public bool isPushable = false;
     public bool obstacle = false;
 
-    //private BoxCollider playerBox;
+    //[SerializeField] private CapsuleCollider playerBox;
 
     private void Awake()
     {
         Player = GameObject.Find("Player");
 
-        //playerBox = PlayerController.Instance.GetComponent<BoxCollider>();
+        //playerBox = PlayerController.Instance.GetComponentInChildren<CapsuleCollider>();
 
-        rb = GetComponent<Rigidbody>();
+        //rb = GetComponent<Rigidbody>();
 
         //playerBox.enabled = false;
         //playerBox.isTrigger = true;
