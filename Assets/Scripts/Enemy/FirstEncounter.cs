@@ -1,27 +1,28 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class FirstEncounter : MonoBehaviour
 {
     public GameObject enemy;
-    [SerializeField] private GameObject Trigger;
+
+    private bool readyToStun;
+
     [SerializeField] private float timeSpawn;
+    [SerializeField] private GameObject tutoStun;
+    [SerializeField] private Animator tutoStunAnimator;
 
     [SerializeField] private AudioSource noise;
 
-    private void Awake()
-    {
-        Trigger = this.gameObject;
-    }
     private void OnTriggerEnter(Collider collision)
     {
         if (collision.tag == "Player")
         {
             noise.Play();
             Invoke("EnemySpawn", timeSpawn);
-            //Ralenti
-            //TutoStun
+            Invoke("EnemySlowed", timeSpawn + 1);
         }
     }
 
@@ -30,5 +31,11 @@ public class FirstEncounter : MonoBehaviour
         enemy.SetActive(true);
     }
 
-    //SFX brindille + petits délais + Tuto + ralentissement + faire disparaître pour ce cas là.
+    private void EnemySlowed()
+    {
+        tutoStun.SetActive(true);
+        Time.timeScale = 0.25f;
+
+        readyToStun = true;
+    }
 }
