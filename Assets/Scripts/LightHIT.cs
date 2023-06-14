@@ -21,7 +21,7 @@ public class LightHIT : MonoBehaviour
     private void Start()
     {
         SpeedDefault = agent.speed;
-        monsterMesh.GetMaterials(materials);
+        //monsterMesh.GetMaterials(materials);
         //materials.Find(Material) = eyesMaterial1;
     }
 
@@ -37,7 +37,7 @@ public class LightHIT : MonoBehaviour
     public void Stun()
     {
         agent.speed = 0;
-        monsterMesh.material = eyesMaterial2;
+        //monsterMesh.material = eyesMaterial2;
     }
 
     public void StopStun()

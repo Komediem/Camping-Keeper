@@ -6,6 +6,6 @@ public class BeginStunActivation : MonoBehaviour
 {
     private void Start()
     {
-        FirstEncounter.Instance.readyToStun = true;
+        PlayerController.Instance.readyToStun = true;
     }
 }

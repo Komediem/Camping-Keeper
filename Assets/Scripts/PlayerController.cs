@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour
     [Space]
     [SerializeField] VisualEffect sparksVFX;
     [SerializeField] Light lanternLight;
+    [SerializeField] public bool readyToStun;
 
     [Space]
     public Rigidbody rb;
@@ -323,8 +324,9 @@ public class PlayerController : MonoBehaviour
 
     public void Light(InputAction.CallbackContext context)
     {
-        if (context.started && !isCrouching && !isCooldown && FirstEncounter.Instance.readyToStun)
+        if (context.started && !isCrouching && !isCooldown && readyToStun)
         {
+            if(FirstEncounter.Instance != null)
             FirstEncounter.Instance.Stun();
 
             LightLantern.SetActive(true);

@@ -10,8 +10,6 @@ public class FirstEncounter : MonoBehaviour
 
     public GameObject enemy;
 
-    public bool readyToStun;
-
     [SerializeField] private float timeSpawn;
     [SerializeField] private GameObject tutoStun;
     [SerializeField] private Animator tutoStunAnimator;
@@ -41,7 +39,7 @@ public class FirstEncounter : MonoBehaviour
         tutoStun.SetActive(true);
         Time.timeScale = 0.25f;
 
-        readyToStun = true;
+        PlayerController.Instance.readyToStun = true;
     }
 
     public void Stun()
