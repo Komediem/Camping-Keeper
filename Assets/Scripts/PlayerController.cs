@@ -280,13 +280,17 @@ public class PlayerController : MonoBehaviour
     {
         if (context.performed)
         {
-            if (SceneManager.GetActiveScene().buildIndex != 0)
+            if (SceneManager.GetActiveScene().buildIndex != 0 && SceneManager.GetActiveScene().buildIndex != 3) // not in menu or credits scenes
             {
                 PauseMenu.Instance.PauseGame();
             }
-            else if (!Menu.Instance.isMenuActive)
+            else if (SceneManager.GetActiveScene().buildIndex == 0 && !Menu.Instance.isMenuActive) //in menu scene and menu is not active
             {
                 PauseMenu.Instance.PauseGame();
+            }
+            else if (SceneManager.GetActiveScene().buildIndex == 3) //in credits scene
+            {
+                SceneManager.LoadScene("Lvl 1");
             }
         }
     }

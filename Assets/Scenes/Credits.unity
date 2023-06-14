@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 1188.0479, g: 1423.1816, b: 1875.0176, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -301,6 +301,65 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 259042890}
   m_CullTransparentMesh: 0
+--- !u!1001 &661698001
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 2
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 6330055504169505633, guid: a389da2f4438b3a4e9c5202b88c93942, type: 3}
+      propertyPath: m_Name
+      value: Player + Cam
+      objectReference: {fileID: 0}
+    - target: {fileID: 6330055504169505634, guid: a389da2f4438b3a4e9c5202b88c93942, type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6330055504169505634, guid: a389da2f4438b3a4e9c5202b88c93942, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 15.84684
+      objectReference: {fileID: 0}
+    - target: {fileID: 6330055504169505634, guid: a389da2f4438b3a4e9c5202b88c93942, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 4.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 6330055504169505634, guid: a389da2f4438b3a4e9c5202b88c93942, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6330055504169505634, guid: a389da2f4438b3a4e9c5202b88c93942, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6330055504169505634, guid: a389da2f4438b3a4e9c5202b88c93942, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6330055504169505634, guid: a389da2f4438b3a4e9c5202b88c93942, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6330055504169505634, guid: a389da2f4438b3a4e9c5202b88c93942, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6330055504169505634, guid: a389da2f4438b3a4e9c5202b88c93942, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6330055504169505634, guid: a389da2f4438b3a4e9c5202b88c93942, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6330055504169505634, guid: a389da2f4438b3a4e9c5202b88c93942, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_AddedGameObjects: []
+  m_SourcePrefab: {fileID: 100100000, guid: a389da2f4438b3a4e9c5202b88c93942, type: 3}
 --- !u!1 &934972444
 GameObject:
   m_ObjectHideFlags: 0
@@ -598,7 +657,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1446187204}
   - component: {fileID: 1446187205}
-  - component: {fileID: 1446187206}
   m_Layer: 5
   m_Name: Content
   m_TagString: Untagged
@@ -648,18 +706,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &1446187206
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1446187203}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f260e2d20311f66479de4bab9d8ede73, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &2021327297
 GameObject:
   m_ObjectHideFlags: 0

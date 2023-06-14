@@ -5,14 +5,6 @@ public class Credits : MonoBehaviour
 {
     public void LoadMainMenu()
     {
-        SceneManager.LoadScene("Menu");
-    }
-
-    private void Update()
-    {
-        if(Input.GetKeyDown(KeyCode.Escape))
-        {
-            LoadMainMenu();
-        }
+        SceneManager.LoadScene("Lvl 1");
     }
 }
