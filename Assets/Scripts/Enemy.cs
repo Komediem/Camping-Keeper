@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.VFX;
 
 public class Enemy : MonoBehaviour
 {
@@ -11,6 +12,8 @@ public class Enemy : MonoBehaviour
     public Transform player; //position player
 
     public LayerMask whatIsGround, whatIsPlayer; //quoi sol, quoi player
+
+    [SerializeField] private VisualEffect attackEffect;
 
     #region Attacking
     public float timeBetweenAttacks; // CD attaque
@@ -85,8 +88,7 @@ public class Enemy : MonoBehaviour
         {
 
             ///Attack code here
-            animator.SetBool("IsWalking", false);
-            animator.SetBool("IsAttacking", true);
+            attackEffect.Play();
             PlayerMentalHealth.instance.TakeDamage(BIGAmountDMG);
             ///
 
@@ -96,8 +98,6 @@ public class Enemy : MonoBehaviour
     }
     private void ResetAttack()
     {
-        animator.SetBool("IsAttacking", false);
-        animator.SetBool("IsWalking", true);
         alreadyAttacked = false;
     }
 

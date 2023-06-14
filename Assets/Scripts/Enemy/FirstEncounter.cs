@@ -31,14 +31,9 @@ public class FirstEncounter : MonoBehaviour
             noise.Play();
             PlayerController.Instance.lockMovements = true;
             PlayerController.Instance.playerAnimator.SetTrigger("backDefault");
-            Invoke("EnemySpawn", timeSpawn);
-            Invoke("EnemySlowed", timeSpawn + 1);
+            enemy.SetActive(true);
+            Invoke("EnemySlowed", timeSpawn);
         }
-    }
-
-    private void EnemySpawn()
-    {
-        enemy.SetActive(true);
     }
 
     private void EnemySlowed()

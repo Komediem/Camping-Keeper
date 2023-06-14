@@ -29,7 +29,6 @@ public class PlayerMentalHealth : MonoBehaviour
 
     private void Start()
     {
-        volume = FindObjectOfType<Volume>();
         volume.profile.TryGet(out blackVignette);
     }
 
