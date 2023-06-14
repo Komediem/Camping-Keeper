@@ -68,6 +68,7 @@ public class PlayerController : MonoBehaviour
     [Space]
     public float SpamRequire;
     public bool SpamActive = false;
+    public bool SpamEND = false;
 
     #region Light
     [Space]
@@ -326,6 +327,7 @@ public class PlayerController : MonoBehaviour
             if (NombrePression >= SpamRequire)
             {
                 SpamActive = true;
+                SpamEND = true;
             }
 
             NombrePression++;

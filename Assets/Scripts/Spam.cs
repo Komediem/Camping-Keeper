@@ -31,11 +31,14 @@ public class Spam : MonoBehaviour
             //Animation Destruction Enemy
             Invoke("ENDGAME", DelayENDGAME); 
         }
-
-        if (NoCD)
+        if (NoCD && !PlayerController.Instance.SpamEND)
         {
             //SpamInputFeedbackTUTO
             PlayerController.Instance.cooldownDuration = 0;
+        }
+        if (PlayerController.Instance.SpamEND)
+        {
+            PlayerController.Instance.cooldownDuration = 100;
         }
     }
 
