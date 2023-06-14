@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour
 
     [Space]
     [SerializeField] VisualEffect sparksVFX;
+    [SerializeField] Light LanternLight;
 
     [Space]
     public Rigidbody rb;
@@ -321,13 +322,9 @@ public class PlayerController : MonoBehaviour
 
     public void Light(InputAction.CallbackContext context)
     {
-        if (context.started && !isCrouching && !isCooldown)
+        if (context.started && !isCrouching && !isCooldown && FirstEncounter.Instance.readyToStun)
         {
-            if(FirstEncounter.Instance.readyToStun)
-            {
-                FirstEncounter.Instance.readyToStun = false;
-                FirstEncounter.Instance.Stun();
-            }
+            FirstEncounter.Instance.Stun();
 
             LightLantern.SetActive(true);
             sparksVFX.Play();
@@ -351,7 +348,7 @@ public class PlayerController : MonoBehaviour
     {
         if (isCooldown)
         {
-            // Update the current cooldown progress
+            LanternLight.intensity += Time.deltaTime * 100;
             currentCooldown -= Time.deltaTime;
 
             if (currentCooldown <= 0f)
@@ -370,7 +367,7 @@ public class PlayerController : MonoBehaviour
         {
             isCooldown = true;
             currentCooldown = cooldownDuration;
-            // Perform any actions you want to trigger at the start of the cooldown
+            LanternLight.intensity = 0f;
         }
     }
     #endregion

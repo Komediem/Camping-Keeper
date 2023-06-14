@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.51290596, g: 1.1087755, b: 2.3440423, a: 1}
+  m_IndirectSpecularColor: {r: 0.5120907, g: 1.106308, b: 2.3347135, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -15962,6 +15962,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 1b4f7ff64a342354a8267aae69e7ddac, type: 3}
   m_PrefabInstance: {fileID: 704590664}
   m_PrefabAsset: {fileID: 0}
+--- !u!108 &704607874 stripped
+Light:
+  m_CorrespondingSourceObject: {fileID: 744957368, guid: a389da2f4438b3a4e9c5202b88c93942, type: 3}
+  m_PrefabInstance: {fileID: 1031652614}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &708065621
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -23889,8 +23894,16 @@ PrefabInstance:
       value: -1.3421544
       objectReference: {fileID: 0}
     - target: {fileID: 4292055377032961778, guid: a389da2f4438b3a4e9c5202b88c93942, type: 3}
+      propertyPath: LanternLight
+      value: 
+      objectReference: {fileID: 704607874}
+    - target: {fileID: 4292055377032961778, guid: a389da2f4438b3a4e9c5202b88c93942, type: 3}
       propertyPath: trampolineForce
       value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 4292055377032961778, guid: a389da2f4438b3a4e9c5202b88c93942, type: 3}
+      propertyPath: cooldownDuration
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 4292055377032961787, guid: a389da2f4438b3a4e9c5202b88c93942, type: 3}
       propertyPath: m_Camera
