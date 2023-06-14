@@ -6,15 +6,23 @@ using UnityEngine.InputSystem;
 
 public class FirstEncounter : MonoBehaviour
 {
+    public static FirstEncounter Instance;
+
     public GameObject enemy;
 
-    private bool readyToStun;
+    public bool readyToStun;
 
     [SerializeField] private float timeSpawn;
     [SerializeField] private GameObject tutoStun;
     [SerializeField] private Animator tutoStunAnimator;
 
     [SerializeField] private AudioSource noise;
+
+    private void Awake()
+    {
+        if(Instance == null)
+            Instance = this;
+    }
 
     private void OnTriggerEnter(Collider collision)
     {
@@ -39,5 +47,13 @@ public class FirstEncounter : MonoBehaviour
         Time.timeScale = 0.25f;
 
         readyToStun = true;
+    }
+
+    public void Stun()
+    {
+        Time.timeScale = 1;
+        PlayerController.Instance.lockMovements = false;
+        tutoStunAnimator.SetTrigger("FadeOut");
+        this.gameObject.SetActive(false);
     }
 }

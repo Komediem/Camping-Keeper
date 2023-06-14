@@ -323,6 +323,12 @@ public class PlayerController : MonoBehaviour
     {
         if (context.started && !isCrouching && !isCooldown)
         {
+            if(FirstEncounter.Instance.readyToStun)
+            {
+                FirstEncounter.Instance.readyToStun = false;
+                FirstEncounter.Instance.Stun();
+            }
+
             LightLantern.SetActive(true);
             sparksVFX.Play();
             //Play Anmation, Be Carefull of the Moment Where The Light Cuts
