@@ -6,31 +6,24 @@ public class PushPull : MonoBehaviour
     [Header("Don't assign :")]
     [SerializeField] private GameObject Player;
 
-    //[SerializeField] public Rigidbody rb;
+    [SerializeField] public Rigidbody rb;
 
     public bool isPushable = false;
     public bool obstacle = false;
-
-    [SerializeField] private BoxCollider playerBox;
 
     private void Awake()
     {
         Player = GameObject.Find("Player");
 
-        playerBox = PlayerController.Instance.GetComponentInChildren<BoxCollider>();
-
-        //rb = GetComponent<Rigidbody>();
-
-        playerBox.enabled = false;
-        //playerBox.isTrigger = true;
+        rb = GetComponent<Rigidbody>();
     }
 
     void Update()
     {
+        CheckCollisions();
+
         if (isPushable && !PlayerController.Instance.lockMovements && !PlayerController.Instance.isCrouching && PlayerController.Instance.PushPullTrigger)
         {
-            CheckCollisions();
-
             Pull();
         }
     }
@@ -43,9 +36,6 @@ public class PushPull : MonoBehaviour
 
             PlayerController.Instance.canJump = false;
             PlayerController.Instance.isCrouching = false;
-
-            playerBox.enabled = true;
-            //playerBox.isTrigger = false;
 
             if (PlayerController.Instance.movement == 0) //no movement
             {
@@ -84,9 +74,6 @@ public class PushPull : MonoBehaviour
         else
         {
             gameObject.transform.SetParent(null); //Setting the parent to "null" unparents the GameObject and turns child into a top-level object in the hierarchy
-            
-            playerBox.enabled = false;
-            //playerBox.isTrigger = true;
 
             //Resets Push/Pull Animation
             PlayerController.Instance.playerAnimator.SetBool("isPushAndPull", false);
@@ -100,7 +87,7 @@ public class PushPull : MonoBehaviour
 
     public void CheckCollisions()
     {
-        if (PlayerController.Instance.isPulling && isPushable)
+        /*if (PlayerController.Instance.isPulling && isPushable)
         {
             if (obstacle)
             {
@@ -109,6 +96,42 @@ public class PushPull : MonoBehaviour
             else
             {
                 print("B");
+            }
+        }*/
+
+        if (/*PlayerController.Instance.isPulling &&*/ isPushable)
+        {
+            if (obstacle)
+            {
+                // Stop the pushable object from moving
+                rb.isKinematic = true;
+
+                if (PlayerController.Instance.movement > 0)
+                {
+                    // Set the position of the pushable object to its previous position
+                    rb.MovePosition(rb.position);
+
+                    // Disable player movement while pushing against an obstacle
+                    PlayerController.Instance.lockMovements = true;
+                }
+                else if (PlayerController.Instance.movement < 0 || PlayerController.Instance.movement == 0)
+                {
+                    // Enable player movement when there are no obstacles
+                    PlayerController.Instance.lockMovements = false;
+
+                    // Enable the pushable object's movement
+                    rb.isKinematic = false;
+
+                    if (PlayerController.Instance.movement == 0)
+                    {
+                        PlayerController.Instance.currentMoveVelocity = Vector3.zero;
+                    }
+                }
+            }
+            else
+            {
+                // Enable the pushable object's movement
+                rb.isKinematic = false;
             }
         }
     }
