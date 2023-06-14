@@ -290,7 +290,7 @@ public class PlayerController : MonoBehaviour
             }
             else if (SceneManager.GetActiveScene().buildIndex == 3) //in credits scene
             {
-                SceneManager.LoadScene("Lvl 1");
+                Credits.Instance.LoadMainMenu();
             }
         }
     }
