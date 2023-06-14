@@ -22,6 +22,7 @@ public class PlayerController : MonoBehaviour
     [Header("Movement Settings")]
     [Space]
     public float movement;
+    private Vector3 move;
     public bool lockMovements;
 
     public bool isCrouching = false;
@@ -130,8 +131,6 @@ public class PlayerController : MonoBehaviour
 
         if (!lockMovements)
         {
-            Vector3 move;
-
             if (!PushPullTrigger)
             {
                 if (movement > 0) //going right
@@ -145,7 +144,10 @@ public class PlayerController : MonoBehaviour
 
                 move = transform.right * Mathf.Abs(movement);
             }
-            else move = transform.right * movement;
+            else
+            {
+                move = transform.right * movement;
+            }
 
             currentMoveVelocity = Vector3.SmoothDamp(currentMoveVelocity, move * speedValue, ref moveDampVelocity, moveSmoothTime);
             controller.Move(currentMoveVelocity * Time.deltaTime);
