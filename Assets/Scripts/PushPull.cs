@@ -3,11 +3,11 @@ using UnityEngine.InputSystem;
 
 public class PushPull : MonoBehaviour
 {
-    [Header("Don't assign :")]
+    [Header("Don't need to assign :")]
     [SerializeField] private GameObject Player;
+    [SerializeField] private Rigidbody rb;
 
-    [SerializeField] public Rigidbody rb;
-
+    [Space]
     public bool isPushable = false;
     public bool obstacle = false;
 
@@ -30,7 +30,7 @@ public class PushPull : MonoBehaviour
 
     public void Pull()
     {
-        if (PlayerController.Instance.isPulling && !PlayerController.Instance.isCrouching) ///is button pressed && isn't crouching
+        if (PlayerController.Instance.isPulling && !PlayerController.Instance.isCrouching) ///if button is pressed && isn't crouching
         {
             gameObject.transform.SetParent(Player.transform); //Sets "Player" as the new parent of the child GameObject.
 
@@ -87,23 +87,10 @@ public class PushPull : MonoBehaviour
 
     public void CheckCollisions()
     {
-        /*if (PlayerController.Instance.isPulling && isPushable)
-        {
-            if (obstacle)
-            {
-                print("A");
-            }
-            else
-            {
-                print("B");
-            }
-        }*/
-
         if (/*PlayerController.Instance.isPulling &&*/ isPushable)
         {
             if (obstacle)
             {
-                // Stop the pushable object from moving
                 rb.isKinematic = true;
 
                 if (PlayerController.Instance.movement > 0)
@@ -116,10 +103,9 @@ public class PushPull : MonoBehaviour
                 }
                 else if (PlayerController.Instance.movement < 0 || PlayerController.Instance.movement == 0)
                 {
-                    // Enable player movement when there are no obstacles
+                    // Enable player movement when they are pulling (going bacwards)
                     PlayerController.Instance.lockMovements = false;
 
-                    // Enable the pushable object's movement
                     rb.isKinematic = false;
 
                     if (PlayerController.Instance.movement == 0)
@@ -130,7 +116,6 @@ public class PushPull : MonoBehaviour
             }
             else
             {
-                // Enable the pushable object's movement
                 rb.isKinematic = false;
             }
         }
