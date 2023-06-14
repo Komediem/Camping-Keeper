@@ -1,3 +1,4 @@
+using System.Threading;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
@@ -10,7 +11,7 @@ public class PlayerController : MonoBehaviour
 
     [Space]
     [SerializeField] VisualEffect sparksVFX;
-    [SerializeField] Light LanternLight;
+    [SerializeField] Light lanternLight;
 
     [Space]
     public Rigidbody rb;
@@ -328,6 +329,7 @@ public class PlayerController : MonoBehaviour
 
             LightLantern.SetActive(true);
             sparksVFX.Play();
+
             //Play Anmation, Be Carefull of the Moment Where The Light Cuts
             Invoke("LightStop", LightTime);
 
@@ -348,7 +350,9 @@ public class PlayerController : MonoBehaviour
     {
         if (isCooldown)
         {
-            LanternLight.intensity += Time.deltaTime * 100;
+            //Rajoutez les actions qui se déroulent pendant le cooldown
+
+            lanternLight.intensity += Time.deltaTime * 100;
             currentCooldown -= Time.deltaTime;
 
             if (currentCooldown <= 0f)
@@ -367,7 +371,8 @@ public class PlayerController : MonoBehaviour
         {
             isCooldown = true;
             currentCooldown = cooldownDuration;
-            LanternLight.intensity = 0f;
+            lanternLight.intensity = 0f;
+            // Rajoutez les actions qui se déroulent au début du cooldown
         }
     }
     #endregion
