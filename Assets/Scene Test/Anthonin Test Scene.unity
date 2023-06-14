@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 1966.6152, g: 2164.1758, b: 2652.3555, a: 1}
+  m_IndirectSpecularColor: {r: 2062.1973, g: 2297, b: 2867.9766, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1527,6 +1527,65 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Asset: {fileID: -944628639613478452, guid: e67c89c6072fd744da39b1e0cfb78897, type: 3}
   m_ActionId: 7c5b2179-e88d-4cfd-bfb3-2a822856544e
+--- !u!1001 &999286976
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 2
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5747504497276877724, guid: 034e940684b85304fb2f5307838313d8, type: 3}
+      propertyPath: m_RootOrder
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 5747504497276877724, guid: 034e940684b85304fb2f5307838313d8, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.86
+      objectReference: {fileID: 0}
+    - target: {fileID: 5747504497276877724, guid: 034e940684b85304fb2f5307838313d8, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.00000047683716
+      objectReference: {fileID: 0}
+    - target: {fileID: 5747504497276877724, guid: 034e940684b85304fb2f5307838313d8, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.34
+      objectReference: {fileID: 0}
+    - target: {fileID: 5747504497276877724, guid: 034e940684b85304fb2f5307838313d8, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5747504497276877724, guid: 034e940684b85304fb2f5307838313d8, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5747504497276877724, guid: 034e940684b85304fb2f5307838313d8, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5747504497276877724, guid: 034e940684b85304fb2f5307838313d8, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5747504497276877724, guid: 034e940684b85304fb2f5307838313d8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5747504497276877724, guid: 034e940684b85304fb2f5307838313d8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5747504497276877724, guid: 034e940684b85304fb2f5307838313d8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5747504497276877726, guid: 034e940684b85304fb2f5307838313d8, type: 3}
+      propertyPath: m_Name
+      value: Pickable_1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_AddedGameObjects: []
+  m_SourcePrefab: {fileID: 100100000, guid: 034e940684b85304fb2f5307838313d8, type: 3}
 --- !u!114 &1014029546
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1679,7 +1738,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1728498595
 Transform:
   m_ObjectHideFlags: 0
@@ -2550,6 +2609,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: LittleGirl
       objectReference: {fileID: 0}
+    - target: {fileID: 1878011535890124679, guid: e54d20b8c296a8245b9e6f70640dce7e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5379838235846391419, guid: e54d20b8c296a8245b9e6f70640dce7e, type: 3}
       propertyPath: FinalEnemy
       value: 
@@ -2615,7 +2678,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1013405930934950086, guid: 59d15adcdd40c50418032aaa3e9f7ec8, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4773817834129914032, guid: 59d15adcdd40c50418032aaa3e9f7ec8, type: 3}
       propertyPath: m_Name
@@ -2671,7 +2734,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4773817834627145001, guid: 59d15adcdd40c50418032aaa3e9f7ec8, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
