@@ -134,11 +134,11 @@ public class PlayerController : MonoBehaviour
 
             if (!PushPullTrigger)
             {
-                if (movement > 0)
+                if (movement > 0) //going right
                 {
                     transform.rotation = Quaternion.Euler(0, 0, 0);
                 }
-                else if (movement < 0)
+                else if (movement < 0) //going left
                 {
                     transform.rotation = Quaternion.Euler(0, 180, 0);
                 }
