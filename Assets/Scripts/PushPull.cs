@@ -11,17 +11,17 @@ public class PushPull : MonoBehaviour
     public bool isPushable = false;
     public bool obstacle = false;
 
-    //[SerializeField] private CapsuleCollider playerBox;
+    [SerializeField] private BoxCollider playerBox;
 
     private void Awake()
     {
         Player = GameObject.Find("Player");
 
-        //playerBox = PlayerController.Instance.GetComponentInChildren<CapsuleCollider>();
+        playerBox = PlayerController.Instance.GetComponentInChildren<BoxCollider>();
 
         //rb = GetComponent<Rigidbody>();
 
-        //playerBox.enabled = false;
+        playerBox.enabled = false;
         //playerBox.isTrigger = true;
     }
 
@@ -44,7 +44,7 @@ public class PushPull : MonoBehaviour
             PlayerController.Instance.canJump = false;
             PlayerController.Instance.isCrouching = false;
 
-            //playerBox.enabled = true;
+            playerBox.enabled = true;
             //playerBox.isTrigger = false;
 
             if (PlayerController.Instance.movement == 0) //no movement
@@ -85,7 +85,7 @@ public class PushPull : MonoBehaviour
         {
             gameObject.transform.SetParent(null); //Setting the parent to "null" unparents the GameObject and turns child into a top-level object in the hierarchy
             
-            //playerBox.enabled = false;
+            playerBox.enabled = false;
             //playerBox.isTrigger = true;
 
             //Resets Push/Pull Animation
