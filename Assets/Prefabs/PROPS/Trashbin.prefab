@@ -116,7 +116,7 @@ Transform:
   - {fileID: 5487194854217185674}
   - {fileID: 8563626011271993883}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2018496876
 MonoBehaviour:
@@ -134,6 +134,7 @@ MonoBehaviour:
   rb: {fileID: 0}
   isPushable: 0
   obstacle: 0
+  playerBox: {fileID: 0}
 --- !u!54 &2018496875
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -477,8 +478,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.5876014, y: 0.42000008, z: 1.0012882}
-  m_Center: {x: -1.1361994, y: 1.042, z: -0.0008095205}
+  m_Size: {x: 0.485, y: 0.42, z: 1.0012}
+  m_Center: {x: -1.084, y: 1.042, z: -0.000825}
 --- !u!114 &8277499623151678321
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -644,8 +645,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.576802, y: 0.42000008, z: 1.001288}
-  m_Center: {x: 1.141599, y: 1.042, z: -0.0008094907}
+  m_Size: {x: 0.485, y: 0.42, z: 1.0012}
+  m_Center: {x: 1.084, y: 1.042, z: -0.000825}
 --- !u!114 &8762270153961249475
 MonoBehaviour:
   m_ObjectHideFlags: 0
