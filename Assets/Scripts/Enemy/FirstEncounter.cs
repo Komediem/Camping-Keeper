@@ -18,8 +18,10 @@ public class FirstEncounter : MonoBehaviour
     {
         if (collision.tag == "Player")
         {
-            noise.Play(); //Jouer anim de la caméra
+            noise.Play();
             Invoke("EnemySpawn", timeSpawn);
+            //Ralenti
+            //TutoStun
         }
     }
 
@@ -28,11 +30,5 @@ public class FirstEncounter : MonoBehaviour
         enemy.SetActive(true);
     }
 
-    private void DisableBox()
-    {
-        Trigger.SetActive(false);
-    }
-
-
-    //SFX brindille + petits délais + Tuto + ralentissement        + faire disparaître pour ce cas là.
+    //SFX brindille + petits délais + Tuto + ralentissement + faire disparaître pour ce cas là.
 }
