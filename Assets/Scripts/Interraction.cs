@@ -8,7 +8,7 @@ public class Interraction : MonoBehaviour
     private void Update()
     {
         if (PlayerController.Instance.isJumping || PlayerController.Instance.isPulling || PlayerController.Instance.isCrouching 
-            || GameManager.instance.checkpointInstance.CheckpointIsActivate || PlayerController.Instance.SpamActive)
+            || PlayerController.Instance.SpamActive)
         {
             OutlineObject.SetActive(false);
         }

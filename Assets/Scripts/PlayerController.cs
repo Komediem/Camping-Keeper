@@ -8,11 +8,14 @@ public class PlayerController : MonoBehaviour
     public static PlayerController Instance;
     private CharacterController controller;
 
+    [Space]
     [SerializeField] VisualEffect sparksVFX;
 
+    [Space]
     public Rigidbody rb;
     public Animator playerAnimator;
 
+    [Space]
     public GameObject Raycast;
 
     #region Movement
@@ -22,14 +25,17 @@ public class PlayerController : MonoBehaviour
     public bool lockMovements;
 
     public bool isCrouching = false;
+
     [Space]
     public float speed = 5f;
     public float speedDefault;
     public float speedValue;
 
-    [SerializeField] private float moveSmoothTime = 0.2f;
+    [Space]
+    private float moveSmoothTime = 0.2f;
     public Vector3 currentMoveVelocity;
     private Vector3 moveDampVelocity;
+
     [Space]
     #endregion
 
@@ -43,8 +49,8 @@ public class PlayerController : MonoBehaviour
     public bool canJump;
     public bool isJumping;
 
-    [SerializeField] private float gravity = 9.8f;
-    [SerializeField] private Vector3 velocity;
+    private float gravity = 9.8f;
+    private Vector3 velocity;
 
     //Trampoline settings
     [SerializeField] private float trampolineForce = 16f;
@@ -62,11 +68,14 @@ public class PlayerController : MonoBehaviour
     [Space]
     public float SpamRequire;
     public bool SpamActive = false;
+    public bool SpamEND = false;
 
     #region Light
+    [Space]
     public GameObject LightLantern;
     public float LightTime;
 
+    [Space]
     public float cooldownDuration = 3f;  // Duration of the cooldown in seconds
     public float currentCooldown = 0f;  // Current cooldown progress
     public bool isCooldown = false;  // Flag to check if the cooldown is active
@@ -318,6 +327,7 @@ public class PlayerController : MonoBehaviour
             if (NombrePression >= SpamRequire)
             {
                 SpamActive = true;
+                SpamEND = true;
             }
 
             NombrePression++;
