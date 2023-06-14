@@ -12,6 +12,7 @@ public class Spam : MonoBehaviour
     public GameObject LightENDGAME;
     public float DelayENDGAME;
     public bool NoCD = false;
+    public GameObject CamFinal;
     //public GameObject [Name Canvas Object];
 
     private void Awake()
@@ -50,7 +51,7 @@ public class Spam : MonoBehaviour
             OutlineKID.SetActive(false);
             NoCD = true;
             FinalEnemy.SetActive(true);
-            //switch camera
+            CamFinal.SetActive(true);
         }
     }
 
