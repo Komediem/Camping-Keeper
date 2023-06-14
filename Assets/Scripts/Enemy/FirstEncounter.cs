@@ -21,6 +21,8 @@ public class FirstEncounter : MonoBehaviour
         if (collision.tag == "Player")
         {
             noise.Play();
+            PlayerController.Instance.lockMovements = true;
+            PlayerController.Instance.playerAnimator.SetTrigger("backDefault");
             Invoke("EnemySpawn", timeSpawn);
             Invoke("EnemySlowed", timeSpawn + 1);
         }
