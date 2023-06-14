@@ -13,6 +13,10 @@ public class Collapse : MonoBehaviour
 
     [SerializeField] private bool Touched = false;
 
+    [SerializeField] private AudioClip Fall;
+    [SerializeField] private AudioClip OnCollapse;
+    [SerializeField] private AudioSource Sound;
+
     // Update is called once per frame
 
     private void OnTriggerEnter(Collider other)
@@ -35,7 +39,9 @@ public class Collapse : MonoBehaviour
     {
         if (!Touched)
         {
+            Sound.PlayOneShot(OnCollapse);
             yield return new WaitForSeconds(Timing);
+            Sound.PlayOneShot(Fall);
             c_Animator.SetBool("Activate", true);
             Touched = true;
         }
