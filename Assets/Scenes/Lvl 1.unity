@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.41647422, g: 0.60724986, b: 1.1243052, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -5782,6 +5782,10 @@ PrefabInstance:
       propertyPath: tutoImages.Array.data[5]
       value: 
       objectReference: {fileID: 21300000, guid: 31fa6237a8e50fb4485e276611dba1b6, type: 3}
+    - target: {fileID: 1397333176, guid: a389da2f4438b3a4e9c5202b88c93942, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 366175168531857554, guid: a389da2f4438b3a4e9c5202b88c93942, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: -8.170441
@@ -5805,6 +5809,10 @@ PrefabInstance:
     - target: {fileID: 608321762012690049, guid: a389da2f4438b3a4e9c5202b88c93942, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 15.482052
+      objectReference: {fileID: 0}
+    - target: {fileID: 660948951562820670, guid: a389da2f4438b3a4e9c5202b88c93942, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1031632034806615371, guid: a389da2f4438b3a4e9c5202b88c93942, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -9165,6 +9173,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 77fe3a182e4db97489fe229d72739a4d, type: 3}
       propertyPath: m_Name
       value: Palissade_Hole_1m
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 77fe3a182e4db97489fe229d72739a4d, type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
@@ -15059,8 +15071,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 791087620}
-  m_LocalRotation: {x: -0.036246497, y: -0.4019619, z: -0.015925461, w: 0.91480017}
-  m_LocalPosition: {x: -78.64, y: -126.87729, z: -91.45}
+  m_LocalRotation: {x: 0.007185757, y: -0.6720403, z: 0.0065218597, w: 0.7404511}
+  m_LocalPosition: {x: -11.269997, y: -124.92536, z: -96.16996}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -23183,6 +23195,10 @@ PrefabInstance:
     - target: {fileID: 5516399533543761745, guid: c1a0b6d49a59cc5499d3db68041723de, type: 3}
       propertyPath: m_Name
       value: VAN2_Capot_Coll
+      objectReference: {fileID: 0}
+    - target: {fileID: 5516399533543761745, guid: c1a0b6d49a59cc5499d3db68041723de, type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
@@ -33567,6 +33583,10 @@ PrefabInstance:
     - target: {fileID: 5516399533543761745, guid: c1a0b6d49a59cc5499d3db68041723de, type: 3}
       propertyPath: m_Name
       value: VAN2_Capot_Coll
+      objectReference: {fileID: 0}
+    - target: {fileID: 5516399533543761745, guid: c1a0b6d49a59cc5499d3db68041723de, type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
