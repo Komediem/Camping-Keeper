@@ -10,6 +10,8 @@ public class ENDGAMEEnemy : MonoBehaviour
     public float ENDGAME;
     public GameObject EnemyEND;
 
+    [SerializeField] private GameObject tutoStun;
+
     private void Awake()
     {
         EnemyEND = this.gameObject;
@@ -19,6 +21,7 @@ public class ENDGAMEEnemy : MonoBehaviour
     {
 
     }
+
     private void OnTriggerEnter(Collider collision)
     {
         if (collision.tag == "LightENDGAME")
@@ -42,5 +45,6 @@ public class ENDGAMEEnemy : MonoBehaviour
     {
         PlayerMentalHealth.instance.mentalHealth -= 100;
         PlayerController.Instance.lockMovements = false;
+        tutoStun.SetActive(false);
     }
 }
