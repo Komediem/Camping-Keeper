@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.41653442, g: 0.60731256, b: 1.1243883, a: 1}
+  m_IndirectSpecularColor: {r: 0.41672105, g: 0.60966545, b: 1.149051, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2353,6 +2353,14 @@ PrefabInstance:
       propertyPath: m_Navigation.m_WrapAround
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 564248769, guid: 0b808f0095528bf41ba9480bb86dffea, type: 3}
+      propertyPath: music
+      value: 
+      objectReference: {fileID: 260173271}
+    - target: {fileID: 564248769, guid: 0b808f0095528bf41ba9480bb86dffea, type: 3}
+      propertyPath: scream
+      value: 
+      objectReference: {fileID: 260173271}
     - target: {fileID: 564248769, guid: 0b808f0095528bf41ba9480bb86dffea, type: 3}
       propertyPath: movementText
       value: 
@@ -5753,6 +5761,10 @@ PrefabInstance:
       propertyPath: m_UIInputModule
       value: 
       objectReference: {fileID: 1095564879}
+    - target: {fileID: 4292055377032961787, guid: a389da2f4438b3a4e9c5202b88c93942, type: 3}
+      propertyPath: m_DefaultActionMap
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 6330055504169505633, guid: a389da2f4438b3a4e9c5202b88c93942, type: 3}
       propertyPath: m_Name
       value: Player + Cam

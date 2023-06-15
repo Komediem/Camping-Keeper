@@ -6,6 +6,7 @@ public class Checkpoint : MonoBehaviour
 {
     public bool CheckpointIsActivate;
     [SerializeField] private GameObject flames;
+    public GameObject CamFocus;
     private void Awake()
     {
         GameManager.instance.checkpointInstance = this;
@@ -17,6 +18,8 @@ public class Checkpoint : MonoBehaviour
 
     private void OnTriggerEnter(Collider collision)
     {
+        CamFocus.SetActive(true);
+
         if (CheckpointIsActivate == true) return;
         if (collision.tag == "Player")
         {
@@ -26,5 +29,11 @@ public class Checkpoint : MonoBehaviour
             //Activation des flammes
             flames.SetActive(true);
         }
+
+    }
+
+    private void onTriggerExit(Collider collision)
+    {
+        CamFocus.SetActive(false);
     }
 }
