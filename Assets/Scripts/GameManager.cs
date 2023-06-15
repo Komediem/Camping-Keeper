@@ -35,7 +35,7 @@ public class GameManager : MonoBehaviour
     {
         Player.GetComponent<CharacterController>().enabled = false;
 
-        Player.transform.position = CurrentCheckpoint.transform.position; //TP Checkpoint
+        Player.transform.position = new Vector3(CurrentCheckpoint.transform.position.x, CurrentCheckpoint.transform.position.y, 15); //TP Checkpoint
 
         Player.GetComponent<CharacterController>().enabled = true;
 
