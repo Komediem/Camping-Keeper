@@ -389,7 +389,7 @@ public class PlayerController : MonoBehaviour
                 lanternLight.intensity = 0f;
 
             else if (Spam.Instance != null && Spam.Instance.NoCD)
-                lanternLight.intensity += 150;
+                lanternLight.intensity += 200;
             // Rajoutez les actions qui se déroulent au début du cooldown
         }
     }

@@ -18,6 +18,7 @@ public class Spam : MonoBehaviour
 
     public Animator StunSpamAnimator;
     public GameObject StunSpamText;
+    public GameObject whitescreen;
 
     private void Awake()
     {
@@ -38,6 +39,7 @@ public class Spam : MonoBehaviour
         if (PlayerController.Instance.SpamActive)
         {
             LightENDGAME.SetActive(true);
+            whitescreen.SetActive(true);
             //Animation Destruction Enemy
             Invoke("ENDGAME", DelayENDGAME); 
         }

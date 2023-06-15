@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0.3345878, g: 0.51289314, b: 1.1354564, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1716,13 +1716,14 @@ GameObject:
   - component: {fileID: 117244371}
   - component: {fileID: 117244373}
   - component: {fileID: 117244372}
+  - component: {fileID: 117244374}
   m_Layer: 5
   m_Name: Whitescreen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &117244371
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1781,6 +1782,26 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 117244370}
   m_CullTransparentMesh: 1
+--- !u!95 &117244374
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 117244370}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 5a38e2e0e39aa234d934181f4bceb881, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &124259743
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4267,6 +4288,10 @@ PrefabInstance:
       propertyPath: FinalEnemy
       value: 
       objectReference: {fileID: 1494811206}
+    - target: {fileID: 5379838235846391419, guid: e54d20b8c296a8245b9e6f70640dce7e, type: 3}
+      propertyPath: whitescreen
+      value: 
+      objectReference: {fileID: 117244370}
     - target: {fileID: 5379838235846391419, guid: e54d20b8c296a8245b9e6f70640dce7e, type: 3}
       propertyPath: LightENDGAME
       value: 
