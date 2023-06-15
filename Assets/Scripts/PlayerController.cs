@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] VisualEffect sparksVFX;
     [SerializeField] Light lanternLight;
     [SerializeField] public bool readyToStun;
+    [SerializeField] public AudioSource stunSound;
 
     [Space]
     public Rigidbody rb;
@@ -331,6 +332,7 @@ public class PlayerController : MonoBehaviour
 
             LightLantern.SetActive(true);
             sparksVFX.Play();
+            stunSound.Play();
 
             //Play Anmation, Be Carefull of the Moment Where The Light Cuts
             Invoke("LightStop", LightTime);
