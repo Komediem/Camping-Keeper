@@ -37,4 +37,10 @@ public class ENDGAMEEnemy : MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
+
+    public void KillPlayer()
+    {
+        PlayerMentalHealth.instance.mentalHealth -= 100;
+        PlayerController.Instance.lockMovements = false;
+    }
 }
