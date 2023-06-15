@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -27,7 +28,9 @@ public class Menu : MonoBehaviour
 
     public Toggle fullscreenToggle;
 
-    public AudioSource scream; //musica !!
+    public AudioSource scream; //aaahhh !!
+    public AudioSource music; //musica
+
     public Slider musicSlider;
     [Space]
     public bool isMenuActive = true;
@@ -83,7 +86,7 @@ public class Menu : MonoBehaviour
             
             EventSystem.current.SetSelectedGameObject(MainButtons.transform.GetChild(0).gameObject);
         }
-    }
+	}
 
     public void StartGame() //new game or continue from save
     {
@@ -156,6 +159,7 @@ public class Menu : MonoBehaviour
     public void VolumeSlider()
     {
         scream.volume = musicSlider.value;
+        music.volume = musicSlider.value;
     }
 
     public void SensitivitySlider()
