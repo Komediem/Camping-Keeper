@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
@@ -12,7 +13,9 @@ public class PauseMenu : MonoBehaviour
     public static bool gameIsPaused;
 
     public AudioSource audioSource;
-    [Space]
+	public AudioSource[] sounds;
+
+	[Space]
     public GameObject pauseMenu;
     public GameObject Buttons; //buttons of the Pause Menu
 
@@ -35,7 +38,7 @@ public class PauseMenu : MonoBehaviour
             virtualCursor = GameObject.Find("VirtualMouse");
         }
 
-        audioSource = GetComponent<AudioSource>();
+        //audioSource = GetComponent<AudioSource>();
     }
 
     private void Start()
@@ -140,8 +143,13 @@ public class PauseMenu : MonoBehaviour
 
     public void VolumeSlider()
     {
-        GetComponent<AudioSource>().volume = musicSlider.value;
-    }
+        audioSource.volume = musicSlider.value;
+
+		for (int i = 0; i <= sounds.Length; i++)
+		{
+			sounds[i].volume = musicSlider.value;
+		}
+	}
 
     public void SensitivitySlider()
     {
@@ -166,6 +174,6 @@ public class PauseMenu : MonoBehaviour
         Screen.fullScreen = true;
 
         musicSlider.value = musicSlider.maxValue;
-        GetComponent<AudioSource>().volume = musicSlider.maxValue;
+        audioSource.volume = musicSlider.maxValue;
     }
 }

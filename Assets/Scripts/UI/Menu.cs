@@ -30,6 +30,7 @@ public class Menu : MonoBehaviour
 
     public AudioSource scream; //aaahhh !!
     public AudioSource music; //musica
+    public AudioSource[] sounds;
 
     public Slider musicSlider;
     [Space]
@@ -160,7 +161,12 @@ public class Menu : MonoBehaviour
     {
         scream.volume = musicSlider.value;
         music.volume = musicSlider.value;
-    }
+
+        for(int i = 0; i <= sounds.Length; i++)
+        {
+            sounds[i].volume = musicSlider.value;
+        }
+	}
 
     public void SensitivitySlider()
     {
