@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 1762166408752083517}
   - component: {fileID: 1762166408752083519}
   - component: {fileID: 1762166408752083516}
+  - component: {fileID: 6268323546032195579}
+  - component: {fileID: 429953074855304686}
   m_Layer: 0
   m_Name: TrampoCheck 1
   m_TagString: TrampoCheck
@@ -32,7 +34,7 @@ Transform:
   m_Children:
   - {fileID: 1759658789822742880}
   m_Father: {fileID: 0}
-  m_RootOrder: 18
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &1762166408752083519
 BoxCollider:
@@ -60,6 +62,42 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   trampoBox: {fileID: 1762166409774203078}
+--- !u!114 &6268323546032195579
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1762166408752083514}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3203d816690b85840bc990c0420f2011, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  feedbackJumpAnimator: {fileID: 0}
+  splash: {fileID: 5666798523565423385, guid: 3738987f3791ed84093e91bea480b54c, type: 3}
+  audioClip:
+  - {fileID: 8300000, guid: 642ad95a99c436642be6a5eec5559e88, type: 3}
+--- !u!95 &429953074855304686
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1762166408752083514}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e5ad1e513a2af1a488912f474a47bd80, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &1762166408701790198
 PrefabInstance:
   m_ObjectHideFlags: 0
