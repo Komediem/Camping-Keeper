@@ -69,7 +69,7 @@ public class Spam : MonoBehaviour
     {
         //                                               -- Choisir entre skip next scene ou mettre un canvas fin du jeu. --
         //
-        //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         //[Name Canvas Object].SetActive(true);
     }
 
