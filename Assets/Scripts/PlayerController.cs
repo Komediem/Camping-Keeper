@@ -259,7 +259,7 @@ public class PlayerController : MonoBehaviour
 
                 Raycast.SetActive(false);
 
-                controller.height = 2f;
+                controller.height = 1.75f;
                 controller.center = new(0, 1f, 0);
 
                 playerAnimator.SetBool("isCrouching", false);
