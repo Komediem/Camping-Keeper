@@ -7,21 +7,30 @@ using UnityEngine.SceneManagement;
 
 public class Spam : MonoBehaviour
 {
+    public static Spam Instance;
+
     public GameObject FinalEnemy;
     public GameObject OutlineKID;
     public GameObject LightENDGAME;
     public float DelayENDGAME;
     public bool NoCD = false;
     public GameObject Final_Cam;
-    //public GameObject [Name Canvas Object];
+
+    public Animator StunSpamAnimator;
+    public GameObject StunSpamText;
 
     private void Awake()
     {
+        if (Instance) Destroy(this);
+        else Instance = this;
+
         LightENDGAME.SetActive(false);
         FinalEnemy = GameObject.Find("FinalEnemy");
         OutlineKID = GameObject.Find("LittleGirlOutline");
         FinalEnemy.SetActive(false);
         OutlineKID.SetActive(false);    
+
+        StunSpamAnimator = StunSpamText.GetComponent<Animator>(); 
     }
 
     private void Update()
@@ -47,6 +56,7 @@ public class Spam : MonoBehaviour
     {
         if (collision.tag == "SpamBOX")
         {
+            StunSpamText.SetActive(true);
             PlayerController.Instance.lockMovements = true;
             OutlineKID.SetActive(false);
             NoCD = true;
