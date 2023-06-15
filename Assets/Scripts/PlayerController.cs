@@ -362,7 +362,7 @@ public class PlayerController : MonoBehaviour
         if (isCooldown)
         {
             //Rajoutez les actions qui se déroulent pendant le cooldown
-            if(!Spam.Instance.NoCD)
+            if(Spam.Instance != null && !Spam.Instance.NoCD)
             lanternLight.intensity += Time.deltaTime * 100;
 
 
@@ -385,10 +385,10 @@ public class PlayerController : MonoBehaviour
             isCooldown = true;
             currentCooldown = cooldownDuration;
 
-            if (!Spam.Instance.NoCD)
+            if (Spam.Instance != null && !Spam.Instance.NoCD)
                 lanternLight.intensity = 0f;
 
-            else if (Spam.Instance.NoCD)
+            else if (Spam.Instance != null && Spam.Instance.NoCD)
                 lanternLight.intensity += 150;
             // Rajoutez les actions qui se déroulent au début du cooldown
         }
