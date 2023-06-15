@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.50572854, g: 1.0736988, b: 2.261029, a: 1}
+  m_IndirectSpecularColor: {r: 0.5124334, g: 1.1109684, b: 2.3875587, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -27554,6 +27554,18 @@ PrefabInstance:
       propertyPath: m_Center.y
       value: -0.08086722
       objectReference: {fileID: 0}
+    - target: {fileID: 1068107410000044793, guid: fdc08069dc7e88c4486ae2f667f93338, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 542
+      objectReference: {fileID: 0}
+    - target: {fileID: 1068107410000044793, guid: fdc08069dc7e88c4486ae2f667f93338, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 145
+      objectReference: {fileID: 0}
+    - target: {fileID: 1068107410000044793, guid: fdc08069dc7e88c4486ae2f667f93338, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 1068107410423922275, guid: fdc08069dc7e88c4486ae2f667f93338, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -33499,29 +33511,9 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 1016861432}
     m_Modifications:
-    - target: {fileID: 1947254944830850182, guid: ac90f98969d27904fa8fa118b828c5e4, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1.0875
-      objectReference: {fileID: 0}
-    - target: {fileID: 1947254944830850182, guid: ac90f98969d27904fa8fa118b828c5e4, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.20585
-      objectReference: {fileID: 0}
     - target: {fileID: 2057216437848822388, guid: ac90f98969d27904fa8fa118b828c5e4, type: 3}
       propertyPath: m_RootOrder
       value: -1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2057216437848822388, guid: ac90f98969d27904fa8fa118b828c5e4, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.73
-      objectReference: {fileID: 0}
-    - target: {fileID: 2057216437848822388, guid: ac90f98969d27904fa8fa118b828c5e4, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.73
-      objectReference: {fileID: 0}
-    - target: {fileID: 2057216437848822388, guid: ac90f98969d27904fa8fa118b828c5e4, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.73
       objectReference: {fileID: 0}
     - target: {fileID: 2057216437848822388, guid: ac90f98969d27904fa8fa118b828c5e4, type: 3}
       propertyPath: m_LocalPosition.x
@@ -33563,21 +33555,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2057216437848822388, guid: ac90f98969d27904fa8fa118b828c5e4, type: 3}
-      propertyPath: m_ConstrainProportionsScale
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 2057216437848822389, guid: ac90f98969d27904fa8fa118b828c5e4, type: 3}
       propertyPath: m_Name
       value: Platforme_Collapse
-      objectReference: {fileID: 0}
-    - target: {fileID: 6627674542737546064, guid: ac90f98969d27904fa8fa118b828c5e4, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1.0249
-      objectReference: {fileID: 0}
-    - target: {fileID: 6627674542737546064, guid: ac90f98969d27904fa8fa118b828c5e4, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.0039498
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
@@ -35307,6 +35287,14 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[2]
       value: 
       objectReference: {fileID: 2100000, guid: f9d567f19a75a5e48a8b001efeac4b6c, type: 2}
+    - target: {fileID: 6799812451190587169, guid: 873681ef14e580d448b5176cf85d8e5a, type: 3}
+      propertyPath: MaxDistance
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 6799812451190587169, guid: 873681ef14e580d448b5176cf85d8e5a, type: 3}
+      propertyPath: rolloffMode
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 7530676927202162803, guid: 873681ef14e580d448b5176cf85d8e5a, type: 3}
       propertyPath: Target
       value: 
