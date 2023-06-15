@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.33482206, g: 0.5150118, b: 1.1606531, a: 1}
+  m_IndirectSpecularColor: {r: 0.334627, g: 0.51297295, b: 1.1355575, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -15104,6 +15104,10 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 467230384}
     m_Modifications:
+    - target: {fileID: 1068107410000044774, guid: fdc08069dc7e88c4486ae2f667f93338, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1068107410000044793, guid: fdc08069dc7e88c4486ae2f667f93338, type: 3}
       propertyPath: m_LocalPosition.x
       value: 553
@@ -17248,7 +17252,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1025836217}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 142.54, y: -125.55, z: -85.49}
+  m_LocalPosition: {x: 140.13, y: -125.55, z: -85.49}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -21035,6 +21039,26 @@ PrefabInstance:
     - target: {fileID: 752417956836166006, guid: b7bba6b4cba4dbc42be11a79f4889ac5, type: 3}
       propertyPath: m_Name
       value: tronc_casse_1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3460174359744905958, guid: b7bba6b4cba4dbc42be11a79f4889ac5, type: 3}
+      propertyPath: m_Size.x
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 3460174359744905958, guid: b7bba6b4cba4dbc42be11a79f4889ac5, type: 3}
+      propertyPath: m_Size.y
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 3460174359744905958, guid: b7bba6b4cba4dbc42be11a79f4889ac5, type: 3}
+      propertyPath: m_Size.z
+      value: 118.43
+      objectReference: {fileID: 0}
+    - target: {fileID: 3460174359744905958, guid: b7bba6b4cba4dbc42be11a79f4889ac5, type: 3}
+      propertyPath: m_Center.y
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 3460174359744905958, guid: b7bba6b4cba4dbc42be11a79f4889ac5, type: 3}
+      propertyPath: m_Center.z
+      value: -177.6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
@@ -25178,7 +25202,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1605320584}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 143.94, y: -125.94, z: -85.49}
+  m_LocalPosition: {x: 142.91, y: -125.94, z: -85.49}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
