@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 8982303687345814}
   - component: {fileID: 4012763131729381683}
   - component: {fileID: 1176782586808335865}
+  - component: {fileID: 7756975292031428390}
+  - component: {fileID: 5147429431544205028}
   m_Layer: 0
   m_Name: 'Lilypad '
   m_TagString: Untagged
@@ -83,3 +85,37 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!95 &7756975292031428390
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 816341165853695020}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e5ad1e513a2af1a488912f474a47bd80, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &5147429431544205028
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 816341165853695020}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3203d816690b85840bc990c0420f2011, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  feedbackJumpAnimator: {fileID: 7756975292031428390}
+  splash: {fileID: 5666798523565423385, guid: 3738987f3791ed84093e91bea480b54c, type: 3}
