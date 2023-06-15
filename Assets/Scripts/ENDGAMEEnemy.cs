@@ -47,6 +47,13 @@ public class ENDGAMEEnemy : MonoBehaviour
         PlayerController.Instance.lockMovements = false;
         tutoStun.SetActive(false);
         Spam.Instance.Final_Cam.SetActive(false);
+        PlayerController.Instance.NombrePression = 0;
+        Invoke("KillEnemy", 5);
+
+    }
+
+    public void KillEnemy()
+    {
         EnemyEND.SetActive(false);
     }
 }

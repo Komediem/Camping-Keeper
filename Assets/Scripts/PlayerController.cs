@@ -352,7 +352,8 @@ public class PlayerController : MonoBehaviour
             if(Spam.Instance.NoCD)
                 Spam.Instance.StunSpamAnimator.SetTrigger("StunSpam");
 
-            NombrePression++;
+            if (Spam.Instance.NoCD)
+                NombrePression++;
         }
     }
 
