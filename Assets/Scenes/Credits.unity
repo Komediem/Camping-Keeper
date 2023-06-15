@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0.41665292, g: 0.6095411, b: 1.148945, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2682,6 +2682,10 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 107765928}
     m_Modifications:
+    - target: {fileID: 1354580625, guid: 539c744f902d7914188a0a6172e17220, type: 3}
+      propertyPath: m_Volume
+      value: 0.401
+      objectReference: {fileID: 0}
     - target: {fileID: 1637859067340282869, guid: 539c744f902d7914188a0a6172e17220, type: 3}
       propertyPath: m_Name
       value: feu_camp (1)

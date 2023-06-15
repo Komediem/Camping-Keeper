@@ -30,7 +30,7 @@ public class FootStep : MonoBehaviour
     private AudioClip GetRandomClip()
     {
         int index = Random.Range(0, LandCLip.Length - 1);
-        audioSource.volume = Random.Range(0.2f, 0.4f);
+        audioSource.volume = Random.Range(0.15f, 0.3f);
         audioSource.pitch = Random.Range(0.95f, 1.05f);
         return LandCLip[index];
     }
@@ -38,7 +38,7 @@ public class FootStep : MonoBehaviour
     private AudioClip GetRandomLand()
     {
         int index = Random.Range(0, LandCLip.Length - 1);
-        audioSource.volume = Random.Range(0.2f, 0.4f);
+        audioSource.volume = Random.Range(0.14f, 0.3f);
         audioSource.pitch = Random.Range(0.85f, 1f);
         return LandCLip[index];
     }
