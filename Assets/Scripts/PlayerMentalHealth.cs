@@ -13,6 +13,8 @@ public class PlayerMentalHealth : MonoBehaviour
     public float maxMentalHealth;
     public float minMentalHealth;
 
+    private bool isDead;
+
     [Header("Vignette")]
     [SerializeField] private Volume volume;
     [SerializeField] private Vignette blackVignette;
@@ -29,6 +31,8 @@ public class PlayerMentalHealth : MonoBehaviour
 
     private void Start()
     {
+        isDead = false;
+
         volume.profile.TryGet(out blackVignette);
     }
 
@@ -41,9 +45,10 @@ public class PlayerMentalHealth : MonoBehaviour
     {
         blackVignette.intensity.value = -mentalHealth / 100;
 
-        if(mentalHealth <= minMentalHealth)
+        if(mentalHealth <= minMentalHealth && !isDead)
         {
             GameManager.instance.Die();
+            isDead = true;
         }
     }
 }

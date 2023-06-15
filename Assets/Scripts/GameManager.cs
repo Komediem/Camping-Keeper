@@ -29,7 +29,7 @@ public class GameManager : MonoBehaviour
 
     public void Die()
     {
-        PlayerController.Instance.playerAnimator.SetBool("isDead", true);
+        PlayerController.Instance.playerAnimator.SetTrigger("isDead");
     }
     public void Respawn()
     {
