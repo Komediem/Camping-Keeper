@@ -43,8 +43,10 @@ public class ENDGAMEEnemy : MonoBehaviour
 
     public void KillPlayer()
     {
-        PlayerMentalHealth.instance.mentalHealth -= 100;
+        GameManager.instance.Die();
         PlayerController.Instance.lockMovements = false;
         tutoStun.SetActive(false);
+        Spam.Instance.Final_Cam.SetActive(false);
+        EnemyEND.SetActive(false);
     }
 }
