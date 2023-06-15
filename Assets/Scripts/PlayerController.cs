@@ -9,6 +9,9 @@ public class PlayerController : MonoBehaviour
     public static PlayerController Instance;
     private CharacterController controller;
 
+    public AudioSource audioSource;
+    public AudioClip clip;
+
     [Space]
     [SerializeField] VisualEffect sparksVFX;
     [SerializeField] Light lanternLight;
@@ -306,6 +309,7 @@ public class PlayerController : MonoBehaviour
         if (context.performed && !isCrouching)
         {
             isPulling = true;
+            audioSource.PlayOneShot(clip);
         }
         else if (context.canceled && !isCrouching)
         {
