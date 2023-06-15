@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.4169256, g: 0.6099368, b: 1.1493155, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -517,6 +517,82 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &138806451
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 138806452}
+  - component: {fileID: 138806454}
+  - component: {fileID: 138806453}
+  m_Layer: 5
+  m_Name: Image
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &138806452
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 138806451}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1446187204}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 479.33, y: 3507.9902}
+  m_SizeDelta: {x: 958.67, y: 246.0766}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &138806453
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 138806451}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: fd4b2399672b36446932f7b3e5414eb2, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &138806454
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 138806451}
+  m_CullTransparentMesh: 1
 --- !u!1 &141664258
 GameObject:
   m_ObjectHideFlags: 0
@@ -2662,6 +2738,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6849662760491548673, guid: 539c744f902d7914188a0a6172e17220, type: 3}
+      propertyPath: m_Intensity
+      value: 795.7747
+      objectReference: {fileID: 0}
+    - target: {fileID: 7200285796362654869, guid: 539c744f902d7914188a0a6172e17220, type: 3}
+      propertyPath: m_Intensity
+      value: 5000
+      objectReference: {fileID: 0}
+    - target: {fileID: 7654954073875762622, guid: 539c744f902d7914188a0a6172e17220, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 6.589614
+      objectReference: {fileID: 0}
+    - target: {fileID: 7654954073875762622, guid: 539c744f902d7914188a0a6172e17220, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 6.589615
+      objectReference: {fileID: 0}
+    - target: {fileID: 7654954073875762622, guid: 539c744f902d7914188a0a6172e17220, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 6.589614
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 7654954073875762622, guid: 539c744f902d7914188a0a6172e17220, type: 3}
@@ -3755,18 +3851,18 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 925250533}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0.13052598, w: 0.9914449}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 108738457}
   m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -15}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 1473, y: -351}
+  m_SizeDelta: {x: 1089.9424, y: 613.0927}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &925250535
 MonoBehaviour:
@@ -3781,7 +3877,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0.39215687}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.78431374}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -5152,6 +5248,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2021327298}
+  - {fileID: 138806452}
   m_Father: {fileID: 108738457}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -7171,7 +7268,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.92941177, g: 0.7490196, b: 0.43137255, a: 1}
+  m_Color: {r: 0.6603774, g: 0.53062713, b: 0.30215383, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -7179,7 +7276,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 067dd99efb5c7ea438826dc9692926a1, type: 3}
+    m_Font: {fileID: 12800000, guid: a51a3aebb43ac044989270407476b208, type: 3}
     m_FontSize: 60
     m_FontStyle: 0
     m_BestFit: 0
@@ -7191,19 +7288,18 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "<SIZE=200><B>LIGHT SEEKER</B>\r</SIZE>\r\n\n<SIZE=74>TEAM A</SIZE>\r\n\n\r\n<SIZE=127>-
-    GAME DESIGN DEPARTEMENT -</SIZE>\r\n\r\n<SIZE=62>GAME DIRECTOR\n<I>GABRIEL COCHARD</I></SIZE>\r\n\n<SIZE=62>LEVEL
-    / CAMERA DESIGNER\n<I>THOMAS ABATE</I></SIZE>\r\n\r\n<SIZE=62>GAME / TECHNICAL
-    DESIGNER\n<I>GUILHEM BUSSOLA</I></SIZE>\r\n\n\n<SIZE=124>- PROGRAMING DEPARTEMENT
-    -</SIZE>\r\n\r\n<SIZE=62>GAMEPLAY PROGRAMER\n<I>ANTHONIN KADI</I>\n<I>LORIS MOREAU</I></SIZE>\r\n\n\n<SIZE=124>-
-    ARTISTIC DEPARTEMENT -</SIZE>\r\n\r\n<SIZE=62>ARTISTIC DIRECTOR / TECHNICAL ARTIST\n<I>MAYEUL
-    SIRON</I></SIZE>\r\n\r\n\r<SIZE=62>VFX ARTIST\n<I>ALICE SARKISYAN</I></SIZE>\r\n\n<SIZE=62>PROPS
-    ARTIST\n<I>TEODORA DAN</I></SIZE>\r\n\n<SIZE=62>ENVIRO ARTIST / WORLD BUILDER\n<I>NICOLAS
-    MAAMAR</I></SIZE>\r\n\n<SIZE=62>ENVIRO ARTIST / WORLD BUILDER\n<I>EMMALIE KLING</I></SIZE>\r\n\n<SIZE=62>CHARA
-    DESIGNER  / UI ARTIST\n<I>HA TRUC LINH NGUYEN</I></SIZE>\r\n\n\n<SIZE=124>- SPECIAL 
-    THANKS -</SIZE>\r\n\r\n<SIZE=62>SOUND BANK\n<I>ZAPSPLAT.COM</I></SIZE>\r\n\n\n<SIZE=100>-
-    PLAY TESTERS -</SIZE>\r\n<SIZE=62>\n<I>VICTOR DALBIN</I>\n<I>LEO ROCHER</I>\n<I>LAURIANE
-    MANGIN D'HERMANTIN</I></SIZE>\r\n\r\n\r\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
+  m_Text: "\n\n\n<SIZE=74>TEAM A</SIZE>\r\n\n\r\n<SIZE=127>GAME DESIGN DEPARTMENT</SIZE>\r\n\r\n<SIZE=62>GAME
+    DIRECTOR\n<I>GABRIEL COCHARD</I></SIZE>\r\n\n<SIZE=62>LEVEL / CAMERA DESIGNER\n<I>THOMAS
+    ABATE</I></SIZE>\r\n\r\n<SIZE=62>GAME / TECHNICAL DESIGNER\n<I>GUILHEM BUSSOLA</I></SIZE>\r\n\n\n<SIZE=124>PROGRAMMING
+    DEPARTMENT</SIZE>\r\n\r\n<SIZE=62>GAMEPLAY PROGRAMER\n<I>ANTHONIN KADI</I>\n<I>LORIS
+    MOREAU</I></SIZE>\r\n\n\n<SIZE=124>ARTISTIC DEPARTMENT</SIZE>\r\n\r\n<SIZE=62>ARTISTIC
+    DIRECTOR / TECHNICAL ARTIST\n<I>MAYEUL SIRON</I></SIZE>\r\n\r\n\r<SIZE=62>VFX
+    ARTIST\n<I>ALICE SARKISYAN</I></SIZE>\r\n\n<SIZE=62>PROPS / TECHNICAL ARTIST
+    \n<I>TEODORA DAN</I></SIZE>\r\n\n<SIZE=62>ENVIRO ARTIST / WORLD BUILDER\n<I>NICOLAS
+    MAAMAR</I>\n<I>EMMALIE KLING</I></SIZE>\r\n\n<SIZE=62>CHARA DESIGNER  / UI ARTIST\n<I>HA
+    TRUC LINH NGUYEN</I></SIZE>\r\n\n\n<SIZE=124>- SPECIAL  THANKS -</SIZE>\r\n\r\n<SIZE=62>SOUND
+    BANK\n<I>ZAPSPLAT.COM</I></SIZE>\r\n\n\n<SIZE=100>- PLAY TESTERS -</SIZE>\r\n<SIZE=62>\n<I>VICTOR
+    DALBIN</I>\n<I>LEO ROCHER</I>\n<I>LAURIANE MANGIN D'HERMANTIN</I></SIZE>\r\n\r\n\r\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
 --- !u!222 &2021327300
 CanvasRenderer:
   m_ObjectHideFlags: 0
