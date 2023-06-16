@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.5087501, g: 1.0793175, b: 2.2592878, a: 1}
+  m_IndirectSpecularColor: {r: 0.51219267, g: 1.1065316, b: 2.3351097, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -15113,6 +15113,18 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 1994338798}
     m_Modifications:
+    - target: {fileID: 458843438, guid: 7afe2cd1213775b42a9ce7295c6150cf, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -6.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 1769957160, guid: 7afe2cd1213775b42a9ce7295c6150cf, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -6.79
+      objectReference: {fileID: 0}
+    - target: {fileID: 3156648365066105357, guid: 7afe2cd1213775b42a9ce7295c6150cf, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -7.25
+      objectReference: {fileID: 0}
     - target: {fileID: 8429274702172861687, guid: 7afe2cd1213775b42a9ce7295c6150cf, type: 3}
       propertyPath: m_Name
       value: TrampoCheck
@@ -15143,7 +15155,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8429274702172861689, guid: 7afe2cd1213775b42a9ce7295c6150cf, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 9.66
+      value: 7.19
       objectReference: {fileID: 0}
     - target: {fileID: 8429274702172861689, guid: 7afe2cd1213775b42a9ce7295c6150cf, type: 3}
       propertyPath: m_LocalPosition.z
@@ -32273,6 +32285,10 @@ PrefabInstance:
     - target: {fileID: 271440865437242606, guid: 2d14bc3cb4b7dea4fbef322e39185f78, type: 3}
       propertyPath: m_PropertySheet.m_Vector4f.m_Array.Array.size
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 271440865437242606, guid: 2d14bc3cb4b7dea4fbef322e39185f78, type: 3}
+      propertyPath: m_PropertySheet.m_Float.m_Array.Array.data[0].m_Value
+      value: 0.7
       objectReference: {fileID: 0}
     - target: {fileID: 271440865437242606, guid: 2d14bc3cb4b7dea4fbef322e39185f78, type: 3}
       propertyPath: m_PropertySheet.m_Vector4f.m_Array.Array.data[0].m_Name

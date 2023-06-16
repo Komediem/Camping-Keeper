@@ -27,25 +27,22 @@ public class FirstEncounter : MonoBehaviour
         if (collision.tag == "Player")
         {
             noise.Play();
-            PlayerController.Instance.lockMovements = true;
-            PlayerController.Instance.playerAnimator.SetTrigger("backDefault");
             enemy.SetActive(true);
-            Invoke("EnemySlowed", timeSpawn);
+
+            Time.timeScale = 0.25f;
+            EnemySlowed();
         }
     }
 
     private void EnemySlowed()
     {
         tutoStun.SetActive(true);
-        Time.timeScale = 0.25f;
-
         PlayerController.Instance.readyToStun = true;
     }
 
     public void Stun()
     {
         Time.timeScale = 1;
-        PlayerController.Instance.lockMovements = false;
         tutoStunAnimator.SetTrigger("FadeOut");
         this.gameObject.SetActive(false);
     }
